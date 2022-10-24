@@ -1,0 +1,25 @@
+{
+  "name": "@aoviz/graphs",
+  "version": "0.0.1",
+  "description": "d3 graphs force knowledge 力导向图",
+  "main": "index.js",
+  "repository": "https://github.com/aoviz/graphs",
+  "author": "zhongshenen",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "d3": "^7.6.1",
+    "zrender": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "rollup": "^3.2.3",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "typescript": "^4.8.4"
+  }
+}
