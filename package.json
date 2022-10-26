@@ -2,24 +2,39 @@
   "name": "@aoviz/graphs",
   "version": "0.0.1",
   "description": "d3 graphs force knowledge 力导向图",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/aoviz/graphs",
-  "author": "zhongshenen",
+  "author": "Steven",
   "license": "MIT",
   "type": "module",
   "scripts": {
+    "start": "parcel examples/base/index.html",
     "build": "rollup -c"
   },
   "dependencies": {
     "d3": "^7.6.1",
+    "lodash-es": "^4.17.21",
+    "rxjs": "^7.5.7",
     "zrender": "^5.4.0"
   },
   "devDependencies": {
+    "@parcel/transformer-typescript-tsc": "^2.7.0",
     "@types/d3": "^7.4.0",
+    "@types/lodash-es": "^4.17.6",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "parcel": "^2.7.0",
     "rollup": "^3.2.3",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-uglify": "^6.0.4",
-    "typescript": "^4.8.4"
+    "typescript": "*"
   }
 }
