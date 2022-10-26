@@ -1,0 +1,9 @@
+{
+  "cSpell.words": [
+    "aoviz"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+  },
+}
