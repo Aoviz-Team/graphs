@@ -1,0 +1,9 @@
+.vscode
+example
+src
+docs
+rollup.config.js
+tsconfig.json
+node_modules
+yarn.lock
+.parcel-cache
