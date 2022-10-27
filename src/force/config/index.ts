@@ -33,5 +33,6 @@ export const DEFAULT_OPTION: IOption = {
     chargeStrength: -1600,
     collideStrength: 0.5,
     linkDistance: 300,
+    static: true,
   },
 };

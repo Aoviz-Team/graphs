@@ -20,6 +20,7 @@ export interface ILayoutForceOption {
   width: number;
   height: number;
   linkDistance: number;
+  static?: boolean;
 }
 
 // 坐标点

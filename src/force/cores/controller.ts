@@ -51,7 +51,7 @@ export class Controller {
 
   initLayout() {
     this.layout = new ForceLayout(this.option.layout as ILayoutForceOption);
-    this.tick$.pipe(throttleTime(106)).subscribe((data: IRenderData) => {
+    this.tick$.pipe(throttleTime(106, undefined, { trailing: true })).subscribe((data: IRenderData) => {
       this.renderer.draw(data);
     });
   }
@@ -70,6 +70,11 @@ export class Controller {
     const updateDragNodeCoordinates = (node: IRenderNode, point: IPoint) => {
       node.fx = this.transform.invertX(point.x);
       node.fy = this.transform.invertY(point.y);
+      if (this.option.layout.static) {
+        node.x = node.fx;
+        node.y = node.fy;
+        this.tick$.next(this.tick$.value)
+      }
     };
     select(this.canvas).call(
       (drag() as ISafeAny)
@@ -82,7 +87,7 @@ export class Controller {
           return node;
         })
         .on('start', (ev) => {
-          if (!ev.active) {
+          if (!ev.active && !this.option.layout.static) {
             this.layout.simulation.alphaTarget(0.3).restart();
           }
           this.event.onNodeDrag$.next({ data: ev.subject, type: 'dragstart' });
@@ -93,7 +98,7 @@ export class Controller {
           updateDragNodeCoordinates(ev.subject, { x: ev.x, y: ev.y });
         })
         .on('end', (ev) => {
-          if (!ev.active) {
+          if (!ev.active && !this.option.layout.static) {
             this.layout.simulation.alphaTarget(0);
           }
           this.event.onNodeDrag$.next({ data: ev.subject, type: 'dragend' });
