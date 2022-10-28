@@ -33,6 +33,7 @@ export interface IPoint {
 export interface INode {
   id: string;
   name: string;
+  category?: string;
   cfg?: Partial<INodeCfg>;
 }
 
