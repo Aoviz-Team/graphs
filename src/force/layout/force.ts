@@ -64,6 +64,14 @@ export class ForceLayout {
         .id((d: ISafeAny) => d.id)
         .distance(linkDistance)
     );
-    this.simulation.alpha(0.3).restart();
+    this.simulation.alpha(0.3).stop()
+    if (this.option.static) {
+      for (let i = 0, n = Math.ceil(Math.log(this.simulation.alphaMin()) / Math.log(1 - this.simulation.alphaDecay())); i < n; ++i) {
+        this.simulation.tick();
+      }
+      this.tick$.next(this.data);
+    } else {
+      this.simulation.restart()
+    }
   }
 }
