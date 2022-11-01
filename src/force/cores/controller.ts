@@ -1,7 +1,7 @@
 import { isString } from 'lodash-es';
 import { select, drag, zoom, zoomIdentity, ZoomBehavior } from 'd3';
 import { throttleTime } from 'rxjs/operators';
-import { IForceData, ILayoutForceOption, IRenderNode, IOption, ISafeAny, IRenderData, ILink } from '../interface';
+import { IForceData, ILayoutOption, IRenderNode, IOption, ISafeAny, IRenderData, ILink } from '../interface';
 import { ForceLayout } from '../layout';
 import { Renderer } from './renderer';
 import { Event } from './event';
@@ -50,7 +50,7 @@ export class Controller {
   }
 
   initLayout() {
-    this.layout = new ForceLayout(this.option.layout as ILayoutForceOption);
+    this.layout = new ForceLayout(this.option.layout as ILayoutOption);
     this.tick$.pipe(throttleTime(106, undefined, { trailing: true })).subscribe((data: IRenderData) => {
       this.renderer.draw(data);
     });

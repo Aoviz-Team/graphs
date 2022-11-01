@@ -14,14 +14,60 @@ export interface IRenderData {
   nodes: IRenderNode[];
   links: IRenderLink[];
 }
-export interface ILayoutForceOption {
-  chargeStrength: number;
-  collideStrength: number;
+export interface ILayoutOption {
   width: number;
   height: number;
-  linkDistance: number;
   static?: boolean;
+  alpha?: number;
+  alphaMin?: number;
+  alphaTarget?: number;
+  velocityDecay?: number;
+  forces: IForce[]
 }
+
+interface IForceCenter {
+  force: 'center',
+  x?: number | Function;
+  y?: number | Function;
+}
+
+interface IForceCollide {
+  force: 'collide',
+  radius?: number | Function;
+  strength?: number;
+  iterations?: number;
+}
+
+interface IForceManyBody {
+  force: 'n-body';
+  strength?: number;
+  theta?: number;
+  distanceMin?: number;
+  distanceMax?: number
+}
+
+export interface IForceLink {
+  force: 'link';
+  id?: Function;
+  distance?: number | Function;
+  strength?: number | Function;
+  iterations?: number;
+}
+
+interface IForceX {
+  force: 'x',
+  x?: number | Function;
+  strength: number;
+}
+
+interface IForceY {
+  force: 'y',
+  y?: number | Function;
+  strength: number;
+}
+
+
+type IForce = IForceCenter | IForceCollide | IForceManyBody | IForceLink | IForceX | IForceY
 
 // 坐标点
 export interface IPoint {
@@ -77,7 +123,7 @@ export interface ILabel {
 export interface IOption {
   node?: INodeCfg;
   link?: ILinkCfg;
-  layout: Partial<ILayoutForceOption>;
+  layout: Partial<ILayoutOption>;
 }
 
 // self 表示指向自己的特殊连线
