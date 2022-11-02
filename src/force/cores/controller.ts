@@ -73,7 +73,7 @@ export class Controller {
       if (this.option.layout.static) {
         node.x = node.fx;
         node.y = node.fy;
-        this.tick$.next(this.tick$.value)
+        this.tick$.next(this.tick$.value);
       }
     };
     select(this.canvas).call(

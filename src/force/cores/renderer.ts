@@ -67,13 +67,13 @@ export class Renderer {
     // 计算中点位置
     const midPoint = {
       x: (link.source.x + link.target.x) / 2,
-      y: (link.source.y + link.target.y) / 2,
+      y: (link.source.y + link.target.y) / 2
     };
     const linkAngle = Math.atan2(link.target.y - link.source.y, link.target.x - link.source.x);
     // 通过偏移量计算出弧线上的点位置
     const arcPoint = {
       x: curveOffset * Math.cos(-Math.PI / 2 + linkAngle) + midPoint.x,
-      y: curveOffset * Math.sin(-Math.PI / 2 + linkAngle) + midPoint.y,
+      y: curveOffset * Math.sin(-Math.PI / 2 + linkAngle) + midPoint.y
     };
     // 通过三个点坐标求出圆心位置
     const arcCenterPoint = getCircleCenterByPoints(link.source, arcPoint, link.target);
@@ -104,7 +104,7 @@ export class Renderer {
     const endPointOffset = 2 + offset;
     const midPoint = {
       x: (link.source.x + link.target.x) / 2,
-      y: (link.source.y + link.target.y) / 2,
+      y: (link.source.y + link.target.y) / 2
     };
     const linkAngle = Math.atan2(link.target.y - link.source.y, link.target.x - link.source.x);
     const startPoint = getCirclePointByArc(link.source.x, link.source.y, link.source.cfg.radius + offset, linkAngle);
@@ -195,7 +195,7 @@ export class Renderer {
       type: ECollectorType.NodeLabel,
       shape: ECollectorShape.Circle,
       model: { x: node.x || 0, y: node.y || 0, r: cfg.radius },
-      data: node,
+      data: node
     });
   }
 

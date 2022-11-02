@@ -15,7 +15,7 @@ export function getNodeByPoint(nodes: IRenderNode[], point: IPoint) {
 export function mergeCfg(data: IForceData): IForceData {
   return {
     nodes: data.nodes?.map((node) => ({ ...node, cfg: merge(cloneDeep(DEFAULT_OPTION.node), node?.cfg) as INodeCfg })) || [],
-    links: data.links?.map((link) => ({ ...link, cfg: merge(cloneDeep(DEFAULT_OPTION.link), link?.cfg) as ILinkCfg })) || [],
+    links: data.links?.map((link) => ({ ...link, cfg: merge(cloneDeep(DEFAULT_OPTION.link), link?.cfg) as ILinkCfg })) || []
   };
 }
 

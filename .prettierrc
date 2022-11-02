@@ -1,0 +1,18 @@
+{
+	"printWidth": 150,
+	"singleQuote": true,
+	"semi": true,
+	"stylelintIntegration": true,
+	"tabWidth": 2,
+	"useTabs": false,
+	"proseWrap": "never",
+	"trailingComma": "none",
+	"overrides": [
+		{
+			"files": ".prettierrc",
+			"options": {
+				"parser": "json"
+			}
+		}
+	]
+}
