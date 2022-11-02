@@ -74,17 +74,85 @@ interface ILinkCfg {
 interface IOption {
   node?: INodeCfg;
   link?: ILinkCfg;
-  layout: Partial<ILayoutForceOption>;
+  layout: Partial<ILayoutOption>;
 }
 
-interface ILayoutForceOption {
-  chargeStrength: number; // 电荷力强度，为正模拟重力(吸引力)，为负模拟排斥力
-  collideStrength: number; // 节点间碰撞强度，范围 [0,1]
-  width: number; // 画布宽度，默认父元素宽度
-  height: number; // 画布高度，默认传入父元素高度
-  linkDistance: number; // 关系的间距
+interface ILayoutOption {
+  width?: number;
+  height?: number;
+  static?: boolean;
+  alpha?: number;
+  alphaMin?: number;
+  alphaTarget?: number;
+  velocityDecay?: number;
+  forces: IForce[]
 }
 ```
+
+### force 布局参数
+| 名称         | 说明                              | 类型                              | 默认 |
+| ------------ | -------------------------------- | ------------------------------ | ----- |
+| static       | 生成的布局类型，静态布局或者正常力布局  | `boolean`                     | `false` |
+| alpha       | 生成的布局类型，静态布局或者正常力布局    | `number`                     |  `1`  |
+| alphaMin     | 在每次模拟迭代中降低 alpha 值的最小限制 | `number`                     | `0.001` |
+| alphaTarget  | 模拟收敛到的目标 alpha 值             | `number`                     | `0` |
+| velocityDecay| 在迭代期间施加任何力后，每个节点的速度乘以 1 - velocityDecay | `number`   |  `0.4`  |
+| forces       | 定义要包含在模拟中的力的对象数组，更多配置请看 forces 配置 | `IForce[]`    |  `[]`  |
+
+### forces 配置项
+
+#### center
+
+| 名称         | 说明                             | 类型                    | 默认 |
+| ------------ | --------------------------- | -------------------------- | --- |
+| force       | 值为 `center`                 | `center`                   |  -  |
+| x       | x 轴坐标点，默认画布中心（width / 2） | `number`                    |  -  |
+| y       | y 轴坐标点，默认画布中心（height / 2）| `number`                   |  -  |
+
+#### collide
+
+| 名称         | 说明                             | 类型                    | 默认 |
+| ------------ | --------------------------- | -------------------------- | --- |
+| force         | 值为 `collide`             | `collide`                   |  -  |
+| radius        | 节点的 radius 大小          | `number \| Function`        |  -  |
+| strength      | 力的相对强度                | `number`                    |  `0.7` |
+| iterations    | 运行碰撞检测的迭代次数        | `number`                    |  `1`  |
+
+#### n-body
+
+| 名称           | 说明                         | 类型              | 默认 |
+| ------------- | ---------------------------- | ---------------- | --- |
+| force         | 值为 `n-body`                 | `n-body`        |  -  |
+| theta         | 用于聚合更多距离力的近似参数       | `number`       | `0.9` |
+| strength      | 力的相对强度，负值排斥，正值吸引   | `number`        | `-30` |
+| distanceMin   | 该力作用的最小距离               | `number`        |  `1`  |
+| distanceMax   | 此力作用的最大距离               | `number`        |  -  |
+
+#### link
+
+| 名称         | 说明                     | 类型                      | 默认 |
+| ------------ | ---------------------- | ------------------------- | --- |
+| force       | 值为 `link`              | `link`                   |  -  |
+| id          | 节点的 radius 大小        | `number \| Function`     |  -  |
+| distance    | 链接约束应分隔节点的距离     | `number \| Function`    | `30` |
+| strength    | 链接约束的相对强度          | `number \| Function`    |  -  |
+| iterations  | 运行链接约束的迭代次数       | `number`                | `1` |
+
+#### x
+
+| 名称         | 说明                         | 类型                | 默认 |
+| ------------ | ----------------------- | ---------------------- | --- |
+| force       | 值为 `x`                 | `x`                     |  -  |
+| x            | 吸引节点的 x 轴坐标       | `number \| Function`    |  -  |
+| strength     | 力的相对强度             | `number`                | `0.1` |
+
+#### y
+
+| 名称         | 说明                 | 类型                      | 默认 |
+| ------------ | ------------------- | ------------------------ | --- |
+| force       | 值为 `y`              | `y`                      |  -  |
+| y           | 吸引节点的 y 轴坐标     | `number \| Function`     |  -  |
+| strength    | 力的相对强度           | `number`                 | `0.1` |
 
 ### 图组件默认配置：
 
