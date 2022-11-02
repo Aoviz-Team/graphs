@@ -40,7 +40,7 @@ export function getCircleCenterByPoints(p1: IPoint, p2: IPoint, p3: IPoint): IPo
   const denominator = b * c - a * d;
   return {
     x: -(d * e - b * f) / denominator,
-    y: -(a * f - c * e) / denominator,
+    y: -(a * f - c * e) / denominator
   };
 }
 /**
@@ -80,7 +80,7 @@ export function getRectPointsByCenterPoint(point: IPoint, width: number, height:
     { x: point.x - width / 2, y: point.y - height / 2 },
     { x: point.x + width / 2, y: point.y - height / 2 },
     { x: point.x + width / 2, y: point.y + height / 2 },
-    { x: point.x - width / 2, y: point.y + height / 2 },
+    { x: point.x - width / 2, y: point.y + height / 2 }
   ];
 }
 

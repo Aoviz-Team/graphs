@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { zoomIdentity, ZoomTransform } from 'd3';
 import { BehaviorSubject, fromEvent, Subject, throttleTime } from 'rxjs';
 import { ECollectorShape, ECollectorType, ICollector, INodeDragEvent, IPoint, IRenderLink, IRenderNode, ISafeAny } from '../interface';
@@ -5,7 +6,7 @@ import { isPointInCircle, isPointInPolygon, isPointInRect } from '../utils/math'
 
 enum EEventName {
   Click = 'click',
-  Hover = 'hover',
+  Hover = 'hover'
 }
 
 export class Event {

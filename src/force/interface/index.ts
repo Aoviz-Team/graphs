@@ -22,17 +22,17 @@ export interface ILayoutOption {
   alphaMin?: number;
   alphaTarget?: number;
   velocityDecay?: number;
-  forces: IForce[]
+  forces: IForce[];
 }
 
 interface IForceCenter {
-  force: 'center',
+  force: 'center';
   x?: number | Function;
   y?: number | Function;
 }
 
 interface IForceCollide {
-  force: 'collide',
+  force: 'collide';
   radius?: number | Function;
   strength?: number;
   iterations?: number;
@@ -43,7 +43,7 @@ interface IForceManyBody {
   strength?: number;
   theta?: number;
   distanceMin?: number;
-  distanceMax?: number
+  distanceMax?: number;
 }
 
 export interface IForceLink {
@@ -55,19 +55,18 @@ export interface IForceLink {
 }
 
 interface IForceX {
-  force: 'x',
+  force: 'x';
   x?: number | Function;
   strength: number;
 }
 
 interface IForceY {
-  force: 'y',
+  force: 'y';
   y?: number | Function;
   strength: number;
 }
 
-
-type IForce = IForceCenter | IForceCollide | IForceManyBody | IForceLink | IForceX | IForceY
+type IForce = IForceCenter | IForceCollide | IForceManyBody | IForceLink | IForceX | IForceY;
 
 // 坐标点
 export interface IPoint {
@@ -130,7 +129,7 @@ export interface IOption {
 export enum ELinkShape {
   Line = 'line',
   Arc = 'arc',
-  Self = 'self',
+  Self = 'self'
 }
 
 export type ICollector = IArcCollector | IPolygonCollector;
@@ -153,14 +152,14 @@ export enum ECollectorType {
   LinkLabel = 'linkLabel',
   NodeLabel = 'nodeLabel',
   Node = 'node',
-  Link = 'link',
+  Link = 'link'
 }
 
 export enum ECollectorShape {
   Arc = 'arc',
   Circle = 'circle',
   Rect = 'rect',
-  Polygon = 'polygon',
+  Polygon = 'polygon'
 }
 
 export interface INodeDragEvent {
