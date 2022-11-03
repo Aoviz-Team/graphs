@@ -32,14 +32,6 @@ export const DEFAULT_OPTION: IOption = {
   layout: {
     static: false,
     alpha: 0.3,
-    velocityDecay: 0.15,
-    forces: [
-      { force: 'n-body', strength: -1600, distanceMin: 30 },
-      { force: 'collide', strength: 0.5, radius: (d: ISafeAny) => d.cfg?.radius || 20, iterations: 1 },
-      { force: 'link', id: (d) => d.id, distance: 200 },
-      { force: 'x', strength: 0.1 },
-      { force: 'y', strength: 0.1 },
-      { force: 'center' }
-    ]
+    velocityDecay: 0.15
   }
-};
+}

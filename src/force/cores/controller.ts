@@ -40,13 +40,17 @@ export class Controller {
   initCanvas() {
     this.wrapper.innerHTML = '';
     this.canvas = document.createElement('canvas');
+    this.updateCanvas()
+    this.wrapper.append(this.canvas);
+  }
+
+  updateCanvas(){
     const clientRect = this.wrapper.getBoundingClientRect();
     const layoutOption = this.option.layout;
     layoutOption.width = layoutOption?.width || clientRect.width;
     layoutOption.height = layoutOption?.height || clientRect.height;
     this.canvas.width = layoutOption.width;
     this.canvas.height = layoutOption.height;
-    this.wrapper.append(this.canvas);
   }
 
   initLayout() {
@@ -140,5 +144,14 @@ export class Controller {
   load(data: IForceData) {
     const links = updateLinkOffsetMultiple(data.links as Required<ILink>[]);
     this.layout.load({ ...data, links });
+  }
+
+  setOption(option: IOption){
+    this.option = option;
+    const clientRect = this.wrapper.getBoundingClientRect();
+    const layoutOption = this.option.layout;
+    layoutOption.width = layoutOption?.width || clientRect.width;
+    layoutOption.height = layoutOption?.height || clientRect.height;
+    this.layout.setOption(option.layout as ILayoutOption)
   }
 }

@@ -1,6 +1,5 @@
 import { cloneDeep, isNumber, merge } from 'lodash-es';
-import { DEFAULT_OPTION } from '../config';
-import { ELinkShape, IForceData, ILink, ILinkCfg, INodeCfg, IPoint, ISafeAny } from '../interface';
+import { ELinkShape, IForceData, ILink, ILinkCfg, INodeCfg, IOption, IPoint, ISafeAny } from '../interface';
 import { IRenderNode } from '../interface';
 import { isPointInCircle } from './math';
 
@@ -12,10 +11,10 @@ export function getNodeByPoint(nodes: IRenderNode[], point: IPoint) {
   return null;
 }
 
-export function mergeCfg(data: IForceData): IForceData {
+export function mergeCfg(data: IForceData, option: IOption): IForceData {
   return {
-    nodes: data.nodes?.map((node) => ({ ...node, cfg: merge(cloneDeep(DEFAULT_OPTION.node), node?.cfg) as INodeCfg })) || [],
-    links: data.links?.map((link) => ({ ...link, cfg: merge(cloneDeep(DEFAULT_OPTION.link), link?.cfg) as ILinkCfg })) || []
+    nodes: data.nodes?.map((node) => ({ ...node, cfg: merge(cloneDeep(option.node), node?.cfg) as INodeCfg })) || [],
+    links: data.links?.map((link) => ({ ...link, cfg: merge(cloneDeep(option.link), link?.cfg) as ILinkCfg })) || []
   };
 }
 
