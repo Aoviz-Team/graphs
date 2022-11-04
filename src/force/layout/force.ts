@@ -3,14 +3,6 @@ import { difference, find, isFunction } from 'lodash-es';
 import { BehaviorSubject } from 'rxjs';
 import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode, ISafeAny } from '../interface';
 
-const forces = [
-  { force: 'n-body', strength: -1600, distanceMin: 30 },
-  { force: 'collide', strength: 0.5, radius: (d: ISafeAny, c, v) => d.cfg?.radius || 20, iterations: 1 },
-  { force: 'link', id: (d) => d.id, distance: 200 },
-  { force: 'x', strength: 0.1 },
-  { force: 'y', strength: 0.1 },
-  { force: 'center' }
-];
 const FORCE_MAP = {
   center: forceCenter,
   collide: forceCollide,
@@ -58,17 +50,18 @@ export class ForceLayout {
   }
 
   setup() {
-    const { width, height } = this.option;
+    const { width, height, forces } = this.option;
     const collect: string[] = [];
     for (const p of FORCE_PARAMS) {
       if (p !== 'forces' && this.option[p]) this.simulation[p](this.option[p]);
     }
     for (const _ of forces) {
       if (!FORCE_MAP[_.force]) continue;
-      const f = FORCE_MAP[_.force]();
+      const f = FORCE_MAP[_.force as string]();
       for (const p in _) {
         if (isFunction(f[p])) f[p](isFunction(_[p]) ? (...d) => _[p](...d, _, this.option) : _[p]);
       }
+      console.log(_,'---')
       if (_.force === 'x' && !_['x']) f.x(width / 2);
       if (_.force === 'y' && !_['y']) f.y(height / 2);
       if (_.force === 'center') {
@@ -100,5 +93,12 @@ export class ForceLayout {
     } else {
       this.simulation.restart();
     }
+  }
+
+  setOption(option:ILayoutOption){
+    this.option = option;
+    this.simulation.stop()
+    this.setup();
+    this.load()
   }
 }

@@ -1,0 +1,11 @@
+.force-base-container {
+    display: flex;
+}
+
+.force-base-control {
+    flex: 0 0 200px;
+}
+
+.force-base-canvas {
+    flex: 1 1 auto;
+}

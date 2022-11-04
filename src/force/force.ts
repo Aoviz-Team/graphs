@@ -1,5 +1,5 @@
 import { select } from 'd3';
-import { merge } from 'lodash-es';
+import { cloneDeep, merge } from 'lodash-es';
 import { distinctUntilChanged } from 'rxjs';
 import { DEFAULT_OPTION } from './config';
 import { Controller } from './cores/controller';
@@ -9,12 +9,13 @@ import { mergeCfg } from './utils';
 export class Force<T extends IForceData> {
   controller: Controller;
   constructor(selector: string | HTMLElement, config?: { data?: T; option?: IOption }) {
-    this.controller = new Controller(selector, merge(config?.option, DEFAULT_OPTION));
-    if (config?.data) this.controller.load(mergeCfg(config?.data));
+    const option = merge(cloneDeep(DEFAULT_OPTION,), config?.option)
+    this.controller = new Controller(selector, option);
+    if (config?.data) this.controller.load(mergeCfg(config?.data, option));
   }
 
   data(data: T) {
-    this.controller.load(mergeCfg(data));
+    this.controller.load(mergeCfg(data, this.controller.option || DEFAULT_OPTION));
   }
 
   getZoom() {
@@ -23,6 +24,10 @@ export class Force<T extends IForceData> {
 
   setZoom(k: number) {
     this.controller.zoom.scaleTo(select(this.controller.canvas), k);
+  }
+
+  setOption(option: IOption) {
+    this.controller.setOption(merge(cloneDeep(DEFAULT_OPTION), option))
   }
 
   get onNodeClick$() {
