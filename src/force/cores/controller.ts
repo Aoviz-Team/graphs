@@ -28,7 +28,7 @@ export class Controller {
       return;
     }
     this.wrapper = wrapper as HTMLElement;
-    this.option = option;
+    this.setOption(option);
     this.initCanvas();
     this.initEvent();
     this.initRenderer();
@@ -40,11 +40,11 @@ export class Controller {
   initCanvas() {
     this.wrapper.innerHTML = '';
     this.canvas = document.createElement('canvas');
-    this.updateCanvas()
+    this.updateCanvas();
     this.wrapper.append(this.canvas);
   }
 
-  updateCanvas(){
+  updateCanvas() {
     const clientRect = this.wrapper.getBoundingClientRect();
     const layoutOption = this.option.layout;
     layoutOption.width = layoutOption?.width || clientRect.width;
@@ -146,12 +146,18 @@ export class Controller {
     this.layout.load({ ...data, links });
   }
 
-  setOption(option: IOption){
+  setOption(option: IOption) {
     this.option = option;
     const clientRect = this.wrapper.getBoundingClientRect();
     const layoutOption = this.option.layout;
     layoutOption.width = layoutOption?.width || clientRect.width;
     layoutOption.height = layoutOption?.height || clientRect.height;
-    this.layout.setOption(option.layout as ILayoutOption)
+    this.layout.setOption(option.layout as ILayoutOption);
+  }
+
+  resize(opt?: { width: number; height: number }) {
+    const clientRect = this.wrapper.getBoundingClientRect();
+    this.option.layout.width = opt?.width || clientRect.width;
+    this.option.layout.height = opt?.height || clientRect.height;
   }
 }
