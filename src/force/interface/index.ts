@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { SimulationNodeDatum } from 'd3';
 export type ISafeAny = any;
 
@@ -120,8 +121,8 @@ export interface ILabel {
 }
 
 export interface IOption {
-  node?: INodeCfg;
-  link?: ILinkCfg;
+  node?: Partial<INodeCfg>;
+  link?: Partial<ILinkCfg>;
   layout: Partial<ILayoutOption>;
 }
 

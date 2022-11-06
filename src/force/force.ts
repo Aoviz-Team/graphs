@@ -4,18 +4,17 @@ import { distinctUntilChanged } from 'rxjs';
 import { DEFAULT_OPTION } from './config';
 import { Controller } from './cores/controller';
 import { IForceData, IOption } from './interface';
-import { mergeCfg } from './utils';
 
 export class Force<T extends IForceData> {
   controller: Controller;
-  constructor(selector: string | HTMLElement, config?: { data?: T; option?: IOption }) {
-    const option = merge(cloneDeep(DEFAULT_OPTION,), config?.option)
+  constructor(selector: string | HTMLElement, config?: { data?: T; option?: Partial<IOption> }) {
+    const option = merge(cloneDeep(DEFAULT_OPTION), config?.option);
     this.controller = new Controller(selector, option);
-    if (config?.data) this.controller.load(mergeCfg(config?.data, option));
+    if (config?.data) this.controller.load(config.data);
   }
 
   data(data: T) {
-    this.controller.load(mergeCfg(data, this.controller.option || DEFAULT_OPTION));
+    this.controller.load(data);
   }
 
   getZoom() {
@@ -27,7 +26,11 @@ export class Force<T extends IForceData> {
   }
 
   setOption(option: IOption) {
-    this.controller.setOption(merge(cloneDeep(DEFAULT_OPTION), option))
+    this.controller.setOption(merge(cloneDeep(DEFAULT_OPTION), option));
+  }
+
+  resize(size: { width: number; height: number }) {
+    this.controller.resize(size);
   }
 
   get onNodeClick$() {

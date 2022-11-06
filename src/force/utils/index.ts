@@ -1,5 +1,5 @@
 import { cloneDeep, isNumber, merge } from 'lodash-es';
-import { ELinkShape, IForceData, ILink, ILinkCfg, INodeCfg, IOption, IPoint, ISafeAny } from '../interface';
+import { ELinkShape, ILink, ILinkCfg, INodeCfg, IOption, IPoint, ISafeAny } from '../interface';
 import { IRenderNode } from '../interface';
 import { isPointInCircle } from './math';
 
@@ -11,18 +11,21 @@ export function getNodeByPoint(nodes: IRenderNode[], point: IPoint) {
   return null;
 }
 
-export function mergeCfg(data: IForceData, option: IOption): IForceData {
-  return {
-    nodes: data.nodes?.map((node) => ({ ...node, cfg: merge(cloneDeep(option.node), node?.cfg) as INodeCfg })) || [],
-    links: data.links?.map((link) => ({ ...link, cfg: merge(cloneDeep(option.link), link?.cfg) as ILinkCfg })) || []
-  };
+export function mergeCfg<T extends { nodes: { cfg?: Partial<INodeCfg> }[]; links: { cfg?: Partial<ILinkCfg> }[] }>(data: T, option: IOption): T {
+  data.nodes.forEach((node) => {
+    node.cfg = merge(cloneDeep(option.node), node?.cfg) as INodeCfg;
+  });
+  data.links.forEach((link) => {
+    link.cfg = merge(cloneDeep(option.link), link?.cfg) as ILinkCfg;
+  });
+  return data;
 }
 
 export function updateLinkOffsetMultiple(links: Required<ILink>[]) {
   const hash: ISafeAny = {};
   for (const link of links) {
     const hashKey1 = `${link.source}-${link.target}`;
-    const hashKey2 = `${link.target}-${link.source}`;
+    const hashKey2 = `${link.target}-${link.target}`;
 
     if (!isNumber(hash[hashKey1])) {
       hash[hashKey1] = 0;
@@ -36,6 +39,7 @@ export function updateLinkOffsetMultiple(links: Required<ILink>[]) {
     const offsetMultiple = Math.ceil((hash[hashKey1] + hash[hashKey2]) / 2) * ((hash[hashKey1] & 1) === 0 ? -1 : 1);
     link._offsetMultiple = offsetMultiple;
   }
+
   for (const link of links) {
     const hashKey1 = `${link.source}-${link.target}`;
     const hashKey2 = `${link.target}-${link.source}`;
