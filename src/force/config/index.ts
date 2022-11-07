@@ -1,4 +1,4 @@
-import { IOption, ISafeAny } from '../interface';
+import { IOption } from '../interface';
 
 const DEFAULT_FONT_STYLE = {
   fontSize: 12,
@@ -34,4 +34,4 @@ export const DEFAULT_OPTION: IOption = {
     alpha: 0.3,
     velocityDecay: 0.15
   }
-}
+};

@@ -1,7 +1,7 @@
 import { forceSimulation, forceManyBody, forceCollide, Simulation, forceX, forceY, forceCenter, forceLink } from 'd3';
-import { difference, find, isFunction } from 'lodash-es';
+import { cloneDeep, difference, find, isFunction, merge } from 'lodash-es';
 import { BehaviorSubject } from 'rxjs';
-import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode, ISafeAny } from '../interface';
+import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode } from '../interface';
 
 const FORCE_MAP = {
   center: forceCenter,
@@ -61,12 +61,11 @@ export class ForceLayout {
       for (const p in _) {
         if (isFunction(f[p])) f[p](isFunction(_[p]) ? (...d) => _[p](...d, _, this.option) : _[p]);
       }
-      console.log(_,'---')
-      if (_.force === 'x' && !_['x']) f.x(width / 2);
-      if (_.force === 'y' && !_['y']) f.y(height / 2);
+      if (_.force === 'x' && !_['x']) f.x(width! / 2);
+      if (_.force === 'y' && !_['y']) f.y(height! / 2);
       if (_.force === 'center') {
-        if (!_['x']) f.x(width / 2);
-        if (!_['y']) f.y(height / 2);
+        if (!_['x']) f.x(width! / 2);
+        if (!_['y']) f.y(height! / 2);
       }
       collect.push(_.force);
       this.simulation.force(_.force, f);
@@ -76,7 +75,7 @@ export class ForceLayout {
     }
   }
 
-  load(data?: IForceData) {
+  load(data?: IForceData | IRenderData) {
     this.data = (data || this.data) as unknown as IRenderData;
     const _ = (find(this.option.forces, { force: 'link' }) as IForceLink) || { force: 'link' };
     const f = FORCE_MAP[_.force](this.links);
@@ -95,10 +94,10 @@ export class ForceLayout {
     }
   }
 
-  setOption(option:ILayoutOption){
-    this.option = option;
-    this.simulation.stop()
+  setOption(option: ILayoutOption, data?: IForceData | IRenderData) {
+    this.option = merge(cloneDeep(this.option), option);
+    this.simulation.stop();
     this.setup();
-    this.load()
+    this.load(data);
   }
 }

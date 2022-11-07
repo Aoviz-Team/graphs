@@ -1,14 +1,15 @@
-import { isString } from 'lodash-es';
+import { cloneDeep, isString } from 'lodash-es';
 import { select, drag, zoom, zoomIdentity, ZoomBehavior } from 'd3';
 import { throttleTime } from 'rxjs/operators';
 import { IForceData, ILayoutOption, IRenderNode, IOption, ISafeAny, IRenderData, ILink } from '../interface';
 import { ForceLayout } from '../layout';
 import { Renderer } from './renderer';
 import { Event } from './event';
-import { getNodeByPoint, updateLinkOffsetMultiple } from '../utils';
+import { getNodeByPoint, mergeCfg, updateLinkOffsetMultiple } from '../utils';
 import { IPoint } from '../interface';
 
 export class Controller {
+  data;
   wrapper!: HTMLElement;
   canvas!: HTMLCanvasElement;
   layout!: ForceLayout;
@@ -28,7 +29,7 @@ export class Controller {
       return;
     }
     this.wrapper = wrapper as HTMLElement;
-    this.option = option;
+    this.setOption(option);
     this.initCanvas();
     this.initEvent();
     this.initRenderer();
@@ -40,11 +41,11 @@ export class Controller {
   initCanvas() {
     this.wrapper.innerHTML = '';
     this.canvas = document.createElement('canvas');
-    this.updateCanvas()
+    this.updateCanvas();
     this.wrapper.append(this.canvas);
   }
 
-  updateCanvas(){
+  updateCanvas() {
     const clientRect = this.wrapper.getBoundingClientRect();
     const layoutOption = this.option.layout;
     layoutOption.width = layoutOption?.width || clientRect.width;
@@ -54,6 +55,9 @@ export class Controller {
   }
 
   initLayout() {
+    const clientRect = this.wrapper.getBoundingClientRect();
+    this.option.layout.width = this.option.layout?.width || clientRect.width;
+    this.option.layout.height = this.option.layout?.height || clientRect.height;
     this.layout = new ForceLayout(this.option.layout as ILayoutOption);
     this.tick$.pipe(throttleTime(106, undefined, { trailing: true })).subscribe((data: IRenderData) => {
       this.renderer.draw(data);
@@ -142,16 +146,27 @@ export class Controller {
   }
 
   load(data: IForceData) {
-    const links = updateLinkOffsetMultiple(data.links as Required<ILink>[]);
-    this.layout.load({ ...data, links });
+    const _data = cloneDeep(mergeCfg(data, this.option));
+    const links = updateLinkOffsetMultiple(_data.links as Required<ILink>[]);
+    this.layout.load({ ..._data, links });
   }
 
-  setOption(option: IOption){
+  setOption(option: IOption) {
     this.option = option;
+    if (this.layout?.data) {
+      const data = mergeCfg(this.layout.data, this.option);
+      this.layout?.setOption(option.layout as ILayoutOption, data);
+    } else {
+      this.layout?.setOption(option.layout as ILayoutOption);
+    }
+  }
+
+  resize(opt?: { width: number; height: number }) {
     const clientRect = this.wrapper.getBoundingClientRect();
-    const layoutOption = this.option.layout;
-    layoutOption.width = layoutOption?.width || clientRect.width;
-    layoutOption.height = layoutOption?.height || clientRect.height;
-    this.layout.setOption(option.layout as ILayoutOption)
+    this.option.layout.width = opt?.width || clientRect.width;
+    this.option.layout.height = opt?.height || clientRect.height;
+    if (this.option.layout.width !== this.canvas.width || this.option.layout.height !== this.canvas.height) {
+      this.layout.setOption(this.option.layout as ILayoutOption);
+    }
   }
 }
