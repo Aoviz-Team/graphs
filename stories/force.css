@@ -1,5 +1,6 @@
 .force-base-container {
     display: flex;
+    color: #fff;
 }
 
 .force-base-control {
