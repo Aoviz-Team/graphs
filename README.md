@@ -187,9 +187,9 @@ export const DEFAULT_OPTION: IOption = {
     curveOffset: 22,
   },
   layout: {
-    chargeStrength: -1600,
-    collideStrength: 0.5,
-    linkDistance: 300,
+    static: false,
+    alpha: 0.3,
+    velocityDecay: 0.15
   },
 };
 ```

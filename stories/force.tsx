@@ -70,13 +70,13 @@ export default function Viz() {
       <div className="force-base-control">
         <div>1.n-body-strength: {bodyStrength}</div>
         <input onChange={onNBodyStrength} type="range" min="-2000" max="100" value={bodyStrength} />
-        {/* <div>2.node-radius:</div>
-        <input onChange={onNodeRadius} type="range" min="10" max="50" value="28" /> */}
-        <div>2.link-distance: {linkDistance}</div>
+        <div>2.node-radius: {option.node.radius}</div>
+        <input onChange={onNodeRadius} type="range" min="10" max="50" value={option.node.radius} />
+        <div>3.link-distance: {linkDistance}</div>
         <input onChange={onLinkDistance} type="range" min="80" max="200" value={linkDistance} />
-        <div>3.velocity-decay: {option.layout.velocityDecay}</div>
+        <div>4.velocity-decay: {option.layout.velocityDecay}</div>
         <input onChange={onVelocityDecay} type="range" min="0" step="0.01" max="1" value={option.layout.velocityDecay} />
-        <div>4.static: {option.layout.static ? 'true' : 'false'}</div>
+        <div>5.static: {option.layout.static ? 'true' : 'false'}</div>
         <input onChange={onStatic} type="checkbox" checked={option.layout.static} />
       </div>
       <div className="force-base-canvas" ref={wrapper} style={{ height: 700 }} />

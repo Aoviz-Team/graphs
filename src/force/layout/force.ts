@@ -2,6 +2,7 @@ import { forceSimulation, forceManyBody, forceCollide, Simulation, forceX, force
 import { cloneDeep, difference, find, isFunction, merge } from 'lodash-es';
 import { BehaviorSubject } from 'rxjs';
 import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode } from '../interface';
+import { mergeRenderData } from '../utils';
 
 const FORCE_MAP = {
   center: forceCenter,
@@ -75,8 +76,8 @@ export class ForceLayout {
     }
   }
 
-  load(data?: IForceData | IRenderData) {
-    this.data = (data || this.data) as unknown as IRenderData;
+  load(data?: IForceData) {
+    this.data = (mergeRenderData(data, this.data) || this.data) as unknown as IRenderData;
     const _ = (find(this.option.forces, { force: 'link' }) as IForceLink) || { force: 'link' };
     const f = FORCE_MAP[_.force](this.links);
     for (const p in _) {
@@ -94,7 +95,7 @@ export class ForceLayout {
     }
   }
 
-  setOption(option: ILayoutOption, data?: IForceData | IRenderData) {
+  setOption(option: ILayoutOption, data?: IForceData) {
     this.option = merge(cloneDeep(this.option), option);
     this.simulation.stop();
     this.setup();

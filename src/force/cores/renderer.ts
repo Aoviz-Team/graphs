@@ -145,7 +145,7 @@ export class Renderer {
   }
 
   drawLinkArrow(point: IPoint, angle: number, color: string) {
-    const triangle = (width = 8, length = 12, d = 0) => {
+    const triangle = (width = 12, length = 10, d = 0) => {
       const begin = d * 2;
       const path = `M ${begin + 2},0 L -${begin + length},-${width / 2} L -${begin + length},${width / 2} Z`;
       return path;

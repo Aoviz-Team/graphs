@@ -1,5 +1,5 @@
-import { cloneDeep, isNumber, merge } from 'lodash-es';
-import { ELinkShape, ILink, ILinkCfg, INodeCfg, IOption, IPoint, ISafeAny } from '../interface';
+import { cloneDeep, isNumber, merge, pick } from 'lodash-es';
+import { ELinkShape, IForceData, ILink, ILinkCfg, INode, INodeCfg, IOption, IPoint, IRenderData, ISafeAny } from '../interface';
 import { IRenderNode } from '../interface';
 import { isPointInCircle } from './math';
 
@@ -51,4 +51,26 @@ export function updateLinkOffsetMultiple(links: Required<ILink>[]) {
     }
   }
   return links;
+}
+
+export function mergeRenderData(data: IForceData | undefined, renderData: IRenderData) {
+  // 合并渲染数据的位置信息，否则会出现闪屏抖动
+  if (!data) return renderData;
+  const { nodes, links } = data;
+  const { nodes: renderNodes } = renderData;
+  const rNodeHash = renderNodes.reduce((p, c) => {
+    p[c.id] = c;
+    return p;
+  }, {} as Record<string, IRenderNode>);
+  const _nodes = nodes.map((node) => {
+    return { ...node, ...pick(rNodeHash?.[node.id], ['x', 'y', 'vx', 'vy', 'fx', 'fy']) };
+  });
+  const nodeHash = _nodes.reduce((p, c) => {
+    p[c.id] = c;
+    return p;
+  }, {} as Record<string, INode>);
+  const _links = links.map((link) => {
+    return { ...link, source: nodeHash[link.source], target: nodeHash[link.target] };
+  });
+  return { nodes: _nodes, links: _links };
 }

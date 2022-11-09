@@ -9,7 +9,7 @@ import { getNodeByPoint, mergeCfg, updateLinkOffsetMultiple } from '../utils';
 import { IPoint } from '../interface';
 
 export class Controller {
-  data;
+  originData: IForceData = { nodes: [], links: [] };
   wrapper!: HTMLElement;
   canvas!: HTMLCanvasElement;
   layout!: ForceLayout;
@@ -146,19 +146,17 @@ export class Controller {
   }
 
   load(data: IForceData) {
-    const _data = cloneDeep(mergeCfg(data, this.option));
+    this.originData = data;
+    const _data = mergeCfg(cloneDeep(data), this.option);
     const links = updateLinkOffsetMultiple(_data.links as Required<ILink>[]);
     this.layout.load({ ..._data, links });
   }
 
   setOption(option: IOption) {
     this.option = option;
-    if (this.layout?.data) {
-      const data = mergeCfg(this.layout.data, this.option);
-      this.layout?.setOption(option.layout as ILayoutOption, data);
-    } else {
-      this.layout?.setOption(option.layout as ILayoutOption);
-    }
+    const data = mergeCfg(cloneDeep(this.originData), this.option);
+    const links = updateLinkOffsetMultiple(data.links as Required<ILink>[]);
+    this.layout?.setOption(option.layout as ILayoutOption, { ...data, links });
   }
 
   resize(opt?: { width: number; height: number }) {
