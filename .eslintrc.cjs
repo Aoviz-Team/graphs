@@ -19,6 +19,7 @@ module.exports = {
       {
         code: 150
       }
-    ]
+    ],
+    'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }]
   }
 };
