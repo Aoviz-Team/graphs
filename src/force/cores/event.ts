@@ -1,15 +1,39 @@
 /* eslint-disable no-unused-vars */
 import { zoomIdentity, ZoomTransform } from 'd3';
-import { BehaviorSubject, fromEvent, Subject, throttleTime } from 'rxjs';
+import { BehaviorSubject, fromEvent, Subject, tap, throttleTime } from 'rxjs';
 import { ECollectorShape, ECollectorType, ICollector, INodeDragEvent, IPoint, IRenderLink, IRenderNode, ISafeAny } from '../interface';
 import { isPointInCircle, isPointInPolygon, isPointInRect } from '../utils/math';
+import { EventEmitter } from './eventemitter';
 
-enum EEventName {
+export enum EEventName {
   Click = 'click',
-  Hover = 'hover'
+  Hover = 'hover',
+  Dblclick = 'dblclick',
+  Mousedown = 'mousedown',
+  Mousemove = 'mousemove',
+  Mouseup = 'mouseup',
+  Contextmenu = 'contextmenu',
+  Keydown = 'keydown',
+  Keyup = 'keyup',
+  Wheel = 'wheel'
 }
 
-export class Event {
+export enum EInternalEvent {
+  SetTransform = 'setTransform'
+}
+
+export enum EEventRender {
+  BeforeDrawNode = 'beforeDrawNode',
+  AfterDrawNode = 'afterDrawNode',
+  BeforeDrawLink = 'beforeDrawLink',
+  AfterDrawLink = 'afterDrawLink',
+  BeforeDraw = 'beforeDraw',
+  AfterDraw = 'afterDraw',
+  OverwriteDrawNode = 'overwriteDrawNode',
+  OverwriteDrawLink = 'overwriteDrawLink'
+}
+
+export class Event extends EventEmitter {
   element: HTMLCanvasElement;
   collectors: ICollector[] = [];
   transform = zoomIdentity;
@@ -20,19 +44,33 @@ export class Event {
   onNodeDrag$ = new Subject<INodeDragEvent>();
 
   constructor(element: HTMLCanvasElement) {
+    super();
     this.element = element;
     this.initListener();
   }
 
   initListener() {
-    fromEvent(this.element, 'mousemove')
-      .pipe(throttleTime(16))
+    fromEvent(this.element, EEventName.Mousemove)
+      .pipe(
+        tap((e) => this.emit(EEventName.Mousemove, e)),
+        throttleTime(16)
+      )
       .subscribe((ev) => this.processCollectors(ev, EEventName.Hover));
-    fromEvent(this.element, 'click').subscribe((ev) => this.processCollectors(ev, EEventName.Click));
+    fromEvent(this.element, EEventName.Click)
+      .pipe(tap((e) => this.emit(EEventName.Click, e)))
+      .subscribe((ev) => this.processCollectors(ev, EEventName.Click));
+    fromEvent(this.element, EEventName.Dblclick).subscribe((e) => this.emit(EEventName.Dblclick, e));
+    fromEvent(this.element, EEventName.Mousedown).subscribe((e) => this.emit(EEventName.Mousedown, e));
+    fromEvent(this.element, EEventName.Mouseup).subscribe((e) => this.emit(EEventName.Mouseup, e));
+    fromEvent(this.element, EEventName.Contextmenu).subscribe((e) => this.emit(EEventName.Contextmenu, e));
+    fromEvent(this.element, EEventName.Keydown).subscribe((e) => this.emit(EEventName.Keydown, e));
+    fromEvent(this.element, EEventName.Keyup).subscribe((e) => this.emit(EEventName.Keyup, e));
+    fromEvent(this.element, EEventName.Wheel).subscribe((e) => this.emit(EEventName.Wheel, e));
   }
 
   setTransform(transform: ZoomTransform) {
     this.transform = transform;
+    this.emit(EInternalEvent.SetTransform, transform);
   }
 
   dispatch(item: ICollector, eventName: EEventName) {

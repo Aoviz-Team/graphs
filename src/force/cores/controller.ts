@@ -7,7 +7,7 @@ import { Renderer } from './renderer';
 import { Event } from './event';
 import { getNodeByPoint, mergeCfg, updateLinkOffsetMultiple } from '../utils';
 import { IPoint } from '../interface';
-
+import { Plugin } from '../../plugins/plugin';
 export class Controller {
   originData: IForceData = { nodes: [], links: [] };
   wrapper!: HTMLElement;
@@ -157,6 +157,12 @@ export class Controller {
     const data = mergeCfg(cloneDeep(this.originData), this.option);
     const links = updateLinkOffsetMultiple(data.links as Required<ILink>[]);
     this.layout?.setOption(option.layout as ILayoutOption, { ...data, links });
+  }
+
+  setPlugins(plugins: Plugin[]) {
+    for (const plugin of plugins) {
+      plugin.apply(this);
+    }
   }
 
   resize(opt?: { width: number; height: number }) {

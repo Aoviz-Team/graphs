@@ -4,6 +4,7 @@ import { distinctUntilChanged } from 'rxjs';
 import { DEFAULT_OPTION } from './config';
 import { Controller } from './cores/controller';
 import { IForceData, IOption } from './interface';
+import { Plugin } from '../plugins/plugin';
 
 export class Force<T extends IForceData> {
   controller: Controller;
@@ -27,6 +28,10 @@ export class Force<T extends IForceData> {
 
   setOption(option: IOption) {
     this.controller.setOption(merge(cloneDeep(DEFAULT_OPTION), option));
+  }
+
+  setPlugins(plugins: Plugin[]) {
+    this.controller.setPlugins(plugins);
   }
 
   resize(size: { width: number; height: number }) {
