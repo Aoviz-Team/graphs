@@ -30,4 +30,8 @@ export class EventEmitter {
       listener(...args);
     }
   }
+
+  get(eventName: string) {
+    return this.eventMap.get(eventName);
+  }
 }

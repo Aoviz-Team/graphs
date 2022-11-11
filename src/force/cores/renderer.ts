@@ -2,7 +2,7 @@ import { zoomIdentity, ZoomTransform } from 'd3-zoom';
 import { ECollectorShape, ELinkShape, ICollector, ECollectorType, IPoint, IRenderData } from '../interface';
 import { IRenderLink, IRenderNode, IOption } from '../interface';
 import { distance, getCircleCenterByPoints, getCirclePointByArc, getRectPointsByCenterPoint, rotatePoints } from '../utils/math';
-import { Event } from './event';
+import { EEventRender, Event } from './event';
 
 export class Renderer {
   context: CanvasRenderingContext2D;
@@ -27,6 +27,7 @@ export class Renderer {
   draw(data: IRenderData) {
     const { context, option, transform } = this;
     const { width = 0, height = 0 } = option.layout;
+    this.event.emit(EEventRender.BeforeDraw, context, data, option);
     this.collectors = [];
     context.save();
     context.textAlign = 'center';
@@ -35,13 +36,32 @@ export class Renderer {
     context.translate(transform.x, transform.y);
     context.scale(transform.k, transform.k);
     data.links.forEach((link) => {
-      this.drawLink(link);
+      this.event.emit(EEventRender.BeforeDrawLink, context, link);
+      const drawLinks = this.event.get(EEventRender.OverwriteDrawLink);
+      if (drawLinks && drawLinks.size) {
+        for (const drawLink of drawLinks) {
+          drawLink(context, link);
+        }
+      } else {
+        this.drawLink(link);
+      }
+      this.event.emit(EEventRender.AfterDrawLink, context, link);
     });
     data.nodes.forEach((node) => {
-      this.drawNode(node);
+      this.event.emit(EEventRender.BeforeDrawNode, context, node);
+      const drawNodes = this.event.get(EEventRender.OverwriteDrawNode);
+      if (drawNodes && drawNodes.size) {
+        for (const drawNode of drawNodes) {
+          drawNode(context, node);
+        }
+      } else {
+        this.drawNode(node);
+      }
+      this.event.emit(EEventRender.BeforeDrawNode, context, node);
     });
     context.restore();
     this.event.collectors = this.collectors;
+    this.event.emit(EEventRender.AfterDraw, context, data, option);
   }
 
   drawLink(link: IRenderLink) {
