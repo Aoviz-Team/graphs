@@ -1,21 +1,21 @@
 /* eslint-disable no-unused-vars */
 import { zoomIdentity, ZoomTransform } from 'd3-zoom';
 import { IRenderData, IRenderLink, IRenderNode } from 'src/force';
-import { EInternalEvent, EEventName, EEventRender } from '../force/cores/event';
-import { EventEmitter } from '../force/cores/eventemitter';
+import { ForceLayout } from 'src/force/layout';
+import { EInternalEvent, EEventName, EEventRender } from '../cores/event';
+import { Event as InternalEvent } from '../cores/event';
 
 type IEventArgs = [Event, ...any];
 type IRenderArgs<T> = [CanvasRenderingContext2D, T, ...any];
 interface IPluginConfig {
-  event: EventEmitter;
+  event: InternalEvent;
   transform: ZoomTransform;
+  layout: ForceLayout;
 }
 export class Plugin {
   transform = zoomIdentity;
-  overwriteDrawNode?: (...args: IRenderArgs<IRenderNode>) => void;
-  overwriteDrawLink?: (...args: IRenderArgs<IRenderLink>) => void;
   apply(config: IPluginConfig) {
-    const { event, transform } = config;
+    const { event, transform, layout } = config;
     this.transform = transform;
     // 交互事件
     event.on(EEventName.Click, this.onClick.bind(this));
@@ -38,25 +38,45 @@ export class Plugin {
     event.on(EEventRender.AfterDrawNode, this.onAfterDrawNode.bind(this));
     event.on(EEventRender.BeforeDrawLink, this.onBeforeDrawLink.bind(this));
     event.on(EEventRender.AfterDrawLink, this.onAfterDrawLink.bind(this));
+    // 重写方法实现后，会代替内置的绘制方法
     if (this.overwriteDrawLink) {
-      console.log('overt1');
       event.on(EEventRender.OverwriteDrawLink, this.overwriteDrawLink.bind(this));
     }
     if (this.overwriteDrawNode) {
-      console.log('overt2');
       event.on(EEventRender.OverwriteDrawNode, this.overwriteDrawNode.bind(this));
     }
+    this.disableZoom = () => {
+      event.emit(EInternalEvent.DisableZoom);
+    };
+    this.enableZoom = () => {
+      event.emit(EInternalEvent.EnableZoom);
+    };
+    this.getData = () => {
+      return layout.data;
+    };
+    this.getSelectedNodes = () => {
+      return event.onSelectedNodes$.value;
+    };
+    this.getSelectedLinks = () => {
+      return event.onSelectedLinks$.value;
+    };
+    this.setSelectedNodes = (nodes: IRenderNode[]) => {
+      return event.onSelectedNodes$.next(nodes);
+    };
+    this.setSelectedLinks = (links: IRenderLink[]) => {
+      return event.onSelectedLinks$.next(links);
+    };
   }
 
   onClick(...args: IEventArgs) {}
   onDblclick(...args: IEventArgs) {}
-  onMousedown(...args: IEventArgs) {}
-  onMousemove(...args: IEventArgs) {}
-  onMouseup(...args: IEventArgs) {}
+  onMousedown(...args: [MouseEvent, ...any]) {}
+  onMousemove(...args: [MouseEvent, ...any]) {}
+  onMouseup(...args: [MouseEvent, ...any]) {}
   onContextmenu(...args: IEventArgs) {}
-  onKeydown(...args: IEventArgs) {}
-  onKeyup(...args: IEventArgs) {}
-  onWheel(...args: IEventArgs) {}
+  onKeydown(...args: [KeyboardEvent, ...any]) {}
+  onKeyup(...args: [KeyboardEvent, ...any]) {}
+  onWheel(...args: [WheelEvent, ...any]) {}
 
   onBeforeDrawNode(...args: IRenderArgs<IRenderNode>) {}
   onAfterDrawNode(...args: IRenderArgs<IRenderNode>) {}
@@ -66,4 +86,47 @@ export class Plugin {
 
   onBeforeDraw(...args: IRenderArgs<IRenderData>) {}
   onAfterDraw(...args: IRenderArgs<IRenderData>) {}
+}
+
+export interface Plugin {
+  /**
+   * 重写方法实现后，会代替内置的渲染方法
+   * @param context
+   * @param node
+   */
+  overwriteDrawNode(...args: IRenderArgs<IRenderNode>);
+  /**
+   * 重写方法实现后，会代替内置的渲染方法
+   * @param context
+   * @param link
+   */
+  overwriteDrawLink(...args: IRenderArgs<IRenderLink>);
+  /**
+   * 禁用缩放和拖拽画布
+   */
+  disableZoom();
+  /**
+   * 启用缩放和拖拽画布
+   */
+  enableZoom();
+  /**
+   * 获取渲染数据
+   */
+  getData(): IRenderData;
+  /**
+   * 获取选中的节点
+   */
+  getSelectedNodes(): IRenderNode[];
+  /**
+   * 获取选中的关系
+   */
+  getSelectedLinks(): IRenderLink[];
+  /**
+   * 设置选中的节点
+   */
+  setSelectedNodes(nodes: IRenderNode[]);
+  /**
+   * 设置选中的关系
+   */
+  setSelectedLinks(links: IRenderLink[]);
 }

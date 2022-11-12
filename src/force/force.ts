@@ -1,10 +1,10 @@
 import { select } from 'd3';
 import { cloneDeep, merge } from 'lodash-es';
-import { distinctUntilChanged } from 'rxjs';
+import { distinct, distinctUntilChanged, distinctUntilKeyChanged } from 'rxjs';
 import { DEFAULT_OPTION } from './config';
 import { Controller } from './cores/controller';
 import { IForceData, IOption } from './interface';
-import { Plugin } from '../plugins/plugin';
+import { Plugin } from './plugins/plugin';
 
 export class Force<T extends IForceData> {
   controller: Controller;
@@ -56,5 +56,13 @@ export class Force<T extends IForceData> {
 
   get onNodeDrag$() {
     return this.controller.event.onNodeDrag$.asObservable();
+  }
+
+  get onSelectedNodes$() {
+    return this.controller.event.onSelectedNodes$.asObservable().pipe(distinct((nodes) => nodes.map((node) => node.id).join(',')));
+  }
+
+  get onSelectedLinks$() {
+    return this.controller.event.onSelectedLinks$.asObservable().pipe(distinct((links) => links.map((link) => link.id).join(',')));
   }
 }

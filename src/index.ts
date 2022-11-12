@@ -1,3 +1,3 @@
 export * from './force';
-export * from './plugins';
+export * from './force/plugins';
 export * from './draws';
