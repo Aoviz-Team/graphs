@@ -27,12 +27,12 @@ export class Renderer {
   draw(data: IRenderData) {
     const { context, option, transform } = this;
     const { width = 0, height = 0 } = option.layout;
-    this.event.emit(EEventRender.BeforeDraw, context, data, option);
     this.collectors = [];
+    context.clearRect(0, 0, width, height);
     context.save();
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    context.clearRect(0, 0, width, height);
+    this.event.emit(EEventRender.BeforeDraw, context, data, option);
     context.translate(transform.x, transform.y);
     context.scale(transform.k, transform.k);
     data.links.forEach((link) => {

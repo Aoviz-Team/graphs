@@ -20,24 +20,13 @@ const OPTION: IOption = {
     ]
   }
 };
-class CustomPlugin extends Plugin {
-  onClick(e: Event): void {
-    console.log(e, 'click');
-  }
-  onDblclick(e: Event): void {
-    console.log(e, 'dblclick');
-  }
-  overwriteDrawNode = (c: CanvasRenderingContext2D, n: IRenderNode) => {
-    circleInnerShadow(c, n.x, n.y, n.cfg.radius, n.cfg.backgroundColor, 20, 20);
-  };
-}
+
 export default function Viz() {
   const wrapper = useRef<HTMLDivElement>(null);
   const [option, setOption] = useState(OPTION);
   const instanceRef = useRef<Force<IForceData>>(null);
   useEffect(() => {
     instanceRef.current = new Force(wrapper.current!, { data, option });
-    instanceRef.current.setPlugins([new CustomPlugin()]);
   }, [wrapper]);
 
   const onNBodyStrength = (e) => {

@@ -19,7 +19,10 @@ export enum EEventName {
 }
 
 export enum EInternalEvent {
-  SetTransform = 'setTransform'
+  SetTransform = 'setTransform',
+  DisableZoom = 'disableZoom',
+  EnableZoom = 'enableZoom',
+  GetRenderData = 'getRenderData'
 }
 
 export enum EEventRender {
@@ -42,7 +45,8 @@ export class Event extends EventEmitter {
   onNodeHover$ = new BehaviorSubject<IRenderNode | null>(null);
   onLinkHover$ = new BehaviorSubject<IRenderLink | null>(null);
   onNodeDrag$ = new Subject<INodeDragEvent>();
-
+  onSelectedNodes$ = new BehaviorSubject<IRenderNode[]>([]);
+  onSelectedLinks$ = new BehaviorSubject<IRenderLink[]>([]);
   constructor(element: HTMLCanvasElement) {
     super();
     this.element = element;

@@ -4,10 +4,10 @@ import { throttleTime } from 'rxjs/operators';
 import { IForceData, ILayoutOption, IRenderNode, IOption, ISafeAny, IRenderData, ILink } from '../interface';
 import { ForceLayout } from '../layout';
 import { Renderer } from './renderer';
-import { Event } from './event';
+import { EInternalEvent, Event } from './event';
 import { getNodeByPoint, mergeCfg, updateLinkOffsetMultiple } from '../utils';
 import { IPoint } from '../interface';
-import { Plugin } from '../../plugins/plugin';
+import { Plugin } from '../plugins/plugin';
 export class Controller {
   originData: IForceData = { nodes: [], links: [] };
   wrapper!: HTMLElement;
@@ -40,6 +40,7 @@ export class Controller {
   }
   initCanvas() {
     this.wrapper.innerHTML = '';
+    this.wrapper.style.position = 'relative';
     this.canvas = document.createElement('canvas');
     this.updateCanvas();
     this.wrapper.append(this.canvas);
@@ -124,7 +125,13 @@ export class Controller {
       this.renderer.draw(this.tick$.value);
     };
     this.zoom = (zoom() as ISafeAny).scaleExtent([1 / 6, 36]).on('zoom', zoomed);
-    select(this.canvas).call(this.zoom).call(this.zoom.transform, zoomIdentity).on('dblclick', null);
+    select(this.canvas).call(this.zoom).call(this.zoom.transform, zoomIdentity).on('dblclick.zoom', null);
+    this.event.on(EInternalEvent.DisableZoom, () => {
+      select(this.canvas).on('.zoom', null);
+    });
+    this.event.on(EInternalEvent.EnableZoom, () => {
+      select(this.canvas).call(this.zoom).on('dblclick.zoom', null);
+    });
   }
 
   initEvent() {
