@@ -8,7 +8,7 @@ import { Plugin } from './plugins/plugin';
 
 export class Force<T extends IForceData> {
   controller: Controller;
-  constructor(selector: string | HTMLElement, config?: { data?: T; option?: Partial<IOption> }) {
+  constructor(selector: string | HTMLElement, config?: { data?: T; option?: DeepPartial<IOption> }) {
     const option = merge(cloneDeep(DEFAULT_OPTION), config?.option);
     this.controller = new Controller(selector, option);
     if (config?.data) this.controller.load(config.data);

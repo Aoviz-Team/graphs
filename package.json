@@ -1,11 +1,11 @@
 {
   "name": "@aoviz/graphs",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
   "module": "es/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/aoviz/graphs",
+  "repository": "https://github.com/Aoviz-Team/graphs",
   "author": "Steven",
   "license": "MIT",
   "type": "module",
