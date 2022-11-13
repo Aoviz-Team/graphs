@@ -7,4 +7,10 @@ tsconfig.json
 node_modules
 yarn.lock
 .parcel-cache
-
+.storybook
+storybook-static
+stories
+.eslintrc.cjs
+.gitignore
+.parcelrc
+.prettierrc
