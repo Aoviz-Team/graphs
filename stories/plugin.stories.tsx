@@ -38,15 +38,24 @@ class CustomPlugin extends Plugin {
     roundRectBgLabel(c, { x: n.x!, y: n.y! + n.cfg.radius + 10 }, n);
   }
 }
-export default function Viz() {
+function Viz({ watermark, custom, brushSelect }: Record<string, boolean>) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [option, setOption] = useState(OPTION);
   const instanceRef = useRef<Force<IForceData>>(null);
 
   useEffect(() => {
     instanceRef.current = new Force(wrapper.current!, { data, option });
-    instanceRef.current.setPlugins([new CustomPlugin(), new BrushSelectPlugin(), new WatermarkPlugin()]);
-    instanceRef.current.onSelectedNodes$.subscribe((res) => console.log(res, 'res'));
+    const plugins: any[] = [];
+    if (watermark) {
+      plugins.push(new WatermarkPlugin());
+    }
+    if (custom) {
+      plugins.push(new CustomPlugin());
+    }
+    if (brushSelect) {
+      plugins.push(new BrushSelectPlugin());
+    }
+    instanceRef.current.setPlugins(plugins);
   }, [wrapper]);
 
   useEffect(() => {
@@ -59,3 +68,17 @@ export default function Viz() {
     </div>
   );
 }
+
+export default {
+  /* 👇 The title prop is optional.
+   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
+  title: '基础使用/插件配置',
+  component: Viz
+};
+
+export const Default = () => <Viz />;
+export const Custom = () => <Viz custom />;
+export const Watermark = () => <Viz watermark />;
+export const BrushSelect = () => <Viz brushSelect />;
