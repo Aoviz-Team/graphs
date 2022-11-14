@@ -1,5 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { circleInnerShadow, Force, IForceData, IOption, IRenderNode, Plugin, BrushSelectPlugin, WatermarkPlugin, roundRectBgLabel } from '../src';
+import {
+  circleInnerShadow,
+  Force,
+  IForceData,
+  IOption,
+  IRenderNode,
+  Plugin,
+  BrushSelectPlugin,
+  WatermarkPlugin,
+  roundRectBgLabel,
+  FisheyePlugin
+} from '../src';
 import data from './assets/data';
 import './force.css';
 
@@ -45,7 +56,7 @@ export default function Viz() {
 
   useEffect(() => {
     instanceRef.current = new Force(wrapper.current!, { data, option });
-    instanceRef.current.setPlugins([new CustomPlugin(), new BrushSelectPlugin(), new WatermarkPlugin()]);
+    instanceRef.current.setPlugins([new CustomPlugin(), new BrushSelectPlugin(), new WatermarkPlugin(), new FisheyePlugin()]);
     instanceRef.current.onSelectedNodes$.subscribe((res) => console.log(res, 'res'));
   }, [wrapper]);
 

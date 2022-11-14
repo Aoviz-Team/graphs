@@ -66,6 +66,9 @@ export class Plugin {
     this.setSelectedLinks = (links: IRenderLink[]) => {
       return event.onSelectedLinks$.next(links);
     };
+    this.tick = () => {
+      return layout.tick$.next(layout.data);
+    };
   }
 
   onClick(...args: IEventArgs) {}
@@ -129,4 +132,8 @@ export interface Plugin {
    * 设置选中的关系
    */
   setSelectedLinks(links: IRenderLink[]);
+  /**
+   * 触发一次渲染
+   */
+  tick();
 }
