@@ -17,16 +17,23 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   mod
 )), __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: !0 }), mod);
 
-// <stdin>
-var stdin_exports = {};
-__export(stdin_exports, {
+// server.js
+var server_exports = {};
+__export(server_exports, {
+  default: () => server_default
+});
+module.exports = __toCommonJS(server_exports);
+var import_vercel = require("@remix-run/vercel");
+
+// server-entry-module:@remix-run/dev/server-build
+var server_build_exports = {};
+__export(server_build_exports, {
   assets: () => assets_manifest_default,
   assetsBuildDirectory: () => assetsBuildDirectory,
   entry: () => entry,
   publicPath: () => publicPath,
   routes: () => routes
 });
-module.exports = __toCommonJS(stdin_exports);
 
 // app/entry.server.tsx
 var entry_server_exports = {};
@@ -247,17 +254,13 @@ var Stitches = __toESM(require("@stitches/react")), { styled, globalCss, getCssT
 });
 
 // app/entry.server.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_jsx_runtime = require("react/jsx-runtime");
 function handleRequest(request, responseStatusCode, responseHeaders, remixContext) {
   let markup = (0, import_server.renderToString)(
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react.RemixServer, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.RemixServer, {
       context: remixContext,
       url: request.url
-    }, void 0, !1, {
-      fileName: "app/entry.server.tsx",
-      lineNumber: 14,
-      columnNumber: 5
-    }, this)
+    })
   ).replace(/<\/head>/, `<style id="stitches">${getCssText()}</style></head>`);
   return responseHeaders.set("Content-Type", "text/html"), new Response("<!DOCTYPE html>" + markup, {
     status: responseStatusCode,
@@ -276,7 +279,7 @@ __export(root_exports, {
 var import_node = require("@remix-run/node"), import_react2 = require("@remix-run/react");
 
 // ../node_modules/@docsearch/css/dist/style.css
-var style_default = "/build/_assets/style-AAM3DOU7.css";
+var style_default = "/build/_assets/style-5LDDQMHT.css";
 
 // app/styles/global.ts
 var globalStyles = globalCss({
@@ -478,7 +481,7 @@ var globalStyles = globalCss({
 });
 
 // app/components/Widgets/WidgetTheme.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetTheme = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
+var import_jsx_runtime = require("react/jsx-runtime"), WidgetTheme = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", {
   dangerouslySetInnerHTML: {
     __html: `
           !function(){
@@ -501,122 +504,78 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetTheme = () 
             }()
           `
   }
-}, void 0, !1, {
-  fileName: "app/components/Widgets/WidgetTheme.tsx",
-  lineNumber: 2,
-  columnNumber: 3
-}, this);
+});
 
 // app/components/Widgets/WidgetPlausible.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetPlausible = () => typeof window < "u" && !window.env.ENABLE_PLAUSIBLE ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
+var import_jsx_runtime = require("react/jsx-runtime"), WidgetPlausible = () => typeof window < "u" && !window.env.ENABLE_PLAUSIBLE ? null : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", {
   defer: !0,
   "data-domain": "beta.react-spring.dev",
   src: "https://plausible.io/js/plausible.js"
-}, void 0, !1, {
-  fileName: "app/components/Widgets/WidgetPlausible.tsx",
-  lineNumber: 7,
-  columnNumber: 5
-}, this);
+});
 
 // app/components/Site/SiteFooter.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), SiteFooter = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Footer, {
+var import_jsx_runtime = require("react/jsx-runtime"), SiteFooter = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Footer, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FooterCopy, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FooterCopy, {
       children: [
         "Designed & built by",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://twitter.com/_josh_ellis_",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Josh"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 8,
-          columnNumber: 9
-        }, this),
+        }),
         ". ",
         "Powered by \u2013",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://www.vercel.com/",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Vercel"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 16,
-          columnNumber: 9
-        }, this),
+        }),
         ",",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://remix.run/",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Remix"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 23,
-          columnNumber: 9
-        }, this),
+        }),
         ",",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://www.algolia.com/",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Algolia"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 27,
-          columnNumber: 9
-        }, this),
+        }),
         ",",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://plausible.io",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Plausible"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 34,
-          columnNumber: 9
-        }, this),
+        }),
         ",",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "https://stitches.dev/",
           rel: "noopener noreferrer",
           target: "_blank",
           children: "Stitches"
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteFooter.tsx",
-          lineNumber: 41,
-          columnNumber: 9
-        }, this),
+        }),
         " ",
         "& more..."
       ]
-    }, void 0, !0, {
-      fileName: "app/components/Site/SiteFooter.tsx",
-      lineNumber: 6,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FooterCopy, {
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCopy, {
       children: `\xA9 ${new Date().getFullYear()} react-spring`
-    }, void 0, !1, {
-      fileName: "app/components/Site/SiteFooter.tsx",
-      lineNumber: 49,
-      columnNumber: 7
-    }, this)
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Site/SiteFooter.tsx",
-  lineNumber: 5,
-  columnNumber: 5
-}, this), Footer = styled("footer", {
+}), Footer = styled("footer", {
   px: "$25",
   py: "$20",
   mt: "$50",
@@ -641,7 +600,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), SiteFooter = () =
 });
 
 // app/root.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta = () => ({
+var import_jsx_runtime = require("react/jsx-runtime"), meta = () => ({
   title: "react-spring",
   description: "Bring your components to life with simple spring animation primitives for React",
   "og:site_name": "React Spring",
@@ -678,111 +637,47 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta = () => ({
 function Document({ children }) {
   globalStyles();
   let data = (0, import_react2.useLoaderData)();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("html", {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
     lang: "en",
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("head", {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("head", {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("meta", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("meta", {
             charSet: "utf-8"
-          }, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 78,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("meta", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("meta", {
             name: "viewport",
             content: "width=device-width,initial-scale=1"
-          }, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 79,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 80,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Links, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 81,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetPlausible, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 82,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetTheme, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 83,
-            columnNumber: 9
-          }, this)
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react2.Meta, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react2.Links, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WidgetPlausible, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WidgetTheme, {})
         ]
-      }, void 0, !0, {
-        fileName: "app/root.tsx",
-        lineNumber: 77,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("body", {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", {
         children: [
           children,
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SiteFooter, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 87,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteFooter, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", {
             dangerouslySetInnerHTML: {
               __html: `window.env = ${JSON.stringify(data.ENV)}`
             }
-          }, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 88,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 93,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
-            fileName: "app/root.tsx",
-            lineNumber: 94,
-            columnNumber: 52
-          }, this)
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react2.Scripts, {}),
+          !1
         ]
-      }, void 0, !0, {
-        fileName: "app/root.tsx",
-        lineNumber: 85,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/root.tsx",
-    lineNumber: 76,
-    columnNumber: 5
-  }, this);
+  });
 }
 function App() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Document, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Document, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 103,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
-        fileName: "app/root.tsx",
-        lineNumber: 104,
-        columnNumber: 7
-      }, this)
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react2.Outlet, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react2.ScrollRestoration, {})
     ]
-  }, void 0, !0, {
-    fileName: "app/root.tsx",
-    lineNumber: 102,
-    columnNumber: 5
-  }, this);
+  });
 }
 
 // app/routes/examples.tsx
@@ -883,7 +778,7 @@ var useAnimatedHeader = ({
 
 // app/components/Logo.tsx
 var import_web2 = require("@react-spring/web"), import_react6 = require("@use-gesture/react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Logo = ({ large = !1 }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), Logo = ({ large = !1 }) => {
   let centerX = 69.560811, centerY = 69.604167, rMax = 12, [{ x, y, cursor }, api] = (0, import_web2.useSpring)(() => ({
     x: centerX + rMax / 2,
     y: centerY + rMax / 2,
@@ -907,7 +802,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Logo = ({ large =
       x: centerX,
       y: centerY
     });
-  }, [api]), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Svg, {
+  }, [api]), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Svg, {
     viewBox: "0 0 139 139",
     ...bind(),
     style: {
@@ -915,122 +810,70 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Logo = ({ large =
     },
     large,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("radialGradient", {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("radialGradient", {
         id: "a",
         cx: "33.434395%",
         cy: "32.389247%",
         gradientTransform: "matrix(.57850251 .81411613 -.8156806 .57739294 .405118 -.135316)",
         r: "64.015025%",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
             offset: "0",
             stopColor: "#fff",
             stopOpacity: ".904382"
-          }, void 0, !1, {
-            fileName: "app/components/Logo.tsx",
-            lineNumber: 63,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("stop", {
             offset: "1",
             stopColor: "#ff6d6d"
-          }, void 0, !1, {
-            fileName: "app/components/Logo.tsx",
-            lineNumber: 64,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Logo.tsx",
-        lineNumber: 57,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("g", {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("g", {
         fill: "none",
         fillRule: "evenodd",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("g", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("g", {
             fillRule: "nonzero",
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("circle", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
                 cx: "69.375",
                 cy: "69.375",
                 fill: "rgba(250,250,250,1)",
                 r: "69.375"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 69,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
                 d: "m61.7036428 103.869967c-.3008927.15881-.6194455.198001-.9986496.105707-.4018775-.108222-.8277538-.484318-.9722841-.84701-.1293799-.315008-.1195953-1.181203.0670551-1.921261-.9876687-.219493-2.9337433-.69745-3.9047244-.964762-7.0558988-1.9411418-12.464704-4.5951643-15.2553387-7.4393687-1.508588-1.5375472-2.1542079-2.9558802-2.1472586-4.4855131.0071469-1.12903.3484044-2.0538039 1.2161081-3.1647359.7119232-.9113404 2.045448-2.015538 3.5551801-2.9343133-1.8540449-.5007908-4.6084183-1.3431887-6.1116392-1.8770154-2.4907696-.8917586-5.4140783-2.2488303-6.8812937-3.198075-2.5645231-1.6486745-4.1905718-3.4060152-5.1952597-5.5409694-.6188868-1.3103229-.8874499-2.5536308-.8249513-3.7337862.0636396-1.2017016.4685362-2.3436144 1.224064-3.4294645 1.2386666-1.7779976 3.6941033-3.6284425 7.251406-5.4213873.7482035-.3793075 1.9338912-.9174742 2.8287871-1.3060743-2.5140029-1.6986328-4.1550032-3.7990022-4.6665801-5.8647981-.1632088-.6653669-.1815136-2.0029723-.0389941-2.6202779.8655092-3.6733212 5.7903936-7.6955227 14.0458892-11.1300662.6603782-.2758422 2.5667017-1.004827 3.5272709-1.3549174-.0608919-1.09386.1859264-1.7518545 1.1632672-2.7945877.642809-.6703845 1.3184411-1.0437624 2.1335616-1.1885718.3732846-.065077.6413441-.0462878.8376674.0167333.3193766.102522.5328168.3050701.6626057.6523612.1193826.3269996.1134023.5864646-.03319.8897372-.0841619.1741154-.2457237.384154-.5467945.6778251-.2368272.2273808-.3169501.3115259-.3709642.5183883h.0708218c1.5500713-.4762156 5.0561197-1.3149427 7.2934287-1.7444647 8.1854613-1.568253 17.8213468-2.1836861 25.0730136-1.5988431 6.5678606.5259059 13.7619027 2.0235466 16.0708129 3.3136159.694519.3847015 1.24945.9245847 1.542778 1.4611787.223298.424098.262231.5577369.262231 1.2609916 0 .743535-.042188.8488015-.267733 1.265978-.752996 1.3854871-2.8986969 2.3555393-8.0746782 3.1368151-6.620771 1.000634-17.2819542 1.4891912-25.3625648 1.155657-7.955922-.3243459-13.9303866-1.4290105-17.2388958-3.1409596-.3987303-.2068867-.5191853-.35817-.619423-.3377376-.1034878.0198244-.9118426.2936004-1.8024.5920836-4.892672 1.6642911-8.7978036 3.5410863-11.2886198 5.4513418-.6877463.5257114-1.6855832 1.4848608-2.1135828 2.0361852-.3598089.4610143-.7199502 1.1252988-.761431 1.4899389-.0556989.4494819.1774571.9294989.5787791 1.4429911.5062641.6477658 1.2923166 1.3271537 2.3246298 2.0176171.6994737.4649354 2.6763456 1.5247718 3.5150609 1.8778482l1.0851083-.2244216c5.3039081-1.8554085 11.7100386-3.4738732 18.0660096-4.5653072 8.5856741-1.4733617 19.1323175-2.3771349 29.1636756-2.4860364 5.9773353-.0644664 9.4178681.1705882 13.0925741.8861172 2.868855.5582041 5.654542 1.5610256 6.830993 2.4354666.839282.6184014 1.397805 1.3347201 1.684043 2.0934752.301683.7996972.310813 1.6544039.001033 2.5236268-.807113 2.2630077-3.992406 4.310689-9.352937 5.8203372-5.069335 1.4276408-12.0655105 2.4272957-20.5467739 2.8675323-5.063084.2692318-12.4407108.3009178-16.5418665.0765374-10.4718745-.5793489-18.4969645-1.9911311-24.1762189-4.2381955l-.3867357-.154413c-2.5912066.9117207-6.3538391 2.6041591-8.0945044 3.6233087-1.4483786.8530396-2.7214526 1.8245587-3.3225673 2.5706589-.3728222.4605044-.5930697.8869482-.6272915 1.3517279-.0355318.4825715.1234285.9909294.4297934 1.5894215.484194.9334666 1.6212695 2.1824042 2.6584143 2.9425332 3.2003964 2.3424739 9.1446236 4.5740707 16.8699079 6.3741066l1.6736538.3874148 1.0819075-.3693947c7.1451577-2.4595482 16.9866944-4.3563269 26.5013998-5.101289 5.2752798-.4111098 11.2753368-.4617931 15.6618145-.1277766 3.4845223.2647416 6.4619798.7050228 8.997492 1.3252287 2.238589.5529039 3.904846 1.208226 5.058427 1.9840302 1.286107.8649302 1.968566 1.8872456 2.160314 3.0745667.146456.9073907-.060333 1.7734472-.595654 2.5455946-.489429.7059527-1.266686 1.3373756-2.318991 1.8284859-3.060698 1.4173442-8.6501499 2.3053936-17.3615124 2.7133792-2.1708829.0961981-9.5959335.0962634-11.8939992.000008-9.6047154-.4228272-18.6813601-1.4739261-27.0043095-3.1204964l-1.5745014-.3129784-.5395024.2342869c-1.5643079.6824009-3.2331467 1.6174679-4.3042504 2.4114059-.6264348.4648437-1.3464031 1.2104334-1.558987 1.6550874-.1141795.2327426-.1247416.2787903-.1097658.5117759.0293097.4132344.192096.6960948.5898471 1.2003715 1.7257707 2.212608 6.2624618 4.5977634 11.9647267 6.3778762 2.1724113.6768861 4.5186393 1.2714293 6.8836607 1.7459217l1.1444003.2299881c2.2311707-.9365661 4.9237048-1.2956465 9.431866-1.295646 5.1832243.0064581 10.8537608.7311793 12.6086946 1.1468582 2.0497437.4855084 3.4982518 1.4626379 3.7631056 2.1046525.1631419.4154338.1771317.8628528.0658085 1.2668398-.1166197.423208-.3688494.793324-.7132048 1.02565-.5063126.344021-2.054889.669759-4.3427823.828902-1.6166894.115855-6.3404596.155028-8.4932267.071382-3.9218221-.147803-6.6330354-.392137-10.2007729-.912516l-1.1247443-.162217c-.5870355.314916-1.0186943.747481-1.3228773 1.207146-.245238.365662-.4861218.587362-.7278613.714952zm19.8939266-21.3686411c2.6721452.044542 3.7774373.038113 7.3368518-.031896 4.2957231-.0885763 8.7598728-.4984513 11.7959138-1.0806141 1.488968-.2839863 2.813672-.6323499 3.677267-1.1045979-.470579-.2144276-1.109834-.4436503-1.751735-.6339091-3.1093903-.909054-7.1762256-1.4987902-12.8412411-1.8651777-1.712637-.1142505-9.7778525-.1075013-11.7008045.000323-6.4730171.3746297-12.1309628 1.0917254-17.6019151 2.2412144-.6961025.147287-1.5204597.3333584-2.3099031.5186334 7.6327417 1.1437084 15.7408218 1.8218276 23.3955662 1.956024zm13.5169151-24.0673525c6.0137265-.9373305 10.6048385-2.3857294 12.2846865-3.6654062-.151066-.1051214-.349042-.2246923-.537453-.3193146-1.881023-.9616701-5.474563-1.6465847-10.0320598-1.9454576-1.8741319-.1205712-8.7819912-.1006282-11.896427.0326891-14.8982372.6588703-26.2682057 2.2226683-36.2575823 5.0141827 2.7072773.6510399 6.2593054 1.2660902 9.4280922 1.6203061 5.9547439.667278 12.7884796.927599 19.2356213.730599 7.1725298-.2161282 12.6671957-.673035 17.7751221-1.4675985zm-12.2353804-19.472339c4.9077391-.1679978 9.1141502-.5329463 12.0277388-1.031527-.3957213-.0943797-.7975727-.1849204-1.169846-.2620136-6.4377159-1.3363257-13.1423831-1.7527839-20.6732855-1.2714839-4.4185019.2838002-8.7884141.8249341-12.8309429 1.5956983 3.1143966.4931332 6.7956612.8045395 11.6060192.988515 1.2550143.050908 9.4811551.0380185 11.0403164-.0191888z",
                 fill: "#363645",
                 transform: "matrix(.76604444 -.64278761 -.64278761 -.76604444 59.595584 163.737522)"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 75,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_web2.animated.ellipse, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_web2.animated.ellipse, {
                 cx: x,
                 cy: y,
                 fill: "url(#a)",
                 rx: "22.560811",
                 ry: "22.604167"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 80,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/Logo.tsx",
-            lineNumber: 68,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("g", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("g", {
             fill: "#363645",
             transform: "translate(30.3 29.7)",
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
                 d: "m2.0129 41.6619c-.9885-1.1673-1.4056-2.6688-1.2383-4.8163l3.7398 1.1477c.0195.642.0766.9633.3198 1.2987.1383.1881.1759.2166.413.3215.4487.2039 1.4795.3123 2.2581.2657 1.3309-.0803 4.8473-.9194 4.8473-.9194l9.7548-4.0129s1.4749-.7528 2.1028-1.0875c4.9299-2.6361 9.7251-5.7236 14.9245-9.5974 1.5424-1.1534 7.725-6.3325 8.9636-7.5209 4.1041-3.922 6.8404-6.9879 8.638-9.683.3694-.5583.5906-1.1371.9344-1.6116l2.0384-4.47078c.8898.22998 1.6215.77788 2.0925 1.56718.6163 1.0328.7507 2.2546.3214 3.7439-.385 1.3358-1.2402 2.9088-2.5996 4.7713-1.5437 2.1049-3.5416 4.3561-6.0407 6.7987-3.1455 3.0754-7.7744 6.8934-12.0798 9.9693-7.7675 5.5453-16.5258 10.4183-23.5803 13.127l-1.0662.4124-3.7564 1.1345-3.4116.7672c-1.7471.2666-3.4785.2779-4.6096.0374-1.3788-.2933-2.2347-.7824-2.9659-1.6427z"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 89,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
                 d: "m4.2473 66.4812c-.8064-.8639-1.3999-1.989-1.768-3.3905l4.2731-.6631c.15.6554.355 1.147.6924 1.4939.325.334.7678.5191 1.3494.6322.9401.1852 2.5398.1111 4.1977-.1664 1.9885-.3382 5.9587-1.4603 8.5297-2.4275l8.0688-3.2745c9.4467-4.2827 19.1618-10.3932 30.998-19.4649 2.4715-1.8998 7.776-6.3248 9.1342-7.6218 3.2991-3.1585 5.6117-5.993 6.4345-7.9388.0835-.1936.1583-.4125.2065-.5901l2.3608-3.4017c.796.4667 1.3384 1.1274 1.6214 1.9339.2684.7652.301 1.6729.0556 2.6861-.3392 1.4261-1.8285 3.9849-3.6674 6.2566-2.3551 2.9102-4.8396 5.3018-9.4599 9.0946-7.7545 6.3646-16.4146 12.4515-23.9387 16.8416-5.5705 3.2494-11.5182 6.1274-16.7739 8.1154l-.9755.5255-6.1503 1.8739c-.9354.2775-2.1896.6274-3.0066.8178-3.8775.9131-6.9479 1.0739-9.0397.5081-1.2767-.3462-2.3209-.9607-3.1421-1.8403z"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 90,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", {
                 d: "m39.1991 76.0178c-8.5317 2.6756-14.8898 2.76-17.914.5024l2.8156-3.1833c.2662.2527.969.5301 1.541.652.6823.1472 2.0632.2406 2.9279.2012 3.136-.1377 7.3339-1.2102 12.1517-3.0802.874-.3438 1.6693-.6537 1.7613-.705l8.533-4.1659c3.5922-2.008 7.2875-4.4024 10.8547-7.0251 6.0784-4.4721 10.9468-9.1008 15.0194-14.2626.2356-.2983.4853-.626.7277-.9527l4.6829-5.9425c.441.1746.541.2281 1.0189.7977.452.5387.5081.6661.6097 1.1346.1202.5996.0421 1.3698-.2426 2.111-.9395 2.4723-5.4878 8.2438-10.181 12.8685-5.1792 5.1093-12.9563 10.8316-20.2348 14.8918-1.99 1.1091-5.2149 2.7202-6.7084 3.3518l-.0543.0455-3.7357 1.5315c-.9609.3492-2.8898 1.0162-3.573 1.2293z"
-              }, void 0, !1, {
-                fileName: "app/components/Logo.tsx",
-                lineNumber: 91,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/Logo.tsx",
-            lineNumber: 88,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Logo.tsx",
-        lineNumber: 67,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Logo.tsx",
-    lineNumber: 50,
-    columnNumber: 5
-  }, this);
+  });
 }, Svg = styled(import_web2.animated.svg, {
   touchAction: "none",
   variants: {
@@ -1136,7 +979,7 @@ var import_jotai = require("jotai"), Toolbar = __toESM(require("@radix-ui/react-
 
 // app/components/AccessibleIcon.tsx
 var import_react7 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), VisuallyHiddenLabel = styled("span", {
+var import_jsx_runtime = require("react/jsx-runtime"), VisuallyHiddenLabel = styled("span", {
   visuallyHidden: ""
 }), AccessibleIcon = ({
   children,
@@ -1144,30 +987,22 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), VisuallyHiddenLab
   className
 }) => {
   let child = import_react7.Children.only(children);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
     children: [
       (0, import_react7.cloneElement)(child, {
         "aria-hidden": "true",
         focusable: "false",
         className
       }),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(VisuallyHiddenLabel, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(VisuallyHiddenLabel, {
         children: label
-      }, void 0, !1, {
-        fileName: "app/components/AccessibleIcon.tsx",
-        lineNumber: 27,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/AccessibleIcon.tsx",
-    lineNumber: 21,
-    columnNumber: 5
-  }, this);
+  });
 };
 
 // app/components/Site/SiteThemePicker.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_jsx_runtime = require("react/jsx-runtime");
 var themeAtom = (0, import_jotai.atom)("light" /* Light */), SiteThemePicker = () => {
   let [theme, setTheme] = (0, import_jotai.useAtom)(themeAtom), [styles, api] = (0, import_web3.useSpring)(
     () => ({
@@ -1211,72 +1046,40 @@ var themeAtom = (0, import_jotai.atom)("light" /* Light */), SiteThemePicker = (
       width: 42
     });
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ThemeGroup, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(ThemeGroup, {
     onValueChange: handleValueChange,
     value: theme,
     type: "single",
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ThemePicker, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemePicker, {
         onPointerEnter: handlePointerEnter("light" /* Light */),
         onPointerOut: handlePointerOut("light" /* Light */),
         value: "light",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccessibleIcon, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccessibleIcon, {
           label: "Enable light mode",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react.Sun, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.Sun, {
             size: 20,
             weight: isDarkMode ? "light" : "regular"
-          }, void 0, !1, {
-            fileName: "app/components/Site/SiteThemePicker.tsx",
-            lineNumber: 99,
-            columnNumber: 11
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteThemePicker.tsx",
-          lineNumber: 98,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Site/SiteThemePicker.tsx",
-        lineNumber: 94,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ThemePicker, {
+          })
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemePicker, {
         onPointerEnter: handlePointerEnter("dark" /* Dark */),
         onPointerOut: handlePointerOut("dark" /* Dark */),
         value: "dark",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccessibleIcon, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccessibleIcon, {
           label: "Enable dark mode",
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react.MoonStars, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.MoonStars, {
             size: 20,
             weight: isDarkMode ? "light" : "regular"
-          }, void 0, !1, {
-            fileName: "app/components/Site/SiteThemePicker.tsx",
-            lineNumber: 107,
-            columnNumber: 11
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/components/Site/SiteThemePicker.tsx",
-          lineNumber: 106,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Site/SiteThemePicker.tsx",
-        lineNumber: 102,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ThemeActiveBlob, {
+          })
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeActiveBlob, {
         style: styles
-      }, void 0, !1, {
-        fileName: "app/components/Site/SiteThemePicker.tsx",
-        lineNumber: 110,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Site/SiteThemePicker.tsx",
-    lineNumber: 93,
-    columnNumber: 5
-  }, this);
+  });
 }, ThemeGroup = styled(Toolbar.ToggleGroup, {
   height: "4.6rem",
   width: "9.2rem",
@@ -1317,7 +1120,7 @@ var useIsDarkTheme = () => {
 };
 
 // app/components/Buttons/NavButton.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationButton = ({
+var import_jsx_runtime = require("react/jsx-runtime"), NavigationButton = ({
   Icon,
   title,
   href,
@@ -1331,13 +1134,13 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationButton 
     rel: "noopener noreferrer",
     target: "_blank"
   } : {}, isDarkMode = useIsDarkTheme();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavAnchor, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavAnchor, {
     onClick: handleClick,
     href,
     variant: showLabel ? "withLabel" : void 0,
     active: isRoute,
     ...externalLinkProps,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavIconWrapper, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(NavIconWrapper, {
       css: {
         color: isRoute ? "var(--colors-steel100)" : "unset",
         [`.${dark} &`]: {
@@ -1345,32 +1148,16 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationButton 
         }
       },
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Icon, {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
           size: 20,
           weight: isDarkMode ? "light" : "regular"
-        }, void 0, !1, {
-          fileName: "app/components/Buttons/NavButton.tsx",
-          lineNumber: 76,
-          columnNumber: 9
-        }, this),
-        showLabel ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+        }),
+        showLabel ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
           children: title
-        }, void 0, !1, {
-          fileName: "app/components/Buttons/NavButton.tsx",
-          lineNumber: 77,
-          columnNumber: 22
-        }, this) : null
+        }) : null
       ]
-    }, void 0, !0, {
-      fileName: "app/components/Buttons/NavButton.tsx",
-      lineNumber: 69,
-      columnNumber: 7
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/components/Buttons/NavButton.tsx",
-    lineNumber: 63,
-    columnNumber: 5
-  }, this);
+    })
+  });
 }, NavAnchor = styled(Toolbar2.Link, {
   height: "4.6rem",
   width: "4.6rem",
@@ -1440,7 +1227,7 @@ var firePlausibleEvent = (event) => {
 };
 
 // app/components/Header/HeaderSubNavigation.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), SUB_NAV = [
+var import_jsx_runtime = require("react/jsx-runtime"), SUB_NAV = [
   {
     title: "Github",
     href: "https://github.com/pmndrs/react-spring",
@@ -1470,25 +1257,17 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), SUB_NAV = [
       }
     });
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
-    children: SUB_NAV.map((props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavigationButton, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
+    children: SUB_NAV.map((props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavigationButton, {
       showLabel: showLabels,
       onClick: handleClick(props.title),
       ...props
-    }, props.title, !1, {
-      fileName: "app/components/Header/HeaderSubNavigation.tsx",
-      lineNumber: 46,
-      columnNumber: 9
-    }, this))
-  }, void 0, !1, {
-    fileName: "app/components/Header/HeaderSubNavigation.tsx",
-    lineNumber: 44,
-    columnNumber: 5
-  }, this);
+    }, props.title))
+  });
 };
 
 // app/components/Header/HeaderNavigation.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MAIN_NAV = [
+var import_jsx_runtime = require("react/jsx-runtime"), MAIN_NAV = [
   {
     title: "Home",
     href: "/",
@@ -1504,67 +1283,31 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MAIN_NAV = [
   showSubNav = !0,
   showLabels = !1,
   showThemePicker = !0
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Tooltip.TooltipProvider, {
-  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavList, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Tooltip.TooltipProvider, {
+  children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(NavList, {
     className,
     children: [
-      MAIN_NAV.map((props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavigationButton, {
+      MAIN_NAV.map((props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavigationButton, {
         showLabel: showLabels,
         ...props
-      }, props.title, !1, {
-        fileName: "app/components/Header/HeaderNavigation.tsx",
-        lineNumber: 50,
-        columnNumber: 11
-      }, this)),
-      showSubNav && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+      }, props.title)),
+      showSubNav && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavSeperator, {}, void 0, !1, {
-            fileName: "app/components/Header/HeaderNavigation.tsx",
-            lineNumber: 58,
-            columnNumber: 13
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeaderSubNavigation, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavSeperator, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeaderSubNavigation, {
             showLabels
-          }, void 0, !1, {
-            fileName: "app/components/Header/HeaderNavigation.tsx",
-            lineNumber: 59,
-            columnNumber: 13
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Header/HeaderNavigation.tsx",
-        lineNumber: 57,
-        columnNumber: 11
-      }, this),
-      showThemePicker && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+      }),
+      showThemePicker && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavSeperator, {}, void 0, !1, {
-            fileName: "app/components/Header/HeaderNavigation.tsx",
-            lineNumber: 64,
-            columnNumber: 13
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SiteThemePicker, {}, void 0, !1, {
-            fileName: "app/components/Header/HeaderNavigation.tsx",
-            lineNumber: 65,
-            columnNumber: 13
-          }, this)
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavSeperator, {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteThemePicker, {})
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Header/HeaderNavigation.tsx",
-        lineNumber: 63,
-        columnNumber: 11
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Header/HeaderNavigation.tsx",
-    lineNumber: 48,
-    columnNumber: 7
-  }, this)
-}, void 0, !1, {
-  fileName: "app/components/Header/HeaderNavigation.tsx",
-  lineNumber: 47,
-  columnNumber: 5
-}, this), NavList = styled(Toolbar3.Root, {
+  })
+}), NavList = styled(Toolbar3.Root, {
   listStyle: "none",
   margin: 0,
   padding: 0,
@@ -1585,41 +1328,29 @@ var import_react12 = require("@remix-run/react"), Dialog = __toESM(require("@rad
 var import_react11 = require("@remix-run/react");
 
 // app/components/Widgets/WidgetSearch.tsx
-var import_react9 = require("@docsearch/react"), import_react10 = require("react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetSearch = (0, import_react10.memo)(() => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react9.DocSearch, {
+var import_react9 = require("@docsearch/react"), import_react10 = require("react"), import_jsx_runtime = require("react/jsx-runtime"), WidgetSearch = (0, import_react10.memo)(() => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react9.DocSearch, {
   appId: typeof window > "u" ? "" : window.env.ALGOLIA_APP_ID,
   indexName: "react-spring_beta",
   apiKey: typeof window > "u" ? "" : window.env.ALGOLIA_API_KEY
-}, void 0, !1, {
-  fileName: "app/components/Widgets/WidgetSearch.tsx",
-  lineNumber: 6,
-  columnNumber: 5
-}, this));
+}));
 
 // app/components/Menu/MenuDocs.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuDocs = ({ submenu, onNavClick }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), MenuDocs = ({ submenu, onNavClick }) => {
   let location = (0, import_react11.useLocation)(), handleNavClick = () => {
     onNavClick && onNavClick();
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(DocsList, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DocsList, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetContainer, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WidgetContainer, {
         shouldBeHidden: location.pathname === "/",
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetSearch, {}, void 0, !1, {
-          fileName: "app/components/Menu/MenuDocs.tsx",
-          lineNumber: 30,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Menu/MenuDocs.tsx",
-        lineNumber: 29,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ScrollArea, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(WidgetSearch, {})
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(ScrollArea, {
         children: [
           Array.isArray(submenu) && submenu.map(
             (item) => renderSubMenu({ ...item, location, onClick: handleNavClick }, 0)
           ),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ExternalAnchor, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalAnchor, {
             shouldBeHidden: location.pathname === "/",
             href: "https://github.com/pmndrs/react-spring/releases",
             rel: "noopener noreferrer",
@@ -1628,67 +1359,39 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuDocs = ({ sub
             active: !1,
             onClick: handleNavClick,
             children: "Changelog"
-          }, void 0, !1, {
-            fileName: "app/components/Menu/MenuDocs.tsx",
-            lineNumber: 37,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Menu/MenuDocs.tsx",
-        lineNumber: 32,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Menu/MenuDocs.tsx",
-    lineNumber: 28,
-    columnNumber: 5
-  }, this);
+  });
 }, renderSubMenu = ({ children, id, title, href, location, onClick, noPage }, level) => {
   let handleClick = () => {
     onClick && onClick();
   }, hasRenderableChildren = children.length > 0, isTitle = level === 0, doesNotWantPage = Boolean(noPage);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ListItem, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(ListItem, {
     children: [
-      doesNotWantPage ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Anchor, {
+      doesNotWantPage ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Anchor, {
         title: isTitle,
         as: "span",
         hasNoLink: !0,
         children: title
-      }, void 0, !1, {
-        fileName: "app/components/Menu/MenuDocs.tsx",
-        lineNumber: 83,
-        columnNumber: 9
-      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Anchor, {
+      }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Anchor, {
         to: href,
         title: isTitle,
         active: location.pathname === href,
         onClick: handleClick,
         children: title
-      }, void 0, !1, {
-        fileName: "app/components/Menu/MenuDocs.tsx",
-        lineNumber: 75,
-        columnNumber: 9
-      }, this),
-      hasRenderableChildren ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("ul", {
+      }),
+      hasRenderableChildren ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
         children: children.map(
           (item) => renderSubMenu(
             { ...item, location, onClick: handleClick },
             level + 1
           )
         )
-      }, void 0, !1, {
-        fileName: "app/components/Menu/MenuDocs.tsx",
-        lineNumber: 88,
-        columnNumber: 9
-      }, this) : null
+      }) : null
     ]
-  }, id, !0, {
-    fileName: "app/components/Menu/MenuDocs.tsx",
-    lineNumber: 73,
-    columnNumber: 5
-  }, this);
+  }, id);
 }, DocsList = styled("ul", {
   m: 0,
   p: "$15 $10",
@@ -1810,7 +1513,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuDocs = ({ sub
 }), ExternalAnchor = styled("a", AnchorStyles), Anchor = styled(import_react11.Link, AnchorStyles);
 
 // app/components/Header/HeaderSidePanel.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSidePanel = ({
+var import_jsx_runtime = require("react/jsx-runtime"), HeaderSidePanel = ({
   isOpen,
   submenu,
   onNavigationClick
@@ -1837,124 +1540,60 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSidePanel =
     onNavigationClick && onNavigationClick();
   };
   return transitions(
-    ({ opacity, x }, item) => item ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+    ({ opacity, x }, item) => item ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Dialog.Overlay, {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog.Overlay, {
           forceMount: !0,
           asChild: !0,
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileMenuOverlay, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MobileMenuOverlay, {
             style: { opacity }
-          }, void 0, !1, {
-            fileName: "app/components/Header/HeaderSidePanel.tsx",
-            lineNumber: 61,
-            columnNumber: 11
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/components/Header/HeaderSidePanel.tsx",
-          lineNumber: 60,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Dialog.Content, {
+          })
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog.Content, {
           trapFocus: !1,
           forceMount: !0,
           asChild: !0,
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileMenu, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(MobileMenu, {
             style: { x },
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
                 children: [
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileDialogHeader, {
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(MobileDialogHeader, {
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileMenuClose, {
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react4.X, {}, void 0, !1, {
-                          fileName: "app/components/Header/HeaderSidePanel.tsx",
-                          lineNumber: 69,
-                          columnNumber: 19
-                        }, this)
-                      }, void 0, !1, {
-                        fileName: "app/components/Header/HeaderSidePanel.tsx",
-                        lineNumber: 68,
-                        columnNumber: 17
-                      }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileThemePicker, {
-                        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SiteThemePicker, {}, void 0, !1, {
-                          fileName: "app/components/Header/HeaderSidePanel.tsx",
-                          lineNumber: 72,
-                          columnNumber: 19
-                        }, this)
-                      }, void 0, !1, {
-                        fileName: "app/components/Header/HeaderSidePanel.tsx",
-                        lineNumber: 71,
-                        columnNumber: 17
-                      }, this)
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MobileMenuClose, {
+                        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react4.X, {})
+                      }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MobileThemePicker, {
+                        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteThemePicker, {})
+                      })
                     ]
-                  }, void 0, !0, {
-                    fileName: "app/components/Header/HeaderSidePanel.tsx",
-                    lineNumber: 67,
-                    columnNumber: 15
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HiddenTitle, {
+                  }),
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HiddenTitle, {
                     children: "Main Menu"
-                  }, void 0, !1, {
-                    fileName: "app/components/Header/HeaderSidePanel.tsx",
-                    lineNumber: 75,
-                    columnNumber: 15
-                  }, this),
-                  /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MainNavigation, {
+                  }),
+                  /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MainNavigation, {
                     isDocsSection: isDocs,
                     showSubNav: !1,
                     showThemePicker: !1,
                     showLabels: !isDocs
-                  }, void 0, !1, {
-                    fileName: "app/components/Header/HeaderSidePanel.tsx",
-                    lineNumber: 76,
-                    columnNumber: 15
-                  }, this)
+                  })
                 ]
-              }, void 0, !0, {
-                fileName: "app/components/Header/HeaderSidePanel.tsx",
-                lineNumber: 66,
-                columnNumber: 13
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MenuDocs, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MenuDocs, {
                 submenu,
                 onNavClick: handleNavClick
-              }, void 0, !1, {
-                fileName: "app/components/Header/HeaderSidePanel.tsx",
-                lineNumber: 83,
-                columnNumber: 13
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavContainer, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubNavContainer, {
                 isDocsSection: isDocs,
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeaderSubNavigation, {
+                children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeaderSubNavigation, {
                   showLabels: !isDocs
-                }, void 0, !1, {
-                  fileName: "app/components/Header/HeaderSidePanel.tsx",
-                  lineNumber: 85,
-                  columnNumber: 15
-                }, this)
-              }, void 0, !1, {
-                fileName: "app/components/Header/HeaderSidePanel.tsx",
-                lineNumber: 84,
-                columnNumber: 13
-              }, this)
+                })
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/Header/HeaderSidePanel.tsx",
-            lineNumber: 65,
-            columnNumber: 11
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/components/Header/HeaderSidePanel.tsx",
-          lineNumber: 64,
-          columnNumber: 9
-        }, this)
+          })
+        })
       ]
-    }, void 0, !0, {
-      fileName: "app/components/Header/HeaderSidePanel.tsx",
-      lineNumber: 59,
-      columnNumber: 7
-    }, this) : null
+    }) : null
   );
 }, MobileMenuOverlay = styled(import_web4.animated.div, {
   position: "fixed",
@@ -2035,7 +1674,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSidePanel =
 });
 
 // app/components/Header/Header.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights = () => [
+var import_jsx_runtime = require("react/jsx-runtime"), getHeaderHeights = () => [
   89,
   63
 ], Header = ({
@@ -2051,7 +1690,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights 
     alwaysAnimate: alwaysAnimateHeader,
     heights: headerHeights
   }), handleDialogChange = (isOpen) => setDialogOpen(isOpen), handleNavigationClick = () => setDialogOpen(!1), [desktopHeight, mobileHeight] = headerHeights;
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Head, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Head, {
     className,
     isStuck,
     style: { ...styles, position },
@@ -2068,68 +1707,32 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights 
         }
       }
     } : {},
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(FlexContainer, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(FlexContainer, {
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(DesktopNavigation, {}, void 0, !1, {
-          fileName: "app/components/Header/Header.tsx",
-          lineNumber: 87,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Dialog2.Root, {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DesktopNavigation, {}),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Dialog2.Root, {
           open: dialogOpen,
           onOpenChange: handleDialogChange,
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MobileMenuButton, {
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HamburgerMenu, {
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MobileMenuButton, {
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HamburgerMenu, {
                 size: 20
-              }, void 0, !1, {
-                fileName: "app/components/Header/Header.tsx",
-                lineNumber: 90,
-                columnNumber: 13
-              }, this)
-            }, void 0, !1, {
-              fileName: "app/components/Header/Header.tsx",
-              lineNumber: 89,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Dialog2.Portal, {
+              })
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dialog2.Portal, {
               forceMount: !0,
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeaderSidePanel, {
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeaderSidePanel, {
                 onNavigationClick: handleNavigationClick,
                 isOpen: dialogOpen,
                 submenu: sidebar
-              }, void 0, !1, {
-                fileName: "app/components/Header/Header.tsx",
-                lineNumber: 93,
-                columnNumber: 13
-              }, this)
-            }, void 0, !1, {
-              fileName: "app/components/Header/Header.tsx",
-              lineNumber: 92,
-              columnNumber: 11
-            }, this)
+              })
+            })
           ]
-        }, void 0, !0, {
-          fileName: "app/components/Header/Header.tsx",
-          lineNumber: 88,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Logo, {}, void 0, !1, {
-          fileName: "app/components/Header/Header.tsx",
-          lineNumber: 100,
-          columnNumber: 9
-        }, this)
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Logo, {})
       ]
-    }, void 0, !0, {
-      fileName: "app/components/Header/Header.tsx",
-      lineNumber: 86,
-      columnNumber: 7
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/components/Header/Header.tsx",
-    lineNumber: 63,
-    columnNumber: 5
-  }, this);
+    })
+  });
 }, Head = styled(import_web5.animated.header, {
   width: "100%",
   pt: "$15",
@@ -2231,26 +1834,14 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights 
 });
 
 // app/routes/examples.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var import_jsx_runtime = require("react/jsx-runtime");
 function DocsLayout() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Header, {}, void 0, !1, {
-        fileName: "app/routes/examples.tsx",
-        lineNumber: 8,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Main, {}, void 0, !1, {
-        fileName: "app/routes/examples.tsx",
-        lineNumber: 9,
-        columnNumber: 7
-      }, this)
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Main, {})
     ]
-  }, void 0, !0, {
-    fileName: "app/routes/examples.tsx",
-    lineNumber: 7,
-    columnNumber: 5
-  }, this);
+  });
 }
 var Main = styled("main", {
   padding: "0 $25",
@@ -2270,12 +1861,12 @@ __export(routes_exports, {
 });
 
 // app/components/AspectRatio.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), AspectRatio = ({
+var import_jsx_runtime = require("react/jsx-runtime"), AspectRatio = ({
   children,
   width = 1,
   height = 1,
   className
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Container, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Container, {
   className,
   css: {
     "@supports(aspect-ratio: 1)": {
@@ -2288,11 +1879,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), AspectRatio = ({
     }
   },
   children
-}, void 0, !1, {
-  fileName: "app/components/AspectRatio.tsx",
-  lineNumber: 18,
-  columnNumber: 3
-}, this), Container = styled("div", {
+}), Container = styled("div", {
   "@supports(aspect-ratio: 1)": {
     overflow: "hidden"
   },
@@ -2329,25 +1916,17 @@ var isValidHttpUrl = (string) => {
 };
 
 // app/components/Text/Anchor.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Anchor2 = ({ href, children, className }) => isValidHttpUrl(href) ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnchorElement, {
+var import_jsx_runtime = require("react/jsx-runtime"), Anchor2 = ({ href, children, className }) => isValidHttpUrl(href) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnchorElement, {
   className,
   as: "a",
   href,
   rel: "noopener noreferrer",
   target: "_blank",
   children
-}, void 0, !1, {
-  fileName: "app/components/Text/Anchor.tsx",
-  lineNumber: 18,
-  columnNumber: 7
-}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnchorElement, {
+}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnchorElement, {
   to: href,
   children
-}, void 0, !1, {
-  fileName: "app/components/Text/Anchor.tsx",
-  lineNumber: 28,
-  columnNumber: 12
-}, this), AnchorElement = styled(import_react14.Link, {
+}), AnchorElement = styled(import_react14.Link, {
   fontSize: "inherit",
   lineHeight: "inherit",
   fontWeight: "$bold",
@@ -2356,8 +1935,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Anchor2 = ({ href
 
 // app/components/Text/Copy.tsx
 var import_react15 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import_react15.forwardRef)(
-  ({ fontStyle = "$XS", className, children, css: css3, tag = "p" }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Text, {
+var import_jsx_runtime = require("react/jsx-runtime"), Copy = (0, import_react15.forwardRef)(
+  ({ fontStyle = "$XS", className, children, css: css3, tag = "p" }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Text, {
     className,
     as: tag,
     ref,
@@ -2366,11 +1945,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import
       ...css3
     },
     children
-  }, void 0, !1, {
-    fileName: "app/components/Text/Copy.tsx",
-    lineNumber: 17,
-    columnNumber: 7
-  }, this)
+  })
 ), Text = styled("p", {
   margin: 0,
   fontWeight: "$default"
@@ -2379,7 +1954,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import
 // app/components/Text/Heading.tsx
 var import_react16 = require("react");
 var import_phosphor_react6 = require("phosphor-react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, import_react16.forwardRef)(
+var import_jsx_runtime = require("react/jsx-runtime"), Heading = (0, import_react16.forwardRef)(
   ({
     tag = "h1",
     fontStyle = "$S",
@@ -2389,7 +1964,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, imp
     css: css3,
     isLink = !1,
     ...restProps
-  }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeadingElement, {
+  }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HeadingElement, {
     className,
     ref,
     as: tag,
@@ -2401,19 +1976,11 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, imp
     ...restProps,
     children: [
       children,
-      isLink ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LinkIcon, {
+      isLink ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LinkIcon, {
         size: 16
-      }, void 0, !1, {
-        fileName: "app/components/Text/Heading.tsx",
-        lineNumber: 47,
-        columnNumber: 19
-      }, this) : null
+      }) : null
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Text/Heading.tsx",
-    lineNumber: 36,
-    columnNumber: 7
-  }, this)
+  })
 ), LinkIcon = styled(import_phosphor_react6.Link, {
   position: "absolute",
   left: -24,
@@ -2439,36 +2006,20 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, imp
 });
 
 // app/components/Carousels/CarouselQuotes.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), CarouselQuotes = ({ quotes }) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuotesSection, {
+var import_jsx_runtime = require("react/jsx-runtime"), CarouselQuotes = ({ quotes }) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QuotesSection, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteHeading, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QuoteHeading, {
       fontStyle: "$M",
       tag: "h2",
       children: "Hear what our fans say"
-    }, void 0, !1, {
-      fileName: "app/components/Carousels/CarouselQuotes.tsx",
-      lineNumber: 30,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuotesContainer, {
-      children: quotes.map((quote) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CarouselQuoteCard, {
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QuotesContainer, {
+      children: quotes.map((quote) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselQuoteCard, {
         ...quote
-      }, quote.handle, !1, {
-        fileName: "app/components/Carousels/CarouselQuotes.tsx",
-        lineNumber: 35,
-        columnNumber: 11
-      }, this))
-    }, void 0, !1, {
-      fileName: "app/components/Carousels/CarouselQuotes.tsx",
-      lineNumber: 33,
-      columnNumber: 7
-    }, this)
+      }, quote.handle))
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Carousels/CarouselQuotes.tsx",
-  lineNumber: 29,
-  columnNumber: 5
-}, this), QuotesSection = styled("section", {
+}), QuotesSection = styled("section", {
   mb: "$10",
   "@tabletUp": {
     mb: "$30"
@@ -2498,83 +2049,43 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), CarouselQuotes = 
   handle,
   text,
   job
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteAnchor, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QuoteAnchor, {
   href: tweetUrl,
-  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteCard, {
+  children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QuoteCard, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ExternalLinkIcon, {}, void 0, !1, {
-        fileName: "app/components/Carousels/CarouselQuotes.tsx",
-        lineNumber: 85,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteeHandle, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLinkIcon, {}),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QuoteeHandle, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteImage, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QuoteImage, {
             width: 1,
             height: 1,
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
               src: `/images/quotee/${img}`,
               alt: name
-            }, void 0, !1, {
-              fileName: "app/components/Carousels/CarouselQuotes.tsx",
-              lineNumber: 88,
-              columnNumber: 13
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Carousels/CarouselQuotes.tsx",
-            lineNumber: 87,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(QuoteeName, {
+            })
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(QuoteeName, {
             tag: "figcaption",
             fontStyle: "$code",
             weight: "$default",
             children: [
               handle,
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, !1, {
-                fileName: "app/components/Carousels/CarouselQuotes.tsx",
-                lineNumber: 92,
-                columnNumber: 13
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
                 children: job
-              }, void 0, !1, {
-                fileName: "app/components/Carousels/CarouselQuotes.tsx",
-                lineNumber: 93,
-                columnNumber: 13
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/Carousels/CarouselQuotes.tsx",
-            lineNumber: 90,
-            columnNumber: 11
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Carousels/CarouselQuotes.tsx",
-        lineNumber: 86,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Copy, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, {
         tag: "blockquote",
         fontStyle: "$XS",
         children: text
-      }, void 0, !1, {
-        fileName: "app/components/Carousels/CarouselQuotes.tsx",
-        lineNumber: 96,
-        columnNumber: 9
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Carousels/CarouselQuotes.tsx",
-    lineNumber: 84,
-    columnNumber: 7
-  }, this)
-}, void 0, !1, {
-  fileName: "app/components/Carousels/CarouselQuotes.tsx",
-  lineNumber: 83,
-  columnNumber: 5
-}, this), ExternalLinkIcon = styled("div", {
+  })
+}), ExternalLinkIcon = styled("div", {
   position: "absolute",
   top: 16,
   right: 20,
@@ -2636,7 +2147,7 @@ var isStringGuard = (value) => typeof value == "string";
 
 // app/components/Buttons/Button.tsx
 var import_react17 = require("@stitches/react"), import_react18 = require("@remix-run/react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Button = ({
+var import_jsx_runtime = require("react/jsx-runtime"), Button = ({
   children,
   className,
   type = "button",
@@ -2648,27 +2159,19 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Button = ({
   let handleClick = (e) => {
     onClick && onClick(e);
   };
-  return href ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(StyledLink, {
+  return href ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StyledLink, {
     className,
     to: href,
     variant,
     children
-  }, void 0, !1, {
-    fileName: "app/components/Buttons/Button.tsx",
-    lineNumber: 33,
-    columnNumber: 7
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(StyledButton, {
+  }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StyledButton, {
     className,
     type,
     onClick: handleClick,
     disabled,
     variant,
     children
-  }, void 0, !1, {
-    fileName: "app/components/Buttons/Button.tsx",
-    lineNumber: 40,
-    columnNumber: 5
-  }, this);
+  });
 }, sharedStyles = (0, import_react17.css)({
   border: "solid 1px $black",
   backgroundColor: "transparent",
@@ -2720,36 +2223,28 @@ var GradiantHeader = styled(Heading, {
 });
 
 // app/components/Grids/NavigationGrid.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationGrid = ({
+var import_jsx_runtime = require("react/jsx-runtime"), NavigationGrid = ({
   tiles,
   cols = 2,
   subheading,
   heading,
   smallTiles = !1,
   className
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavSection, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(NavSection, {
   className,
   children: [
-    subheading ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradiantHeader, {
+    subheading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradiantHeader, {
       fontStyle: "$XXS",
       tag: "h2",
       weight: "$semiblack",
       children: subheading
-    }, void 0, !1, {
-      fileName: "app/components/Grids/NavigationGrid.tsx",
-      lineNumber: 43,
-      columnNumber: 9
-    }, this) : null,
-    heading ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+    }) : null,
+    heading ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
       fontStyle: "$M",
       tag: "h3",
       children: heading
-    }, void 0, !1, {
-      fileName: "app/components/Grids/NavigationGrid.tsx",
-      lineNumber: 48,
-      columnNumber: 9
-    }, this) : null,
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Grid, {
+    }) : null,
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Grid, {
       css: {
         [smallTiles ? "@tabletUp" : "@desktopUp"]: {
           gridTemplateColumns: `repeat(${cols}, ${smallTiles ? "minmax(100px, 238px)" : "1fr"})`,
@@ -2757,25 +2252,13 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationGrid = 
           gridRowGap: "$40"
         }
       },
-      children: tiles.map((tile) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavigationItem, {
+      children: tiles.map((tile) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(NavigationItem, {
         variant: smallTiles ? "small" : "large",
         ...tile
-      }, tile.label, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 63,
-        columnNumber: 11
-      }, this))
-    }, void 0, !1, {
-      fileName: "app/components/Grids/NavigationGrid.tsx",
-      lineNumber: 52,
-      columnNumber: 7
-    }, this)
+      }, tile.label))
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Grids/NavigationGrid.tsx",
-  lineNumber: 41,
-  columnNumber: 5
-}, this), NavSection = styled("section", {
+}), NavSection = styled("section", {
   my: "$20",
   "& + &": {
     mt: "$40"
@@ -2799,96 +2282,48 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationGrid = 
   variant = "large",
   Icon
 }) => {
-  let canHover = Boolean(!comingSoon), isDarkMode = useIsDarkTheme(), renderTile = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Tile, {
+  let canHover = Boolean(!comingSoon), isDarkMode = useIsDarkTheme(), renderTile = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Tile, {
     variant,
     canHover,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BackgroundTile, {}, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 115,
-        columnNumber: 7
-      }, this),
-      Icon && isStringGuard(Icon) ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(IconWrapper, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BackgroundTile, {}),
+      Icon && isStringGuard(Icon) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconWrapper, {
         isString: !0,
         children: Icon
-      }, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 117,
-        columnNumber: 9
-      }, this) : Icon && !isStringGuard(Icon) ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(IconWrapper, {
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Icon, {
+      }) : Icon && !isStringGuard(Icon) ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IconWrapper, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
           size: 32,
           weight: isDarkMode ? "light" : "regular"
-        }, void 0, !1, {
-          fileName: "app/components/Grids/NavigationGrid.tsx",
-          lineNumber: 120,
-          columnNumber: 11
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 119,
-        columnNumber: 9
-      }, this) : null,
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+        })
+      }) : null,
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
         tag: "h2",
         fontStyle: "$S",
         weight: "$semiblack",
         children: label
-      }, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 123,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TileCopy, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TileCopy, {
         children: description
-      }, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 126,
-        columnNumber: 7
-      }, this),
-      variant === "large" ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TileButton, {
+      }),
+      variant === "large" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TileButton, {
         disabled: comingSoon,
-        children: comingSoon ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+        children: comingSoon ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
           children: "Coming soon!"
-        }, void 0, !1, {
-          fileName: "app/components/Grids/NavigationGrid.tsx",
-          lineNumber: 129,
-          columnNumber: 25
-        }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+        }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
           children: "Read more"
-        }, void 0, !1, {
-          fileName: "app/components/Grids/NavigationGrid.tsx",
-          lineNumber: 129,
-          columnNumber: 53
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Grids/NavigationGrid.tsx",
-        lineNumber: 128,
-        columnNumber: 9
-      }, this) : null
+        })
+      }) : null
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Grids/NavigationGrid.tsx",
-    lineNumber: 114,
-    columnNumber: 5
-  }, this);
-  return comingSoon ? renderTile() : isExternal ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+  });
+  return comingSoon ? renderTile() : isExternal ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
     href,
     rel: "noopener noreferrer",
     target: "_blank",
     children: renderTile()
-  }, void 0, !1, {
-    fileName: "app/components/Grids/NavigationGrid.tsx",
-    lineNumber: 141,
-    columnNumber: 7
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react19.Link, {
+  }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react19.Link, {
     to: href,
     children: renderTile()
-  }, void 0, !1, {
-    fileName: "app/components/Grids/NavigationGrid.tsx",
-    lineNumber: 147,
-    columnNumber: 10
-  }, this);
+  });
 }, TileButton = styled(Button), BackgroundTile = styled("span", {
   display: "block",
   position: "absolute",
@@ -2952,7 +2387,7 @@ var import_phosphor_react8 = require("phosphor-react");
 
 // app/components/Buttons/ButtonCopy.tsx
 var import_web6 = require("@react-spring/web"), import_phosphor_react7 = require("phosphor-react"), import_react20 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ButtonCopy = ({ children, className }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), ButtonCopy = ({ children, className }) => {
   let [copied, setCopied] = (0, import_react20.useState)(!1), handleCopyClick = async () => {
     try {
       await navigator.clipboard.writeText(children);
@@ -2978,45 +2413,25 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ButtonCopy = ({ c
     }),
     [copied]
   );
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CopyButton, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CopyButton, {
     className,
     type: "button",
     onClick: handleCopyClick,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccessibleIcon, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccessibleIcon, {
       label: `Copy ${children}`,
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AbsoluteContainer, {
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AbsoluteContainer, {
         children: springs.map(
-          (style, i) => i === 0 ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnimatedCopy, {
+          (style, i) => i === 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatedCopy, {
             size: 24,
             style
-          }, i, !1, {
-            fileName: "app/components/Buttons/ButtonCopy.tsx",
-            lineNumber: 64,
-            columnNumber: 15
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnimatedCheck, {
+          }, i) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AnimatedCheck, {
             size: 24,
             style
-          }, i, !1, {
-            fileName: "app/components/Buttons/ButtonCopy.tsx",
-            lineNumber: 66,
-            columnNumber: 15
-          }, this)
+          }, i)
         )
-      }, void 0, !1, {
-        fileName: "app/components/Buttons/ButtonCopy.tsx",
-        lineNumber: 61,
-        columnNumber: 9
-      }, this)
-    }, void 0, !1, {
-      fileName: "app/components/Buttons/ButtonCopy.tsx",
-      lineNumber: 60,
-      columnNumber: 7
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/components/Buttons/ButtonCopy.tsx",
-    lineNumber: 59,
-    columnNumber: 5
-  }, this);
+      })
+    })
+  });
 }, CopyButton = styled("button", {
   backgroundColor: "$codeBackground",
   border: "none",
@@ -3052,29 +2467,17 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ButtonCopy = ({ c
 });
 
 // app/components/Fields/FieldCode.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), INSTALL_LINE = "npm i @react-spring/web", CodeField = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Field, {
+var import_jsx_runtime = require("react/jsx-runtime"), INSTALL_LINE = "npm i @react-spring/web", CodeField = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Field, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CopyText, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CopyText, {
       fontStyle: "$code",
       children: INSTALL_LINE
-    }, void 0, !1, {
-      fileName: "app/components/Fields/FieldCode.tsx",
-      lineNumber: 11,
-      columnNumber: 7
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ButtonCopy, {
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ButtonCopy, {
       children: INSTALL_LINE
-    }, void 0, !1, {
-      fileName: "app/components/Fields/FieldCode.tsx",
-      lineNumber: 12,
-      columnNumber: 7
-    }, this)
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Fields/FieldCode.tsx",
-  lineNumber: 10,
-  columnNumber: 5
-}, this), Field = styled("div", {
+}), Field = styled("div", {
   display: "inline-flex",
   alignItems: "center",
   border: "solid 1px $steel100",
@@ -3104,87 +2507,51 @@ var useWindowSize = (cb) => {
 }, isObjectEqual = (oldObj, newObj, keys) => keys.every((key) => oldObj[key] === newObj[key]);
 
 // app/components/Heros/HeroHome.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeroHome = () => {
+var import_jsx_runtime = require("react/jsx-runtime"), HeroHome = () => {
   let { width, height } = useWindowSize();
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Header2, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Header2, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TitleTop, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TitleTop, {
         style: { width, height },
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TitleContent, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TitleContent, {
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
               tag: "h1",
               fontStyle: "$XXL",
               children: "With naturally fluid animations you will elevate your UI & interactions. Bringing your apps to life has never been simpler."
-            }, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 19,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TopFields, {
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TopFields, {
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CodeField, {}, void 0, !1, {
-                  fileName: "app/components/Heros/HeroHome.tsx",
-                  lineNumber: 24,
-                  columnNumber: 13
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NavLink, {
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeField, {}),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(NavLink, {
                   variant: "large",
                   href: "/docs/getting-started",
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
                       children: "Get started"
-                    }, void 0, !1, {
-                      fileName: "app/components/Heros/HeroHome.tsx",
-                      lineNumber: 26,
-                      columnNumber: 15
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react8.ArrowCircleRight, {
+                    }),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react8.ArrowCircleRight, {
                       size: 24,
                       color: "var(--colors-steel100)"
-                    }, void 0, !1, {
-                      fileName: "app/components/Heros/HeroHome.tsx",
-                      lineNumber: 27,
-                      columnNumber: 15
-                    }, this)
+                    })
                   ]
-                }, void 0, !0, {
-                  fileName: "app/components/Heros/HeroHome.tsx",
-                  lineNumber: 25,
-                  columnNumber: 13
-                }, this)
+                })
               ]
-            }, void 0, !0, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 23,
-              columnNumber: 11
-            }, this)
+            })
           ]
-        }, void 0, !0, {
-          fileName: "app/components/Heros/HeroHome.tsx",
-          lineNumber: 18,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Heros/HeroHome.tsx",
-        lineNumber: 17,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TitleBottom, {
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TitleBottom, {
         style: { width, height },
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Left, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Left, {
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
                 tag: "h2",
                 fontStyle: "$L",
                 children: "Why Springs?"
-              }, void 0, !1, {
-                fileName: "app/components/Heros/HeroHome.tsx",
-                lineNumber: 34,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Copy, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, {
                 fontStyle: "$M",
                 css: {
                   mt: "$25",
@@ -3193,80 +2560,36 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeroHome = () => 
                 children: `We think of animation in terms of time and curves, but that causes most of the struggle we face when trying to make elements on the screen move naturally, because nothing in the real world moves like that. 
 
 Springs don\u2019t have a defined curve or a set duration.`
-              }, void 0, !1, {
-                fileName: "app/components/Heros/HeroHome.tsx",
-                lineNumber: 37,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 33,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Right, {
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Copy, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Right, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, {
               fontStyle: "$M",
               children: "As Andy Matuschak (ex Apple UI-Kit developer) expressed \u2013 \u201CAnimation APIs parameterized by duration and curve are fundamentally opposed to continuous, fluid interactivity.\u201D"
-            }, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 47,
-              columnNumber: 11
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 46,
-            columnNumber: 9
-          }, this)
+            })
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Heros/HeroHome.tsx",
-        lineNumber: 32,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Background, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Background, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BallContainer, {
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(RedBall, {}, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 54,
-              columnNumber: 11
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 53,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BallContainer, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BallContainer, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(RedBall, {})
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BallContainer, {
             css: { mt: "-70vh" },
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(OrangeBall, {}, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 57,
-              columnNumber: 11
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 56,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BallContainer, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(OrangeBall, {})
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BallContainer, {
             css: {
               mt: "-50vh",
               "@tabletUp": {
                 mt: "-70vh"
               }
             },
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GreenBall, {}, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 66,
-              columnNumber: 11
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 59,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BallContainer, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GreenBall, {})
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BallContainer, {
             css: {
               mt: "-50vh",
               "@tabletUp": {
@@ -3274,28 +2597,12 @@ Springs don\u2019t have a defined curve or a set duration.`
               },
               mb: "10vh"
             },
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BlueBall, {}, void 0, !1, {
-              fileName: "app/components/Heros/HeroHome.tsx",
-              lineNumber: 76,
-              columnNumber: 11
-            }, this)
-          }, void 0, !1, {
-            fileName: "app/components/Heros/HeroHome.tsx",
-            lineNumber: 68,
-            columnNumber: 9
-          }, this)
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlueBall, {})
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Heros/HeroHome.tsx",
-        lineNumber: 52,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Heros/HeroHome.tsx",
-    lineNumber: 16,
-    columnNumber: 5
-  }, this);
+  });
 }, Header2 = styled("header", {
   position: "relative",
   zIndex: 0
@@ -3736,7 +3043,7 @@ var LIVE_PREVIEW_DEPS = {
 };
 
 // app/components/Code/LivePreview.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
+var import_jsx_runtime = require("react/jsx-runtime"), LivePreview = ({
   code,
   showCode = !0,
   preProps,
@@ -3758,12 +3065,12 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
       height: value === "" ? 0 : preRef.current.getBoundingClientRect().height,
       immediate: !isMounted.current
     }), isMounted.current = !0;
-  }, [value]), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PreviewContainer, {
+  }, [value]), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(PreviewContainer, {
     className,
     isDemo: template !== "spring",
     largeSize: template === "configPlayground" || template === "imperative" || template === "r3f",
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_sandpack_react.SandpackProvider, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_sandpack_react.SandpackProvider, {
         template: "react",
         files: {
           "/App.js": {
@@ -3791,77 +3098,37 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
             "sp-button": "preview__button"
           }
         },
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_sandpack_react.SandpackPreview, {}, void 0, !1, {
-          fileName: "app/components/Code/LivePreview.tsx",
-          lineNumber: 99,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Code/LivePreview.tsx",
-        lineNumber: 71,
-        columnNumber: 7
-      }, this),
-      showCode ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Accordion.Root, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_sandpack_react.SandpackPreview, {})
+      }),
+      showCode ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Accordion.Root, {
         type: "single",
         collapsible: !0,
         value,
         onValueChange: handleValueChange,
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Accordion.Item, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Accordion.Item, {
           value: "code",
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccordionHeader, {
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Accordion.Trigger, {
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccordionHeader, {
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Accordion.Trigger, {
                 asChild: !0,
-                children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccordionTrigger, {
+                children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccordionTrigger, {
                   children: value === "" ? "Show Code" : "Hide Code"
-                }, void 0, !1, {
-                  fileName: "app/components/Code/LivePreview.tsx",
-                  lineNumber: 110,
-                  columnNumber: 17
-                }, this)
-              }, void 0, !1, {
-                fileName: "app/components/Code/LivePreview.tsx",
-                lineNumber: 109,
-                columnNumber: 15
-              }, this)
-            }, void 0, !1, {
-              fileName: "app/components/Code/LivePreview.tsx",
-              lineNumber: 108,
-              columnNumber: 13
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccordionContent, {
+                })
+              })
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AccordionContent, {
               style: styles,
               forceMount: !0,
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Pre, {
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pre, {
                 ref: preRef,
                 ...preProps
-              }, void 0, !1, {
-                fileName: "app/components/Code/LivePreview.tsx",
-                lineNumber: 116,
-                columnNumber: 15
-              }, this)
-            }, void 0, !1, {
-              fileName: "app/components/Code/LivePreview.tsx",
-              lineNumber: 115,
-              columnNumber: 13
-            }, this)
+              })
+            })
           ]
-        }, void 0, !0, {
-          fileName: "app/components/Code/LivePreview.tsx",
-          lineNumber: 107,
-          columnNumber: 11
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Code/LivePreview.tsx",
-        lineNumber: 102,
-        columnNumber: 9
-      }, this) : null
+        })
+      }) : null
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Code/LivePreview.tsx",
-    lineNumber: 63,
-    columnNumber: 5
-  }, this);
+  });
 }, PreviewContainer = styled("div", {
   width: "100%",
   my: "$40",
@@ -3959,7 +3226,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
 });
 
 // app/components/Code/Code.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Code2 = ({
+var import_jsx_runtime = require("react/jsx-runtime"), Code2 = ({
   isLive,
   code,
   showCode,
@@ -3968,35 +3235,23 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Code2 = ({
   defaultOpen,
   template,
   ...restProps
-}) => isLive ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LivePreview, {
+}) => isLive ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LivePreview, {
   code,
   showCode,
   className,
   defaultOpen,
   preProps: { ...restProps },
   template
-}, void 0, !1, {
-  fileName: "app/components/Code/Code.tsx",
-  lineNumber: 34,
-  columnNumber: 7
-}, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CodePre, {
+}) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CodePre, {
   className,
   ...restProps,
   children: [
-    copy ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PreCopy, {
+    copy ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PreCopy, {
       children: copy
-    }, void 0, !1, {
-      fileName: "app/components/Code/Code.tsx",
-      lineNumber: 46,
-      columnNumber: 17
-    }, this) : null,
+    }) : null,
     restProps.children
   ]
-}, void 0, !0, {
-  fileName: "app/components/Code/Code.tsx",
-  lineNumber: 45,
-  columnNumber: 7
-}, this), PreCopy = styled(ButtonCopy, {
+}), PreCopy = styled(ButtonCopy, {
   position: "absolute",
   top: 24,
   right: 24,
@@ -4019,20 +3274,12 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Code2 = ({
 });
 
 // app/components/Buttons/GradientButton.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), GradientButton = ({ href, children }) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Button2, {
+var import_jsx_runtime = require("react/jsx-runtime"), GradientButton = ({ href, children }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button2, {
   href,
-  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+  children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
     children
-  }, void 0, !1, {
-    fileName: "app/components/Buttons/GradientButton.tsx",
-    lineNumber: 12,
-    columnNumber: 7
-  }, this)
-}, void 0, !1, {
-  fileName: "app/components/Buttons/GradientButton.tsx",
-  lineNumber: 11,
-  columnNumber: 5
-}, this), Button2 = styled("a", {
+  })
+}), Button2 = styled("a", {
   color: "$steel100",
   borderRadius: "$r8",
   p: 2,
@@ -4074,55 +3321,35 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), GradientButton = 
 });
 
 // app/components/HomeBlocks/HomeBlockCopy.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HomeBlockCopy = ({
+var import_jsx_runtime = require("react/jsx-runtime"), HomeBlockCopy = ({
   subtitle,
   title,
   children,
   cta
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Block, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Block, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradiantHeader, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradiantHeader, {
       tag: "h2",
       fontStyle: "$XXS",
       weight: "$bold",
       children: subtitle
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockCopy.tsx",
-      lineNumber: 26,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
       tag: "h3",
       fontStyle: "$XL",
       children: title
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockCopy.tsx",
-      lineNumber: 29,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BlockCopy, {
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlockCopy, {
       tag: "div",
       fontStyle: "$S",
       children
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockCopy.tsx",
-      lineNumber: 32,
-      columnNumber: 5
-    }, this),
-    cta ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradientButton, {
+    }),
+    cta ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradientButton, {
       href: cta.href,
       children: cta.label
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockCopy.tsx",
-      lineNumber: 35,
-      columnNumber: 12
-    }, this) : null
+    }) : null
   ]
-}, void 0, !0, {
-  fileName: "app/components/HomeBlocks/HomeBlockCopy.tsx",
-  lineNumber: 25,
-  columnNumber: 3
-}, this), Block = styled("div", {
+}), Block = styled("div", {
   maxWidth: 630
 }), BlockCopy = styled(Copy, {
   py: "$20",
@@ -4150,7 +3377,7 @@ var Section = styled("section", {
 });
 
 // app/components/HomeBlocks/HomeBlockImperative.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), example = `
+var import_jsx_runtime = require("react/jsx-runtime"), example = `
 import { animated, useSpring } from '@react-spring/web'
 
 export default function () {
@@ -4183,9 +3410,9 @@ export default function () {
     </animated.div>
   )
 }
-`, HomeBlockImperative = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Section, {
+`, HomeBlockImperative = () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCopy, {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockCopy, {
       subtitle: "Avoid unnecessary overhead",
       title: `Run animations without 
 re-rendering`,
@@ -4193,39 +3420,23 @@ re-rendering`,
         label: "View imperative API",
         href: "/docs/concepts/imperative-api"
       },
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Use our imperative API methods to run animations without updating state. Repsond to events without the react rendering overhead to achieve smooth, fluid animation."
-      }, void 0, !1, {
-        fileName: "app/components/HomeBlocks/HomeBlockImperative.tsx",
-        lineNumber: 52,
-        columnNumber: 7
-      }, this)
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockImperative.tsx",
-      lineNumber: 45,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ImperativeCode, {
+      })
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ImperativeCode, {
       isLive: !0,
       code: example,
       showCode: !1
-    }, void 0, !1, {
-      fileName: "app/components/HomeBlocks/HomeBlockImperative.tsx",
-      lineNumber: 58,
-      columnNumber: 5
-    }, this)
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/HomeBlocks/HomeBlockImperative.tsx",
-  lineNumber: 44,
-  columnNumber: 3
-}, this), ImperativeCode = styled(Code2, {
+}), ImperativeCode = styled(Code2, {
   mt: "$40"
 });
 
 // app/components/HomeBlocks/HomeBlockMore.tsx
 var import_web8 = require("@react-spring/web");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), listItems = [
+var import_jsx_runtime = require("react/jsx-runtime"), listItems = [
   "Animate any value \u2013 strings, numbers, css variables...",
   "Shorthand transformation styles",
   "Interpolate values inline",
@@ -4402,17 +3613,17 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), listItems = [
       opacity: j === i ? 1 : 0
     }));
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Section, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCopy, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockCopy, {
         subtitle: "Wow, that's a lot!",
         title: "And there's even more",
         cta: {
           label: "Get started now",
           href: "/docs/getting-started"
         },
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(List2, {
-          children: listItems.map((str, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ListItem2, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(List2, {
+          children: listItems.map((str, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ListItem2, {
             onMouseEnter: handleMouseEnter(i),
             style: {
               color: springs[i].opacity.to(
@@ -4424,56 +3635,28 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), listItems = [
               )
             },
             children: str
-          }, str, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-            lineNumber: 208,
-            columnNumber: 13
-          }, this))
-        }, void 0, !1, {
-          fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-          lineNumber: 206,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-        lineNumber: 199,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCode, {
+          }, str))
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HomeBlockCode, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             className: "language-jsx",
             dangerouslySetInnerHTML: { __html: dataFixtures[0] },
             style: {
               visibility: "hidden",
               userSelect: "none"
             }
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-            lineNumber: 226,
-            columnNumber: 9
-          }, this),
-          springs.map((style, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_web8.animated.code, {
+          }),
+          springs.map((style, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_web8.animated.code, {
             className: "language-jsx",
             dangerouslySetInnerHTML: { __html: dataFixtures[i] },
             style: { ...style, position: "absolute", top: 30, left: 30 }
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-            lineNumber: 235,
-            columnNumber: 11
-          }, this))
+          }))
         ]
-      }, void 0, !0, {
-        fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-        lineNumber: 225,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/HomeBlocks/HomeBlockMore.tsx",
-    lineNumber: 198,
-    columnNumber: 5
-  }, this);
+  });
 }, List2 = styled("ul", {
   my: 0,
   pl: 26
@@ -4486,7 +3669,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), listItems = [
 
 // app/components/HomeBlocks/HomeBlockSSR.tsx
 var import_react23 = require("react"), import_web9 = require("@react-spring/web"), import_react_use_measure = __toESM(require("react-use-measure"));
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ASPECT = 259 / 140, HomeBlockSSR = () => {
+var import_jsx_runtime = require("react/jsx-runtime"), ASPECT = 259 / 140, HomeBlockSSR = () => {
   let [measureRef, { width }] = (0, import_react_use_measure.default)(), sectionRef = (0, import_react23.useRef)(null), { width: windowWidth } = useWindowSize(), maxBarHeight = width * ASPECT, heights = [
     maxBarHeight,
     maxBarHeight * (90 / 259),
@@ -4521,155 +3704,75 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ASPECT = 259 / 14
     }));
   }, [maxBarHeight]);
   let isTablet = (windowWidth ?? 0) > 768;
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SSRSection, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SSRSection, {
     ref: sectionRef,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCopy, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HomeBlockCopy, {
         subtitle: "Designed with you in mind",
         title: "Production ready with SSR support",
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
             children: [
               "Forget about useRef & useEffect to attach your animations to dom nodes. animated takes care of it for you.",
               " "
             ]
-          }, void 0, !0, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 79,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 83,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
             children: "Fully written in Typescript for easy integration to your pre-existing codebase."
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 84,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 88,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
             children: "Use a target for a small bundle size or omit the target and just use the core for an even smaller package."
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 89,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-        lineNumber: 76,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SizeGraph, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SizeGraph, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GraphBar, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(GraphBar, {
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
                 children: "55.1kb"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 96,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Bar, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bar, {
                 ref: measureRef,
                 style: springs[0]
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 97,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h5", {
                 children: "react-spring"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 98,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 95,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GraphBar, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(GraphBar, {
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
                 children: "19.2kb"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 101,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Bar, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bar, {
                 style: springs[1]
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 102,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h5", {
                 children: isTablet ? "@react-spring/web" : "web"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 103,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 100,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GraphBar, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(GraphBar, {
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
                 children: "15.2kb"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 106,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Bar, {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bar, {
                 style: springs[2]
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 107,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h5", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h5", {
                 children: isTablet ? "@react-spring/core" : "core"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-                lineNumber: 108,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-            lineNumber: 105,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-        lineNumber: 94,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/HomeBlocks/HomeBlockSSR.tsx",
-    lineNumber: 75,
-    columnNumber: 5
-  }, this);
+  });
 }, SSRSection = styled(Section, {
   "@tabletUp": {
     "& > *": {
@@ -4721,7 +3824,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ASPECT = 259 / 14
 
 // app/components/HomeBlocks/HomeBlockTarget.tsx
 var import_react24 = require("react"), import_web10 = require("@react-spring/web");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), webHtml = `<div data-line="1" class="highlight-line" data-highlighted="true"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> animated<span class="token punctuation">,</span> useSpring <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@react-spring/web'</span>
+var import_jsx_runtime = require("react/jsx-runtime"), webHtml = `<div data-line="1" class="highlight-line" data-highlighted="true"><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> animated<span class="token punctuation">,</span> useSpring <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@react-spring/web'</span>
 </div><div data-line="2" class="highlight-line" data-highlighted="false">
 </div><div data-line="3" class="highlight-line" data-highlighted="false"><span class="token keyword module">export</span> <span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">MyComponent</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
 </div><div data-line="4" class="highlight-line" data-highlighted="false">  <span class="token keyword">const</span> <span class="token punctuation">{</span> x <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">useSpring</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
@@ -4814,9 +3917,9 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), webHtml = `<div d
     return () => {
       clearInterval(interval);
     };
-  }, [index]), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Section, {
+  }, [index]), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Section, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCopy, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HomeBlockCopy, {
         subtitle: "But wait, there\u2019s more",
         title: "It\u2019s not just for web",
         cta: {
@@ -4824,103 +3927,51 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), webHtml = `<div d
           href: "/docs/concept/targets"
         },
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
             children: "Choose from our five targets:"
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-            lineNumber: 132,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(List3, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(List3, {
             children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
                 children: "web"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-                lineNumber: 134,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
                 children: "native"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-                lineNumber: 135,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
                 children: "three"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-                lineNumber: 136,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
                 children: "konva"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-                lineNumber: 137,
-                columnNumber: 11
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("li", {
+              }),
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
                 children: "zdog"
-              }, void 0, !1, {
-                fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-                lineNumber: 138,
-                columnNumber: 11
-              }, this)
+              })
             ]
-          }, void 0, !0, {
-            fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-            lineNumber: 133,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
             children: "Missing a target you want? Request we add it or create it yourself with our advanced API usage."
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-            lineNumber: 140,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-        lineNumber: 125,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockCode2, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HomeBlockCode2, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             className: "language-jsx",
             dangerouslySetInnerHTML: { __html: dataFixtures2[0] },
             style: {
               visibility: "hidden"
             }
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-            lineNumber: 146,
-            columnNumber: 9
-          }, this),
-          transition((style, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_web10.animated.code, {
+          }),
+          transition((style, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_web10.animated.code, {
             className: "language-jsx",
             dangerouslySetInnerHTML: { __html: dataFixtures2[i] },
             style: { ...style, position: "absolute", top: 30, left: 30 }
-          }, void 0, !1, {
-            fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-            lineNumber: 154,
-            columnNumber: 11
-          }, this))
+          }))
         ]
-      }, void 0, !0, {
-        fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-        lineNumber: 145,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/HomeBlocks/HomeBlockTarget.tsx",
-    lineNumber: 124,
-    columnNumber: 5
-  }, this);
+  });
 }, List3 = styled("ul", {
   my: 8,
   pl: 26
@@ -4930,7 +3981,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), webHtml = `<div d
 });
 
 // app/data/fixtures.tsx
-var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), QUOTES = [
+var import_phosphor_react9 = require("phosphor-react"), import_jsx_runtime = require("react/jsx-runtime"), QUOTES = [
   {
     text: "Holy smokes. I don't think animation can get any easier in React now with React Spring. Wrapping Reach UI (https://reach.tech/ui) in your own brand and feel is going to be so easy.",
     name: "Ryan Florence",
@@ -5087,13 +4138,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "bounce",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When above zero, the spring will bounce instead of overshooting when exceeding its goal value."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 176,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     null
@@ -5101,13 +4148,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "clamp",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When true, stops the spring once it overshoots its boundaries."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 189,
-        columnNumber: 9
-      }, this)
+      })
     },
     "boolean",
     "false"
@@ -5115,24 +4158,16 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "precision",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           'How close to the goal the animated value gets before we consider it to be "done", see ',
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
             href: "#precision",
             children: "precision"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 201,
-            columnNumber: 26
-          }, this),
+          }),
           " pifalls for more information."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 199,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     "0.01"
@@ -5140,13 +4175,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "round",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "While animating, round to the nearest multiple of this number. The from and to values are never rounded, as well as any value passed to the set method of an animated value."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 213,
-        columnNumber: 9
-      }, this)
+      })
     },
     "boolean",
     null
@@ -5154,56 +4185,32 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "frequency",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "The natural frequency (in seconds), which dictates the number of bounces per second when no ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "damping"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 229,
-            columnNumber: 38
-          }, this),
+          }),
           " exists. When defined,",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "tension"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 230,
-            columnNumber: 11
-          }, this),
+          }),
           " is derived from this, and ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "friction"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 230,
-            columnNumber: 58
-          }, this),
+          }),
           " ",
           "is derived from ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "tension"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 231,
-            columnNumber: 27
-          }, this),
+          }),
           " and ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "damping"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 231,
-            columnNumber: 52
-          }, this),
+          }),
           "."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 227,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     null
@@ -5211,13 +4218,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "damping",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "The damping ratio, which dictates how the spring slows down. Only works when frequency is defined."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 242,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     "1"
@@ -5226,13 +4229,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "restVelocity",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: 'The smallest velocity before the animation is considered to be "not moving". When undefined, precision is used instead.'
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 256,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     null
@@ -5241,44 +4240,28 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "decay",
     {
       label: "number | boolean",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "If ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "true"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 271,
-            columnNumber: 14
-          }, this),
+          }),
           ", default value is ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "0.998"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 271,
-            columnNumber: 50
-          }, this),
+          }),
           "."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 270,
-        columnNumber: 9
-      }, this)
+      })
     },
     "false"
   ],
   [
     {
       label: "duration",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Switches to duration based animation. Value should be indicated in milliseconds."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 281,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     null
@@ -5287,26 +4270,18 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "easing",
     {
       label: "function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(t: number) => number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 294,
-        columnNumber: 16
-      }, this)
+      })
     },
     "t => t"
   ],
   [
     {
       label: "progress",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Decides how far into the easing function to start from. The duration itself is unaffected."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 302,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     "0"
@@ -5325,78 +4300,50 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
 ], EVENTS_CELL = [
   {
     label: "events",
-    content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+    content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
       children: [
         "This is not a prop but rather a collection, see",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
           href: "/docs/advanced/events",
           children: "Events"
-        }, void 0, !1, {
-          fileName: "app/data/fixtures.tsx",
-          lineNumber: 332,
-          columnNumber: 9
-        }, this),
+        }),
         " for more information."
       ]
-    }, void 0, !0, {
-      fileName: "app/data/fixtures.tsx",
-      lineNumber: 330,
-      columnNumber: 7
-    }, this)
+    })
   },
   "function",
   null
 ], REF_CELL = [
   {
     label: "ref",
-    content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+    content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
       children: [
         "Used to access the imperative API. Animations never auto-start when",
         " ",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
           children: "ref"
-        }, void 0, !1, {
-          fileName: "app/data/fixtures.tsx",
-          lineNumber: 346,
-          columnNumber: 9
-        }, this),
+        }),
         " is defined."
       ]
-    }, void 0, !0, {
-      fileName: "app/data/fixtures.tsx",
-      lineNumber: 344,
-      columnNumber: 7
-    }, this)
+    })
   },
   "SpringRef",
   null
-], ToContent = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+], ToContent = /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
   children: [
     "The ",
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
       children: "to"
-    }, void 0, !1, {
-      fileName: "app/data/fixtures.tsx",
-      lineNumber: 356,
-      columnNumber: 9
-    }, this),
+    }),
     " prop, is very versatile, for more information checkout out ",
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
       href: "/docs/advanced/async-animations",
       children: "Async Animations"
-    }, void 0, !1, {
-      fileName: "app/data/fixtures.tsx",
-      lineNumber: 357,
-      columnNumber: 9
-    }, this),
+    }),
     "."
   ]
-}, void 0, !0, {
-  fileName: "app/data/fixtures.tsx",
-  lineNumber: 355,
-  columnNumber: 3
-}, this), DEFAULT_CONFIG_DATA = [
+}), DEFAULT_CONFIG_DATA = [
   ["from", "object", null],
   [
     {
@@ -5405,13 +4352,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     },
     {
       label: "object | object[] | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(next: (props?: object) => Promise<void>, cancel: () => void) => Promise<void>"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 371,
-        columnNumber: 9
-      }, this)
+      })
     },
     null
   ],
@@ -5419,72 +4362,48 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "loop",
     {
       label: "boolean | object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "() => boolean"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 380,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
   [
     {
       label: "delay",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Delay in ms before the animation starts."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 387,
-        columnNumber: 16
-      }, this)
+      })
     },
     {
       label: "number | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(key: string) => number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 391,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
   [
     {
       label: "immediate",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Prevents the animation if true."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 398,
-        columnNumber: 16
-      }, this)
+      })
     },
     {
       label: "boolean | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(key: string) => boolean"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 402,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
   [
     {
       label: "reset",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Resets the spring so it plays from the start again when true."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 410,
-        columnNumber: 9
-      }, this)
+      })
     },
     "boolean",
     null
@@ -5492,40 +4411,24 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "reverse",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "Reverse the ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "to"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 421,
-            columnNumber: 23
-          }, this),
+          }),
           " and ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "from"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 421,
-            columnNumber: 43
-          }, this),
+          }),
           " prop so that",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "to"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 422,
-            columnNumber: 11
-          }, this),
+          }),
           " is the initial starting state."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 420,
-        columnNumber: 9
-      }, this)
+      })
     },
     "boolean",
     null
@@ -5533,13 +4436,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "pause",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Pause an animation at it's current point."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 432,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     null
@@ -5548,13 +4447,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "cancel",
     {
       label: "boolean | string | string[] | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(key: string) => boolean"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 441,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
@@ -5562,45 +4457,29 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "config",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "Spring config (mass / tension etc.), see",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
             href: "/docs/advanced/config",
             children: "Config"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 452,
-            columnNumber: 11
-          }, this),
+          }),
           " for more information."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 450,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(key: string) => SpringConfig"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 458,
-        columnNumber: 16
-      }, this)
+      })
     },
     {
       label: "object",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "{ mass: 1, tension: 170, friction: 26 }"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 462,
-        columnNumber: 16
-      }, this)
+      })
     }
   ],
   EVENTS_CELL
@@ -5609,13 +4488,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "from",
     {
       label: "object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number) => object"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 473,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
@@ -5623,13 +4498,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "intial",
     {
       label: "object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number) => object"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 481,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
@@ -5640,13 +4511,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     },
     {
       label: "object | object[] | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number) => object | object[] | (next: (props?: object) => Promise<void>, cancel: () => void) => Promise<void>"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 493,
-        columnNumber: 9
-      }, this)
+      })
     },
     null
   ],
@@ -5657,13 +4524,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     },
     {
       label: "object | object[] | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number) => object | object[] | (next: (props?: object) => Promise<void>, cancel: () => void) => Promise<void>"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 506,
-        columnNumber: 9
-      }, this)
+      })
     },
     null
   ],
@@ -5674,36 +4537,24 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     },
     {
       label: "object | object[] | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number) => object | object[] | (next: (props?: object) => Promise<void>, cancel: () => void) => Promise<void>"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 519,
-        columnNumber: 9
-      }, this)
+      })
     },
     null
   ],
   [
     {
       label: "keys",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Keys are automatically created so this prop is typically not required"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 528,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "Array<string | number> | function | null",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item) =>  string | number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 535,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
@@ -5711,13 +4562,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "sort",
     {
       label: "function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(a: Item, b: Item) => number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 543,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ],
@@ -5726,118 +4573,62 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "expires",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
             children: [
               "When ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "true"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 555,
-                columnNumber: 18
-              }, this),
+              }),
               " or ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "<= 0"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 555,
-                columnNumber: 39
-              }, this),
+              }),
               ", each item is unmounted immediately after its `leave` animation is finished."
             ]
-          }, void 0, !0, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 554,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 558,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
             children: [
               "When ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "false"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 560,
-                columnNumber: 18
-              }, this),
+              }),
               ", items are never unmounted."
             ]
-          }, void 0, !0, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 559,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 562,
-            columnNumber: 11
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
             children: [
               "When ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "> 0"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 564,
-                columnNumber: 18
-              }, this),
+              }),
               ", this prop is used in a",
               " ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "setTimeout"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 565,
-                columnNumber: 13
-              }, this),
+              }),
               " call that forces a rerender if the component that called ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "useTransition"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 566,
-                columnNumber: 25
-              }, this),
+              }),
               " doesn't rerender on its own after an item's ",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+              /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
                 children: "leave"
-              }, void 0, !1, {
-                fileName: "app/data/fixtures.tsx",
-                lineNumber: 567,
-                columnNumber: 29
-              }, this),
+              }),
               " animation is finished."
             ]
-          }, void 0, !0, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 563,
-            columnNumber: 11
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 553,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "boolean | number | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item) => boolean | number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 574,
-        columnNumber: 16
-      }, this)
+      })
     },
     "true"
   ],
@@ -5845,45 +4636,29 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "config",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "Spring config (mass / tension etc.), see",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
             href: "/docs/advanced/config",
             children: "Config"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 585,
-            columnNumber: 11
-          }, this),
+          }),
           " for more information."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 583,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(item: Item, index: number, state: TransitionPhase) => SpringConfig"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 592,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "object",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "{ mass: 1, tension: 170, friction: 26 }"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 597,
-        columnNumber: 16
-      }, this)
+      })
     }
   ],
   EVENTS_CELL
@@ -5892,13 +4667,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "defaultProps",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Some props have customizable default values."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 608,
-        columnNumber: 16
-      }, this)
+      })
     },
     "SpringConfig",
     "{}"
@@ -5907,13 +4678,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "hasAnimated",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When true, this value has been animated at least once."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 617,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     "false"
@@ -5921,13 +4688,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "idle",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Equals true when not advancing on each frame."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 625,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     null
@@ -5935,13 +4698,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "isAnimating",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When true, this value has been animated at least once."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 633,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     "false"
@@ -5949,13 +4708,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "isDelayed",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When true the value has delay before it can animate."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 641,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     "false"
@@ -5963,13 +4718,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "isPaused",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "When true, all current and future animations are paused."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 649,
-        columnNumber: 16
-      }, this)
+      })
     },
     "boolean",
     "false"
@@ -5977,13 +4728,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "key",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "The property name used when `to` or `from` is an object. Useful when debugging too."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 658,
-        columnNumber: 9
-      }, this)
+      })
     },
     "string | undefined",
     "undefined"
@@ -5991,13 +4738,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "queue",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "The queue of pending props"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 670,
-        columnNumber: 16
-      }, this)
+      })
     },
     "SpringUpdate[]",
     "[]"
@@ -6007,24 +4750,16 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "idle",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "The animated values. This is what you pass to your",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "animted"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 685,
-            columnNumber: 11
-          }, this),
+          }),
           " component."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 683,
-        columnNumber: 9
-      }, this)
+      })
     },
     "SpringValues",
     "{}"
@@ -6033,23 +4768,15 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "queue",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "The queue of props passed to the ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "update"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 698,
-            columnNumber: 44
-          }, this),
+          }),
           " method."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 697,
-        columnNumber: 9
-      }, this)
+      })
     },
     "ControllerQueue",
     "[]"
@@ -6057,23 +4784,15 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "ref",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "The injected ref. When defined, render-based updates are pushed onto the ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "queue"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 711,
-            columnNumber: 15
-          }, this),
+          }),
           " instead of being auto-started."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 709,
-        columnNumber: 9
-      }, this)
+      })
     },
     "SpringRef",
     null
@@ -6081,24 +4800,16 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "springs",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "The animated values. This is what you pass to your",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
             children: "animted"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 724,
-            columnNumber: 11
-          }, this),
+          }),
           " component."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 722,
-        columnNumber: 9
-      }, this)
+      })
     },
     "SpringValues",
     "{}"
@@ -6108,13 +4819,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "extrapolateLeft",
     {
       label: "string",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: '"identity" | "clamp" | "extend"'
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 738,
-        columnNumber: 16
-      }, this)
+      })
     },
     "extend"
   ],
@@ -6122,13 +4829,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "extrapolateRight",
     {
       label: "string",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: '"identity" | "clamp" | "extend"'
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 746,
-        columnNumber: 16
-      }, this)
+      })
     },
     "extend"
   ],
@@ -6136,26 +4839,18 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
     "extrapolate",
     {
       label: "string",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: '"identity" | "clamp" | "extend"'
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 754,
-        columnNumber: 16
-      }, this)
+      })
     },
     "extend"
   ],
   [
     {
       label: "range",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Array of input ranges"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 761,
-        columnNumber: 16
-      }, this)
+      })
     },
     "number[]",
     "[0,1]"
@@ -6163,13 +4858,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "output",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Array of mapped output ranges"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 769,
-        columnNumber: 16
-      }, this)
+      })
     },
     "number[]",
     null
@@ -6177,23 +4868,15 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "map",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Value filter applied to input value"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 777,
-        columnNumber: 16
-      }, this)
+      })
     },
     {
       label: "function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(value: number) => number"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 781,
-        columnNumber: 16
-      }, this)
+      })
     },
     "null"
   ]
@@ -6201,13 +4884,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "pages",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Determines the total space of the inner content where each page takes 100% of the visible container."
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 792,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     null
@@ -6215,45 +4894,29 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "config",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
         children: [
           "Spring config (mass / tension etc.), see",
           " ",
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
             href: "/docs/advanced/config",
             children: "Config"
-          }, void 0, !1, {
-            fileName: "app/data/fixtures.tsx",
-            lineNumber: 807,
-            columnNumber: 11
-          }, this),
+          }),
           " for more information."
         ]
-      }, void 0, !0, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 805,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "object | function",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "(key: string) => SpringConfig"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 813,
-        columnNumber: 16
-      }, this)
+      })
     },
     {
       label: "object",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "{ mass: 1, tension: 280, friction: 60 }"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 817,
-        columnNumber: 16
-      }, this)
+      })
     }
   ],
   ["enabled", "boolean", "true"],
@@ -6264,13 +4927,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "factor",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Size of a page, (1=100%, 1.5=1 and 1/2, ...)"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 830,
-        columnNumber: 16
-      }, this)
+      })
     },
     "number",
     "1"
@@ -6278,13 +4937,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "offset",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Determines where the layer will be at when scrolled to (0=start, 1=1st page, ...)"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 839,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     "0"
@@ -6292,13 +4947,9 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "speed",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Shifts the layer in accordance to its offset, values can be positive or negative"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 852,
-        columnNumber: 9
-      }, this)
+      })
     },
     "number",
     "0"
@@ -6306,141 +4957,73 @@ var import_phosphor_react9 = require("phosphor-react"), import_jsx_dev_runtime =
   [
     {
       label: "sticky",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
         children: "Layer will be sticky between these two offsets, all other props are ignored"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 865,
-        columnNumber: 9
-      }, this)
+      })
     },
     {
       label: "StickyConfig",
-      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      content: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
         children: "{ start?: number; end?: number } | undefined"
-      }, void 0, !1, {
-        fileName: "app/data/fixtures.tsx",
-        lineNumber: 873,
-        columnNumber: 16
-      }, this)
+      })
     },
     null
   ]
 ];
 
 // app/routes/index.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta2 = () => ({
+var import_jsx_runtime = require("react/jsx-runtime"), meta2 = () => ({
   title: "react-spring",
   description: "With naturally fluid animations you will elevate your UI & interactions. Bringing your apps to life has never been simpler."
 });
 function Index() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MainHeader, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MainHeader, {
         addMarginToMain: !1,
         position: "fixed",
         alwaysAnimateHeader: !0
-      }, void 0, !1, {
-        fileName: "app/routes/index.tsx",
-        lineNumber: 24,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Main2, {
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("article", {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Main2, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
           children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MaxWrapper, {
-              children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeroHome, {}, void 0, !1, {
-                fileName: "app/routes/index.tsx",
-                lineNumber: 32,
-                columnNumber: 13
-              }, this)
-            }, void 0, !1, {
-              fileName: "app/routes/index.tsx",
-              lineNumber: 31,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CarouselQuotes, {
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MaxWrapper, {
+              children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroHome, {})
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CarouselQuotes, {
               quotes: QUOTES
-            }, void 0, !1, {
-              fileName: "app/routes/index.tsx",
-              lineNumber: 34,
-              columnNumber: 11
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MaxWrapper, {
+            }),
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(MaxWrapper, {
               children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlocks, {
+                /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(HomeBlocks, {
                   children: [
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockTarget, {}, void 0, !1, {
-                      fileName: "app/routes/index.tsx",
-                      lineNumber: 37,
-                      columnNumber: 15
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockImperative, {}, void 0, !1, {
-                      fileName: "app/routes/index.tsx",
-                      lineNumber: 38,
-                      columnNumber: 15
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockSSR, {}, void 0, !1, {
-                      fileName: "app/routes/index.tsx",
-                      lineNumber: 39,
-                      columnNumber: 15
-                    }, this),
-                    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HomeBlockMore, {}, void 0, !1, {
-                      fileName: "app/routes/index.tsx",
-                      lineNumber: 40,
-                      columnNumber: 15
-                    }, this)
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockTarget, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockImperative, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockSSR, {}),
+                    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HomeBlockMore, {})
                   ]
-                }, void 0, !0, {
-                  fileName: "app/routes/index.tsx",
-                  lineNumber: 36,
-                  columnNumber: 13
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ExternalLinkGrid, {
+                }),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLinkGrid, {
                   cols: 3,
                   tiles: COMMUNITY_TILES,
                   subheading: "Join our community",
                   heading: "Share thoughts and join in with active discussions",
                   smallTiles: !0
-                }, void 0, !1, {
-                  fileName: "app/routes/index.tsx",
-                  lineNumber: 42,
-                  columnNumber: 13
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ExternalLinkGrid, {
+                }),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLinkGrid, {
                   cols: 4,
                   tiles: TOOL_TILES,
                   subheading: "Check out the ecosystem",
                   heading: "See more fantastic tools from Poimandres",
                   smallTiles: !0
-                }, void 0, !1, {
-                  fileName: "app/routes/index.tsx",
-                  lineNumber: 49,
-                  columnNumber: 13
-                }, this)
+                })
               ]
-            }, void 0, !0, {
-              fileName: "app/routes/index.tsx",
-              lineNumber: 35,
-              columnNumber: 11
-            }, this)
+            })
           ]
-        }, void 0, !0, {
-          fileName: "app/routes/index.tsx",
-          lineNumber: 30,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/routes/index.tsx",
-        lineNumber: 29,
-        columnNumber: 7
-      }, this)
+        })
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/routes/index.tsx",
-    lineNumber: 23,
-    columnNumber: 5
-  }, this);
+  });
 }
 var MainHeader = styled(Header, {
   pb: "$15",
@@ -6475,8 +5058,8 @@ var import_react27 = require("react"), import_react28 = require("@remix-run/reac
 
 // app/components/Text/List.tsx
 var import_react25 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List4 = (0, import_react25.forwardRef)(
-  ({ tag = "ul", fontStyle = "$XS", className, children, css: css3 }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ListElement, {
+var import_jsx_runtime = require("react/jsx-runtime"), List4 = (0, import_react25.forwardRef)(
+  ({ tag = "ul", fontStyle = "$XS", className, children, css: css3 }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ListElement, {
     className,
     ref,
     as: tag,
@@ -6485,11 +5068,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List4 = (0, impor
       ...css3
     },
     children
-  }, void 0, !1, {
-    fileName: "app/components/Text/List.tsx",
-    lineNumber: 17,
-    columnNumber: 7
-  }, this)
+  })
 ), ListElement = styled("ul", {
   pl: "$20",
   fontWeight: "$default",
@@ -6499,34 +5078,18 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List4 = (0, impor
     py: 2,
     px: 5
   }
-}), DescriptiveList = ({ data }) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Dl, {
-  children: data.map((datum) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", {
+}), DescriptiveList = ({ data }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Dl, {
+  children: data.map((datum) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("dt", {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dt", {
         children: `${datum[0]} \u2013`
-      }, void 0, !1, {
-        fileName: "app/components/Text/List.tsx",
-        lineNumber: 52,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("dd", {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
         children: datum[1]
-      }, void 0, !1, {
-        fileName: "app/components/Text/List.tsx",
-        lineNumber: 53,
-        columnNumber: 11
-      }, this)
+      })
     ]
-  }, datum[0], !0, {
-    fileName: "app/components/Text/List.tsx",
-    lineNumber: 51,
-    columnNumber: 9
-  }, this))
-}, void 0, !1, {
-  fileName: "app/components/Text/List.tsx",
-  lineNumber: 49,
-  columnNumber: 5
-}, this), Dl = styled("dl", {
+  }, datum[0]))
+}), Dl = styled("dl", {
   ...getFontStyles("$XS"),
   "& code": {
     backgroundColor: "$steel20",
@@ -6549,7 +5112,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List4 = (0, impor
 });
 
 // app/components/Code/H.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), H = ({ index, id, ...props }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), H = ({ index, id, ...props }) => {
   let getHighlightedWords = () => {
     let codeBlock = document.getElementById(id);
     if (!codeBlock)
@@ -6559,7 +5122,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), H = ({ index, id,
     ), targetIndex = [index - 1];
     return Math.max(...targetIndex) >= allHighlightWords.length ? [[], []] : [targetIndex, allHighlightWords];
   };
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
     onMouseLeave: () => {
       let [targetIndex, allHighlightWords] = getHighlightedWords();
       targetIndex.forEach((i) => allHighlightWords[i].classList.remove("on"));
@@ -6572,11 +5135,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), H = ({ index, id,
       cursor: "pointer"
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/components/Code/H.tsx",
-    lineNumber: 35,
-    columnNumber: 5
-  }, this);
+  });
 };
 
 // app/components/Menu/MenuSticky.tsx
@@ -6584,7 +5143,7 @@ var import_web12 = require("@react-spring/web");
 
 // app/components/Header/HeaderSubnav.tsx
 var import_react26 = require("react"), import_web11 = require("@react-spring/web");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSubnav = ({ className, subnav }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), HeaderSubnav = ({ className, subnav }) => {
   let subNavScrollRef = (0, import_react26.useRef)(null), [springs, ref] = (0, import_web11.useSprings)(2, (i) => ({
     opacity: 0
   })), handleScroll = (e) => {
@@ -6610,57 +5169,29 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSubnav = ({
     return handleResize(), window.addEventListener("resize", handleResize), () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavContainer2, {
+  }, []), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SubNavContainer2, {
     className,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradientLeft, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradientLeft, {
         style: { ...springs[0] }
-      }, void 0, !1, {
-        fileName: "app/components/Header/HeaderSubnav.tsx",
-        lineNumber: 72,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavScroller, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubNavScroller, {
         ref: subNavScrollRef,
         onScroll: handleScroll,
-        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavList, {
-          children: subnav.map(({ href, label, id }) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavListItem, {
-            children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SubNavAnchor, {
+        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubNavList, {
+          children: subnav.map(({ href, label, id }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubNavListItem, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SubNavAnchor, {
               href,
               children: label
-            }, void 0, !1, {
-              fileName: "app/components/Header/HeaderSubnav.tsx",
-              lineNumber: 77,
-              columnNumber: 15
-            }, this)
-          }, id, !1, {
-            fileName: "app/components/Header/HeaderSubnav.tsx",
-            lineNumber: 76,
-            columnNumber: 13
-          }, this))
-        }, void 0, !1, {
-          fileName: "app/components/Header/HeaderSubnav.tsx",
-          lineNumber: 74,
-          columnNumber: 9
-        }, this)
-      }, void 0, !1, {
-        fileName: "app/components/Header/HeaderSubnav.tsx",
-        lineNumber: 73,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradientRight, {
+            })
+          }, id))
+        })
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradientRight, {
         style: { ...springs[1] }
-      }, void 0, !1, {
-        fileName: "app/components/Header/HeaderSubnav.tsx",
-        lineNumber: 82,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Header/HeaderSubnav.tsx",
-    lineNumber: 71,
-    columnNumber: 5
-  }, this);
+  });
 }, SubNavContainer2 = styled("nav", {
   m: "$30 0",
   position: "relative",
@@ -6722,27 +5253,19 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSubnav = ({
 });
 
 // app/components/Menu/MenuSticky.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuSticky = ({ className, subnav }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), MenuSticky = ({ className, subnav }) => {
   let [styles, isStuck] = useAnimatedHeader({
     isHeader: !1,
     heights: getHeaderHeights()
   });
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(StickyMenu, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StickyMenu, {
     className,
     isStuck,
     style: styles,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(HeaderSubnav, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeaderSubnav, {
       subnav
-    }, void 0, !1, {
-      fileName: "app/components/Menu/MenuSticky.tsx",
-      lineNumber: 26,
-      columnNumber: 7
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/components/Menu/MenuSticky.tsx",
-    lineNumber: 25,
-    columnNumber: 5
-  }, this);
+    })
+  });
 }, StickyMenu = styled(import_web12.animated.header, {
   display: "flex",
   alignItems: "center",
@@ -6774,20 +5297,16 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuSticky = ({ c
 
 // app/components/Asides/StickyAside.tsx
 var import_web13 = require("@react-spring/web");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), StickyAside = ({ children }) => {
+var import_jsx_runtime = require("react/jsx-runtime"), StickyAside = ({ children }) => {
   let [styles, isStuck] = useAnimatedHeader({
     isHeader: !1,
     heights: getHeaderHeights()
   });
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Aside, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Aside, {
     style: styles,
     isStuck,
     children
-  }, void 0, !1, {
-    fileName: "app/components/Asides/StickyAside.tsx",
-    lineNumber: 22,
-    columnNumber: 5
-  }, this);
+  });
 }, Aside = styled(import_web13.animated.aside, {
   display: "none",
   flexShrink: 1,
@@ -6832,41 +5351,29 @@ var InlineLinkStyles = {
 
 // app/components/Callout.tsx
 var import_phosphor_react10 = require("phosphor-react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), icons = {
+var import_jsx_runtime = require("react/jsx-runtime"), icons = {
   warning: import_phosphor_react10.Warning,
   danger: import_phosphor_react10.Fire,
   success: import_phosphor_react10.CheckCircle,
   note: import_phosphor_react10.Note
 }, capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1), Callout = ({ children, variant = "warning" }) => {
   let Icon = icons[variant];
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CalloutWrapper, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CalloutWrapper, {
     variant,
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Label, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Label, {
         variant,
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Icon, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, {
             size: 20,
             weight: "bold"
-          }, void 0, !1, {
-            fileName: "app/components/Callout.tsx",
-            lineNumber: 27,
-            columnNumber: 9
-          }, this),
+          }),
           capitalize(variant)
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Callout.tsx",
-        lineNumber: 26,
-        columnNumber: 7
-      }, this),
+      }),
       children
     ]
-  }, void 0, !0, {
-    fileName: "app/components/Callout.tsx",
-    lineNumber: 25,
-    columnNumber: 5
-  }, this);
+  });
 }, CalloutWrapper = styled("div", {
   borderRadius: "$r8",
   px: "$30",
@@ -6947,8 +5454,8 @@ var BASE_URL = "https://github.com/pmndrs/react-spring/tree/beta-docs/docs/app/r
 };
 
 // app/routes/docs.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
-  h1: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+var import_jsx_runtime = require("react/jsx-runtime"), comps = {
+  h1: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
     fontStyle: "$XL",
     css: {
       mb: 20,
@@ -6958,12 +5465,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
     },
     isLink: !0,
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 33,
-    columnNumber: 5
-  }, this),
-  h2: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+  }),
+  h2: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
     tag: "h2",
     fontStyle: "$L",
     css: {
@@ -6976,12 +5479,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
     },
     isLink: !0,
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 47,
-    columnNumber: 7
-  }, this),
-  h3: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+  }),
+  h3: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
     tag: "h3",
     fontStyle: "$M",
     css: {
@@ -6994,12 +5493,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
     },
     isLink: !0,
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 65,
-    columnNumber: 5
-  }, this),
-  h4: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+  }),
+  h4: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
     tag: "h4",
     fontStyle: "$S",
     css: {
@@ -7011,12 +5506,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
       }
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 82,
-    columnNumber: 5
-  }, this),
-  h5: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Heading, {
+  }),
+  h5: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heading, {
     tag: "h5",
     fontStyle: "$XS",
     css: {
@@ -7029,13 +5520,9 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
       }
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 98,
-    columnNumber: 5
-  }, this),
+  }),
   h6: () => null,
-  p: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Copy, {
+  p: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, {
     css: {
       "& + &": {
         mt: 15
@@ -7058,47 +5545,27 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
       maxWidth: 680
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 116,
-    columnNumber: 5
-  }, this),
-  ul: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(List4, {
+  }),
+  ul: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(List4, {
     css: {
       mt: 15
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 142,
-    columnNumber: 5
-  }, this),
-  ol: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(List4, {
+  }),
+  ol: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(List4, {
     tag: "ol",
     css: {
       mt: 15
     },
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 150,
-    columnNumber: 5
-  }, this),
-  a: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Anchor2, {
+  }),
+  a: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Anchor2, {
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 158,
-    columnNumber: 30
-  }, this),
-  blockquote: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(BlockQuote, {
+  }),
+  blockquote: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BlockQuote, {
     as: "blockquote",
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 159,
-    columnNumber: 31
-  }, this),
+  }),
   pre: (props) => {
     let {
       defaultOpen,
@@ -7112,7 +5579,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
       showCode,
       template
     } = props;
-    return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Code2, {
+    return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Code2, {
       id,
       showLineNumbers: showLineNumbers === "",
       "data-showing-lines": Boolean(line),
@@ -7123,29 +5590,17 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
       showCode: showCode !== "false",
       template,
       children
-    }, void 0, !1, {
-      fileName: "app/routes/docs.tsx",
-      lineNumber: 186,
-      columnNumber: 7
-    }, this);
+    });
   },
   H,
-  warning: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Callout, {
+  warning: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, {
     variant: "warning",
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 202,
-    columnNumber: 5
-  }, this),
-  note: (props) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Callout, {
+  }),
+  note: (props) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Callout, {
     variant: "note",
     ...props
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 205,
-    columnNumber: 5
-  }, this)
+  })
 };
 function DocsLayout2() {
   let location = (0, import_react28.useLocation)(), navigation = getNavigations(location.pathname), isDarkMode = useIsDarkTheme(), hasStickySubnav = navigation.subnav && navigation.subnav.length > 0, activeRoute = (0, import_react27.useMemo)(
@@ -7155,117 +5610,57 @@ function DocsLayout2() {
   return (0, import_react27.useEffect)(() => {
     let element = document.getElementById("carbonads");
     typeof window._carbonads < "u" && element && (window._carbonads.remove(element), window._carbonads.refresh());
-  }, [location.pathname]), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Grid2, {
+  }, [location.pathname]), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_jsx_runtime.Fragment, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Grid2, {
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Header, {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {
           data: navigation
-        }, void 0, !1, {
-          fileName: "app/routes/docs.tsx",
-          lineNumber: 236,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(StickyAside, {
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(StickyAside, {
           hasSubNav: hasStickySubnav,
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MenuDocs, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MenuDocs, {
             submenu: navigation.sidebar
-          }, void 0, !1, {
-            fileName: "app/routes/docs.tsx",
-            lineNumber: 238,
-            columnNumber: 11
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/routes/docs.tsx",
-          lineNumber: 237,
-          columnNumber: 9
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Main3, {
+          })
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Main3, {
           children: [
-            hasStickySubnav ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(MainStickyMenu, {
+            hasStickySubnav ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MainStickyMenu, {
               subnav: navigation.subnav
-            }, void 0, !1, {
-              fileName: "app/routes/docs.tsx",
-              lineNumber: 242,
-              columnNumber: 13
-            }, this) : null,
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Article, {
+            }) : null,
+            /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Article, {
               hasStickySubnav,
               children: [
-                typeof window < "u" && window.env.ENABLE_CARBON ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
+                typeof window < "u" && window.env.ENABLE_CARBON ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("script", {
                   async: !0,
                   type: "text/javascript",
                   src: "//cdn.carbonads.com/carbon.js?serve=CEAIPK7I&placement=react-springdev",
                   id: "_carbonads_js"
-                }, void 0, !1, {
-                  fileName: "app/routes/docs.tsx",
-                  lineNumber: 246,
-                  columnNumber: 15
-                }, this) : null,
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react29.MDXProvider, {
+                }) : null,
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react29.MDXProvider, {
                   components: comps,
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react28.Outlet, {}, void 0, !1, {
-                    fileName: "app/routes/docs.tsx",
-                    lineNumber: 254,
-                    columnNumber: 15
-                  }, this)
-                }, void 0, !1, {
-                  fileName: "app/routes/docs.tsx",
-                  lineNumber: 253,
-                  columnNumber: 13
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Footer2, {
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(EditAnchor, {
+                  children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react28.Outlet, {})
+                }),
+                /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer2, {
+                  children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(EditAnchor, {
                     href: getDocFilePathToGithub(activeRoute),
                     children: [
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react11.PencilSimple, {
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react11.PencilSimple, {
                         size: 20,
                         weight: isDarkMode ? "light" : "regular"
-                      }, void 0, !1, {
-                        fileName: "app/routes/docs.tsx",
-                        lineNumber: 258,
-                        columnNumber: 17
-                      }, this),
-                      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
+                      }),
+                      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
                         children: "Edit this page"
-                      }, void 0, !1, {
-                        fileName: "app/routes/docs.tsx",
-                        lineNumber: 262,
-                        columnNumber: 17
-                      }, this)
+                      })
                     ]
-                  }, void 0, !0, {
-                    fileName: "app/routes/docs.tsx",
-                    lineNumber: 257,
-                    columnNumber: 15
-                  }, this)
-                }, void 0, !1, {
-                  fileName: "app/routes/docs.tsx",
-                  lineNumber: 256,
-                  columnNumber: 13
-                }, this)
+                  })
+                })
               ]
-            }, void 0, !0, {
-              fileName: "app/routes/docs.tsx",
-              lineNumber: 244,
-              columnNumber: 11
-            }, this)
+            })
           ]
-        }, void 0, !0, {
-          fileName: "app/routes/docs.tsx",
-          lineNumber: 240,
-          columnNumber: 9
-        }, this)
+        })
       ]
-    }, void 0, !0, {
-      fileName: "app/routes/docs.tsx",
-      lineNumber: 235,
-      columnNumber: 7
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/routes/docs.tsx",
-    lineNumber: 234,
-    columnNumber: 5
-  }, this);
+    })
+  });
 }
 var Grid2 = styled("div", {
   "@tabletUp": {
@@ -14049,84 +12444,44 @@ var import_react40 = require("@mdx-js/react"), import_react41 = __toESM(require(
 
 // app/components/Tables/TableCell.tsx
 var Popover = __toESM(require("@radix-ui/react-popover")), import_phosphor_react12 = require("phosphor-react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), renderCell = (template = "config") => (datum, index) => {
+var import_jsx_runtime = require("react/jsx-runtime"), renderCell = (template = "config") => (datum, index) => {
   let isDarkMode = useIsDarkTheme();
-  return datum === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+  return datum === null ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableCell, {
     isThirdItem: template === "config" ? index === 2 : !1,
     children: "\u2013"
-  }, `${datum}_${index}`, !1, {
-    fileName: "app/components/Tables/TableCell.tsx",
-    lineNumber: 19,
-    columnNumber: 9
-  }, this) : typeof datum == "object" ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Popover.Root, {
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+  }, `${datum}_${index}`) : typeof datum == "object" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Popover.Root, {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TableCell, {
       isPropName: template === "config" ? index === 0 : !1,
       isThirdItem: template === "config" ? index === 2 : !1,
       children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
           children: datum.label
-        }, void 0, !1, {
-          fileName: "app/components/Tables/TableCell.tsx",
-          lineNumber: 33,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverTrigger, {
-          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react12.Info, {
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PopoverTrigger, {
+          children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react12.Info, {
             size: 16,
             weight: isDarkMode ? "light" : "regular"
-          }, void 0, !1, {
-            fileName: "app/components/Tables/TableCell.tsx",
-            lineNumber: 35,
-            columnNumber: 15
-          }, this)
-        }, void 0, !1, {
-          fileName: "app/components/Tables/TableCell.tsx",
-          lineNumber: 34,
-          columnNumber: 13
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverContent, {
+          })
+        }),
+        /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(PopoverContent, {
           onOpenAutoFocus: (e) => e.preventDefault(),
           side: "top",
           sideOffset: 10,
           isProp: index === 0,
           children: [
             datum.content,
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverArrow, {}, void 0, !1, {
-              fileName: "app/components/Tables/TableCell.tsx",
-              lineNumber: 43,
-              columnNumber: 15
-            }, this)
+            /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PopoverArrow, {})
           ]
-        }, void 0, !0, {
-          fileName: "app/components/Tables/TableCell.tsx",
-          lineNumber: 37,
-          columnNumber: 13
-        }, this)
+        })
       ]
-    }, void 0, !0, {
-      fileName: "app/components/Tables/TableCell.tsx",
-      lineNumber: 30,
-      columnNumber: 11
-    }, this)
-  }, void 0, !1, {
-    fileName: "app/components/Tables/TableCell.tsx",
-    lineNumber: 29,
-    columnNumber: 9
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+    })
+  }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableCell, {
     isPropName: template === "config" ? index === 0 : !1,
     isThirdItem: template === "config" ? index === 2 : !1,
-    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+    children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
       children: datum
-    }, void 0, !1, {
-      fileName: "app/components/Tables/TableCell.tsx",
-      lineNumber: 55,
-      columnNumber: 9
-    }, this)
-  }, datum, !1, {
-    fileName: "app/components/Tables/TableCell.tsx",
-    lineNumber: 51,
-    columnNumber: 7
-  }, this);
+    })
+  }, datum);
 }, TableCell = styled("td", {
   fontFamily: "$mono",
   fontSize: "$XS",
@@ -14217,112 +12572,56 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), renderCell = (tem
 });
 
 // app/components/Tables/TablesConfig.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), TablesConfiguration = ({
+var import_jsx_runtime = require("react/jsx-runtime"), TablesConfiguration = ({
   data = DEFAULT_CONFIG_DATA
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Table, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Table, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("thead", {
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("tr", {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableHeadCell, {
             css: { width: "40%", "@tabletUp": { width: "30%" } },
             children: "Prop"
-          }, void 0, !1, {
-            fileName: "app/components/Tables/TablesConfig.tsx",
-            lineNumber: 21,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableHeadCell, {
             css: { width: "60%", "@tabletUp": { width: "50%" } },
             children: "Type"
-          }, void 0, !1, {
-            fileName: "app/components/Tables/TablesConfig.tsx",
-            lineNumber: 24,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableHeadCell, {
             css: { "@tabletUp": { width: "20%" } },
             isThirdItem: !0,
             children: "Default"
-          }, void 0, !1, {
-            fileName: "app/components/Tables/TablesConfig.tsx",
-            lineNumber: 27,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/components/Tables/TablesConfig.tsx",
-        lineNumber: 20,
-        columnNumber: 7
-      }, this)
-    }, void 0, !1, {
-      fileName: "app/components/Tables/TablesConfig.tsx",
-      lineNumber: 19,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tbody", {
-      children: data.map((row, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+      })
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tbody", {
+      children: data.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", {
         children: row.map(renderCell())
-      }, index, !1, {
-        fileName: "app/components/Tables/TablesConfig.tsx",
-        lineNumber: 34,
-        columnNumber: 9
-      }, this))
-    }, void 0, !1, {
-      fileName: "app/components/Tables/TablesConfig.tsx",
-      lineNumber: 32,
-      columnNumber: 5
-    }, this)
+      }, index))
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Tables/TablesConfig.tsx",
-  lineNumber: 18,
-  columnNumber: 3
-}, this), TableGeneric = ({
+}), TableGeneric = ({
   data = [],
   headData = []
-}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Table, {
+}) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Table, {
   children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("thead", {
-      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("thead", {
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", {
         children: headData.map(
-          (head) => head ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+          (head) => head ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TableHeadCell, {
             children: head
-          }, head, !1, {
-            fileName: "app/components/Tables/TablesConfig.tsx",
-            lineNumber: 52,
-            columnNumber: 18
-          }, this) : null
+          }, head) : null
         )
-      }, void 0, !1, {
-        fileName: "app/components/Tables/TablesConfig.tsx",
-        lineNumber: 50,
-        columnNumber: 7
-      }, this)
-    }, void 0, !1, {
-      fileName: "app/components/Tables/TablesConfig.tsx",
-      lineNumber: 49,
-      columnNumber: 5
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tbody", {
-      children: data.map((row, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+      })
+    }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tbody", {
+      children: data.map((row, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("tr", {
         children: row.map(renderCell("generic"))
-      }, index, !1, {
-        fileName: "app/components/Tables/TablesConfig.tsx",
-        lineNumber: 58,
-        columnNumber: 9
-      }, this))
-    }, void 0, !1, {
-      fileName: "app/components/Tables/TablesConfig.tsx",
-      lineNumber: 56,
-      columnNumber: 5
-    }, this)
+      }, index))
+    })
   ]
-}, void 0, !0, {
-  fileName: "app/components/Tables/TablesConfig.tsx",
-  lineNumber: 48,
-  columnNumber: 3
-}, this), TableScrollWrapper = styled("div", {
+}), TableScrollWrapper = styled("div", {
   width: "100%",
   overflow: "scroll"
 }), Table = styled("table", {
@@ -38015,7 +36314,7 @@ __export(__exports, {
   meta: () => meta32
 });
 var import_node2 = require("@remix-run/node");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta32 = () => ({
+var import_jsx_runtime = require("react/jsx-runtime"), meta32 = () => ({
   title: "404 | react-spring",
   description: "With naturally fluid animations you will elevate your UI & interactions. Bringing your apps to life has never been simpler."
 }), CAR = `                                                    7%;;WW/                                                                                                                                             
@@ -38115,54 +36414,30 @@ c///(///////////////////////////////////////////                                
   ) : (0, import_node2.json)({});
 };
 function Index2() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, {
     children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Header, {
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Header, {
         addMarginToMain: !1,
         position: "fixed"
-      }, void 0, !1, {
-        fileName: "app/routes/$.tsx",
-        lineNumber: 125,
-        columnNumber: 7
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Main4, {
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Main4, {
         children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Pre2, {
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Pre2, {
             children: CAR
-          }, void 0, !1, {
-            fileName: "app/routes/$.tsx",
-            lineNumber: 127,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ErrorHeading, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ErrorHeading, {
             tag: "h2",
             fontStyle: "$XL",
             children: "404, not found"
-          }, void 0, !1, {
-            fileName: "app/routes/$.tsx",
-            lineNumber: 128,
-            columnNumber: 9
-          }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(GradientButton, {
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime.jsx)(GradientButton, {
             href: "/",
             children: "Go home"
-          }, void 0, !1, {
-            fileName: "app/routes/$.tsx",
-            lineNumber: 131,
-            columnNumber: 9
-          }, this)
+          })
         ]
-      }, void 0, !0, {
-        fileName: "app/routes/$.tsx",
-        lineNumber: 126,
-        columnNumber: 7
-      }, this)
+      })
     ]
-  }, void 0, !0, {
-    fileName: "app/routes/$.tsx",
-    lineNumber: 124,
-    columnNumber: 5
-  }, this);
+  });
 }
 var Main4 = styled("main", {
   width: "100%",
@@ -38189,7 +36464,7 @@ var Main4 = styled("main", {
 });
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "c04a0ad3", entry: { module: "/build/entry.client-64VICSST.js", imports: ["/build/_shared/chunk-6K7Y3HNJ.js", "/build/_shared/chunk-432IMSLU.js", "/build/_shared/chunk-454AYMIU.js", "/build/_shared/chunk-H7ERXWDW.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-JAYVNL52.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-XCTRPJBE.js", imports: ["/build/_shared/chunk-7Y43J7DP.js", "/build/_shared/chunk-HED4BDKD.js", "/build/_shared/chunk-2OFLTKUB.js", "/build/_shared/chunk-VOQUGD7R.js", "/build/_shared/chunk-W6AERA4T.js", "/build/_shared/chunk-LDEU6A26.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-MWNKKBWD.js", imports: ["/build/_shared/chunk-SCGROIXR.js", "/build/_shared/chunk-MYP57KII.js", "/build/_shared/chunk-6LVM6P2F.js", "/build/_shared/chunk-FMKRCY3J.js", "/build/_shared/chunk-HED4BDKD.js", "/build/_shared/chunk-2OFLTKUB.js", "/build/_shared/chunk-VOQUGD7R.js", "/build/_shared/chunk-W6AERA4T.js", "/build/_shared/chunk-LDEU6A26.js", "/build/_shared/chunk-FKBBATAY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/async-animations": { id: "routes/docs/advanced/async-animations", parentId: "routes/docs", path: "advanced/async-animations", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/async-animations-UHZHC2DY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/config": { id: "routes/docs/advanced/config", parentId: "routes/docs", path: "advanced/config", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/config-ZI3BMV52.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/controller": { id: "routes/docs/advanced/controller", parentId: "routes/docs", path: "advanced/controller", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/controller-VFN2PPMQ.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/events": { id: "routes/docs/advanced/events", parentId: "routes/docs", path: "advanced/events", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/events-HPFY4IXO.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/index": { id: "routes/docs/advanced/index", parentId: "routes/docs", path: "advanced", index: !0, caseSensitive: void 0, module: "/build/routes/docs/advanced/index-DPVLXKZX.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/interpolation": { id: "routes/docs/advanced/interpolation", parentId: "routes/docs", path: "advanced/interpolation", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/interpolation-EIBF4SVE.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/spring-ref": { id: "routes/docs/advanced/spring-ref", parentId: "routes/docs", path: "advanced/spring-ref", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/spring-ref-LG5XB5XO.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/spring-value": { id: "routes/docs/advanced/spring-value", parentId: "routes/docs", path: "advanced/spring-value", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/spring-value-I46DOJVM.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/index": { id: "routes/docs/components/index", parentId: "routes/docs", path: "components", index: !0, caseSensitive: void 0, module: "/build/routes/docs/components/index-EEOBKLHC.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/parallax": { id: "routes/docs/components/parallax", parentId: "routes/docs", path: "components/parallax", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/parallax-VAJE7NXQ.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/parallax-layer": { id: "routes/docs/components/parallax-layer", parentId: "routes/docs", path: "components/parallax-layer", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/parallax-layer-ZDNV2MNG.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-chain": { id: "routes/docs/components/use-chain", parentId: "routes/docs", path: "components/use-chain", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-chain-WPJW4GAA.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-spring": { id: "routes/docs/components/use-spring", parentId: "routes/docs", path: "components/use-spring", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-spring-2OPT2MPD.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-springs": { id: "routes/docs/components/use-springs", parentId: "routes/docs", path: "components/use-springs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-springs-PKL7JAJV.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-trail": { id: "routes/docs/components/use-trail", parentId: "routes/docs", path: "components/use-trail", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-trail-NYSFJVEU.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-transition": { id: "routes/docs/components/use-transition", parentId: "routes/docs", path: "components/use-transition", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-transition-TIQEG66Q.js", imports: ["/build/_shared/chunk-K3KQ7O42.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/animated-elements": { id: "routes/docs/concepts/animated-elements", parentId: "routes/docs", path: "concepts/animated-elements", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/animated-elements-ZBXSRZP6.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/controllers-and-springs": { id: "routes/docs/concepts/controllers-and-springs", parentId: "routes/docs", path: "concepts/controllers-and-springs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/controllers-and-springs-CFCPL573.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/imperative-api": { id: "routes/docs/concepts/imperative-api", parentId: "routes/docs", path: "concepts/imperative-api", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/imperative-api-H6R5CZZM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/targets": { id: "routes/docs/concepts/targets", parentId: "routes/docs", path: "concepts/targets", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/targets-O3PKYZZM.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-ZOX3YCAY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/index": { id: "routes/docs/guides/index", parentId: "routes/docs", path: "guides", index: !0, caseSensitive: void 0, module: "/build/routes/docs/guides/index-UGIWL7TL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/react-three-fiber": { id: "routes/docs/guides/react-three-fiber", parentId: "routes/docs", path: "guides/react-three-fiber", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/guides/react-three-fiber-3YCVG4Y3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/testing": { id: "routes/docs/guides/testing", parentId: "routes/docs", path: "guides/testing", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/guides/testing-RV76YHJY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-APTN7S6M.js", imports: ["/build/_shared/chunk-UQVB4XOI.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/typescript": { id: "routes/docs/typescript", parentId: "routes/docs", path: "typescript", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/typescript-6CA4FOF7.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/index": { id: "routes/docs/utilities/index", parentId: "routes/docs", path: "utilities", index: !0, caseSensitive: void 0, module: "/build/routes/docs/utilities/index-3ERHGGCB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/use-isomorphic-layout-effect": { id: "routes/docs/utilities/use-isomorphic-layout-effect", parentId: "routes/docs", path: "utilities/use-isomorphic-layout-effect", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/utilities/use-isomorphic-layout-effect-LWUKLGIZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/use-reduced-motion": { id: "routes/docs/utilities/use-reduced-motion", parentId: "routes/docs", path: "utilities/use-reduced-motion", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/utilities/use-reduced-motion-TUY55GPF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-G23IZJCS.js", imports: ["/build/_shared/chunk-2OFLTKUB.js", "/build/_shared/chunk-VOQUGD7R.js", "/build/_shared/chunk-W6AERA4T.js", "/build/_shared/chunk-LDEU6A26.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-JLQ2SFBG.js", imports: ["/build/_shared/chunk-UQVB4XOI.js", "/build/_shared/chunk-7Y43J7DP.js", "/build/_shared/chunk-6J4D3LHH.js", "/build/_shared/chunk-6LVM6P2F.js", "/build/_shared/chunk-FMKRCY3J.js", "/build/_shared/chunk-HED4BDKD.js", "/build/_shared/chunk-2OFLTKUB.js", "/build/_shared/chunk-VOQUGD7R.js", "/build/_shared/chunk-W6AERA4T.js", "/build/_shared/chunk-LDEU6A26.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-C04A0AD3.js" };
+var assets_manifest_default = { version: "ce189dbe", entry: { module: "/build/entry.client-46NYUGJ3.js", imports: ["/build/_shared/chunk-BM2YL5Q7.js", "/build/_shared/chunk-U227DBCX.js", "/build/_shared/chunk-EZI6KZID.js", "/build/_shared/chunk-JZJB5FLI.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-DV4N3OGA.js", imports: ["/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-3ZRAOFHJ.js", imports: ["/build/_shared/chunk-OQO33GHE.js", "/build/_shared/chunk-IN6ABFCV.js", "/build/_shared/chunk-NDQIEVZQ.js", "/build/_shared/chunk-PFVXHB5S.js", "/build/_shared/chunk-QMMHEKN2.js", "/build/_shared/chunk-WJLCO6PX.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-WFJACJI7.js", imports: ["/build/_shared/chunk-CLGGJR7Y.js", "/build/_shared/chunk-U4254SWG.js", "/build/_shared/chunk-6EEP4MAO.js", "/build/_shared/chunk-J6JPTDJK.js", "/build/_shared/chunk-IN6ABFCV.js", "/build/_shared/chunk-NDQIEVZQ.js", "/build/_shared/chunk-PFVXHB5S.js", "/build/_shared/chunk-QMMHEKN2.js", "/build/_shared/chunk-WJLCO6PX.js", "/build/_shared/chunk-S6DDZ5XZ.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/async-animations": { id: "routes/docs/advanced/async-animations", parentId: "routes/docs", path: "advanced/async-animations", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/async-animations-CPMX3MHB.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/config": { id: "routes/docs/advanced/config", parentId: "routes/docs", path: "advanced/config", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/config-GZJMTEXR.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/controller": { id: "routes/docs/advanced/controller", parentId: "routes/docs", path: "advanced/controller", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/controller-VLCXCEKJ.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/events": { id: "routes/docs/advanced/events", parentId: "routes/docs", path: "advanced/events", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/events-JIUGPDQX.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/index": { id: "routes/docs/advanced/index", parentId: "routes/docs", path: "advanced", index: !0, caseSensitive: void 0, module: "/build/routes/docs/advanced/index-B2YJLV3C.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/interpolation": { id: "routes/docs/advanced/interpolation", parentId: "routes/docs", path: "advanced/interpolation", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/interpolation-LWD64GF3.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/spring-ref": { id: "routes/docs/advanced/spring-ref", parentId: "routes/docs", path: "advanced/spring-ref", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/spring-ref-FJFJCNH6.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/advanced/spring-value": { id: "routes/docs/advanced/spring-value", parentId: "routes/docs", path: "advanced/spring-value", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/advanced/spring-value-TTJS5FAT.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/index": { id: "routes/docs/components/index", parentId: "routes/docs", path: "components", index: !0, caseSensitive: void 0, module: "/build/routes/docs/components/index-B5X2T6J4.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/parallax": { id: "routes/docs/components/parallax", parentId: "routes/docs", path: "components/parallax", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/parallax-EIYNA34N.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/parallax-layer": { id: "routes/docs/components/parallax-layer", parentId: "routes/docs", path: "components/parallax-layer", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/parallax-layer-JPRTQEM3.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-chain": { id: "routes/docs/components/use-chain", parentId: "routes/docs", path: "components/use-chain", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-chain-MBAPCZ6R.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-spring": { id: "routes/docs/components/use-spring", parentId: "routes/docs", path: "components/use-spring", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-spring-X5Q7TNC3.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-springs": { id: "routes/docs/components/use-springs", parentId: "routes/docs", path: "components/use-springs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-springs-DTBA3K3X.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-trail": { id: "routes/docs/components/use-trail", parentId: "routes/docs", path: "components/use-trail", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-trail-4YNARDMA.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/components/use-transition": { id: "routes/docs/components/use-transition", parentId: "routes/docs", path: "components/use-transition", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/components/use-transition-RVALIAMR.js", imports: ["/build/_shared/chunk-BFGDBE4Z.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/animated-elements": { id: "routes/docs/concepts/animated-elements", parentId: "routes/docs", path: "concepts/animated-elements", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/animated-elements-PICS2RVY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/controllers-and-springs": { id: "routes/docs/concepts/controllers-and-springs", parentId: "routes/docs", path: "concepts/controllers-and-springs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/controllers-and-springs-2T5POHDU.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/imperative-api": { id: "routes/docs/concepts/imperative-api", parentId: "routes/docs", path: "concepts/imperative-api", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/imperative-api-KQVISYBH.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/concepts/targets": { id: "routes/docs/concepts/targets", parentId: "routes/docs", path: "concepts/targets", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/concepts/targets-7LGO5QNQ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-ASC7S7OJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/index": { id: "routes/docs/guides/index", parentId: "routes/docs", path: "guides", index: !0, caseSensitive: void 0, module: "/build/routes/docs/guides/index-2REETFKR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/react-three-fiber": { id: "routes/docs/guides/react-three-fiber", parentId: "routes/docs", path: "guides/react-three-fiber", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/guides/react-three-fiber-ZCMAK5SN.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/guides/testing": { id: "routes/docs/guides/testing", parentId: "routes/docs", path: "guides/testing", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/guides/testing-R2VXQYA3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-W3NWXZE2.js", imports: ["/build/_shared/chunk-HZK53FE3.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-TLET5J2H.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/typescript": { id: "routes/docs/typescript", parentId: "routes/docs", path: "typescript", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/typescript-DHLOEFLF.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/index": { id: "routes/docs/utilities/index", parentId: "routes/docs", path: "utilities", index: !0, caseSensitive: void 0, module: "/build/routes/docs/utilities/index-NJ6GF53O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/use-isomorphic-layout-effect": { id: "routes/docs/utilities/use-isomorphic-layout-effect", parentId: "routes/docs", path: "utilities/use-isomorphic-layout-effect", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/utilities/use-isomorphic-layout-effect-KUSGTJTR.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/utilities/use-reduced-motion": { id: "routes/docs/utilities/use-reduced-motion", parentId: "routes/docs", path: "utilities/use-reduced-motion", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/utilities/use-reduced-motion-UWXLZOOG.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-YOVDGIGJ.js", imports: ["/build/_shared/chunk-NDQIEVZQ.js", "/build/_shared/chunk-PFVXHB5S.js", "/build/_shared/chunk-QMMHEKN2.js", "/build/_shared/chunk-WJLCO6PX.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-B5KUYK5V.js", imports: ["/build/_shared/chunk-HZK53FE3.js", "/build/_shared/chunk-OQO33GHE.js", "/build/_shared/chunk-FDPRG3MP.js", "/build/_shared/chunk-6EEP4MAO.js", "/build/_shared/chunk-J6JPTDJK.js", "/build/_shared/chunk-IN6ABFCV.js", "/build/_shared/chunk-NDQIEVZQ.js", "/build/_shared/chunk-PFVXHB5S.js", "/build/_shared/chunk-QMMHEKN2.js", "/build/_shared/chunk-WJLCO6PX.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-CE189DBE.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -38466,12 +36741,8 @@ var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { mod
     module: __exports
   }
 };
+
+// server.js
+var server_default = (0, import_vercel.createRequestHandler)({ build: server_build_exports, mode: "production" });
 // Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-  assets,
-  assetsBuildDirectory,
-  entry,
-  publicPath,
-  routes
-});
-//# sourceMappingURL=index.js.map
+0 && (module.exports = {});
