@@ -49,6 +49,7 @@
     "@types/lodash-es": "^4.17.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.41.0",
+    "@vercel/remix": "^1.0.36",
     "babel-loader": "^8.2.5",
     "chokidar": "^3.5.3",
     "concurrently": "^7.5.0",
