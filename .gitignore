@@ -6,3 +6,6 @@
 /node_modules
 /.parcel-cache
 /storybook-static
+docs/node_modules
+docs/.cache
+docs/public/build
