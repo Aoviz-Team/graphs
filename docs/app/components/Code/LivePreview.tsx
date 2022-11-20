@@ -81,6 +81,7 @@ export const LivePreview = ({
         customSetup={{
           dependencies: {
             '@react-spring/web': '*',
+            '@aoviz/graphs': '*',
             ...LIVE_PREVIEW_DEPS[template],
           },
         }}

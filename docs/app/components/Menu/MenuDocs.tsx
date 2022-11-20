@@ -36,7 +36,7 @@ export const MenuDocs = ({ submenu, onNavClick }: MenuDocsProps) => {
           )}
         <ExternalAnchor
           shouldBeHidden={location.pathname === '/'}
-          href="https://github.com/pmndrs/react-spring/releases"
+          href="https://github.com/Aoviz-Team/graphs/releases"
           rel="noopener noreferrer"
           target="_blank"
           title={true}
@@ -125,7 +125,7 @@ const DocsList = styled('ul', {
 const ScrollArea = styled('div', {
   '@tabletUp': {
     maxHeight: '100%',
-    overflowY: 'scroll',
+    overflowY: 'auto',
     pb: '$60',
   },
 })

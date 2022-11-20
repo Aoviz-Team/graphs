@@ -3,18 +3,14 @@ import { CarouselQuotes } from '~/components/Carousels/CarouselQuotes'
 import { NavigationGrid } from '~/components/Grids/NavigationGrid'
 import { Header } from '~/components/Header/Header'
 import { HeroHome } from '~/components/Heros/HeroHome'
-import { HomeBlockImperative } from '~/components/HomeBlocks/HomeBlockImperative'
-import { HomeBlockMore } from '~/components/HomeBlocks/HomeBlockMore'
-import { HomeBlockSSR } from '~/components/HomeBlocks/HomeBlockSSR'
-import { HomeBlockTarget } from '~/components/HomeBlocks/HomeBlockTarget'
 
 import { COMMUNITY_TILES, QUOTES, TOOL_TILES } from '~/data/fixtures'
 import { styled } from '~/styles/stitches.config'
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'react-spring',
-    description: `With naturally fluid animations you will elevate your UI & interactions. Bringing your apps to life has never been simpler.`,
+    title: 'Aoviz',
+    description: `aoviz（Art of Visualization），可视化的艺术。`,
   }
 }
 
@@ -31,8 +27,8 @@ export default function Index() {
           <MaxWrapper>
             <HeroHome />
           </MaxWrapper>
-          <CarouselQuotes quotes={QUOTES} />
-          <MaxWrapper>
+          {/* <CarouselQuotes quotes={QUOTES} /> */}
+          {/* <MaxWrapper>
             <HomeBlocks>
               <HomeBlockTarget />
               <HomeBlockImperative />
@@ -53,7 +49,7 @@ export default function Index() {
               heading={'See more fantastic tools from Poimandres'}
               smallTiles
             />
-          </MaxWrapper>
+          </MaxWrapper> */}
         </article>
       </Main>
     </>

@@ -97,7 +97,7 @@ export const Header = ({
             />
           </Dialog.Portal>
         </Dialog.Root>
-        <Logo />
+        {/* <Logo /> */}
       </FlexContainer>
     </Head>
   )

@@ -51,7 +51,7 @@ export class ForceLayout {
   }
 
   setup() {
-    const { width, height, forces } = this.option;
+    const { width, height, forces = [] } = this.option;
     const collect: string[] = [];
     for (const p of FORCE_PARAMS) {
       if (p !== 'forces' && this.option[p]) this.simulation[p](this.option[p]);

@@ -1,218 +1,103 @@
 ---
 meta:
-  title: Getting started | React Spring
-  'og:title': Getting started | React Spring
-  'twitter:title': Getting started | React Spring
-  description: Get started with react-spring by following this step by step guide to get up and running.
-  'og:description': Get started with react-spring by following this step by step guide to get up and running.
-  'twitter:description': Get started with react-spring by following this step by step guide to get up and running.
-  'og:url': https://beta.react-spring.dev/docs/getting-started
-  'twitter:url': https://beta.react-spring.dev/docs/getting-started
+  title: 快速上手 | @aoviz/graphs
+  description: 使用方式
 sidebar_position: 2
 ---
 
-# Getting started
+# 快速上手
 
-React Spring is a library for building interactive, data-driven, and animated UI components. It can animate HTML, SVG, Native Elements, Three.js, and more.
+`@aoviz/graphs` 是完全由 Typescript 编写的框架，用于构建数据驱动的可视化图组件库。
 
-By the end of this quick guide, you'll have installed React Spring and created your first web-based animation! This animation will see a normal div move across the screen.
+## 安装
 
-## Install
+可以使用任意一个包管理器工具安装 `@aoviz/graphs`，下面是以 [Yarn](https://yarnpkg.com/en/) 为例:
 
-React Spring can be installed with any package manager. Here's how to install it with [Yarn](https://yarnpkg.com/en/):
-
-```jsx copy="yarn add @react-spring/web"
-yarn add @react-spring/web
+```jsx copy="yarn add @aoviz/graphs"
+yarn add @aoviz/graphs
 ```
 
-## The Animated Element
+## 使用示例
 
-The actual component that handles animation is our `animated` component. This is just a higher-order
-component (HOC) if you're familiar with that pattern. If you're not see this explanation from the
-`react.js` docs:
+### 准备数据
 
-> a higher-order component is a function that takes a component and returns a new component.
-
-So really, it's just a fancy wrapper. To use it, we need to import it:
-
-```jsx copy="import { animated } from '@react-spring/web'"
-import { animated } from '@react-spring/web'
-```
-
-We use our animated component like any other JSX element and to ensure we can see it, we'll add some styling:
-
-```jsx defaultOpen=true line=5
-import { animated } from '@react-spring/web'
-
-export default function MyComponent() {
-  return (
-    <animated.div
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-      }}
-    />
-  )
+```ts
+const data = {
+  nodes: [
+    {
+      id: '1',
+      name: '节点1',
+      cfg: { backgroundColor: '#6EA3FD' }
+    },
+     {
+      id: '2',
+      name: '节点2',
+      cfg: { backgroundColor: '#8470A8' }
+    }
+  ],
+  links: [
+    {
+      id: 'A',
+      name: '关系1',
+      source: '1',
+      target: '2'
+    }
+  ]
 }
 ```
 
-Now we're ready to add our hook & animate the component!
+### 创建关系图
 
-## The Hook
-
-Meet your first hook, our signature hook really – `useSpring`, first we need to import it:
-
-```jsx copy="import { useSpring, animated } from '@react-spring/web'"
-import { useSpring, animated } from '@react-spring/web'
-```
-
-To use `useSpring`, we treat it like any other hook:
-
-```jsx line=4-8
-import { useSpring, animated } from '@react-spring/web'
-
-export default function MyComponent() {
-  const springs = useSpring({
-    from: { x: 0 },
-    to: { x: 100 },
-  })
-
-  return (
-    <animated.div
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-      }}
-    />
-  )
+```jsx live=true template=imperative
+import { Force } from '@aoviz/graphs'
+import { useRef, useEffect } from 'react'
+const data = {
+  nodes: [
+    {
+      id: '1',
+      name: '节点1',
+      cfg: { backgroundColor: '#6EA3FD' }
+    },
+     {
+      id: '2',
+      name: '节点2',
+      cfg: { backgroundColor: '#8470A8' }
+    }
+  ],
+  links: [
+    {
+      id: 'A',
+      name: '关系1',
+      source: '1',
+      target: '2',
+      cfg: {
+        label: {
+          backgroundColor: 'rgba(114, 193, 209, 0.8)' 
+        }
+      }
+    }
+  ]
 }
-```
 
-We use the keywords `from` and `to` to define the start and end values of our animation.
-So in this instance, we're starting with an `x` value of 0 and ending with a value of 100.
-
-## Your First Animation
-
-`useSpring` doesn't actually animate anything though. It just returns `SpringValues` that we pass to
-our animated component. So that when the springs are applied and the component is mounted it will
-move to the right. These springs are passed to the animated component like so:
-
-```jsx live=true defaultOpen=true line=10
-import { useSpring, animated } from '@react-spring/web'
-
-export default function MyComponent() {
-  const springs = useSpring({
-    from: { x: 0 },
-    to: { x: 100 },
-  })
-
-  return (
-    <animated.div
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-        ...springs,
-      }}
-    />
-  )
-}
-```
-
-And there we have it! Your first animated component.
-
-## Reacting to events
-
-Very rarely do you find yourself only needing an animation to occur only on mount,
-we normally want animations to occur on a user interaction. Whether that's
-`mouseenter`, `click`, `keydown` or any event that could occur. So how do we do
-this very common use-case?
-
-`useSpring` can take two types of first argument, a `config` object and a `function`.
-We're going to explore the latter in more detail, we'll start by changing the notation of our hook.
-
-```jsx line=4-6
-import { useSpring, animated } from '@react-spring/web'
-
-export default function MyComponent() {
-  const [springs, api] = useSpring(() => ({
-    from: { x: 0 },
-  }))
-
-  return (
-    <animated.div
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-        ...springs,
-      }}
-    />
-  )
-}
-```
-
-When we provide a function to `useSpring` we get an array returned, with the first
-argument as our `springs` which we're already used to (as this is returned when you
-provide only a config object) and the second argument is the `api` that controls
-these springs.
-
-We'll start with a very basic user interaction, the `onClick` event by creating a
-handler and in that handler we'll use the `api.start` method. The `start` method starts
-our animation with the configuration we provide to it, like so:
-
-```jsx live=true defaultOpen=true line=8-18
-import { useSpring, animated } from '@react-spring/web'
-
-export default function MyComponent() {
-  const [springs, api] = useSpring(() => ({
-    from: { x: 0 },
-  }))
-
-  const handleClick = () => {
-    api.start({
-      from: {
-        x: 0,
-      },
-      to: {
-        x: 100,
-      },
-    })
+const option = {
+    layout: {
+      velocityDecay: 0.15,
+      forces: [
+        { force: 'n-body', strength: -1600, distanceMin: 30 },
+        { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
+        { force: 'link', id: (d) => d.id, distance: 200 },
+        { force: 'x', strength: 0.1 },
+        { force: 'y', strength: 0.1 },
+        { force: 'center' }
+      ]
   }
-
-  return (
-    <animated.div
-      onClick={handleClick}
-      style={{
-        width: 80,
-        height: 80,
-        background: '#ff6d6d',
-        borderRadius: 8,
-        ...springs,
-      }}
-    />
-  )
 }
+export default function Viz() {
+  const wrapper = useRef(null);
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data, option });
+  }, [wrapper]);
+  return <div ref={wrapper} style={{ height: 380, width: 600}}></div>;
+}
+
 ```
-
-The `api` value has many different methods that we can use to control our animation.
-We can `stop` our animations, we can `set` them (to change the value without animation)
-and much more.
-
-## Next Steps
-
-Whilst this was a brief introduction to `react-spring`, through this tutorial you've
-learnt about these three key areas:
-
-- the `animated` component and how to use it with HTML elements
-- the `useSpring` hook with either a configuration object or with a function
-- how to use the `api` object to control your animation and react to events
-
-From here, you could learn how to use our other hooks or more about the configuration
-objects we pass to the animation hooks.
