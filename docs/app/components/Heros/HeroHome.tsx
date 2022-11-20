@@ -17,8 +17,8 @@ export const HeroHome = () => {
       <TitleTop style={{ width, height }}>
         <TitleContent>
           <Heading tag="h1" fontStyle="$XXL">
-            With naturally fluid animations you will elevate your UI &
-            interactions. Bringing your apps to life has never been simpler.
+          <div>aoviz（Art of Visualization）</div>
+          <div>可视化的艺术。</div>
           </Heading>
           <TopFields>
             <CodeField />
@@ -32,7 +32,7 @@ export const HeroHome = () => {
       <TitleBottom style={{ width, height }}>
         <Left>
           <Heading tag="h2" fontStyle="$L">
-            Why Springs?
+            Why @aoviz/graphs?
           </Heading>
           <Copy
             fontStyle="$M"
@@ -40,12 +40,12 @@ export const HeroHome = () => {
               mt: '$25',
               whiteSpace: 'pre-line',
             }}>
-            {`We think of animation in terms of time and curves, but that causes most of the struggle we face when trying to make elements on the screen move naturally, because nothing in the real world moves like that. \n\nSprings don’t have a defined curve or a set duration.`}
+            {`我们提供了简洁的 API 设计，良好的扩展机制（屏蔽了底层复杂逻辑），以及丰富的内置插件。`}
           </Copy>
         </Left>
         <Right>
           <Copy fontStyle="$M">
-            {`As Andy Matuschak (ex Apple UI-Kit developer) expressed – “Animation APIs parameterized by duration and curve are fundamentally opposed to continuous, fluid interactivity.”`}
+            {`未来将内置丰富的交互动画，并提供 React 组件以简化使用方式。`}
           </Copy>
         </Right>
       </TitleBottom>

@@ -3,7 +3,7 @@ import { styled } from '~/styles/stitches.config'
 import { ButtonCopy } from '../Buttons/ButtonCopy'
 import { Copy } from '../Text/Copy'
 
-const INSTALL_LINE = 'npm i @react-spring/web'
+const INSTALL_LINE = 'npm i @aoviz/graphs'
 
 export const CodeField = () => {
   return (

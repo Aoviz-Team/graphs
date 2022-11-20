@@ -8,8 +8,8 @@ import { styled } from '~/styles/stitches.config'
 
 export const meta: MetaFunction = () => {
   return {
-    title: '404 | react-spring',
-    description: `With naturally fluid animations you will elevate your UI & interactions. Bringing your apps to life has never been simpler.`,
+    title: '404 | Aoviz',
+    description: `aoviz（Art of Visualization），可视化的艺术。`,
   }
 }
 

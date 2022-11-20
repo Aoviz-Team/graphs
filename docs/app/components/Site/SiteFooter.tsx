@@ -4,12 +4,17 @@ export const SiteFooter = () => {
   return (
     <Footer>
       <FooterCopy>
-        Designed & built by{' '}
-        <a
+        Designed by <a
           href="https://twitter.com/_josh_ellis_"
           rel="noopener noreferrer"
           target="_blank">
           Josh
+        </a> & built by{' '}
+        <a
+          href="https://twitter.com/VVYR3XPoJrjbagQ"
+          rel="noopener noreferrer"
+          target="_blank">
+          Steven.zhong
         </a>
         {'. '}
         Powered by –{' '}
@@ -46,7 +51,7 @@ export const SiteFooter = () => {
         </a>{' '}
         & more...
       </FooterCopy>
-      <FooterCopy>{`© ${new Date().getFullYear()} react-spring`}</FooterCopy>
+      <FooterCopy>{`© ${new Date().getFullYear()} @aoviz/graphs`}</FooterCopy>
     </Footer>
   )
 }

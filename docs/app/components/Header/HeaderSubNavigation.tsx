@@ -6,22 +6,22 @@ import { NavigationButton, NavigationButtonProps } from '../Buttons/NavButton'
 const SUB_NAV: NavigationButtonProps[] = [
   {
     title: 'Github',
-    href: 'https://github.com/pmndrs/react-spring',
+    href: 'https://github.com/Aoviz-Team/graphs',
     isExternal: true,
     Icon: GithubLogo,
   },
-  {
-    title: 'Discord',
-    href: 'https://discord.com/invite/poimandres',
-    isExternal: true,
-    Icon: DiscordLogo,
-  },
-  {
-    title: 'Support',
-    href: 'https://opencollective.com/react-spring',
-    isExternal: true,
-    Icon: Lifebuoy,
-  },
+  // {
+  //   title: 'Discord',
+  //   href: 'https://discord.com/invite/poimandres',
+  //   isExternal: true,
+  //   Icon: DiscordLogo,
+  // },
+  // {
+  //   title: 'Support',
+  //   href: 'https://opencollective.com/react-spring',
+  //   isExternal: true,
+  //   Icon: Lifebuoy,
+  // },
 ]
 
 export interface HeaderSubNavigationProps {
