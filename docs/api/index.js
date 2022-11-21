@@ -4104,10 +4104,10 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), icons = {
 });
 
 // app/data/navigationSchema.generated.json
-var navigationSchema_generated_default = [{ href: "/docs", id: "index", title: "\u7B80\u4ECB", sidebarPosition: 1, children: [] }, { href: "/docs/getting-started", id: "getting-started", title: "\u5FEB\u901F\u4E0A\u624B", sidebarPosition: 2, children: [] }];
+var navigationSchema_generated_default = [{ href: "/docs", id: "index", title: "\u7B80\u4ECB", sidebarPosition: 1, children: [] }, { href: "/docs/getting-started", id: "getting-started", title: "\u5FEB\u901F\u4E0A\u624B", sidebarPosition: 2, children: [] }, { href: "/docs/instance", id: "instance", title: "Graph \u65B9\u6CD5", sidebarPosition: 2, children: [] }];
 
 // app/data/subnavSchema.generated.json
-var subnavSchema_generated_default = { "/getting-started": [{ href: "#", label: "\u5B89\u88C5", id: "" }, { href: "#", label: "\u4F7F\u7528\u793A\u4F8B", id: "" }] };
+var subnavSchema_generated_default = { "/getting-started": [{ href: "#", label: "\u5B89\u88C5", id: "" }, { href: "#", label: "\u4F7F\u7528\u793A\u4F8B", id: "" }], "/instance": [{ href: "#", label: "\u65B9\u6CD5\u4ECB\u7ECD", id: "" }] };
 
 // app/helpers/navigation.ts
 var getNavigations = (dir) => {
@@ -5666,16 +5666,615 @@ export default function Viz() {
 }
 var getting_started_default = MDXContent, filename = "getting-started.mdx", headers = typeof attributes < "u" && attributes.headers, meta3 = typeof attributes < "u" && attributes.meta;
 
-// mdx:routes/docs/index.mdx
-var docs_exports2 = {};
-__export(docs_exports2, {
+// mdx:routes/docs/instance.mdx
+var instance_exports = {};
+__export(instance_exports, {
   attributes: () => attributes2,
-  default: () => docs_default,
+  default: () => instance_default,
   filename: () => filename2,
   headers: () => headers2,
   meta: () => meta4
 });
-var import_react29 = require("@mdx-js/react"), import_react30 = __toESM(require("react")), attributes2 = {
+var import_react29 = require("@mdx-js/react"), import_react30 = __toESM(require("react"));
+
+// app/data/fixtures.tsx
+var import_phosphor_react11 = require("phosphor-react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
+var EVENTS_CELL = [
+  {
+    label: "events",
+    content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      children: [
+        "This is not a prop but rather a collection, see",
+        " ",
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+          href: "/docs/advanced/events",
+          children: "Events"
+        }, void 0, !1, {
+          fileName: "app/data/fixtures.tsx",
+          lineNumber: 332,
+          columnNumber: 9
+        }, this),
+        " for more information."
+      ]
+    }, void 0, !0, {
+      fileName: "app/data/fixtures.tsx",
+      lineNumber: 330,
+      columnNumber: 7
+    }, this)
+  },
+  "function",
+  null
+], REF_CELL = [
+  {
+    label: "ref",
+    content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+      children: [
+        "Used to access the imperative API. Animations never auto-start when",
+        " ",
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          children: "ref"
+        }, void 0, !1, {
+          fileName: "app/data/fixtures.tsx",
+          lineNumber: 346,
+          columnNumber: 9
+        }, this),
+        " is defined."
+      ]
+    }, void 0, !0, {
+      fileName: "app/data/fixtures.tsx",
+      lineNumber: 344,
+      columnNumber: 7
+    }, this)
+  },
+  "SpringRef",
+  null
+], ToContent = /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+  children: [
+    "The ",
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      children: "to"
+    }, void 0, !1, {
+      fileName: "app/data/fixtures.tsx",
+      lineNumber: 356,
+      columnNumber: 9
+    }, this),
+    " prop, is very versatile, for more information checkout out ",
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+      href: "/docs/advanced/async-animations",
+      children: "Async Animations"
+    }, void 0, !1, {
+      fileName: "app/data/fixtures.tsx",
+      lineNumber: 357,
+      columnNumber: 9
+    }, this),
+    "."
+  ]
+}, void 0, !0, {
+  fileName: "app/data/fixtures.tsx",
+  lineNumber: 355,
+  columnNumber: 3
+}, this), DEFAULT_CONFIG_DATA = [
+  ["from", "object", null],
+  [
+    {
+      label: "to",
+      content: ToContent
+    },
+    {
+      label: "object | object[] | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "(next: (props?: object) => Promise<void>, cancel: () => void) => Promise<void>"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 371,
+        columnNumber: 9
+      }, this)
+    },
+    null
+  ],
+  [
+    "loop",
+    {
+      label: "boolean | object | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "() => boolean"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 380,
+        columnNumber: 16
+      }, this)
+    },
+    null
+  ],
+  [
+    {
+      label: "delay",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: "Delay in ms before the animation starts."
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 387,
+        columnNumber: 16
+      }, this)
+    },
+    {
+      label: "number | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "(key: string) => number"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 391,
+        columnNumber: 16
+      }, this)
+    },
+    null
+  ],
+  [
+    {
+      label: "immediate",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: "Prevents the animation if true."
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 398,
+        columnNumber: 16
+      }, this)
+    },
+    {
+      label: "boolean | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "(key: string) => boolean"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 402,
+        columnNumber: 16
+      }, this)
+    },
+    null
+  ],
+  [
+    {
+      label: "reset",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: "Resets the spring so it plays from the start again when true."
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 410,
+        columnNumber: 9
+      }, this)
+    },
+    "boolean",
+    null
+  ],
+  [
+    {
+      label: "reverse",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: [
+          "Reverse the ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+            children: "to"
+          }, void 0, !1, {
+            fileName: "app/data/fixtures.tsx",
+            lineNumber: 421,
+            columnNumber: 23
+          }, this),
+          " and ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+            children: "from"
+          }, void 0, !1, {
+            fileName: "app/data/fixtures.tsx",
+            lineNumber: 421,
+            columnNumber: 43
+          }, this),
+          " prop so that",
+          " ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+            children: "to"
+          }, void 0, !1, {
+            fileName: "app/data/fixtures.tsx",
+            lineNumber: 422,
+            columnNumber: 11
+          }, this),
+          " is the initial starting state."
+        ]
+      }, void 0, !0, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 420,
+        columnNumber: 9
+      }, this)
+    },
+    "boolean",
+    null
+  ],
+  [
+    {
+      label: "pause",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: "Pause an animation at it's current point."
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 432,
+        columnNumber: 16
+      }, this)
+    },
+    "boolean",
+    null
+  ],
+  [
+    "cancel",
+    {
+      label: "boolean | string | string[] | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "(key: string) => boolean"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 441,
+        columnNumber: 16
+      }, this)
+    },
+    null
+  ],
+  REF_CELL,
+  [
+    {
+      label: "config",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", {
+        children: [
+          "Spring config (mass / tension etc.), see",
+          " ",
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", {
+            href: "/docs/advanced/config",
+            children: "Config"
+          }, void 0, !1, {
+            fileName: "app/data/fixtures.tsx",
+            lineNumber: 452,
+            columnNumber: 11
+          }, this),
+          " for more information."
+        ]
+      }, void 0, !0, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 450,
+        columnNumber: 9
+      }, this)
+    },
+    {
+      label: "object | function",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "(key: string) => SpringConfig"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 458,
+        columnNumber: 16
+      }, this)
+    },
+    {
+      label: "object",
+      content: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+        children: "{ mass: 1, tension: 170, friction: 26 }"
+      }, void 0, !1, {
+        fileName: "app/data/fixtures.tsx",
+        lineNumber: 462,
+        columnNumber: 16
+      }, this)
+    }
+  ],
+  EVENTS_CELL
+];
+
+// app/components/Tables/TableCell.tsx
+var Popover = __toESM(require("@radix-ui/react-popover")), import_phosphor_react12 = require("phosphor-react");
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), renderCell = (template = "config") => (datum, index) => {
+  let isDarkMode = useIsDarkTheme();
+  return datum === null ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+    isThirdItem: template === "config" ? index === 2 : !1,
+    children: "\u2013"
+  }, `${datum}_${index}`, !1, {
+    fileName: "app/components/Tables/TableCell.tsx",
+    lineNumber: 19,
+    columnNumber: 9
+  }, this) : typeof datum == "object" ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Popover.Root, {
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+      isPropName: template === "config" ? index === 0 : !1,
+      isThirdItem: template === "config" ? index === 2 : !1,
+      children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+          children: datum.label
+        }, void 0, !1, {
+          fileName: "app/components/Tables/TableCell.tsx",
+          lineNumber: 33,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverTrigger, {
+          children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_phosphor_react12.Info, {
+            size: 16,
+            weight: isDarkMode ? "light" : "regular"
+          }, void 0, !1, {
+            fileName: "app/components/Tables/TableCell.tsx",
+            lineNumber: 35,
+            columnNumber: 15
+          }, this)
+        }, void 0, !1, {
+          fileName: "app/components/Tables/TableCell.tsx",
+          lineNumber: 34,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverContent, {
+          onOpenAutoFocus: (e) => e.preventDefault(),
+          side: "top",
+          sideOffset: 10,
+          isProp: index === 0,
+          children: [
+            datum.content,
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(PopoverArrow, {}, void 0, !1, {
+              fileName: "app/components/Tables/TableCell.tsx",
+              lineNumber: 43,
+              columnNumber: 15
+            }, this)
+          ]
+        }, void 0, !0, {
+          fileName: "app/components/Tables/TableCell.tsx",
+          lineNumber: 37,
+          columnNumber: 13
+        }, this)
+      ]
+    }, void 0, !0, {
+      fileName: "app/components/Tables/TableCell.tsx",
+      lineNumber: 30,
+      columnNumber: 11
+    }, this)
+  }, void 0, !1, {
+    fileName: "app/components/Tables/TableCell.tsx",
+    lineNumber: 29,
+    columnNumber: 9
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableCell, {
+    isPropName: template === "config" ? index === 0 : !1,
+    isThirdItem: template === "config" ? index === 2 : !1,
+    children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("code", {
+      children: datum
+    }, void 0, !1, {
+      fileName: "app/components/Tables/TableCell.tsx",
+      lineNumber: 55,
+      columnNumber: 9
+    }, this)
+  }, datum, !1, {
+    fileName: "app/components/Tables/TableCell.tsx",
+    lineNumber: 51,
+    columnNumber: 7
+  }, this);
+}, TableCell = styled("td", {
+  fontFamily: "$mono",
+  fontSize: "$XS",
+  lineHeight: "$XS",
+  py: "$15",
+  pr: "$10",
+  "& > code": {
+    borderRadius: "$r4",
+    py: 2,
+    px: 5
+  },
+  variants: {
+    isPropName: {
+      true: {
+        "& > code": {
+          backgroundColor: "#ff6d6d33",
+          color: "$red100"
+        }
+      },
+      false: {
+        "& > code": {
+          backgroundColor: "$steel20",
+          color: "$steel80",
+          [`.${dark} &`]: {
+            color: "$steel40"
+          }
+        }
+      }
+    },
+    isThirdItem: {
+      true: {
+        display: "none",
+        "@tabletUp": {
+          display: "table-cell"
+        }
+      }
+    }
+  }
+}), PopoverTrigger = styled(Popover.Trigger, {
+  background: "transparent",
+  border: "none",
+  p: 0,
+  m: 0,
+  ml: "$5",
+  cursor: "pointer",
+  width: 24,
+  height: 24,
+  borderRadius: "$r4",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  position: "relative",
+  top: 3,
+  hover: {
+    background: "#ff6d6d66"
+  }
+}), PopoverArrow = styled(Popover.Arrow, {
+  fill: "$codeBackground"
+}), PopoverContent = styled(Popover.Content, {
+  fontFamily: "$sans-var",
+  fontSize: "$XXS",
+  lineHeight: "$XXS",
+  p: "$10 $15",
+  background: "$codeBackground",
+  borderRadius: "$r8",
+  "& > code": {
+    borderRadius: "$r4",
+    py: 2,
+    px: 5,
+    whiteSpace: "nowrap"
+  },
+  "& a": { ...InlineLinkStyles },
+  "&::-webkit-scrollbar": {
+    display: "none"
+  },
+  scrollbarWidth: "none",
+  variants: {
+    isProp: {
+      true: {
+        maxWidth: 265
+      },
+      false: {
+        maxWidth: 400,
+        overflow: "scroll"
+      }
+    }
+  }
+});
+
+// app/components/Tables/TablesConfig.tsx
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), TablesConfiguration = ({
+  data = DEFAULT_CONFIG_DATA
+}) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Table, {
+  children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("thead", {
+      children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+            css: { width: "40%", "@tabletUp": { width: "30%" } },
+            children: "Prop"
+          }, void 0, !1, {
+            fileName: "app/components/Tables/TablesConfig.tsx",
+            lineNumber: 21,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+            css: { width: "60%", "@tabletUp": { width: "50%" } },
+            children: "Type"
+          }, void 0, !1, {
+            fileName: "app/components/Tables/TablesConfig.tsx",
+            lineNumber: 24,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TableHeadCell, {
+            css: { "@tabletUp": { width: "20%" } },
+            isThirdItem: !0,
+            children: "Default"
+          }, void 0, !1, {
+            fileName: "app/components/Tables/TablesConfig.tsx",
+            lineNumber: 27,
+            columnNumber: 9
+          }, this)
+        ]
+      }, void 0, !0, {
+        fileName: "app/components/Tables/TablesConfig.tsx",
+        lineNumber: 20,
+        columnNumber: 7
+      }, this)
+    }, void 0, !1, {
+      fileName: "app/components/Tables/TablesConfig.tsx",
+      lineNumber: 19,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tbody", {
+      children: data.map((row, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("tr", {
+        children: row.map(renderCell())
+      }, index, !1, {
+        fileName: "app/components/Tables/TablesConfig.tsx",
+        lineNumber: 34,
+        columnNumber: 9
+      }, this))
+    }, void 0, !1, {
+      fileName: "app/components/Tables/TablesConfig.tsx",
+      lineNumber: 32,
+      columnNumber: 5
+    }, this)
+  ]
+}, void 0, !0, {
+  fileName: "app/components/Tables/TablesConfig.tsx",
+  lineNumber: 18,
+  columnNumber: 3
+}, this);
+var TableScrollWrapper = styled("div", {
+  width: "100%",
+  overflow: "scroll"
+}), Table = styled("table", {
+  width: "100%",
+  textAlign: "left",
+  borderCollapse: "collapse",
+  "& td, & th": {
+    borderBottom: "2px solid $codeBackground"
+  }
+}), TableHeadCell = styled("th", {
+  fontFamily: "$sans-var",
+  fontSize: "$XXS",
+  lineHeight: "$XXS",
+  py: "$15",
+  variants: {
+    isThirdItem: {
+      true: {
+        display: "none",
+        "@tabletUp": {
+          display: "table-cell"
+        }
+      }
+    }
+  }
+});
+
+// app/data/force.tsx
+var FORCE_INSTANCE_DATA = [
+  [{ label: "data", content: "\u8BBE\u7F6E\u6E32\u67D3\u7684\u6570\u636E\uFF0C\u8C03\u7528\u8BE5\u65B9\u6CD5\u540E\u81EA\u52A8\u6267\u884C\u5E03\u5C40\u91CD\u7ED8\u64CD\u4F5C" }, "(d: IForceData) => void", null],
+  [{ label: "setOption", content: "\u8BBE\u7F6E\u914D\u7F6E" }, "(o: IOption) => void", null],
+  [{ label: "setPlugins", content: "\u6CE8\u5165\u542F\u7528\u7684\u63D2\u4EF6" }, "(p: Plugin[]) => void", null],
+  [{ label: "getZoom", content: "\u83B7\u53D6\u5F53\u524D\u7F29\u653E\u6BD4\u4F8B" }, "number", null],
+  [{ label: "setZoom", content: "\u8BBE\u7F6E\u7F29\u653E\u6BD4\u4F8B" }, "( z: number) => void", null],
+  [{ label: "resize", content: "\u8C03\u6574\u89C6\u56FE\u5C3A\u5BF8" }, { label: "(s?: { width: number, height: number } => void)", content: "\u53C2\u6570\u4E3A\u7A7A\u65F6\u6839\u636E\u5F53\u524D\u5143\u7D20\u7684\u5927\u5C0F\u53D8\u5316" }, null],
+  [{ label: "dispose", content: "\u9500\u6BC1\u6240\u6709\u76D1\u542C\u548C\u7ED8\u5236\u65B9\u6CD5" }, "() => void", null],
+  [{ label: "onNodeClick$", content: "\u83B7\u53D6\u8282\u70B9\u7684 Click \u4E8B\u4EF6" }, "Observable<IRenderNode>", null],
+  [{ label: "onNodeHover$", content: "\u83B7\u53D6\u8282\u70B9\u7684 Hover \u4E8B\u4EF6" }, "Observable<IRenderNode | null>", null],
+  [{ label: "onLinkClick$", content: "\u83B7\u53D6\u5173\u7CFB\u7684 Click \u4E8B\u4EF6" }, "Observable<IRenderLink>", null],
+  [{ label: "onLinkHover$", content: "\u83B7\u53D6\u5173\u7CFB\u7684 Hover \u4E8B\u4EF6" }, "Observable<IRenderLink | null>", null],
+  [{ label: "onNodeDrag$", content: "\u83B7\u53D6\u8282\u70B9\u7684 drag \u4E8B\u4EF6" }, "Observable<INodeDragEvent>", null]
+];
+
+// mdx:routes/docs/instance.mdx
+var attributes2 = {
+  meta: {
+    title: "Graph \u65B9\u6CD5 | @aoviz/graphs",
+    description: "\u5185\u7F6E\u65B9\u6CD5"
+  },
+  sidebar_position: 2
+};
+function MDXContent2(props = {}) {
+  let _components = Object.assign({
+    h2: "h2",
+    a: "a"
+  }, (0, import_react29.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(_components.h2, {
+    id: "\u65B9\u6CD5\u4ECB\u7ECD"
+  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+    href: "#\u65B9\u6CD5\u4ECB\u7ECD"
+  }, "\u65B9\u6CD5\u4ECB\u7ECD")), `
+`, `
+`, /* @__PURE__ */ import_react30.default.createElement(TablesConfiguration, {
+    data: FORCE_INSTANCE_DATA
+  }));
+  return MDXLayout ? /* @__PURE__ */ import_react30.default.createElement(MDXLayout, {
+    ...props
+  }, _content) : _content;
+}
+var instance_default = MDXContent2, filename2 = "instance.mdx", headers2 = typeof attributes2 < "u" && attributes2.headers, meta4 = typeof attributes2 < "u" && attributes2.meta;
+
+// mdx:routes/docs/index.mdx
+var docs_exports2 = {};
+__export(docs_exports2, {
+  attributes: () => attributes3,
+  default: () => docs_default,
+  filename: () => filename3,
+  headers: () => headers3,
+  meta: () => meta5
+});
+var import_react31 = require("@mdx-js/react"), import_react32 = __toESM(require("react")), attributes3 = {
   meta: {
     title: "\u7B80\u4ECB | @aoviz/graphs",
     description: "\u5173\u4E8E @aoviz/graphs \u4ECB\u7ECD"
@@ -5683,7 +6282,7 @@ var import_react29 = require("@mdx-js/react"), import_react30 = __toESM(require(
   sidebar_position: 1,
   noSubnav: !0
 };
-function MDXContent2(props = {}) {
+function MDXContent3(props = {}) {
   let _components = Object.assign({
     h1: "h1",
     a: "a",
@@ -5691,26 +6290,26 @@ function MDXContent2(props = {}) {
     code: "code",
     h3: "h3",
     h2: "h2"
-  }, (0, import_react29.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(_components.h1, {
+  }, (0, import_react31.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react32.default.createElement(import_react32.default.Fragment, null, /* @__PURE__ */ import_react32.default.createElement(_components.h1, {
     id: "\u7B80\u4ECB"
-  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
     href: "#\u7B80\u4ECB"
   }, "\u7B80\u4ECB")), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.p, null, "\u6B22\u8FCE\u4F7F\u7528 ", /* @__PURE__ */ import_react30.default.createElement(_components.code, null, "@aoviz/graphs"), " \u6587\u6863\u7AD9\u70B9\u3002"), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.h3, {
+`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6B22\u8FCE\u4F7F\u7528 ", /* @__PURE__ */ import_react32.default.createElement(_components.code, null, "@aoviz/graphs"), " \u6587\u6863\u7AD9\u70B9\u3002"), `
+`, /* @__PURE__ */ import_react32.default.createElement(_components.h3, {
     id: "aovizart-of-visualization\u53EF\u89C6\u5316\u7684\u827A\u672F"
-  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
     href: "#aovizart-of-visualization\u53EF\u89C6\u5316\u7684\u827A\u672F"
   }, "aoviz\uFF08Art of Visualization\uFF09\uFF0C\u53EF\u89C6\u5316\u7684\u827A\u672F\u3002")), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u8FD9\u95E8\u6280\u672F\u662F\u5173\u4E8E\u6570\u636E\u89C6\u89C9\u8868\u73B0\u5F62\u5F0F\u7684\u4E00\u95E8\u79D1\u5B66\u6280\u672F\u7814\u7A76\u3002\u6570\u636E\u53EF\u89C6\u5316\u6280\u672F\u662F\u5229\u7528\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u4E0E\u56FE\u50CF\u5904\u7406\u6280\u672F\u76F8\u7ED3\u5408\uFF0C\u5C06\u6570\u636E\u901A\u8FC7\u5904\u7406\u8F6C\u6362\u4E3A\u56FE\u5F62\u6216\u56FE\u50CF\u5F62\u5F0F\u6700\u540E\u663E\u793A\u5230\u5C4F\u5E55\u4E0A\u9762\uFF0C\u5E76\u8FDB\u884C\u4EA4\u4E92\u5904\u7406\u7684\u7406\u8BBA\u3001\u65B9\u6CD5\u548C\u6280\u672F\u3002\u5B83\u6D89\u53CA\u8BA1\u7B97\u673A\u89C6\u89C9\u3001\u56FE\u50CF\u5904\u7406\u3001\u8BA1\u7B97\u673A\u8F85\u52A9\u8BBE\u8BA1\u3001\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u7B49\u591A\u4E2A\u9886\u57DF\uFF0C\u6210\u4E3A\u4E00\u9879\u7814\u7A76\u6570\u636E\u8868\u793A\u3001\u6570\u636E\u5904\u7406\u3001\u51B3\u7B56\u5206\u6790\u7B49\u95EE\u9898\u7684\u7EFC\u5408\u6280\u672F\u3002"), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u662F\u4FE1\u606F\u548C\u6570\u636E\u7684\u56FE\u5F62\u5316\u8868\u793A\u65B9\u5F0F\u3002\u901A\u8FC7\u4F7F\u7528\u56FE\u8868\u3001\u56FE\u5F62\u548C\u5730\u56FE\u7B49\u53EF\u89C6\u5316\u5143\u7D20\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u63D0\u4F9B\u4E86\u4E00\u79CD\u67E5\u770B\u548C\u7406\u89E3\u6570\u636E\u8D8B\u52BF\u3001\u5F02\u5E38\u503C\u548C\u6A21\u5F0F\u7684\u53EF\u8BBF\u95EE\u65B9\u5F0F\u3002"), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.p, null, "\u5728\u5927\u6570\u636E\u4E16\u754C\u4E2D\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u548C\u6280\u672F\u5BF9\u4E8E\u5206\u6790\u6D77\u91CF\u4FE1\u606F\u548C\u505A\u51FA\u6570\u636E\u9A71\u52A8\u7684\u51B3\u7B56\u81F3\u5173\u91CD\u8981\u3002"), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u8FD9\u95E8\u6280\u672F\u662F\u5173\u4E8E\u6570\u636E\u89C6\u89C9\u8868\u73B0\u5F62\u5F0F\u7684\u4E00\u95E8\u79D1\u5B66\u6280\u672F\u7814\u7A76\u3002\u6570\u636E\u53EF\u89C6\u5316\u6280\u672F\u662F\u5229\u7528\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u4E0E\u56FE\u50CF\u5904\u7406\u6280\u672F\u76F8\u7ED3\u5408\uFF0C\u5C06\u6570\u636E\u901A\u8FC7\u5904\u7406\u8F6C\u6362\u4E3A\u56FE\u5F62\u6216\u56FE\u50CF\u5F62\u5F0F\u6700\u540E\u663E\u793A\u5230\u5C4F\u5E55\u4E0A\u9762\uFF0C\u5E76\u8FDB\u884C\u4EA4\u4E92\u5904\u7406\u7684\u7406\u8BBA\u3001\u65B9\u6CD5\u548C\u6280\u672F\u3002\u5B83\u6D89\u53CA\u8BA1\u7B97\u673A\u89C6\u89C9\u3001\u56FE\u50CF\u5904\u7406\u3001\u8BA1\u7B97\u673A\u8F85\u52A9\u8BBE\u8BA1\u3001\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u7B49\u591A\u4E2A\u9886\u57DF\uFF0C\u6210\u4E3A\u4E00\u9879\u7814\u7A76\u6570\u636E\u8868\u793A\u3001\u6570\u636E\u5904\u7406\u3001\u51B3\u7B56\u5206\u6790\u7B49\u95EE\u9898\u7684\u7EFC\u5408\u6280\u672F\u3002"), `
+`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u662F\u4FE1\u606F\u548C\u6570\u636E\u7684\u56FE\u5F62\u5316\u8868\u793A\u65B9\u5F0F\u3002\u901A\u8FC7\u4F7F\u7528\u56FE\u8868\u3001\u56FE\u5F62\u548C\u5730\u56FE\u7B49\u53EF\u89C6\u5316\u5143\u7D20\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u63D0\u4F9B\u4E86\u4E00\u79CD\u67E5\u770B\u548C\u7406\u89E3\u6570\u636E\u8D8B\u52BF\u3001\u5F02\u5E38\u503C\u548C\u6A21\u5F0F\u7684\u53EF\u8BBF\u95EE\u65B9\u5F0F\u3002"), `
+`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u5728\u5927\u6570\u636E\u4E16\u754C\u4E2D\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u548C\u6280\u672F\u5BF9\u4E8E\u5206\u6790\u6D77\u91CF\u4FE1\u606F\u548C\u505A\u51FA\u6570\u636E\u9A71\u52A8\u7684\u51B3\u7B56\u81F3\u5173\u91CD\u8981\u3002"), `
+`, /* @__PURE__ */ import_react32.default.createElement(_components.h2, {
     id: "\u529F\u80FD\u89C4\u5212"
-  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
     href: "#\u529F\u80FD\u89C4\u5212"
   }, "\u529F\u80FD\u89C4\u5212")), `
-`, /* @__PURE__ */ import_react30.default.createElement("iframe", {
+`, /* @__PURE__ */ import_react32.default.createElement("iframe", {
     style: {
       width: "100%",
       height: "calc(100vh - 300px)",
@@ -5721,26 +6320,26 @@ function MDXContent2(props = {}) {
     sandbox: "allow-scripts allow-popups allow-top-navigation-by-user-activation allow-forms allow-same-origin allow-storage-access-by-user-activation",
     allowfullscreen: ""
   }), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react32.default.createElement(_components.h2, {
     id: "\u53C2\u4E0E\u8D21\u732E"
-  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
     href: "#\u53C2\u4E0E\u8D21\u732E"
   }, "\u53C2\u4E0E\u8D21\u732E")), `
-`, /* @__PURE__ */ import_react30.default.createElement(_components.p, null, "\u5982\u679C\u4F60\u4E5F\u5BF9\u53EF\u89C6\u5316\u65B9\u9762\u611F\u5174\u8DA3\uFF0C\u53EF\u4EE5\u901A\u8FC7\u63D0\u4EA4 ", /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u5982\u679C\u4F60\u4E5F\u5BF9\u53EF\u89C6\u5316\u65B9\u9762\u611F\u5174\u8DA3\uFF0C\u53EF\u4EE5\u901A\u8FC7\u63D0\u4EA4 ", /* @__PURE__ */ import_react32.default.createElement(_components.a, {
     href: "https://github.com/Aoviz-Team/graphs"
   }, "Pull Request"), " \u53C2\u4E0E\u8D21\u732E"));
-  return MDXLayout ? /* @__PURE__ */ import_react30.default.createElement(MDXLayout, {
+  return MDXLayout ? /* @__PURE__ */ import_react32.default.createElement(MDXLayout, {
     ...props
   }, _content) : _content;
 }
-var docs_default = MDXContent2, filename2 = "index.mdx", headers2 = typeof attributes2 < "u" && attributes2.headers, meta4 = typeof attributes2 < "u" && attributes2.meta;
+var docs_default = MDXContent3, filename3 = "index.mdx", headers3 = typeof attributes3 < "u" && attributes3.headers, meta5 = typeof attributes3 < "u" && attributes3.meta;
 
 // app/routes/$.tsx
 var __exports = {};
 __export(__exports, {
   default: () => Index2,
   loader: () => loader2,
-  meta: () => meta5
+  meta: () => meta6
 });
 var import_node2 = require("@remix-run/node");
 
@@ -5800,7 +6399,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), GradientButton = 
 });
 
 // app/routes/$.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta5 = () => ({
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta6 = () => ({
   title: "404 | Aoviz",
   description: "aoviz\uFF08Art of Visualization\uFF09\uFF0C\u53EF\u89C6\u5316\u7684\u827A\u672F\u3002"
 }), CAR = `                                                    7%;;WW/                                                                                                                                             
@@ -5974,7 +6573,7 @@ var Main4 = styled("main", {
 });
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "83306595", entry: { module: "/build/entry.client-RCNZVO7A.js", imports: ["/build/_shared/chunk-6K7Y3HNJ.js", "/build/_shared/chunk-OLBOZ44G.js", "/build/_shared/chunk-H7ERXWDW.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-77JXTMUC.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-A5RJ7D5V.js", imports: ["/build/_shared/chunk-ZZ44XQF4.js", "/build/_shared/chunk-SNFZKRB4.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-TYJ7NNKF.js", imports: ["/build/_shared/chunk-UWWG6VGB.js", "/build/_shared/chunk-FKBBATAY.js", "/build/_shared/chunk-ZZ44XQF4.js", "/build/_shared/chunk-SNFZKRB4.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-B4FHOAT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-BQRKOGGE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-3N6DR5VM.js", imports: ["/build/_shared/chunk-SNFZKRB4.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-WGH7DCOO.js", imports: ["/build/_shared/chunk-UWWG6VGB.js", "/build/_shared/chunk-ZZ44XQF4.js", "/build/_shared/chunk-SNFZKRB4.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-83306595.js" };
+var assets_manifest_default = { version: "8f6ac7f5", entry: { module: "/build/entry.client-RBBP7QLC.js", imports: ["/build/_shared/chunk-432IMSLU.js", "/build/_shared/chunk-6K7Y3HNJ.js", "/build/_shared/chunk-454AYMIU.js", "/build/_shared/chunk-H7ERXWDW.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-CEWUDGLJ.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-WYE6LCH6.js", imports: ["/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-4JNW33C7.js", imports: ["/build/_shared/chunk-DHB3565C.js", "/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MYP57KII.js", "/build/_shared/chunk-MHFW5KOY.js", "/build/_shared/chunk-FKBBATAY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-B4FHOAT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-BQRKOGGE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/instance": { id: "routes/docs/instance", parentId: "routes/docs", path: "instance", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/instance-WCEJB2UC.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-NKAW3DC4.js", imports: ["/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-LA5VKWIK.js", imports: ["/build/_shared/chunk-DHB3565C.js", "/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-8F6AC7F5.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -6017,6 +6616,14 @@ var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { mod
     index: void 0,
     caseSensitive: void 0,
     module: getting_started_exports
+  },
+  "routes/docs/instance": {
+    id: "routes/docs/instance",
+    parentId: "routes/docs",
+    path: "instance",
+    index: void 0,
+    caseSensitive: void 0,
+    module: instance_exports
   },
   "routes/docs/index": {
     id: "routes/docs/index",

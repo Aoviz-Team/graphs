@@ -7,7 +7,7 @@ import { Renderer } from './renderer';
 import { EInternalEvent, Event } from './event';
 import { getNodeByPoint, mergeCfg, updateLinkOffsetMultiple } from '../utils';
 import { IPoint } from '../interface';
-import { Plugin } from '../plugins/plugin';
+import { Plugin, PLUGIN_EVENTS } from '../plugins/plugin';
 export class Controller {
   originData: IForceData = { nodes: [], links: [] };
   wrapper!: HTMLElement;
@@ -18,6 +18,7 @@ export class Controller {
   transform = zoomIdentity;
   zoom!: ZoomBehavior<HTMLCanvasElement, unknown>;
   event!: Event;
+  plugins: Plugin[] = [];
   get tick$() {
     return this.layout.tick$;
   }
@@ -167,9 +168,13 @@ export class Controller {
   }
 
   setPlugins(plugins: Plugin[]) {
+    for (const eventName of PLUGIN_EVENTS) {
+      this.event.clear(eventName);
+    }
     for (const plugin of plugins) {
       plugin.apply(this);
     }
+    this.plugins = plugins;
   }
 
   resize(opt?: { width: number; height: number }) {
@@ -178,6 +183,12 @@ export class Controller {
     this.option.layout.height = opt?.height || clientRect.height;
     if (this.option.layout.width !== this.canvas.width || this.option.layout.height !== this.canvas.height) {
       this.layout.setOption(this.option.layout as ILayoutOption);
+    }
+  }
+
+  dispose() {
+    for (const plugin of this.plugins) {
+      plugin.dispose();
     }
   }
 }
