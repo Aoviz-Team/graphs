@@ -140,6 +140,7 @@ export class BrushSelectPlugin extends Plugin {
     if (!this.container) return;
     this.enableZoom();
     document.removeEventListener('mousemove', this._onMousemove);
+    document.removeEventListener('mouseup', this._onMouseup);
     this.remove();
     this.container = undefined;
     this.setSelectedNodes(this.getNodes(this.getRectPosition(event)));

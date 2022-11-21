@@ -12,6 +12,27 @@ interface IPluginConfig {
   transform: ZoomTransform;
   layout: ForceLayout;
 }
+
+export const PLUGIN_EVENTS = [
+  EEventName.Click,
+  EEventName.Dblclick,
+  EEventName.Mousedown,
+  EEventName.Mousemove,
+  EEventName.Mouseup,
+  EEventName.Contextmenu,
+  EEventName.Keydown,
+  EEventName.Keyup,
+  EEventName.Wheel,
+  EInternalEvent.SetTransform,
+  EEventRender.BeforeDraw,
+  EEventRender.AfterDraw,
+  EEventRender.BeforeDrawNode,
+  EEventRender.AfterDrawNode,
+  EEventRender.BeforeDrawLink,
+  EEventRender.AfterDrawLink,
+  EEventRender.OverwriteDrawLink,
+  EEventRender.OverwriteDrawNode
+];
 export class Plugin {
   transform = zoomIdentity;
   apply(config: IPluginConfig) {
@@ -32,12 +53,12 @@ export class Plugin {
     event.on(EInternalEvent.SetTransform, (t) => (this.transform = t));
 
     // 渲染事件
-    event.on(EEventRender.BeforeDraw, this.onBeforeDraw.bind(this));
-    event.on(EEventRender.AfterDraw, this.onAfterDraw.bind(this));
-    event.on(EEventRender.BeforeDrawNode, this.onBeforeDrawNode.bind(this));
-    event.on(EEventRender.AfterDrawNode, this.onAfterDrawNode.bind(this));
-    event.on(EEventRender.BeforeDrawLink, this.onBeforeDrawLink.bind(this));
-    event.on(EEventRender.AfterDrawLink, this.onAfterDrawLink.bind(this));
+    event.on(EEventRender.BeforeDraw, this.beforeDraw.bind(this));
+    event.on(EEventRender.AfterDraw, this.afterDraw.bind(this));
+    event.on(EEventRender.BeforeDrawNode, this.beforeDrawNode.bind(this));
+    event.on(EEventRender.AfterDrawNode, this.afterDrawNode.bind(this));
+    event.on(EEventRender.BeforeDrawLink, this.beforeDrawLink.bind(this));
+    event.on(EEventRender.AfterDrawLink, this.afterDrawLink.bind(this));
     // 重写方法实现后，会代替内置的绘制方法
     if (this.overwriteDrawLink) {
       event.on(EEventRender.OverwriteDrawLink, this.overwriteDrawLink.bind(this));
@@ -78,14 +99,16 @@ export class Plugin {
   onKeyup(...args: [KeyboardEvent, ...any]) {}
   onWheel(...args: [WheelEvent, ...any]) {}
 
-  onBeforeDrawNode(...args: IRenderArgs<IRenderNode>) {}
-  onAfterDrawNode(...args: IRenderArgs<IRenderNode>) {}
+  beforeDrawNode(...args: IRenderArgs<IRenderNode>) {}
+  afterDrawNode(...args: IRenderArgs<IRenderNode>) {}
 
-  onBeforeDrawLink(...args: IRenderArgs<IRenderLink>) {}
-  onAfterDrawLink(...args: IRenderArgs<IRenderLink>) {}
+  beforeDrawLink(...args: IRenderArgs<IRenderLink>) {}
+  afterDrawLink(...args: IRenderArgs<IRenderLink>) {}
 
-  onBeforeDraw(...args: IRenderArgs<IRenderData>) {}
-  onAfterDraw(...args: IRenderArgs<IRenderData>) {}
+  beforeDraw(...args: IRenderArgs<IRenderData>) {}
+  afterDraw(...args: IRenderArgs<IRenderData>) {}
+
+  dispose() {}
 }
 
 export interface Plugin {
