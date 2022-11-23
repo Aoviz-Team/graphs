@@ -1,3 +1,5 @@
+import { IRenderLink } from 'es/src';
+import { IRenderData, IRenderNode } from '../interface';
 import { radial } from '../utils';
 import { Plugin } from './plugin';
 
@@ -12,7 +14,7 @@ export class FisheyePlugin extends Plugin {
   constructor(option?: IFisheyeOption) {
     super();
     if (option?.keyCombination) this.keyCombination = option.keyCombination;
-    this.fisheye = (radial() as any).radius(100).distortion(4).smoothing(0.5);
+    this.fisheye = (radial() as any).radius(120).distortion(20).smoothing(0.5);
   }
 
   onMousemove(event: MouseEvent): void {
@@ -37,13 +39,28 @@ export class FisheyePlugin extends Plugin {
     return true;
   }
 
-  onAfterDraw(ctx: CanvasRenderingContext2D): void {
+  afterDraw(ctx: CanvasRenderingContext2D): void {
     if (!this.focus) return;
     ctx.beginPath();
-    ctx.arc(this.mousePoint.x, this.mousePoint.y, 100, 0, 2 * Math.PI);
+    ctx.arc(this.mousePoint.x, this.mousePoint.y, 120, 0, 2 * Math.PI);
     ctx.strokeStyle = '#329485';
     ctx.fillStyle = 'rgba(23,45,67,0.1)';
     ctx.stroke();
     ctx.fill();
+  }
+
+  preprocessRenderData(data: IRenderData) {
+    if (!this.focus) return data;
+    const { nodes, links } = data;
+    const nodeHash: Record<string, IRenderNode> = {};
+    for (const node of nodes) {
+      const [x, y] = this.fisheye([this.transform.applyX(node.x!), this.transform.applyY(node.y!)]);
+      const _node = { ...node, x: this.transform.invertX(x), y: this.transform.invertY(y) };
+      nodeHash[node.id] = _node;
+    }
+    const _links = links.map((link) => {
+      return { ...link, source: nodeHash[link.source.id], target: nodeHash[link.target.id] } as IRenderLink;
+    });
+    return { nodes: Object.values(nodeHash), links: _links };
   }
 }

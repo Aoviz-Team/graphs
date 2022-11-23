@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-type IListener = (...args: any[]) => boolean | void;
+type IListener = (...args: any[]) => boolean | void | any;
 
 export class EventEmitter {
   eventMap = new Map<string, Set<Function>>();
