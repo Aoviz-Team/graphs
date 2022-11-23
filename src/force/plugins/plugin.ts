@@ -31,7 +31,8 @@ export const PLUGIN_EVENTS = [
   EEventRender.BeforeDrawLink,
   EEventRender.AfterDrawLink,
   EEventRender.OverwriteDrawLink,
-  EEventRender.OverwriteDrawNode
+  EEventRender.OverwriteDrawNode,
+  EInternalEvent.PreprocessRenderData
 ];
 export class Plugin {
   transform = zoomIdentity;
@@ -66,6 +67,11 @@ export class Plugin {
     if (this.overwriteDrawNode) {
       event.on(EEventRender.OverwriteDrawNode, this.overwriteDrawNode.bind(this));
     }
+
+    if (this.preprocessRenderData) {
+      event.on(EInternalEvent.PreprocessRenderData, this.preprocessRenderData.bind(this));
+    }
+
     this.disableZoom = () => {
       event.emit(EInternalEvent.DisableZoom);
     };
@@ -86,6 +92,9 @@ export class Plugin {
     };
     this.setSelectedLinks = (links: IRenderLink[]) => {
       return event.onSelectedLinks$.next(links);
+    };
+    this.tick = () => {
+      return layout.tick$.next(layout.data);
     };
   }
 
@@ -125,6 +134,10 @@ export interface Plugin {
    */
   overwriteDrawLink(...args: IRenderArgs<IRenderLink>);
   /**
+   * 重写方法实现后，会代替内置的渲染方法
+   */
+  preprocessRenderData(data: IRenderData): IRenderData;
+  /**
    * 禁用缩放和拖拽画布
    */
   disableZoom();
@@ -152,4 +165,8 @@ export interface Plugin {
    * 设置选中的关系
    */
   setSelectedLinks(links: IRenderLink[]);
+  /**
+   * 触发一次渲染
+   */
+  tick();
 }

@@ -1,5 +1,16 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { circleInnerShadow, Force, IForceData, IOption, IRenderNode, Plugin, BrushSelectPlugin, WatermarkPlugin, roundRectBgLabel } from '../src';
+import {
+  circleInnerShadow,
+  Force,
+  IForceData,
+  IOption,
+  IRenderNode,
+  Plugin,
+  BrushSelectPlugin,
+  WatermarkPlugin,
+  roundRectBgLabel,
+  FisheyePlugin
+} from '../src';
 import data from './assets/data';
 import './force.css';
 
@@ -38,7 +49,7 @@ class CustomPlugin extends Plugin {
     roundRectBgLabel(c, { x: n.x!, y: n.y! + n.cfg.radius + 10 }, n);
   }
 }
-function Viz({ watermark, custom, brushSelect }: Record<string, boolean>) {
+function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean>) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [option, setOption] = useState(OPTION);
   const instanceRef = useRef<Force<IForceData>>(null);
@@ -54,6 +65,10 @@ function Viz({ watermark, custom, brushSelect }: Record<string, boolean>) {
     }
     if (brushSelect) {
       plugins.push(new BrushSelectPlugin());
+    }
+    if (fisheye) {
+      console.log('fish', fisheye);
+      plugins.push(new FisheyePlugin());
     }
     instanceRef.current.setPlugins(plugins);
   }, [wrapper]);
@@ -82,3 +97,4 @@ export const Default = () => <Viz />;
 export const Custom = () => <Viz custom />;
 export const Watermark = () => <Viz watermark />;
 export const BrushSelect = () => <Viz brushSelect />;
+export const Fisheye = () => <Viz fisheye />;

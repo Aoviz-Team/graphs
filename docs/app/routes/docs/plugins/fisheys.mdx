@@ -1,7 +1,17 @@
-export * from './force';
-export * from './interface';
+---
+meta:
+  title: fisheye |  @aoviz/graphs
+  description: 鱼眼插件
+sidebar_position: 1
+---
 
-export const GRAPH_DATA = {
+# 鱼眼插件
+
+
+```jsx live=true template=imperative
+import { Force, GRAPH_DATA, FisheyePlugin } from '@aoviz/graphs'
+import { useRef, useEffect } from 'react'
+const data = {
   nodes: [
     { id: '1', name: '人工智能', cfg: { backgroundColor: '#6EA3FD' } },
     { id: '2', name: '深度学习', cfg: { backgroundColor: '#8470A8' } },
@@ -31,4 +41,27 @@ export const GRAPH_DATA = {
     { id: 'l', name: '别名', source: '11', target: '12' },
     { id: 'm', name: '被提出', source: '10', target: '8' }
   ]
-};
+}
+const option = {
+    layout: {
+      velocityDecay: 0.15,
+      forces: [
+        { force: 'n-body', strength: -1600, distanceMin: 30 },
+        { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
+        { force: 'link', id: (d) => d.id, distance: 200 },
+        { force: 'x', strength: 0.1 },
+        { force: 'y', strength: 0.1 },
+        { force: 'center' }
+      ]
+  }
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data, option });
+    instance.setPlugins([new FisheyePlugin()])
+  }, [wrapper]);
+  return <div ref={wrapper} style={{ height: 380, width: 600}}></div>;
+}
+
+```

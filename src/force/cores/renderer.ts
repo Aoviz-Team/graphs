@@ -2,7 +2,7 @@ import { zoomIdentity, ZoomTransform } from 'd3-zoom';
 import { ECollectorShape, ELinkShape, ICollector, ECollectorType, IPoint, IRenderData } from '../interface';
 import { IRenderLink, IRenderNode, IOption } from '../interface';
 import { distance, getCircleCenterByPoints, getCirclePointByArc, getRectPointsByCenterPoint, rotatePoints } from '../utils/math';
-import { EEventRender, Event } from './event';
+import { EEventRender, EInternalEvent, Event } from './event';
 
 export class Renderer {
   context: CanvasRenderingContext2D;
@@ -35,7 +35,16 @@ export class Renderer {
     this.event.emit(EEventRender.BeforeDraw, context, data, option);
     context.translate(transform.x, transform.y);
     context.scale(transform.k, transform.k);
-    data.links.forEach((link) => {
+    const preprocessRenderDataFns = this.event.get(EInternalEvent.PreprocessRenderData);
+    let { nodes, links } = data;
+    if (preprocessRenderDataFns && preprocessRenderDataFns.size) {
+      for (const preprocessRenderData of preprocessRenderDataFns) {
+        const _data = preprocessRenderData({ nodes, links }) as IRenderData;
+        nodes = _data.nodes;
+        links = _data.links;
+      }
+    }
+    links.forEach((link) => {
       this.event.emit(EEventRender.BeforeDrawLink, context, link);
       const drawLinks = this.event.get(EEventRender.OverwriteDrawLink);
       if (drawLinks && drawLinks.size) {
@@ -47,7 +56,7 @@ export class Renderer {
       }
       this.event.emit(EEventRender.AfterDrawLink, context, link);
     });
-    data.nodes.forEach((node) => {
+    nodes.forEach((node) => {
       this.event.emit(EEventRender.BeforeDrawNode, context, node);
       const drawNodes = this.event.get(EEventRender.OverwriteDrawNode);
       if (drawNodes && drawNodes.size) {

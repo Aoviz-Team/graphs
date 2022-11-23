@@ -2,6 +2,7 @@ import { cloneDeep, isNumber, merge, pick } from 'lodash-es';
 import { ELinkShape, IForceData, ILink, ILinkCfg, INode, INodeCfg, IOption, IPoint, IRenderData, ISafeAny } from '../interface';
 import { IRenderNode } from '../interface';
 import { isPointInCircle } from './math';
+export * from './fisheye';
 
 export function getNodeByPoint(nodes: IRenderNode[], point: IPoint) {
   for (const node of nodes) {
