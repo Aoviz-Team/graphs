@@ -1,0 +1,103 @@
+---
+meta:
+  title: 快速上手 | @aoviz/graphs
+  description: 使用方式
+sidebar_position: 2
+---
+
+# 快速上手
+
+`@aoviz/graphs` 是完全由 Typescript 编写的框架，用于构建数据驱动的可视化图组件库。
+
+## 安装
+
+可以使用任意一个包管理器工具安装 `@aoviz/graphs`，下面是以 [Yarn](https://yarnpkg.com/en/) 为例:
+
+```jsx copy="yarn add @aoviz/graphs"
+yarn add @aoviz/graphs
+```
+
+## 使用示例
+
+### 准备数据
+
+```ts
+const data = {
+  nodes: [
+    {
+      id: '1',
+      name: '节点1',
+      cfg: { backgroundColor: '#6EA3FD' }
+    },
+     {
+      id: '2',
+      name: '节点2',
+      cfg: { backgroundColor: '#8470A8' }
+    }
+  ],
+  links: [
+    {
+      id: 'A',
+      name: '关系1',
+      source: '1',
+      target: '2'
+    }
+  ]
+}
+```
+
+### 创建关系图
+
+```jsx live=true template=imperative
+import { Force } from '@aoviz/graphs'
+import { useRef, useEffect } from 'react'
+const data = {
+  nodes: [
+    {
+      id: '1',
+      name: '节点1',
+      cfg: { backgroundColor: '#6EA3FD' }
+    },
+     {
+      id: '2',
+      name: '节点2',
+      cfg: { backgroundColor: '#8470A8' }
+    }
+  ],
+  links: [
+    {
+      id: 'A',
+      name: '关系1',
+      source: '1',
+      target: '2',
+      cfg: {
+        label: {
+          backgroundColor: 'rgba(114, 193, 209, 0.8)' 
+        }
+      }
+    }
+  ]
+}
+
+const option = {
+    layout: {
+      velocityDecay: 0.15,
+      forces: [
+        { force: 'n-body', strength: -1600, distanceMin: 30 },
+        { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
+        { force: 'link', id: (d) => d.id, distance: 200 },
+        { force: 'x', strength: 0.1 },
+        { force: 'y', strength: 0.1 },
+        { force: 'center' }
+      ]
+  }
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data, option });
+  }, [wrapper]);
+  return <div ref={wrapper} style={{ height: 380, width: 600}}></div>;
+}
+
+```

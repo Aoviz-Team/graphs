@@ -52,7 +52,7 @@ export function generateText(value: string, style: Partial<ICanvasFontStyle> = {
 
 interface IWaterMarkOption {}
 export class WatermarkPlugin extends Plugin {
-  onBeforeDraw(context: CanvasRenderingContext2D): void {
+  beforeDraw(context: CanvasRenderingContext2D): void {
     const pattern = context.createPattern(generateText('Aoviz'), 'repeat')!;
     context.fillStyle = pattern;
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);

@@ -1,0 +1,14 @@
+diff --git a/node_modules/@remix-run/dev/dist/compiler/plugins/mdx.js b/node_modules/@remix-run/dev/dist/compiler/plugins/mdx.js
+index 9e6f1ee..b07a66f 100644
+--- a/node_modules/@remix-run/dev/dist/compiler/plugins/mdx.js
++++ b/node_modules/@remix-run/dev/dist/compiler/plugins/mdx.js
+@@ -102,7 +102,8 @@ export const meta = typeof attributes !== "undefined" && attributes.meta;
+             pragma: "React.createElement",
+             pragmaFrag: "React.Fragment",
+             rehypePlugins,
+-            remarkPlugins
++            remarkPlugins,
++            providerImportSource: "@mdx-js/react"
+           });
+           let contents = `
+ ${compiled.value}

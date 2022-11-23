@@ -34,4 +34,8 @@ export class EventEmitter {
   get(eventName: string) {
     return this.eventMap.get(eventName);
   }
+
+  clear(eventName: string) {
+    this.eventMap.delete(eventName);
+  }
 }

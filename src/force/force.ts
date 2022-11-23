@@ -38,6 +38,10 @@ export class Force<T extends IForceData> {
     this.controller.resize(size);
   }
 
+  dispose() {
+    this.controller.dispose();
+  }
+
   get onNodeClick$() {
     return this.controller.event.onNodeClick$.asObservable();
   }
