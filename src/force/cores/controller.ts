@@ -1,5 +1,7 @@
 import { cloneDeep, isString } from 'lodash-es';
-import { select, drag, zoom, zoomIdentity, ZoomBehavior } from 'd3';
+import { zoom, zoomIdentity, ZoomBehavior } from 'd3-zoom';
+import { select } from 'd3-selection';
+import { drag } from 'd3-drag';
 import { throttleTime } from 'rxjs/operators';
 import { IForceData, ILayoutOption, IRenderNode, IOption, ISafeAny, IRenderData, ILink } from '../interface';
 import { ForceLayout } from '../layout';

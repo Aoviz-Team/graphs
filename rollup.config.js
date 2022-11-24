@@ -16,9 +16,5 @@ export default {
       format: 'esm'
     }
   ],
-  plugins: [
-    del({ targets: ['dist/*', 'es/*'] }),
-    uglify(),
-    typescript(),
-  ]
+  plugins: [del({ targets: ['dist/*', 'es/*'] }), uglify(), typescript()]
 };

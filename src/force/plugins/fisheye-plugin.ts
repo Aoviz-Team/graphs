@@ -1,20 +1,42 @@
-import { IRenderLink } from 'es/src';
-import { IRenderData, IRenderNode } from '../interface';
+import { merge } from 'lodash-es';
+import { IRenderData, IRenderLink, IRenderNode } from '../interface';
 import { radial } from '../utils';
 import { Plugin } from './plugin';
 
+const DEFAULT_OPTION = {
+  keyCombination: ['ctrl'],
+  radius: 130,
+  distortion: 5,
+  smoothing: 0.1,
+  borderColor: '#329485',
+  borderWidth: 1,
+  borderLineDash: [],
+  fillColor: 'rgba(23,45,67,0.1)'
+};
 interface IFisheyeOption {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'>;
+  radius: number;
+  distortion: number;
+  smoothing: number;
+  borderColor: string;
+  borderWidth: number;
+  borderLineDash: number[];
+  fillColor: string;
 }
 export class FisheyePlugin extends Plugin {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'> = ['ctrl'];
   fisheye;
   mousePoint = { x: 0, y: 0 };
   focus = false;
-  constructor(option?: IFisheyeOption) {
+  option: IFisheyeOption;
+  constructor(option?: Partial<IFisheyeOption>) {
     super();
+    this.option = merge({ ...DEFAULT_OPTION }, option);
     if (option?.keyCombination) this.keyCombination = option.keyCombination;
-    this.fisheye = (radial() as any).radius(120).distortion(20).smoothing(0.5);
+    this.fisheye = (radial() as any)
+      .radius(this.option.radius + 10)
+      .distortion(this.option.distortion)
+      .smoothing(this.option.smoothing);
   }
 
   onMousemove(event: MouseEvent): void {
@@ -24,7 +46,7 @@ export class FisheyePlugin extends Plugin {
     }
     if (!this.isAllow(event)) return;
     this.focus = true;
-    this.fisheye.focus([event.x, event.y]);
+    this.fisheye.focus([event.offsetX, event.offsetY]);
     this.mousePoint = { x: event.offsetX, y: event.offsetY };
     this.tick();
   }
@@ -42,9 +64,9 @@ export class FisheyePlugin extends Plugin {
   afterDraw(ctx: CanvasRenderingContext2D): void {
     if (!this.focus) return;
     ctx.beginPath();
-    ctx.arc(this.mousePoint.x, this.mousePoint.y, 120, 0, 2 * Math.PI);
-    ctx.strokeStyle = '#329485';
-    ctx.fillStyle = 'rgba(23,45,67,0.1)';
+    ctx.arc(this.mousePoint.x, this.mousePoint.y, this.option.radius, 0, 2 * Math.PI);
+    ctx.strokeStyle = this.option.borderColor;
+    ctx.fillStyle = this.option.fillColor;
     ctx.stroke();
     ctx.fill();
   }

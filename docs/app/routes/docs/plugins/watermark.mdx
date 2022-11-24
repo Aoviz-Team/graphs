@@ -1,16 +1,17 @@
 ---
 meta:
-  title: 鱼眼插件 |  @aoviz/graphs
-  description: 鱼眼插件
+  title: 水印插件 |  @aoviz/graphs
+  description: 水印
 sidebar_position: 1
 ---
 
-# 鱼眼插件
+# 水印插件
 
-按住 `ctrl` 键，在节点处滑动体验鱼眼插件 
+通过传入文本内容渲染水印
+
 
 ```jsx live=true template=imperative
-import { Force, GRAPH_DATA, FisheyePlugin } from '@aoviz/graphs'
+import { Force, WatermarkPlugin } from '@aoviz/graphs'
 import { useRef, useEffect } from 'react'
 const data = {
   nodes: [
@@ -65,8 +66,7 @@ export default function Viz() {
   const wrapper = useRef(null);
   useEffect(() => {
     const instance = new Force(wrapper.current,{ data, option });
-    instance.setPlugins([new FisheyePlugin()])
-		window._a = instance
+    instance.setPlugins([ new WatermarkPlugin({value: '@aoviz/graphs', color: 'rgba(179, 179, 255, 0.5)'})])
   }, [wrapper]);
   return <div style={{ height: 380, width: 600}}>
 		<div ref={wrapper} style={{ height: 380, width: 600}}></div>
