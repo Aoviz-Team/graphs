@@ -1,7 +1,6 @@
 import { Plugin } from './plugin';
 
-import { merge } from 'lodash-es';
-import { IRenderData } from '../interface';
+import { isString, merge } from 'lodash-es';
 
 const FONT_PADDING = [50, 50, 50, 50];
 const FONT_SIZE = 22;
@@ -50,10 +49,18 @@ export function generateText(value: string, style: Partial<ICanvasFontStyle> = {
   return canvas;
 }
 
-interface IWaterMarkOption {}
+interface IWaterMarkOption extends ICanvasFontStyle {
+  value: string;
+}
 export class WatermarkPlugin extends Plugin {
+  option: IWaterMarkOption;
+  constructor(option: IWaterMarkOption) {
+    super();
+    this.option = option;
+  }
   beforeDraw(context: CanvasRenderingContext2D): void {
-    const pattern = context.createPattern(generateText('Aoviz'), 'repeat')!;
+    if (!isString(this.option.value)) return;
+    const pattern = context.createPattern(generateText(this.option.value, this.option), 'repeat')!;
     context.fillStyle = pattern;
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
   }

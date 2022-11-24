@@ -6,6 +6,7 @@ rollup.config.js
 tsconfig.json
 node_modules
 yarn.lock
+.vercel
 .parcel-cache
 .storybook
 storybook-static
@@ -14,3 +15,5 @@ stories
 .gitignore
 .parcelrc
 .prettierrc
+yarn-error.log
+patches

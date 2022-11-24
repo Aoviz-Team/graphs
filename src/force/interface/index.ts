@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { SimulationNodeDatum } from 'd3';
+import { SimulationNodeDatum } from 'd3-force';
 export type ISafeAny = any;
 
 export type IRenderNode = SimulationNodeDatum & Omit<Required<INode>, 'cfg'> & { cfg: INodeCfg };

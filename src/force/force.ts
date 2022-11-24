@@ -1,6 +1,6 @@
-import { select } from 'd3';
+import { select } from 'd3-selection';
 import { cloneDeep, merge } from 'lodash-es';
-import { distinct, distinctUntilChanged, distinctUntilKeyChanged } from 'rxjs';
+import { distinct, distinctUntilChanged } from 'rxjs';
 import { DEFAULT_OPTION } from './config';
 import { Controller } from './cores/controller';
 import { IForceData, IOption } from './interface';

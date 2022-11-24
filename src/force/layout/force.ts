@@ -1,4 +1,4 @@
-import { forceSimulation, forceManyBody, forceCollide, Simulation, forceX, forceY, forceCenter, forceLink } from 'd3';
+import { forceSimulation, forceManyBody, forceCollide, Simulation, forceX, forceY, forceCenter, forceLink } from 'd3-force';
 import { cloneDeep, difference, find, isFunction, merge } from 'lodash-es';
 import { BehaviorSubject } from 'rxjs';
 import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode } from '../interface';

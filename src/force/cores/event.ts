@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { zoomIdentity, ZoomTransform } from 'd3';
+import { zoomIdentity, ZoomTransform } from 'd3-zoom';
 import { BehaviorSubject, fromEvent, Subject, tap, throttleTime } from 'rxjs';
 import { ECollectorShape, ECollectorType, ICollector, INodeDragEvent, IPoint, IRenderLink, IRenderNode, ISafeAny } from '../interface';
 import { isPointInCircle, isPointInPolygon, isPointInRect } from '../utils/math';
