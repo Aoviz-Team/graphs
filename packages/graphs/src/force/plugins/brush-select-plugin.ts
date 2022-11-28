@@ -1,5 +1,5 @@
 import { uniqBy } from 'lodash-es';
-import { IPoint } from 'src/force';
+import { IPoint } from 'packages/graphs/src/force';
 import { isPointInRect } from '../utils/math';
 import { Plugin } from './plugin';
 

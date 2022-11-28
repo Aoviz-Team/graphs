@@ -10,7 +10,8 @@ import {
   WatermarkPlugin,
   roundRectBgLabel,
   FisheyePlugin
-} from '../src';
+} from '../packages/graphs/src';
+import { randomRadial } from '../packages/mock/src/index.ts';
 import data from './assets/data';
 import './force.css';
 
@@ -31,9 +32,9 @@ const OPTION: DeepPartial<IOption> = {
       { force: 'n-body', strength: -1600, distanceMin: 30 },
       { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
       { force: 'link', id: (d) => d.id, distance: 200 },
-      { force: 'x', strength: 0.1 },
-      { force: 'y', strength: 0.1 },
-      { force: 'center' }
+      { force: 'x', strength: 0.01 },
+      { force: 'y', strength: 0.01 },
+      { force: 'center', strength: 0.1 }
     ]
   }
 };
@@ -55,7 +56,8 @@ function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean
   const instanceRef = useRef<Force<IForceData>>(null);
 
   useEffect(() => {
-    instanceRef.current = new Force(wrapper.current!, { data, option });
+    const D = randomRadial();
+    instanceRef.current = new Force(wrapper.current!, { data: D, option });
     const plugins: any[] = [];
     if (watermark) {
       plugins.push(new WatermarkPlugin());

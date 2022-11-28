@@ -11,3 +11,6 @@ docs/.cache
 docs/public/build
 docs/api
 .vercel
+packages/*/node_modules
+packages/*/es
+packages/*/dist

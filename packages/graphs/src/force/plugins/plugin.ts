@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { zoomIdentity, ZoomTransform } from 'd3-zoom';
-import { IRenderData, IRenderLink, IRenderNode } from 'src/force';
-import { ForceLayout } from 'src/force/layout';
+import { IRenderData, IRenderLink, IRenderNode } from 'packages/graphs/src/force';
+import { ForceLayout } from 'packages/graphs/src/force/layout';
 import { EInternalEvent, EEventName, EEventRender } from '../cores/event';
 import { Event as InternalEvent } from '../cores/event';
 

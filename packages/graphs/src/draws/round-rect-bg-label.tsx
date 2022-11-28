@@ -1,4 +1,4 @@
-import { IPoint, IRenderNode } from 'src/force';
+import { IPoint, IRenderNode } from 'packages/graphs/src/force';
 import { getRectPointsByCenterPoint } from '../force/utils/math';
 import { getEllipsisText } from './utils/ellipsis-text';
 import { roundRect } from './utils/round-rect';

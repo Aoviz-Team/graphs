@@ -10,7 +10,7 @@ import {
   WatermarkPlugin,
   roundRectBgLabel,
   FisheyePlugin
-} from '../src';
+} from '../packages/graphs/src';
 import data from './assets/data';
 import './force.css';
 
