@@ -1,5 +1,5 @@
 {
-  "name": "@aoviz/graphs",
+  "name": "aoviz",
   "version": "0.0.13",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
+    "build": "yarn workspace @aoviz/graphs build && yarn workspace @aoviz/mock build",
     "docs:dev": "yarn workspace @aoviz/docs dev",
     "docs:build": "yarn workspace @aoviz/docs build",
     "storybook": "start-storybook -p 6006",
@@ -21,7 +21,8 @@
   },
   "workspaces": [
     "docs",
-    "src"
+    "src",
+    "packages/*"
   ],
   "dependencies": {
     "d3-drag": "^3.0.0",

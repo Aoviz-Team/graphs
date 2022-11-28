@@ -1,6 +1,6 @@
 import { toNumber } from 'lodash-es';
 import React, { useRef, useEffect, useState } from 'react';
-import { circleInnerShadow, Force, IForceData, IOption, IRenderNode, Plugin } from '../src';
+import { circleInnerShadow, Force, IForceData, IOption, IRenderNode, Plugin } from '../packages/graphs/src';
 import data from './assets/data';
 import './force.css';
 

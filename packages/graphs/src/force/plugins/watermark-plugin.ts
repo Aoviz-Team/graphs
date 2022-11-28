@@ -59,8 +59,8 @@ export class WatermarkPlugin extends Plugin {
     this.option = option;
   }
   beforeDraw(context: CanvasRenderingContext2D): void {
-    if (!isString(this.option.value)) return;
-    const pattern = context.createPattern(generateText(this.option.value, this.option), 'repeat')!;
+    if (!isString(this.option?.value)) return;
+    const pattern = context.createPattern(generateText(this.option?.value, this.option), 'repeat')!;
     context.fillStyle = pattern;
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
   }
