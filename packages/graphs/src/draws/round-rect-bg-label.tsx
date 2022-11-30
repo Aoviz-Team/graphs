@@ -2,7 +2,12 @@ import { IPoint, IRenderNode } from 'packages/graphs/src/force';
 import { getRectPointsByCenterPoint } from '../force/utils/math';
 import { getEllipsisText } from './utils/ellipsis-text';
 import { roundRect } from './utils/round-rect';
-
+/**
+ * 绘制带背景的文字
+ * @param ctx
+ * @param point 绘制的中心点
+ * @param node
+ */
 export function roundRectBgLabel(ctx: CanvasRenderingContext2D, point: IPoint, node: IRenderNode) {
   const { cfg } = node;
   ctx.font = `${cfg.label.fontSize}px ${cfg.label.fontWeight} ${cfg.label.fontFamily}`;
