@@ -91,6 +91,16 @@ export class Event extends EventEmitter {
       default:
         break;
     }
+
+    if ([ECollectorType.NodeLabel, ECollectorType.Node].includes(item.type) && eventName === EEventName.Click) {
+      this.onSelectedNodes$.next([item.data as IRenderNode]);
+      this.onSelectedLinks$.next([]);
+    }
+
+    if ([ECollectorType.Link, ECollectorType.LinkLabel].includes(item.type) && eventName === EEventName.Click) {
+      this.onSelectedLinks$.next([item.data as IRenderLink]);
+      this.onSelectedNodes$.next([]);
+    }
   }
 
   dispatchNode(item: ICollector, eventName: EEventName) {
@@ -145,6 +155,10 @@ export class Event extends EventEmitter {
     if (EEventName.Hover === eventName && !isIn) {
       this.onLinkHover$.next(null);
       this.onNodeHover$.next(null);
+    }
+    if (!isIn && EEventName.Click === eventName) {
+      this.onSelectedNodes$.next([]);
+      this.onSelectedLinks$.next([]);
     }
   }
 }

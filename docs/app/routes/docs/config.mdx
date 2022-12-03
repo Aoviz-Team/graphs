@@ -1,0 +1,121 @@
+---
+meta:
+  title: Graph 配置项 | @aoviz/graphs
+  description:  配置项介绍
+sidebar_position: 3
+---
+
+# Graph 配置项
+
+## 力布局配置
+力导向布局使用一个模型，其中数据对象作为带电粒子（或节点），可以选择由一组边（或关系）连接。一组力被用来驱动决定节点位置的物理模拟。布局基于 d3-force 实现。
+
+import { TablesConfiguration } from '~/components/Tables/TablesConfig'
+import { FORCE_LAYOUT_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_DATA} />
+
+
+## forces 配置项
+
+### center
+一种将所有节点拉向 [x, y] 中心点的力。
+
+import { FORCE_LAYOUT_CENTER_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_CENTER_DATA} />
+
+### collide
+一种碰撞检测力，将圆周半径重叠的节点推开。
+
+import { FORCE_LAYOUT_COLLIDE_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_COLLIDE_DATA} />
+
+### n-body
+一种导致节点之间相互吸引或排斥的力。
+
+import { FORCE_LAYOUT_N_BODY_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_N_BODY_DATA} />
+
+### link
+添加链接约束，使节点向目标分离距离推开。
+
+import { FORCE_LAYOUT_LINK_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_LINK_DATA} />
+
+### x
+吸引节点到一个特定的 X 坐标，以每个节点为基础。
+
+import { FORCE_LAYOUT_X_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_X_DATA} />
+
+### y
+吸引节点到一个特定的 Y 坐标，以每个节点为基础。
+
+import { FORCE_LAYOUT_Y_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LAYOUT_Y_DATA} />
+
+## 样式配置
+
+### 节点样式配置
+图形样式配置。
+
+import { FORCE_NODE_STYLE_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_NODE_STYLE_DATA} />
+
+### 关系样式配置
+关系边的公用线条样式。
+
+import { FORCE_LINK_STYLE_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LINK_STYLE_DATA} />
+
+### 文本样式配置
+图形上的文本标签，可用于说明图形的一些数据信息。
+
+import { FORCE_LABEL_STYLE_DATA } from '~/data/force'
+
+<TablesConfiguration data={FORCE_LABEL_STYLE_DATA} />
+
+## Typescript
+
+### 节点的配置项
+
+```ts
+interface INodeCfg extends INodeStyle {
+    radius: number;
+    label?: ILabelStyle;
+}
+
+interface INode {
+    id: string;
+    name: string;
+    cfg: Partial<INodeCfg>
+}
+```
+
+### 关系的配置项
+
+```ts
+interface ILinkCfg extends ILinkStyle  {
+    radius: number;
+    label?: ILabelStyle;
+}
+
+interface ILink {
+    id: string;
+    source: string;
+    target: string;
+    name: string;
+    cfg: Partial<INodeCfg>
+}
+```
+
+
+

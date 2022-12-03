@@ -127,7 +127,7 @@ export class Controller {
       this.event.setTransform(this.transform);
       this.renderer.draw(this.tick$.value);
     };
-    this.zoom = (zoom() as ISafeAny).scaleExtent([1 / 6, 36]).on('zoom', zoomed);
+    this.zoom = (zoom() as ISafeAny).scaleExtent([1 / 100, 36]).on('zoom', zoomed);
     select(this.canvas).call(this.zoom).call(this.zoom.transform, zoomIdentity).on('dblclick.zoom', null);
     this.event.on(EInternalEvent.DisableZoom, () => {
       select(this.canvas).on('.zoom', null);

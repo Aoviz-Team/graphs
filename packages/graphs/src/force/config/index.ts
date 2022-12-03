@@ -1,5 +1,5 @@
 import { IOption } from '../interface';
-
+export * from './layout';
 const DEFAULT_FONT_STYLE = {
   fontSize: 12,
   fontWeight: 'normal',
@@ -15,17 +15,17 @@ export const DEFAULT_OPTION: IOption = {
       backgroundColor: 'rgba(0,0,0,.65)',
       borderRadius: 12
     },
-    backgroundColor: '#6EA3FD',
+    color: '#6EA3FD',
     radius: 28
   },
   link: {
     label: {
-      width: 150,
+      width: 100,
       color: 'rgba(0,0,0,.65)',
       ...DEFAULT_FONT_STYLE,
       backgroundColor: '#fff'
     },
-    stroke: '#9c9b9b',
+    color: '#9c9b9b',
     shape: 'line',
     curveOffset: 22
   },

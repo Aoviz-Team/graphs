@@ -23,7 +23,7 @@ export const HeroHome = () => {
           <TopFields>
             <CodeField />
             <NavLink variant="large" href="/docs/getting-started">
-              <span>Get started</span>
+              <span>快速上手</span>
               <ArrowCircleRight size={24} color="var(--colors-steel100)" />
             </NavLink>
           </TopFields>

@@ -1,20 +1,6 @@
 import { isArray, isNumber } from 'lodash-es';
+import { INodeStyle } from '../force';
 
-interface INodeStyle {
-  color?: string;
-  borderColor?: string;
-  borderWidth?: number;
-  borderType?: 'solid' | 'dashed' | Array<number>;
-  borderDashOffset?: number;
-  borderCap?: 'butt' | 'round' | 'square';
-  borderJoin?: 'bevel' | 'round' | 'miter';
-  borderMiterLimit?: number;
-  shadowBlur?: number;
-  shadowColor?: string;
-  shadowOffsetX?: number;
-  shadowOffsetY?: number;
-  //   opacity?: number;
-}
 export function drawNodeStyle(ctx: CanvasRenderingContext2D, style: INodeStyle, scale = 1) {
   const {
     color,
@@ -25,6 +11,7 @@ export function drawNodeStyle(ctx: CanvasRenderingContext2D, style: INodeStyle, 
     borderCap = 'butt',
     borderJoin = 'bevel',
     borderMiterLimit = 10,
+    shadowColor,
     shadowBlur,
     shadowOffsetX,
     shadowOffsetY
@@ -33,6 +20,7 @@ export function drawNodeStyle(ctx: CanvasRenderingContext2D, style: INodeStyle, 
   if (isNumber(shadowOffsetY)) ctx.shadowOffsetY = shadowOffsetY;
   if (isNumber(shadowOffsetX)) ctx.shadowOffsetX = shadowOffsetX;
   if (isNumber(shadowBlur)) ctx.shadowBlur = shadowBlur * scale;
+  if (shadowColor) ctx.shadowColor = shadowColor;
   ctx.miterLimit = borderMiterLimit;
   ctx.lineJoin = borderJoin;
   ctx.lineCap = borderCap;

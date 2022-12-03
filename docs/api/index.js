@@ -507,17 +507,6 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetTheme = () 
   columnNumber: 3
 }, this);
 
-// app/components/Widgets/WidgetPlausible.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetPlausible = () => typeof window < "u" && !window.env.ENABLE_PLAUSIBLE ? null : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
-  defer: !0,
-  "data-domain": "beta.react-spring.dev",
-  src: "https://plausible.io/js/plausible.js"
-}, void 0, !1, {
-  fileName: "app/components/Widgets/WidgetPlausible.tsx",
-  lineNumber: 7,
-  columnNumber: 5
-}, this);
-
 // app/components/Site/SiteFooter.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), SiteFooter = () => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Footer, {
   children: [
@@ -695,24 +684,28 @@ function Document({ children }) {
             lineNumber: 62,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("link", {
+            rel: "icon",
+            type: "image/x-icon",
+            href: "./favicon.svg"
+          }, void 0, !1, {
             fileName: "app/root.tsx",
             lineNumber: 63,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Links, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
             fileName: "app/root.tsx",
             lineNumber: 64,
             columnNumber: 9
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetPlausible, {}, void 0, !1, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Links, {}, void 0, !1, {
             fileName: "app/root.tsx",
             lineNumber: 65,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(WidgetTheme, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 66,
+            lineNumber: 67,
             columnNumber: 9
           }, this)
         ]
@@ -726,7 +719,7 @@ function Document({ children }) {
           children,
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SiteFooter, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 70,
+            lineNumber: 71,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("script", {
@@ -735,23 +728,23 @@ function Document({ children }) {
             }
           }, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 71,
+            lineNumber: 72,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 76,
+            lineNumber: 77,
             columnNumber: 9
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
             fileName: "app/root.tsx",
-            lineNumber: 77,
+            lineNumber: 78,
             columnNumber: 52
           }, this)
         ]
       }, void 0, !0, {
         fileName: "app/root.tsx",
-        lineNumber: 68,
+        lineNumber: 69,
         columnNumber: 7
       }, this)
     ]
@@ -766,18 +759,18 @@ function App() {
     children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 86,
+        lineNumber: 87,
         columnNumber: 7
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
         fileName: "app/root.tsx",
-        lineNumber: 87,
+        lineNumber: 88,
         columnNumber: 7
       }, this)
     ]
   }, void 0, !0, {
     fileName: "app/root.tsx",
-    lineNumber: 85,
+    lineNumber: 86,
     columnNumber: 5
   }, this);
 }
@@ -789,7 +782,7 @@ __export(examples_exports, {
 });
 
 // app/components/Header/Header.tsx
-var import_react12 = require("react"), Dialog2 = __toESM(require("@radix-ui/react-dialog")), import_phosphor_react5 = require("phosphor-react"), import_web4 = require("@react-spring/web");
+var import_react13 = require("react"), Dialog2 = __toESM(require("@radix-ui/react-dialog")), import_phosphor_react5 = require("phosphor-react"), import_web4 = require("@react-spring/web");
 
 // app/hooks/useAnimatedHeader.ts
 var import_web = require("@react-spring/web");
@@ -878,11 +871,85 @@ var useAnimatedHeader = ({
   }, [direction, isStuck]), [styles, isStuck, scrollTop, direction];
 };
 
+// app/components/Logo.tsx
+var import_tween = require("@tweenjs/tween.js"), import_react6 = require("react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Logo = () => {
+  let [stopColor1, setStopColor1] = (0, import_react6.useState)("#31DBFE"), [stopColor2, setStopColor2] = (0, import_react6.useState)("#BE6AFF");
+  return (0, import_react6.useEffect)(() => {
+    let isUpdate = !0, animate = (time) => {
+      (0, import_tween.update)(time), isUpdate && requestAnimationFrame(animate);
+    };
+    animate();
+    let t = new import_tween.Tween({ color1: { r: 49, g: 219, b: 254 }, color2: { r: 190, g: 106, b: 255 } }).to({ color1: { r: 190, g: 106, b: 255 }, color2: { r: 49, g: 219, b: 254 } }).easing(import_tween.Easing.Quadratic.InOut).yoyo(!0).repeat(1 / 0).onUpdate((d) => {
+      setStopColor1(`rgb(${d.color1.r},${d.color1.g},${d.color1.b})`), setStopColor2(`rgb(${d.color2.r},${d.color2.g},${d.color2.b})`);
+    }).start();
+    return () => {
+      isUpdate = !1, t.stop();
+    };
+  }, []), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", {
+    width: "64",
+    height: "56",
+    viewBox: "0 0 635 563",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", {
+        "fill-rule": "evenodd",
+        "clip-rule": "evenodd",
+        d: "M481.508 561.785L116.397 305.486L70.7694 337.387C61.2602 344.052 53.497 352.911 48.1374 363.212C42.7778 373.514 39.9795 384.956 39.9795 396.568C39.9795 408.181 42.7778 419.622 48.1374 429.924C53.497 440.226 61.2602 449.084 70.7694 455.749L152.52 513.146L247.321 446.904L282.227 471.417L152.639 562.093L47.8823 488.553C33.0949 478.194 21.0221 464.423 12.687 448.408C4.35191 432.392 0 414.603 0 396.548C0 378.494 4.35191 360.705 12.687 344.689C21.0221 328.673 33.0949 314.903 47.8823 304.544L81.5368 281.015L47.8823 257.391C33.0949 247.032 21.0221 233.261 12.687 217.245C4.35191 201.23 0 183.441 0 165.386C0 147.331 4.35191 129.542 12.687 113.527C21.0221 97.511 33.0949 83.7404 47.8823 73.3815L152.917 0L518.315 256.534L563.656 224.865C573.165 218.2 580.928 209.341 586.288 199.039C591.648 188.738 594.446 177.296 594.446 165.684C594.446 154.071 591.648 142.629 586.288 132.328C580.928 122.026 573.165 113.168 563.656 106.502L481.865 49.1061L387.104 115.268L352.198 90.7551L481.905 0L586.702 73.5402H586.543C601.331 83.8991 613.403 97.6697 621.738 113.685C630.074 129.701 634.425 147.49 634.425 165.545C634.425 183.6 630.074 201.388 621.738 217.404C613.403 233.42 601.331 247.19 586.543 257.549L553.093 280.95L586.542 304.434C601.322 314.799 613.387 328.571 621.717 344.586C630.046 360.601 634.395 378.387 634.395 396.439C634.395 414.49 630.046 432.276 621.717 448.291C613.387 464.306 601.322 478.079 586.542 488.443L481.508 561.785ZM518.147 305.398L563.496 337.238C573.006 343.903 580.769 352.761 586.128 363.063C591.488 373.365 594.286 384.806 594.286 396.419C594.286 408.031 591.488 419.473 586.128 429.775C580.769 440.076 573.006 448.935 563.496 455.6L481.626 512.838L151.394 281.018L282.386 189.434L247.48 165L116.535 256.547L71.0074 224.587C61.4903 217.928 53.7196 209.071 48.3545 198.768C42.9893 188.466 40.188 177.022 40.188 165.406C40.188 153.79 42.9893 142.346 48.3545 132.043C53.7196 121.741 61.4903 112.884 71.0074 106.225L152.877 48.9474L483.341 280.962L352 372.699L386.906 397.212L518.147 305.398Z",
+        fill: "url(#paint0_linear_504_11)"
+      }, void 0, !1, {
+        fileName: "app/components/Logo.tsx",
+        lineNumber: 25,
+        columnNumber: 5
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("defs", {
+        children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("linearGradient", {
+          id: "paint0_linear_504_11",
+          x1: "493.213",
+          y1: "0",
+          x2: "493.213",
+          y2: "397.212",
+          gradientUnits: "userSpaceOnUse",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", {
+              "stop-color": stopColor1
+            }, void 0, !1, {
+              fileName: "app/components/Logo.tsx",
+              lineNumber: 28,
+              columnNumber: 9
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", {
+              offset: "0.9999",
+              "stop-color": stopColor2
+            }, void 0, !1, {
+              fileName: "app/components/Logo.tsx",
+              lineNumber: 29,
+              columnNumber: 9
+            }, this)
+          ]
+        }, void 0, !0, {
+          fileName: "app/components/Logo.tsx",
+          lineNumber: 27,
+          columnNumber: 7
+        }, this)
+      }, void 0, !1, {
+        fileName: "app/components/Logo.tsx",
+        lineNumber: 26,
+        columnNumber: 5
+      }, this)
+    ]
+  }, void 0, !0, {
+    fileName: "app/components/Logo.tsx",
+    lineNumber: 24,
+    columnNumber: 10
+  }, this);
+};
+
 // app/components/Header/HeaderNavigation.tsx
 var import_phosphor_react3 = require("phosphor-react"), Toolbar3 = __toESM(require("@radix-ui/react-toolbar")), Tooltip = __toESM(require("@radix-ui/react-tooltip"));
 
 // app/components/Buttons/NavButton.tsx
-var import_react7 = require("@remix-run/react"), Toolbar2 = __toESM(require("@radix-ui/react-toolbar"));
+var import_react8 = require("@remix-run/react"), Toolbar2 = __toESM(require("@radix-ui/react-toolbar"));
 
 // app/styles/fontStyles.ts
 var getFontStyles = (DeskStyle) => {
@@ -963,7 +1030,7 @@ var import_jotai2 = require("jotai");
 var import_jotai = require("jotai"), Toolbar = __toESM(require("@radix-ui/react-toolbar")), import_phosphor_react = require("phosphor-react"), import_web2 = require("@react-spring/web");
 
 // app/components/AccessibleIcon.tsx
-var import_react6 = require("react");
+var import_react7 = require("react");
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), VisuallyHiddenLabel = styled("span", {
   visuallyHidden: ""
 }), AccessibleIcon = ({
@@ -971,10 +1038,10 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), VisuallyHiddenLab
   label,
   className
 }) => {
-  let child = import_react6.Children.only(children);
+  let child = import_react7.Children.only(children);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
     children: [
-      (0, import_react6.cloneElement)(child, {
+      (0, import_react7.cloneElement)(child, {
         "aria-hidden": "true",
         focusable: "false",
         className
@@ -1153,7 +1220,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationButton 
   showLabel = !1,
   onClick
 }) => {
-  let { pathname } = (0, import_react7.useLocation)(), isRoute = href !== "/" && pathname.includes(href) || pathname === href, handleClick = (e) => {
+  let { pathname } = (0, import_react8.useLocation)(), isRoute = href !== "/" && pathname.includes(href) || pathname === href, handleClick = (e) => {
     onClick && onClick(e);
   }, externalLinkProps = isExternal ? {
     rel: "noopener noreferrer",
@@ -1395,13 +1462,13 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MAIN_NAV = [
 });
 
 // app/components/Header/HeaderSidePanel.tsx
-var import_react11 = require("@remix-run/react"), Dialog = __toESM(require("@radix-ui/react-dialog")), import_phosphor_react4 = require("phosphor-react"), import_web3 = require("@react-spring/web"), Toolbar4 = __toESM(require("@radix-ui/react-toolbar"));
+var import_react12 = require("@remix-run/react"), Dialog = __toESM(require("@radix-ui/react-dialog")), import_phosphor_react4 = require("phosphor-react"), import_web3 = require("@react-spring/web"), Toolbar4 = __toESM(require("@radix-ui/react-toolbar"));
 
 // app/components/Menu/MenuDocs.tsx
-var import_react10 = require("@remix-run/react");
+var import_react11 = require("@remix-run/react");
 
 // app/components/Widgets/WidgetSearch.tsx
-var import_react8 = require("@docsearch/react"), import_react9 = require("react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetSearch = (0, import_react9.memo)(() => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react8.DocSearch, {
+var import_react9 = require("@docsearch/react"), import_react10 = require("react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime"), WidgetSearch = (0, import_react10.memo)(() => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react9.DocSearch, {
   appId: typeof window > "u" ? "" : window.env.ALGOLIA_APP_ID,
   indexName: "react-spring_beta",
   apiKey: typeof window > "u" ? "" : window.env.ALGOLIA_API_KEY
@@ -1413,7 +1480,7 @@ var import_react8 = require("@docsearch/react"), import_react9 = require("react"
 
 // app/components/Menu/MenuDocs.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuDocs = ({ submenu, onNavClick }) => {
-  let location = (0, import_react10.useLocation)(), handleNavClick = () => {
+  let location = (0, import_react11.useLocation)(), handleNavClick = () => {
     onNavClick && onNavClick();
   };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(DocsList, {
@@ -1623,7 +1690,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), MenuDocs = ({ sub
     color: "$steel60",
     fontFamily: "$sans-var"
   }
-}), ExternalAnchor = styled("a", AnchorStyles), Anchor = styled(import_react10.Link, AnchorStyles);
+}), ExternalAnchor = styled("a", AnchorStyles), Anchor = styled(import_react11.Link, AnchorStyles);
 
 // app/components/Header/HeaderSidePanel.tsx
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSidePanel = ({
@@ -1631,7 +1698,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSidePanel =
   submenu,
   onNavigationClick
 }) => {
-  let isDocs = (0, import_react11.useLocation)().pathname.includes("/docs"), transitions = (0, import_web3.useTransition)(isOpen, {
+  let isDocs = (0, import_react12.useLocation)().pathname.includes("/docs"), transitions = (0, import_web3.useTransition)(isOpen, {
     from: {
       x: "-100%",
       opacity: 0
@@ -1862,7 +1929,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights 
   position,
   alwaysAnimateHeader
 }) => {
-  let { sidebar, subnav = [] } = data ?? {}, [dialogOpen, setDialogOpen] = (0, import_react12.useState)(!1), headerHeights = getHeaderHeights(), [styles, isStuck, scrollTop, direction] = useAnimatedHeader({
+  let { sidebar, subnav = [] } = data ?? {}, [dialogOpen, setDialogOpen] = (0, import_react13.useState)(!1), headerHeights = getHeaderHeights(), [styles, isStuck, scrollTop, direction] = useAnimatedHeader({
     isHeader: !0,
     alwaysAnimate: alwaysAnimateHeader,
     heights: headerHeights
@@ -1928,6 +1995,11 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), getHeaderHeights 
         }, void 0, !0, {
           fileName: "app/components/Header/Header.tsx",
           lineNumber: 88,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Logo, {}, void 0, !1, {
+          fileName: "app/components/Header/Header.tsx",
+          lineNumber: 100,
           columnNumber: 9
         }, this)
       ]
@@ -2081,13 +2153,13 @@ __export(routes_exports, {
 });
 
 // app/components/Grids/NavigationGrid.tsx
-var import_react17 = require("@remix-run/react");
+var import_react18 = require("@remix-run/react");
 
 // app/helpers/guards.ts
 var isStringGuard = (value) => typeof value == "string";
 
 // app/components/Buttons/Button.tsx
-var import_react13 = require("@stitches/react"), import_react14 = require("@remix-run/react");
+var import_react14 = require("@stitches/react"), import_react15 = require("@remix-run/react");
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Button = ({
   children,
   className,
@@ -2121,7 +2193,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Button = ({
     lineNumber: 40,
     columnNumber: 5
   }, this);
-}, sharedStyles = (0, import_react13.css)({
+}, sharedStyles = (0, import_react14.css)({
   border: "solid 1px $black",
   backgroundColor: "transparent",
   borderRadius: "$r4",
@@ -2151,11 +2223,11 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Button = ({
       }
     }
   }
-}), StyledLink = styled(import_react14.Link, { ...sharedStyles }), StyledButton = styled("button", { ...sharedStyles });
+}), StyledLink = styled(import_react15.Link, { ...sharedStyles }), StyledButton = styled("button", { ...sharedStyles });
 
 // app/components/Text/Copy.tsx
-var import_react15 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import_react15.forwardRef)(
+var import_react16 = require("react");
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import_react16.forwardRef)(
   ({ fontStyle = "$XS", className, children, css: css3, tag = "p" }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Text, {
     className,
     as: tag,
@@ -2176,9 +2248,9 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Copy = (0, import
 });
 
 // app/components/Text/Heading.tsx
-var import_react16 = require("react");
+var import_react17 = require("react");
 var import_phosphor_react6 = require("phosphor-react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, import_react16.forwardRef)(
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Heading = (0, import_react17.forwardRef)(
   ({
     tag = "h1",
     fontStyle = "$S",
@@ -2417,7 +2489,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationGrid = 
     fileName: "app/components/Grids/NavigationGrid.tsx",
     lineNumber: 141,
     columnNumber: 7
-  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react17.Link, {
+  }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react18.Link, {
     to: href,
     children: renderTile()
   }, void 0, !1, {
@@ -2487,9 +2559,9 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), NavigationGrid = 
 var import_phosphor_react8 = require("phosphor-react");
 
 // app/components/Buttons/ButtonCopy.tsx
-var import_web5 = require("@react-spring/web"), import_phosphor_react7 = require("phosphor-react"), import_react18 = require("react");
+var import_web5 = require("@react-spring/web"), import_phosphor_react7 = require("phosphor-react"), import_react19 = require("react");
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), ButtonCopy = ({ children, className }) => {
-  let [copied, setCopied] = (0, import_react18.useState)(!1), handleCopyClick = async () => {
+  let [copied, setCopied] = (0, import_react19.useState)(!1), handleCopyClick = async () => {
     try {
       await navigator.clipboard.writeText(children);
     } catch {
@@ -2622,12 +2694,12 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), INSTALL_LINE = "n
 });
 
 // app/hooks/useWindowSize.ts
-var import_react19 = require("react");
+var import_react20 = require("react");
 var useWindowSize = (cb) => {
-  let [bounds, setBounds] = (0, import_react19.useState)({
+  let [bounds, setBounds] = (0, import_react20.useState)({
     width: void 0,
     height: void 0
-  }), prevDimesions = (0, import_react19.useRef)(bounds), handleResize = (0, import_react19.useCallback)(() => {
+  }), prevDimesions = (0, import_react20.useRef)(bounds), handleResize = (0, import_react20.useCallback)(() => {
     let { innerHeight: height, innerWidth: width } = window, newDimensions = {
       height,
       width
@@ -2684,7 +2756,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeroHome = () => 
                   href: "/docs/getting-started",
                   children: [
                     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", {
-                      children: "Get started"
+                      children: "\u5FEB\u901F\u4E0A\u624B"
                     }, void 0, !1, {
                       fileName: "app/components/Heros/HeroHome.tsx",
                       lineNumber: 26,
@@ -3066,11 +3138,11 @@ var docs_exports = {};
 __export(docs_exports, {
   default: () => DocsLayout2
 });
-var import_react24 = require("react"), import_react25 = require("@remix-run/react"), import_react26 = require("@mdx-js/react"), import_phosphor_react10 = require("phosphor-react");
+var import_react25 = require("react"), import_react26 = require("@remix-run/react"), import_react27 = require("@mdx-js/react"), import_phosphor_react10 = require("phosphor-react");
 
 // app/components/Text/List.tsx
-var import_react20 = require("react");
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List2 = (0, import_react20.forwardRef)(
+var import_react21 = require("react");
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), List2 = (0, import_react21.forwardRef)(
   ({ tag = "ul", fontStyle = "$XS", className, children, css: css3 }, ref) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ListElement, {
     className,
     ref,
@@ -3118,7 +3190,7 @@ var Dl = styled("dl", {
 });
 
 // app/components/Text/Anchor.tsx
-var import_react21 = require("@remix-run/react");
+var import_react22 = require("@remix-run/react");
 
 // app/helpers/strings.ts
 var isValidHttpUrl = (string) => {
@@ -3150,7 +3222,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), Anchor2 = ({ href
   fileName: "app/components/Text/Anchor.tsx",
   lineNumber: 28,
   columnNumber: 12
-}, this), AnchorElement = styled(import_react21.Link, {
+}, this), AnchorElement = styled(import_react22.Link, {
   fontSize: "inherit",
   lineHeight: "inherit",
   fontWeight: "$bold",
@@ -3192,9 +3264,9 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), H = ({ index, id,
 var import_web7 = require("@react-spring/web");
 
 // app/components/Header/HeaderSubnav.tsx
-var import_react22 = require("react"), import_web6 = require("@react-spring/web");
+var import_react23 = require("react"), import_web6 = require("@react-spring/web");
 var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), HeaderSubnav = ({ className, subnav }) => {
-  let subNavScrollRef = (0, import_react22.useRef)(null), [springs, ref] = (0, import_web6.useSprings)(2, (i) => ({
+  let subNavScrollRef = (0, import_react23.useRef)(null), [springs, ref] = (0, import_web6.useSprings)(2, (i) => ({
     opacity: 0
   })), handleScroll = (e) => {
     let el = e.target;
@@ -3417,7 +3489,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), StickyAside = ({ 
 });
 
 // app/components/Code/LivePreview.tsx
-var import_react23 = require("react"), import_sandpack_react = require("@codesandbox/sandpack-react"), Accordion = __toESM(require("@radix-ui/react-accordion")), import_web9 = require("@react-spring/web");
+var import_react24 = require("react"), import_sandpack_react = require("@codesandbox/sandpack-react"), Accordion = __toESM(require("@radix-ui/react-accordion")), import_web9 = require("@react-spring/web");
 
 // app/components/Code/Pre.tsx
 var Pre = styled("pre", {
@@ -3719,7 +3791,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
   defaultOpen = !1,
   template = "spring"
 }) => {
-  let [value, setValue] = (0, import_react23.useState)(defaultOpen ? "code" : ""), preRef = (0, import_react23.useRef)(null), codeTemplate = `
+  let [value, setValue] = (0, import_react24.useState)(defaultOpen ? "code" : ""), preRef = (0, import_react24.useRef)(null), codeTemplate = `
     import '/index.css'
     ${code}
   `, handleValueChange = (value2) => setValue(value2), [styles, api] = (0, import_web9.useSpring)(
@@ -3727,8 +3799,8 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
       height: 0
     }),
     []
-  ), isMounted = (0, import_react23.useRef)(!1);
-  return (0, import_react23.useEffect)(() => {
+  ), isMounted = (0, import_react24.useRef)(!1);
+  return (0, import_react24.useEffect)(() => {
     api.start({
       height: value === "" ? 0 : preRef.current.getBoundingClientRect().height,
       immediate: !isMounted.current
@@ -3752,6 +3824,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
           dependencies: {
             "@react-spring/web": "*",
             "@aoviz/graphs": "*",
+            "@aoviz/mock": "*",
             ...LIVE_PREVIEW_DEPS[template]
           }
         },
@@ -3769,7 +3842,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
         },
         children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_sandpack_react.SandpackPreview, {}, void 0, !1, {
           fileName: "app/components/Code/LivePreview.tsx",
-          lineNumber: 100,
+          lineNumber: 101,
           columnNumber: 9
         }, this)
       }, void 0, !1, {
@@ -3792,17 +3865,17 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
                   children: value === "" ? "Show Code" : "Hide Code"
                 }, void 0, !1, {
                   fileName: "app/components/Code/LivePreview.tsx",
-                  lineNumber: 111,
+                  lineNumber: 112,
                   columnNumber: 17
                 }, this)
               }, void 0, !1, {
                 fileName: "app/components/Code/LivePreview.tsx",
-                lineNumber: 110,
+                lineNumber: 111,
                 columnNumber: 15
               }, this)
             }, void 0, !1, {
               fileName: "app/components/Code/LivePreview.tsx",
-              lineNumber: 109,
+              lineNumber: 110,
               columnNumber: 13
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AccordionContent, {
@@ -3813,23 +3886,23 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), LivePreview = ({
                 ...preProps
               }, void 0, !1, {
                 fileName: "app/components/Code/LivePreview.tsx",
-                lineNumber: 117,
+                lineNumber: 118,
                 columnNumber: 15
               }, this)
             }, void 0, !1, {
               fileName: "app/components/Code/LivePreview.tsx",
-              lineNumber: 116,
+              lineNumber: 117,
               columnNumber: 13
             }, this)
           ]
         }, void 0, !0, {
           fileName: "app/components/Code/LivePreview.tsx",
-          lineNumber: 108,
+          lineNumber: 109,
           columnNumber: 11
         }, this)
       }, void 0, !1, {
         fileName: "app/components/Code/LivePreview.tsx",
-        lineNumber: 103,
+        lineNumber: 104,
         columnNumber: 9
       }, this) : null
     ]
@@ -4104,10 +4177,10 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), icons = {
 });
 
 // app/data/navigationSchema.generated.json
-var navigationSchema_generated_default = [{ href: "/docs", id: "index", title: "\u7B80\u4ECB", sidebarPosition: 1, children: [] }, { href: "/docs/getting-started", id: "getting-started", title: "\u5FEB\u901F\u4E0A\u624B", sidebarPosition: 2, children: [] }, { href: "/docs/instance", id: "instance", title: "Graph \u65B9\u6CD5", sidebarPosition: 2, children: [] }, { href: "/docs/plugins", id: "plugins", noPage: !0, children: [{ id: "fisheys", title: "\u9C7C\u773C\u63D2\u4EF6", sidebarPosition: 1, children: [], href: "/docs/plugins/fisheys", noPage: !1 }, { id: "watermark", title: "\u6C34\u5370\u63D2\u4EF6", sidebarPosition: 1, children: [], href: "/docs/plugins/watermark", noPage: !1 }], sidebarPosition: 3, title: "Plugins" }];
+var navigationSchema_generated_default = [{ href: "/docs", id: "index", title: "\u7B80\u4ECB", sidebarPosition: 1, children: [] }, { href: "/docs/getting-started", id: "getting-started", title: "\u5FEB\u901F\u4E0A\u624B", sidebarPosition: 2, children: [] }, { href: "/docs/config", id: "config", title: "Graph \u914D\u7F6E\u9879", sidebarPosition: 3, children: [] }, { href: "/docs/instance", id: "instance", title: "Graph \u65B9\u6CD5", sidebarPosition: 4, children: [] }, { href: "/docs/plugins", id: "plugins", noPage: !0, children: [{ id: "fisheys", title: "\u9C7C\u773C\u63D2\u4EF6", sidebarPosition: 1, children: [], href: "/docs/plugins/fisheys", noPage: !1 }, { id: "watermark", title: "\u6C34\u5370\u63D2\u4EF6", sidebarPosition: 1, children: [], href: "/docs/plugins/watermark", noPage: !1 }], sidebarPosition: 5, title: "Plugins \u63D2\u4EF6" }];
 
 // app/data/subnavSchema.generated.json
-var subnavSchema_generated_default = { "/getting-started": [{ href: "#", label: "\u5B89\u88C5", id: "" }, { href: "#", label: "\u4F7F\u7528\u793A\u4F8B", id: "" }], "/instance": [{ href: "#", label: "\u65B9\u6CD5\u4ECB\u7ECD", id: "" }], "/plugins/fisheys": [], "/plugins/index": [], "/plugins/watermark": [] };
+var subnavSchema_generated_default = { "/config": [{ href: "#", label: "\u529B\u5E03\u5C40\u914D\u7F6E", id: "" }, { href: "#forces-", label: "forces \u914D\u7F6E\u9879", id: "forces-" }, { href: "#", label: "\u6837\u5F0F\u914D\u7F6E", id: "" }, { href: "#typescript", label: "Typescript", id: "typescript" }], "/getting-started": [{ href: "#", label: "\u5B89\u88C5", id: "" }, { href: "#", label: "\u4F7F\u7528\u793A\u4F8B", id: "" }], "/instance": [{ href: "#", label: "\u65B9\u6CD5\u4ECB\u7ECD", id: "" }], "/plugins/fisheys": [], "/plugins/index": [], "/plugins/watermark": [] };
 
 // app/helpers/navigation.ts
 var getNavigations = (dir) => {
@@ -4335,11 +4408,11 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), comps = {
   }, this)
 };
 function DocsLayout2() {
-  let location = (0, import_react25.useLocation)(), navigation = getNavigations(location.pathname), isDarkMode = useIsDarkTheme(), hasStickySubnav = navigation.subnav && navigation.subnav.length > 0, activeRoute = (0, import_react24.useMemo)(
+  let location = (0, import_react26.useLocation)(), navigation = getNavigations(location.pathname), isDarkMode = useIsDarkTheme(), hasStickySubnav = navigation.subnav && navigation.subnav.length > 0, activeRoute = (0, import_react25.useMemo)(
     () => flattenNavigationWithChildren(navigation.sidebar),
     [navigation.sidebar]
   ).find((item) => item.href === location.pathname);
-  return (0, import_react24.useEffect)(() => {
+  return (0, import_react25.useEffect)(() => {
     let element = document.getElementById("carbonads");
     typeof window._carbonads < "u" && element && (window._carbonads.remove(element), window._carbonads.refresh());
   }, [location.pathname]), /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, {
@@ -4388,9 +4461,9 @@ function DocsLayout2() {
                   lineNumber: 246,
                   columnNumber: 15
                 }, this) : null,
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react26.MDXProvider, {
+                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react27.MDXProvider, {
                   components: comps,
-                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react25.Outlet, {}, void 0, !1, {
+                  children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react26.Outlet, {}, void 0, !1, {
                     fileName: "app/routes/docs.tsx",
                     lineNumber: 254,
                     columnNumber: 15
@@ -4533,23 +4606,559 @@ var Grid2 = styled("div", {
   }
 });
 
-// mdx:routes/docs/getting-started.mdx
-var getting_started_exports = {};
-__export(getting_started_exports, {
+// mdx:routes/docs/plugins/watermark.mdx
+var watermark_exports = {};
+__export(watermark_exports, {
   attributes: () => attributes,
-  default: () => getting_started_default,
+  default: () => watermark_default,
   filename: () => filename,
   headers: () => headers,
   meta: () => meta3
 });
-var import_react27 = require("@mdx-js/react"), import_react28 = __toESM(require("react")), attributes = {
+var import_react28 = require("@mdx-js/react"), import_react29 = __toESM(require("react")), attributes = {
+  meta: {
+    title: "\u6C34\u5370\u63D2\u4EF6 |  @aoviz/graphs",
+    description: "\u6C34\u5370"
+  },
+  sidebar_position: 1
+};
+function MDXContent(props = {}) {
+  let _components = Object.assign({
+    h1: "h1",
+    a: "a",
+    p: "p",
+    pre: "pre",
+    code: "code",
+    div: "div",
+    span: "span"
+  }, (0, import_react28.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react29.default.createElement(import_react29.default.Fragment, null, /* @__PURE__ */ import_react29.default.createElement(_components.h1, {
+    id: "\u6C34\u5370\u63D2\u4EF6"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.a, {
+    href: "#\u6C34\u5370\u63D2\u4EF6"
+  }, "\u6C34\u5370\u63D2\u4EF6")), `
+`, /* @__PURE__ */ import_react29.default.createElement(_components.p, null, "\u901A\u8FC7\u4F20\u5165\u6587\u672C\u5185\u5BB9\u6E32\u67D3\u6C34\u5370"), `
+`, /* @__PURE__ */ import_react29.default.createElement(_components.pre, {
+    code: `import { Force, WatermarkPlugin, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs'
+import { ONE_DEGREE_BANK_DATA } from '@aoviz/mock'
+import { useRef, useEffect } from 'react'
+
+const option = {
+  link:{
+    label: {
+      backgroundColor: 'rgba(114, 193, 209, 0.8)' 
+    }
+  },
+  layout: DEFAULT_LAYOUT_OPTION
+}
+export default function Viz() {
+
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data: ONE_DEGREE_BANK_DATA, option });
+    instance.setPlugins([ new WatermarkPlugin({value: '@aoviz/graphs', color: 'rgba(179, 179, 255, 0.5)'})])
+  }, [wrapper]);
+
+  return (
+    <div style={{ height: 380, width: 600}}>
+		  <div ref={wrapper} style={{ height: 380, width: 600}}></div>
+	  </div>
+  )
+}
+
+`,
+    live: "true",
+    template: "imperative"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.code, {
+    className: "language-jsx",
+    live: "true",
+    template: "imperative"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "1",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Force"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "WatermarkPlugin"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token constant"
+  }, "DEFAULT_LAYOUT_OPTION"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'@aoviz/graphs'"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "2",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token constant"
+  }, "ONE_DEGREE_BANK_DATA"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'@aoviz/mock'"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "3",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token imports"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " useRef", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " useEffect ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'react'"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "4",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "5",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " option ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "6",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "link"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "7",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "label"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "8",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "      ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "backgroundColor"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'rgba(114, 193, 209, 0.8)'"), ` 
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "9",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "10",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "11",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "layout"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token constant"
+  }, "DEFAULT_LAYOUT_OPTION"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "12",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "13",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "export"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "default"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "function"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token function"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Viz")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "14",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "15",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " wrapper ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token function"
+  }, "useRef"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword null nil"
+  }, "null"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "16",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "17",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token function"
+  }, "useEffect"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token arrow operator"
+  }, "=>"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "18",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " instance ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "new"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token class-name"
+  }, "Force"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), "wrapper", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "."), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token property-access"
+  }, "current"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "data"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token constant"
+  }, "ONE_DEGREE_BANK_DATA"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " option ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "19",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    instance", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "."), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token method function property-access"
+  }, "setPlugins"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "["), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "new"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token class-name"
+  }, "WatermarkPlugin"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "value"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'@aoviz/graphs'"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "color"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token string"
+  }, "'rgba(179, 179, 255, 0.5)'"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "]"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "20",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "["), "wrapper", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "]"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "21",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "22",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token keyword control-flow"
+  }, "return"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "23",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "<"), "div"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "style"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "height"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token number"
+  }, "380"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "width"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token number"
+  }, "600"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token plain-text"
+  }), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "24",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token plain-text"
+  }, "		  "), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "<"), "div"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "ref"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), "wrapper", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "style"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "height"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token number"
+  }, "380"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "width"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token number"
+  }, "600"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "</"), "div"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token plain-text"
+  }), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "25",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token plain-text"
+  }, "	  "), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "</"), "div"), /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "26",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "27",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react29.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react29.default.createElement(_components.div, {
+    "data-line": "28",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`))));
+  return MDXLayout ? /* @__PURE__ */ import_react29.default.createElement(MDXLayout, {
+    ...props
+  }, _content) : _content;
+}
+var watermark_default = MDXContent, filename = "watermark.mdx", headers = typeof attributes < "u" && attributes.headers, meta3 = typeof attributes < "u" && attributes.meta;
+
+// mdx:routes/docs/getting-started.mdx
+var getting_started_exports = {};
+__export(getting_started_exports, {
+  attributes: () => attributes2,
+  default: () => getting_started_default,
+  filename: () => filename2,
+  headers: () => headers2,
+  meta: () => meta4
+});
+var import_react30 = require("@mdx-js/react"), import_react31 = __toESM(require("react")), attributes2 = {
   meta: {
     title: "\u5FEB\u901F\u4E0A\u624B | @aoviz/graphs",
     description: "\u4F7F\u7528\u65B9\u5F0F"
   },
   sidebar_position: 2
 };
-function MDXContent(props = {}) {
+function MDXContent2(props = {}) {
   let _components = Object.assign({
     h1: "h1",
     a: "a",
@@ -4560,264 +5169,264 @@ function MDXContent(props = {}) {
     div: "div",
     span: "span",
     h3: "h3"
-  }, (0, import_react27.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react28.default.createElement(import_react28.default.Fragment, null, /* @__PURE__ */ import_react28.default.createElement(_components.h1, {
+  }, (0, import_react30.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react31.default.createElement(import_react31.default.Fragment, null, /* @__PURE__ */ import_react31.default.createElement(_components.h1, {
     id: "\u5FEB\u901F\u4E0A\u624B"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "#\u5FEB\u901F\u4E0A\u624B"
   }, "\u5FEB\u901F\u4E0A\u624B")), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.p, null, /* @__PURE__ */ import_react28.default.createElement(_components.code, null, "@aoviz/graphs"), " \u662F\u5B8C\u5168\u7531 Typescript \u7F16\u5199\u7684\u6846\u67B6\uFF0C\u7528\u4E8E\u6784\u5EFA\u6570\u636E\u9A71\u52A8\u7684\u53EF\u89C6\u5316\u56FE\u7EC4\u4EF6\u5E93\u3002"), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.p, null, /* @__PURE__ */ import_react31.default.createElement(_components.code, null, "@aoviz/graphs"), " \u662F\u5B8C\u5168\u7531 Typescript \u7F16\u5199\u7684\u6846\u67B6\uFF0C\u7528\u4E8E\u6784\u5EFA\u6570\u636E\u9A71\u52A8\u7684\u53EF\u89C6\u5316\u56FE\u7EC4\u4EF6\u5E93\u3002"), `
+`, /* @__PURE__ */ import_react31.default.createElement(_components.h2, {
     id: "\u5B89\u88C5"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "#\u5B89\u88C5"
   }, "\u5B89\u88C5")), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.p, null, "\u53EF\u4EE5\u4F7F\u7528\u4EFB\u610F\u4E00\u4E2A\u5305\u7BA1\u7406\u5668\u5DE5\u5177\u5B89\u88C5 ", /* @__PURE__ */ import_react28.default.createElement(_components.code, null, "@aoviz/graphs"), "\uFF0C\u4E0B\u9762\u662F\u4EE5 ", /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.p, null, "\u53EF\u4EE5\u4F7F\u7528\u4EFB\u610F\u4E00\u4E2A\u5305\u7BA1\u7406\u5668\u5DE5\u5177\u5B89\u88C5 ", /* @__PURE__ */ import_react31.default.createElement(_components.code, null, "@aoviz/graphs"), "\uFF0C\u4E0B\u9762\u662F\u4EE5 ", /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "https://yarnpkg.com/en/"
   }, "Yarn"), " \u4E3A\u4F8B:"), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.pre, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.pre, {
     copy: "yarn add @aoviz/graphs"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.code, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.code, {
     className: "language-jsx",
     copy: "yarn add @aoviz/graphs"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "1",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "yarn add @aoviz", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "yarn add @aoviz", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
   }, "/"), `graphs
 `))), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.h2, {
     id: "\u4F7F\u7528\u793A\u4F8B"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "#\u4F7F\u7528\u793A\u4F8B"
   }, "\u4F7F\u7528\u793A\u4F8B")), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.h3, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.h3, {
     id: "\u51C6\u5907\u6570\u636E"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "#\u51C6\u5907\u6570\u636E"
   }, "\u51C6\u5907\u6570\u636E")), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.pre, null, /* @__PURE__ */ import_react28.default.createElement(_components.code, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.pre, null, /* @__PURE__ */ import_react31.default.createElement(_components.code, {
     className: "language-ts"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "1",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword"
-  }, "const"), " data ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "const"), " data ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "="), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "="), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "2",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  nodes", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  nodes", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "["), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "3",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "4",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      id", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      id", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "5",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      name", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      name", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u8282\u70B91'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u8282\u70B91'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "6",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      cfg", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      cfg", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " backgroundColor", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " color", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'#6EA3FD'"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'#6EA3FD'"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "7",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "8",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "     ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "     ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "9",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      id", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      id", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'2'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'2'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "10",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      name", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      name", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u8282\u70B92'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u8282\u70B92'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "11",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      cfg", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      cfg", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " backgroundColor", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " color", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'#8470A8'"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'#8470A8'"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "12",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "13",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "]"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "]"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "14",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  links", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  links", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "["), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "15",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "16",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      id", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      id", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'A'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'A'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "17",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      name", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      name", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u5173\u7CFB1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u5173\u7CFB1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "18",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      source", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      source", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "19",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      target", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      target", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
   }, "'2'"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "20",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "21",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "]"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "22",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
 `))), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.h3, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.h3, {
     id: "\u521B\u5EFA\u5173\u7CFB\u56FE"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.a, {
     href: "#\u521B\u5EFA\u5173\u7CFB\u56FE"
   }, "\u521B\u5EFA\u5173\u7CFB\u56FE")), `
-`, /* @__PURE__ */ import_react28.default.createElement(_components.pre, {
+`, /* @__PURE__ */ import_react31.default.createElement(_components.pre, {
     code: `import { Force } from '@aoviz/graphs'
 import { useRef, useEffect } from 'react'
 const data = {
@@ -4825,12 +5434,12 @@ const data = {
     {
       id: '1',
       name: '\u8282\u70B91',
-      cfg: { backgroundColor: '#6EA3FD' }
+      cfg: { color: '#6EA3FD' }
     },
      {
       id: '2',
       name: '\u8282\u70B92',
-      cfg: { backgroundColor: '#8470A8' }
+      cfg: { color: '#8470A8' }
     }
   ],
   links: [
@@ -4863,819 +5472,1371 @@ const option = {
 }
 export default function Viz() {
   const wrapper = useRef(null);
+
   useEffect(() => {
     const instance = new Force(wrapper.current,{ data, option });
   }, [wrapper]);
+  
   return <div ref={wrapper} style={{ height: 380, width: 600}}></div>;
 }
 
 `,
     live: "true",
     template: "imperative"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.code, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.code, {
     className: "language-jsx",
     live: "true",
     template: "imperative"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "1",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "import"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "import"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token imports"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token maybe-class-name"
-  }, "Force"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "Force"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}")), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}")), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "from"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "from"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
   }, "'@aoviz/graphs'"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "2",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "import"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "import"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token imports"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " useRef", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " useRef", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " useEffect ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " useEffect ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}")), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}")), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "from"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "from"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
   }, "'react'"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "3",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword"
-  }, "const"), " data ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "const"), " data ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "="), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "="), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "4",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "nodes"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "nodes"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "["), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "5",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "6",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "id"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "id"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "7",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "name"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "name"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u8282\u70B91'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u8282\u70B91'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "8",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "cfg"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "cfg"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "backgroundColor"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "color"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'#6EA3FD'"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'#6EA3FD'"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "9",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "10",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "     ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "     ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "11",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "id"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "id"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'2'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'2'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "12",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "name"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "name"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u8282\u70B92'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u8282\u70B92'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "13",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "cfg"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "cfg"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "backgroundColor"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "color"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'#8470A8'"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'#8470A8'"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "14",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "15",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "]"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "]"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "16",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "links"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "links"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "["), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "17",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "18",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "id"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "id"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'A'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'A'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "19",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "name"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "name"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'\u5173\u7CFB1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'\u5173\u7CFB1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "20",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "source"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "source"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'1'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'1'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "21",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "target"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "target"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'2'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'2'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "22",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "cfg"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "cfg"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "23",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "label"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "label"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "24",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "          ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "          ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "backgroundColor"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "backgroundColor"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
   }, "'rgba(114, 193, 209, 0.8)'"), ` 
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "25",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "26",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "27",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "28",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "]"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "29",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "30",
     className: "highlight-line",
     "data-highlighted": "true"
   }, `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "31",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword"
-  }, "const"), " option ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "const"), " option ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "="), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "="), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "32",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "layout"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "layout"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "33",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "velocityDecay"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "velocityDecay"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "0.15"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "0.15"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "34",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "forces"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "forces"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "["), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "35",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'n-body'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'n-body'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "strength"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "strength"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "-"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "-"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "1600"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "1600"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "distanceMin"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "distanceMin"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "30"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "30"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "36",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'collide'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'collide'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "strength"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "strength"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "0.5"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "0.5"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token function-variable function"
-  }, "radius"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "radius"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token parameter"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "d"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "d"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " any"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " any"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ")"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token arrow operator"
-  }, "=>"), " d", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "=>"), " d", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "."), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "."), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token property-access"
-  }, "cfg"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "cfg"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "?."), "radius ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "?."), "radius ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "||"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "||"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "20"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "20"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "iterations"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "iterations"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "1"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "1"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "37",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'link'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'link'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token function-variable function"
-  }, "id"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "id"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token parameter"
-  }, "d"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "d"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ")"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token arrow operator"
-  }, "=>"), " d", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "=>"), " d", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "."), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "."), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token property-access"
-  }, "id"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "id"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "distance"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "distance"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "200"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "200"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "38",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'x'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'x'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "strength"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "strength"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "0.1"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "0.1"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "39",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'y'"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'y'"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "strength"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "strength"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token number"
-  }, "0.1"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "0.1"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ","), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "40",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "        ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "        ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token literal-property property"
-  }, "force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token string"
-  }, "'center'"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "'center'"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "41",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "      ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "      ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "]"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "42",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "43",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "44",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "export"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "export"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword module"
-  }, "default"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "default"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword"
-  }, "function"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "function"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token function"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token maybe-class-name"
-  }, "Viz")), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "Viz")), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ")"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "45",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword"
-  }, "const"), " wrapper ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "const"), " wrapper ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token operator"
-  }, "="), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "="), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token function"
-  }, "useRef"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "useRef"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token keyword null nil"
-  }, "null"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "null"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ")"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ";"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "46",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token function"
-  }, "useEffect"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "("), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ")"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token arrow operator"
-  }, "=>"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "{"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+  }, `
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "47",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "    ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token keyword"
-  }, "const"), " instance ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token operator"
-  }, "="), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token keyword"
-  }, "new"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token class-name"
-  }, "Force"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token function"
+  }, "useEffect"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "("), "wrapper", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "."), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token property-access"
-  }, "current"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token arrow operator"
+  }, "=>"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " data", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ","), " option ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ")"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ";"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+  }, "{"), `
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "48",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "    ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " instance ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "new"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token class-name"
+  }, "Force"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "("), "wrapper", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "."), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token property-access"
+  }, "current"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "["), "wrapper", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "]"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "{"), " data", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, ")"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " option ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ";"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "49",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, "  ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token keyword control-flow"
-  }, "return"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token tag"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token tag"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "<"), "div"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token attr-name"
-  }, "ref"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token script language-javascript"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token script-punctuation punctuation"
-  }, "="), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), "wrapper", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "}")), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token attr-name"
-  }, "style"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token script language-javascript"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token script-punctuation punctuation"
-  }, "="), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "["), "wrapper", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, "]"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
-  }, "{"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token literal-property property"
-  }, "height"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token number"
-  }, "380"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ","), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token literal-property property"
-  }, "width"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token operator"
-  }, ":"), " ", /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token number"
-  }, "600"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "}"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "}")), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ">")), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token tag"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token tag"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, "</"), "div"), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
-    className: "token punctuation"
-  }, ">")), /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, ")"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, ";"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
     "data-line": "50",
     className: "highlight-line",
     "data-highlighted": "true"
-  }, /* @__PURE__ */ import_react28.default.createElement(_components.span, {
+  }, `  
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
+    "data-line": "51",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token keyword control-flow"
+  }, "return"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "<"), "div"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "ref"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), "wrapper", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "style"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "height"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token number"
+  }, "380"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "width"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token number"
+  }, "600"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "</"), "div"), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react31.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
+    "data-line": "52",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react31.default.createElement(_components.span, {
     className: "token punctuation"
   }, "}"), `
-`), /* @__PURE__ */ import_react28.default.createElement(_components.div, {
-    "data-line": "51",
+`), /* @__PURE__ */ import_react31.default.createElement(_components.div, {
+    "data-line": "53",
     className: "highlight-line",
     "data-highlighted": "true"
   }, `
 `))));
-  return MDXLayout ? /* @__PURE__ */ import_react28.default.createElement(MDXLayout, {
+  return MDXLayout ? /* @__PURE__ */ import_react31.default.createElement(MDXLayout, {
     ...props
   }, _content) : _content;
 }
-var getting_started_default = MDXContent, filename = "getting-started.mdx", headers = typeof attributes < "u" && attributes.headers, meta3 = typeof attributes < "u" && attributes.meta;
+var getting_started_default = MDXContent2, filename2 = "getting-started.mdx", headers2 = typeof attributes2 < "u" && attributes2.headers, meta4 = typeof attributes2 < "u" && attributes2.meta;
+
+// mdx:routes/docs/plugins/fisheys.mdx
+var fisheys_exports = {};
+__export(fisheys_exports, {
+  attributes: () => attributes3,
+  default: () => fisheys_default,
+  filename: () => filename3,
+  headers: () => headers3,
+  meta: () => meta5
+});
+var import_react32 = require("@mdx-js/react"), import_react33 = __toESM(require("react")), attributes3 = {
+  meta: {
+    title: "\u9C7C\u773C\u63D2\u4EF6 |  @aoviz/graphs",
+    description: "\u9C7C\u773C\u63D2\u4EF6"
+  },
+  sidebar_position: 1
+};
+function MDXContent3(props = {}) {
+  let _components = Object.assign({
+    h1: "h1",
+    a: "a",
+    p: "p",
+    code: "code",
+    pre: "pre",
+    div: "div",
+    span: "span"
+  }, (0, import_react32.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react33.default.createElement(import_react33.default.Fragment, null, /* @__PURE__ */ import_react33.default.createElement(_components.h1, {
+    id: "\u9C7C\u773C\u63D2\u4EF6"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.a, {
+    href: "#\u9C7C\u773C\u63D2\u4EF6"
+  }, "\u9C7C\u773C\u63D2\u4EF6")), `
+`, /* @__PURE__ */ import_react33.default.createElement(_components.p, null, "\u6309\u4F4F ", /* @__PURE__ */ import_react33.default.createElement(_components.code, null, "ctrl"), " \u952E\uFF0C\u5728\u8282\u70B9\u5904\u6ED1\u52A8\u4F53\u9A8C\u9C7C\u773C\u63D2\u4EF6"), `
+`, /* @__PURE__ */ import_react33.default.createElement(_components.pre, {
+    code: `import { Force, FisheyePlugin, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs';
+import { TWO_DEGREE_BANK_DATA } from '@aoviz/mock'
+import { useRef, useEffect } from 'react'
+
+const option = {
+  link:{
+    label: {
+      backgroundColor: 'rgba(114, 193, 209, 0.8)' 
+    }
+  },
+  layout: DEFAULT_LAYOUT_OPTION
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data: TWO_DEGREE_BANK_DATA, option });
+    instance.setPlugins([new FisheyePlugin()])
+  }, [wrapper]);
+
+  return (
+    <div style={{ height: 380, width: 600}}>
+		  <div ref={wrapper} style={{ height: 380, width: 600}}></div>
+	  </div>
+  );
+}
+
+`,
+    live: "true",
+    template: "imperative"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.code, {
+    className: "language-jsx",
+    live: "true",
+    template: "imperative"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "1",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Force"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "FisheyePlugin"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token constant"
+  }, "DEFAULT_LAYOUT_OPTION"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token string"
+  }, "'@aoviz/graphs'"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "2",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token constant"
+  }, "TWO_DEGREE_BANK_DATA"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token string"
+  }, "'@aoviz/mock'"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "3",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "import"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token imports"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " useRef", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " useEffect ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "from"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token string"
+  }, "'react'"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "4",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "5",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " option ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "6",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "link"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "7",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "label"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "8",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "      ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "backgroundColor"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token string"
+  }, "'rgba(114, 193, 209, 0.8)'"), ` 
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "9",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "10",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "11",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "layout"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token constant"
+  }, "DEFAULT_LAYOUT_OPTION"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "12",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "13",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "export"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword module"
+  }, "default"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "function"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token function"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Viz")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "14",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " wrapper ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token function"
+  }, "useRef"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword null nil"
+  }, "null"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "15",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "16",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token function"
+  }, "useEffect"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token arrow operator"
+  }, "=>"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "17",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "const"), " instance ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, "="), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "new"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token class-name"
+  }, "Force"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), "wrapper", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "."), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token property-access"
+  }, "current"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "data"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token constant"
+  }, "TWO_DEGREE_BANK_DATA"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " option ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "18",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    instance", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "."), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token method function property-access"
+  }, "setPlugins"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "["), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "new"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token class-name"
+  }, "FisheyePlugin"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "]"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "19",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "["), "wrapper", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "]"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "20",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "21",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token keyword control-flow"
+  }, "return"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "("), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "22",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "<"), "div"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "style"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "height"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token number"
+  }, "380"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "width"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token number"
+  }, "600"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token plain-text"
+  }), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "23",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token plain-text"
+  }, "		  "), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "<"), "div"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "ref"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), "wrapper", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token attr-name"
+  }, "style"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script language-javascript"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token script-punctuation punctuation"
+  }, "="), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "height"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token number"
+  }, "380"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ","), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token literal-property property"
+  }, "width"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token number"
+  }, "600"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "</"), "div"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token plain-text"
+  }), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "24",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token plain-text"
+  }, "	  "), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token tag"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "</"), "div"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ">")), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "25",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "  ", /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ")"), /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "26",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react33.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react33.default.createElement(_components.div, {
+    "data-line": "27",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`))));
+  return MDXLayout ? /* @__PURE__ */ import_react33.default.createElement(MDXLayout, {
+    ...props
+  }, _content) : _content;
+}
+var fisheys_default = MDXContent3, filename3 = "fisheys.mdx", headers3 = typeof attributes3 < "u" && attributes3.headers, meta5 = typeof attributes3 < "u" && attributes3.meta;
+
+// mdx:routes/docs/plugins/index.mdx
+var plugins_exports = {};
+__export(plugins_exports, {
+  attributes: () => attributes4,
+  default: () => plugins_default,
+  filename: () => filename4,
+  headers: () => headers4,
+  meta: () => meta6
+});
+var import_react34 = require("@mdx-js/react"), import_react35 = __toESM(require("react")), attributes4 = {
+  meta: {
+    title: "Plugins \u63D2\u4EF6 | @aoviz/graphs"
+  },
+  sidebar_position: 5,
+  noPage: !0
+};
+function MDXContent4(props = {}) {
+  let _components = Object.assign({}, (0, import_react34.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react35.default.createElement(import_react35.default.Fragment, null);
+  return MDXLayout ? /* @__PURE__ */ import_react35.default.createElement(MDXLayout, {
+    ...props
+  }, _content) : _content;
+}
+var plugins_default = MDXContent4, filename4 = "index.mdx", headers4 = typeof attributes4 < "u" && attributes4.headers, meta6 = typeof attributes4 < "u" && attributes4.meta;
 
 // mdx:routes/docs/instance.mdx
 var instance_exports = {};
 __export(instance_exports, {
-  attributes: () => attributes2,
+  attributes: () => attributes5,
   default: () => instance_default,
-  filename: () => filename2,
-  headers: () => headers2,
-  meta: () => meta4
+  filename: () => filename5,
+  headers: () => headers5,
+  meta: () => meta7
 });
-var import_react29 = require("@mdx-js/react"), import_react30 = __toESM(require("react"));
+var import_react36 = require("@mdx-js/react"), import_react37 = __toESM(require("react"));
 
 // app/data/fixtures.tsx
 var import_phosphor_react11 = require("phosphor-react"), import_jsx_dev_runtime = require("react/jsx-dev-runtime");
@@ -6236,45 +7397,530 @@ var FORCE_INSTANCE_DATA = [
   [{ label: "onLinkClick$", content: "\u83B7\u53D6\u5173\u7CFB\u7684 Click \u4E8B\u4EF6" }, "Observable<IRenderLink>", null],
   [{ label: "onLinkHover$", content: "\u83B7\u53D6\u5173\u7CFB\u7684 Hover \u4E8B\u4EF6" }, "Observable<IRenderLink | null>", null],
   [{ label: "onNodeDrag$", content: "\u83B7\u53D6\u8282\u70B9\u7684 drag \u4E8B\u4EF6" }, "Observable<INodeDragEvent>", null]
+], FORCE_LAYOUT_DATA = [
+  [{ label: "static", content: "\u751F\u6210\u7684\u5E03\u5C40\u7C7B\u578B\uFF0C\u9759\u6001\u5E03\u5C40\u6216\u8005\u6B63\u5E38\u529B\u5E03\u5C40" }, "boolean", "false"],
+  [{ label: "alpha", content: "\u751F\u6210\u7684\u5E03\u5C40\u7C7B\u578B\uFF0C\u9759\u6001\u5E03\u5C40\u6216\u8005\u6B63\u5E38\u529B\u5E03\u5C40" }, "number", "1"],
+  [{ label: "alphaMin", content: "\u5728\u6BCF\u6B21\u6A21\u62DF\u8FED\u4EE3\u4E2D\u964D\u4F4E alpha \u503C\u7684\u6700\u5C0F\u9650\u5236" }, "number", "0.001"],
+  [{ label: "alphaTarget", content: "\u6A21\u62DF\u6536\u655B\u5230\u7684\u76EE\u6807 alpha \u503C" }, "number", "0"],
+  [{ label: "velocityDecay", content: "\u5728\u8FED\u4EE3\u671F\u95F4\u65BD\u52A0\u4EFB\u4F55\u529B\u540E\uFF0C\u6BCF\u4E2A\u8282\u70B9\u7684\u901F\u5EA6\u4E58\u4EE5 1 - velocityDecay" }, "number", "0.4"],
+  [{ label: "forces", content: "\u5B9A\u4E49\u8981\u5305\u542B\u5728\u6A21\u62DF\u4E2D\u7684\u529B\u7684\u5BF9\u8C61\u6570\u7EC4\uFF0C\u66F4\u591A\u914D\u7F6E\u8BF7\u770B forces \u914D\u7F6E" }, "IForce[]", "[]"]
+], FORCE_LAYOUT_CENTER_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A `center`" }, "`center`", "`center`"],
+  [{ label: "x", content: "x \u8F74\u5750\u6807\u70B9\uFF0C\u9ED8\u8BA4\u753B\u5E03\u4E2D\u5FC3\uFF08width / 2\uFF09" }, "number", null],
+  [{ label: "y", content: "y \u8F74\u5750\u6807\u70B9\uFF0C\u9ED8\u8BA4\u753B\u5E03\u4E2D\u5FC3\uFF08height / 2\uFF09" }, "number", null]
+], FORCE_LAYOUT_COLLIDE_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A `collide`" }, "`collide`", "`collide`"],
+  [{ label: "radius", content: "\u8282\u70B9\u7684 radius \u5927\u5C0F" }, "number | Function", null],
+  [{ label: "strength", content: "\u529B\u7684\u76F8\u5BF9\u5F3A\u5EA6" }, "number", "0.7"],
+  [{ label: "iterations", content: "\u8FD0\u884C\u78B0\u649E\u68C0\u6D4B\u7684\u8FED\u4EE3\u6B21\u6570" }, "number", "1"]
+], FORCE_LAYOUT_N_BODY_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A n-body" }, "`n-body`", "`n-body`"],
+  [{ label: "theta", content: "\u7528\u4E8E\u805A\u5408\u66F4\u591A\u8DDD\u79BB\u529B\u7684\u8FD1\u4F3C\u53C2\u6570" }, "number", "0.9"],
+  [{ label: "strength", content: "\u529B\u7684\u76F8\u5BF9\u5F3A\u5EA6\uFF0C\u8D1F\u503C\u6392\u65A5\uFF0C\u6B63\u503C\u5438\u5F15" }, "number", "-30"],
+  [{ label: "distanceMin", content: "\u8BE5\u529B\u4F5C\u7528\u7684\u6700\u5C0F\u8DDD\u79BB" }, "number", "1"],
+  [{ label: "distanceMax", content: "\u8BE5\u529B\u4F5C\u7528\u7684\u6700\u5927\u8DDD\u79BB" }, "number", null]
+], FORCE_LAYOUT_LINK_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A link" }, "`link`", "`link`"],
+  [{ label: "id", content: "" }, "number | string", null],
+  [{ label: "distance", content: "\u94FE\u63A5\u7EA6\u675F\u5E94\u5206\u9694\u8282\u70B9\u7684\u8DDD\u79BB" }, "number | Function", "30"],
+  [{ label: "strength", content: "\u94FE\u63A5\u7EA6\u675F\u7684\u76F8\u5BF9\u5F3A\u5EA6" }, "number | Function", null],
+  [{ label: "iterations", content: "\u8FD0\u884C\u94FE\u63A5\u7EA6\u675F\u7684\u8FED\u4EE3\u6B21\u6570" }, "number", "1"]
+], FORCE_LAYOUT_X_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A x" }, "`x`", "`x`"],
+  [{ label: "x", content: "\u5438\u5F15\u8282\u70B9\u7684 x \u8F74\u5750\u6807" }, "number | Function", null],
+  [{ label: "strength", content: "\u529B\u7684\u76F8\u5BF9\u5F3A\u5EA6" }, "number", "0.1"]
+], FORCE_LAYOUT_Y_DATA = [
+  [{ label: "force", content: "\u503C\u4E3A y" }, "`y`", "`y`"],
+  [{ label: "y", content: "\u5438\u5F15\u8282\u70B9\u7684 y \u8F74\u5750\u6807" }, "number | Function", null],
+  [{ label: "strength", content: "\u529B\u7684\u76F8\u5BF9\u5F3A\u5EA6" }, "number", "0.1"]
+], FORCE_NODE_STYLE_DATA = [
+  [{ label: "color", content: "\u56FE\u5F62\u7684\u989C\u8272" }, "string", "#6EA3FD"],
+  [{ label: "borderColor", content: "\u56FE\u5F62\u7684\u63CF\u8FB9\u989C\u8272" }, "string", null],
+  [{ label: "borderWidth", content: "\u63CF\u8FB9\u7EBF\u5BBD" }, "number", "1"],
+  [{ label: "borderType", content: "\u63CF\u8FB9\u7C7B\u578B" }, "`solid` | `dashed` | Array<number>", "`solid`"],
+  [{ label: "borderDashOffset", content: "\u7528\u4E8E\u8BBE\u7F6E\u865A\u7EBF\u7684\u504F\u79FB\u91CF" }, "number", null],
+  [{ label: "borderCap", content: "\u7528\u4E8E\u6307\u5B9A\u7EBF\u6BB5\u672B\u7AEF\u7684\u7ED8\u5236\u65B9\u5F0F" }, "`butt` | `round` | `square`", "butt"],
+  [{ label: "borderJoin", content: "\u7528\u4E8E\u8BBE\u7F6E2\u4E2A\u957F\u5EA6\u4E0D\u4E3A0\u7684\u76F8\u8FDE\u90E8\u5206\uFF08\u7EBF\u6BB5\uFF0C\u5706\u5F27\uFF0C\u66F2\u7EBF\uFF09\u5982\u4F55\u8FDE\u63A5\u5728\u4E00\u8D77\u7684\u5C5E\u6027" }, "`bevel` | `round` | `miter`", "`bevel`"],
+  [{ label: "borderMiterLimit", content: "\u7528\u4E8E\u8BBE\u7F6E\u659C\u63A5\u9762\u9650\u5236\u6BD4\u4F8B\u3002\u53EA\u6709\u5F53 join \u4E3A miter \u65F6\uFF0C miterLimit \u624D\u6709\u6548" }, "number", "10"],
+  [{ label: "shadowBlur", content: "\u56FE\u5F62\u9634\u5F71\u7684\u6A21\u7CCA\u5927\u5C0F" }, "number", null],
+  [{ label: "shadowColor", content: "\u9634\u5F71\u989C\u8272" }, "string", null],
+  [{ label: "shadowOffsetX", content: "\u9634\u5F71\u6C34\u5E73\u65B9\u5411\u4E0A\u7684\u504F\u79FB\u8DDD\u79BB" }, "number", null],
+  [{ label: "shadowOffsetY", content: "\u9634\u5F71\u5782\u76F4\u65B9\u5411\u4E0A\u7684\u504F\u79FB\u8DDD\u79BB" }, "number", null]
+], FORCE_LINK_STYLE_DATA = [
+  [{ label: "color", content: "\u7EBF\u7684\u989C\u8272" }, "string", "#9c9b9b"],
+  [{ label: "width", content: "\u7EBF\u5BBD" }, "number", "1"],
+  [{ label: "type", content: "\u7EBF\u7684\u7C7B\u578B" }, "`solid` | `dashed` | Array<number>", "solid"],
+  [{ label: "dashOffset", content: "\u7528\u4E8E\u8BBE\u7F6E\u865A\u7EBF\u7684\u504F\u79FB\u91CF" }, "number", null],
+  [{ label: "cap", content: "\u7528\u4E8E\u6307\u5B9A\u7EBF\u6BB5\u672B\u7AEF\u7684\u7ED8\u5236\u65B9\u5F0F" }, "`butt` | `round` | `square`", "butt"],
+  [{ label: "join", content: "\u7528\u4E8E\u8BBE\u7F6E2\u4E2A\u957F\u5EA6\u4E0D\u4E3A0\u7684\u76F8\u8FDE\u90E8\u5206\uFF08\u7EBF\u6BB5\uFF0C\u5706\u5F27\uFF0C\u66F2\u7EBF\uFF09\u5982\u4F55\u8FDE\u63A5\u5728\u4E00\u8D77\u7684\u5C5E\u6027" }, "`bevel` | `round` | `miter`", "`bevel`"],
+  [{ label: "miterLimit", content: "\u7528\u4E8E\u8BBE\u7F6E\u659C\u63A5\u9762\u9650\u5236\u6BD4\u4F8B\u3002\u53EA\u6709\u5F53 join \u4E3A miter \u65F6\uFF0C miterLimit \u624D\u6709\u6548" }, "number", "10"],
+  [{ label: "shadowBlur", content: "\u56FE\u5F62\u9634\u5F71\u7684\u6A21\u7CCA\u5927\u5C0F" }, "number", null],
+  [{ label: "shadowColor", content: "\u9634\u5F71\u989C\u8272" }, "string", null],
+  [{ label: "shadowOffsetX", content: "\u9634\u5F71\u6C34\u5E73\u65B9\u5411\u4E0A\u7684\u504F\u79FB\u8DDD\u79BB" }, "number", null],
+  [{ label: "shadowOffsetY", content: "\u9634\u5F71\u5782\u76F4\u65B9\u5411\u4E0A\u7684\u504F\u79FB\u8DDD\u79BB" }, "number", null]
+], FORCE_LABEL_STYLE_DATA = [
+  [{ label: "width", content: "\u6587\u672C\u7684\u6700\u5927\u957F\u5EA6\uFF0C\u8D85\u51FA\u4F1A\u622A\u53D6" }, "number", "100"],
+  [{ label: "fontSize", content: "\u6587\u672C\u7684\u5B57\u4F53\u5927\u5C0F" }, "number", "12"],
+  [{ label: "fontWeight", content: "\u6587\u672C\u7684\u7C97\u7EC6" }, "string | number", "`normal`"],
+  [{ label: "fontFamily", content: "\u6587\u672C\u91C7\u7528\u7684\u5B57\u4F53" }, "string", "sans-serif"],
+  [{ label: "color", content: "\u6587\u672C\u7684\u989C\u8272" }, "string", null],
+  [{ label: "backgroundColor", content: "\u6587\u672C\u7684\u80CC\u666F\u989C\u8272" }, "string", null],
+  [{ label: "borderRadius", content: "\u80CC\u666F\u7684\u5706\u89D2\u5927\u5C0F" }, "number", "12"]
 ];
 
 // mdx:routes/docs/instance.mdx
-var attributes2 = {
+var attributes5 = {
   meta: {
     title: "Graph \u65B9\u6CD5 | @aoviz/graphs",
     description: "\u5185\u7F6E\u65B9\u6CD5"
   },
-  sidebar_position: 2
+  sidebar_position: 4
 };
-function MDXContent2(props = {}) {
+function MDXContent5(props = {}) {
   let _components = Object.assign({
     h2: "h2",
     a: "a"
-  }, (0, import_react29.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react30.default.createElement(import_react30.default.Fragment, null, /* @__PURE__ */ import_react30.default.createElement(_components.h2, {
+  }, (0, import_react36.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react37.default.createElement(import_react37.default.Fragment, null, /* @__PURE__ */ import_react37.default.createElement(_components.h2, {
     id: "\u65B9\u6CD5\u4ECB\u7ECD"
-  }, /* @__PURE__ */ import_react30.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react37.default.createElement(_components.a, {
     href: "#\u65B9\u6CD5\u4ECB\u7ECD"
   }, "\u65B9\u6CD5\u4ECB\u7ECD")), `
 `, `
-`, /* @__PURE__ */ import_react30.default.createElement(TablesConfiguration, {
+`, /* @__PURE__ */ import_react37.default.createElement(TablesConfiguration, {
     data: FORCE_INSTANCE_DATA
   }));
-  return MDXLayout ? /* @__PURE__ */ import_react30.default.createElement(MDXLayout, {
+  return MDXLayout ? /* @__PURE__ */ import_react37.default.createElement(MDXLayout, {
     ...props
   }, _content) : _content;
 }
-var instance_default = MDXContent2, filename2 = "instance.mdx", headers2 = typeof attributes2 < "u" && attributes2.headers, meta4 = typeof attributes2 < "u" && attributes2.meta;
+var instance_default = MDXContent5, filename5 = "instance.mdx", headers5 = typeof attributes5 < "u" && attributes5.headers, meta7 = typeof attributes5 < "u" && attributes5.meta;
+
+// mdx:routes/docs/config.mdx
+var config_exports = {};
+__export(config_exports, {
+  attributes: () => attributes6,
+  default: () => config_default,
+  filename: () => filename6,
+  headers: () => headers6,
+  meta: () => meta8
+});
+var import_react38 = require("@mdx-js/react"), import_react39 = __toESM(require("react"));
+var attributes6 = {
+  meta: {
+    title: "Graph \u914D\u7F6E\u9879 | @aoviz/graphs",
+    description: "\u914D\u7F6E\u9879\u4ECB\u7ECD"
+  },
+  sidebar_position: 3
+};
+function MDXContent6(props = {}) {
+  let _components = Object.assign({
+    h1: "h1",
+    a: "a",
+    h2: "h2",
+    p: "p",
+    h3: "h3",
+    pre: "pre",
+    code: "code",
+    div: "div",
+    span: "span"
+  }, (0, import_react38.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react39.default.createElement(import_react39.default.Fragment, null, /* @__PURE__ */ import_react39.default.createElement(_components.h1, {
+    id: "graph-\u914D\u7F6E\u9879"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#graph-\u914D\u7F6E\u9879"
+  }, "Graph \u914D\u7F6E\u9879")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h2, {
+    id: "\u529B\u5E03\u5C40\u914D\u7F6E"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u529B\u5E03\u5C40\u914D\u7F6E"
+  }, "\u529B\u5E03\u5C40\u914D\u7F6E")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u529B\u5BFC\u5411\u5E03\u5C40\u4F7F\u7528\u4E00\u4E2A\u6A21\u578B\uFF0C\u5176\u4E2D\u6570\u636E\u5BF9\u8C61\u4F5C\u4E3A\u5E26\u7535\u7C92\u5B50\uFF08\u6216\u8282\u70B9\uFF09\uFF0C\u53EF\u4EE5\u9009\u62E9\u7531\u4E00\u7EC4\u8FB9\uFF08\u6216\u5173\u7CFB\uFF09\u8FDE\u63A5\u3002\u4E00\u7EC4\u529B\u88AB\u7528\u6765\u9A71\u52A8\u51B3\u5B9A\u8282\u70B9\u4F4D\u7F6E\u7684\u7269\u7406\u6A21\u62DF\u3002\u5E03\u5C40\u57FA\u4E8E d3-force \u5B9E\u73B0\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h2, {
+    id: "forces-\u914D\u7F6E\u9879"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#forces-\u914D\u7F6E\u9879"
+  }, "forces \u914D\u7F6E\u9879")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "center"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#center"
+  }, "center")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u4E00\u79CD\u5C06\u6240\u6709\u8282\u70B9\u62C9\u5411 [x, y] \u4E2D\u5FC3\u70B9\u7684\u529B\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_CENTER_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "collide"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#collide"
+  }, "collide")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u4E00\u79CD\u78B0\u649E\u68C0\u6D4B\u529B\uFF0C\u5C06\u5706\u5468\u534A\u5F84\u91CD\u53E0\u7684\u8282\u70B9\u63A8\u5F00\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_COLLIDE_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "n-body"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#n-body"
+  }, "n-body")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u4E00\u79CD\u5BFC\u81F4\u8282\u70B9\u4E4B\u95F4\u76F8\u4E92\u5438\u5F15\u6216\u6392\u65A5\u7684\u529B\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_N_BODY_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "link"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#link"
+  }, "link")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u6DFB\u52A0\u94FE\u63A5\u7EA6\u675F\uFF0C\u4F7F\u8282\u70B9\u5411\u76EE\u6807\u5206\u79BB\u8DDD\u79BB\u63A8\u5F00\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_LINK_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "x"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#x"
+  }, "x")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u5438\u5F15\u8282\u70B9\u5230\u4E00\u4E2A\u7279\u5B9A\u7684 X \u5750\u6807\uFF0C\u4EE5\u6BCF\u4E2A\u8282\u70B9\u4E3A\u57FA\u7840\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_X_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "y"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#y"
+  }, "y")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u5438\u5F15\u8282\u70B9\u5230\u4E00\u4E2A\u7279\u5B9A\u7684 Y \u5750\u6807\uFF0C\u4EE5\u6BCF\u4E2A\u8282\u70B9\u4E3A\u57FA\u7840\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LAYOUT_Y_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h2, {
+    id: "\u6837\u5F0F\u914D\u7F6E"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u6837\u5F0F\u914D\u7F6E"
+  }, "\u6837\u5F0F\u914D\u7F6E")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "\u8282\u70B9\u6837\u5F0F\u914D\u7F6E"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u8282\u70B9\u6837\u5F0F\u914D\u7F6E"
+  }, "\u8282\u70B9\u6837\u5F0F\u914D\u7F6E")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u56FE\u5F62\u6837\u5F0F\u914D\u7F6E\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_NODE_STYLE_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "\u5173\u7CFB\u6837\u5F0F\u914D\u7F6E"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u5173\u7CFB\u6837\u5F0F\u914D\u7F6E"
+  }, "\u5173\u7CFB\u6837\u5F0F\u914D\u7F6E")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u5173\u7CFB\u8FB9\u7684\u516C\u7528\u7EBF\u6761\u6837\u5F0F\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LINK_STYLE_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "\u6587\u672C\u6837\u5F0F\u914D\u7F6E"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u6587\u672C\u6837\u5F0F\u914D\u7F6E"
+  }, "\u6587\u672C\u6837\u5F0F\u914D\u7F6E")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.p, null, "\u56FE\u5F62\u4E0A\u7684\u6587\u672C\u6807\u7B7E\uFF0C\u53EF\u7528\u4E8E\u8BF4\u660E\u56FE\u5F62\u7684\u4E00\u4E9B\u6570\u636E\u4FE1\u606F\u3002"), `
+`, `
+`, /* @__PURE__ */ import_react39.default.createElement(TablesConfiguration, {
+    data: FORCE_LABEL_STYLE_DATA
+  }), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h2, {
+    id: "typescript"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#typescript"
+  }, "Typescript")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "\u8282\u70B9\u7684\u914D\u7F6E\u9879"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u8282\u70B9\u7684\u914D\u7F6E\u9879"
+  }, "\u8282\u70B9\u7684\u914D\u7F6E\u9879")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.pre, null, /* @__PURE__ */ import_react39.default.createElement(_components.code, {
+    className: "language-ts"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "1",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "interface"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "INodeCfg")), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "extends"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "INodeStyle")), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "2",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    radius", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "number"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "3",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    label", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, "?"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "ILabelStyle"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "4",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "5",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "6",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "interface"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "INode")), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "7",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    id", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "8",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    name", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "9",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    cfg", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Partial"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, "<"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "INodeCfg"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ">"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "10",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`))), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.h3, {
+    id: "\u5173\u7CFB\u7684\u914D\u7F6E\u9879"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.a, {
+    href: "#\u5173\u7CFB\u7684\u914D\u7F6E\u9879"
+  }, "\u5173\u7CFB\u7684\u914D\u7F6E\u9879")), `
+`, /* @__PURE__ */ import_react39.default.createElement(_components.pre, null, /* @__PURE__ */ import_react39.default.createElement(_components.code, {
+    className: "language-ts"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "1",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "interface"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "ILinkCfg")), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "extends"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "ILinkStyle")), "  ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "2",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    radius", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "number"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "3",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    label", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, "?"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "ILabelStyle"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "4",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "5",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "6",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token keyword"
+  }, "interface"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token class-name"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "ILink")), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "{"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "7",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    id", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "8",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    source", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "9",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    target", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "10",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    name", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token builtin"
+  }, "string"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, ";"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "11",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, "    cfg", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ":"), " ", /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "Partial"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, "<"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token maybe-class-name"
+  }, "INodeCfg"), /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token operator"
+  }, ">"), `
+`), /* @__PURE__ */ import_react39.default.createElement(_components.div, {
+    "data-line": "12",
+    className: "highlight-line",
+    "data-highlighted": "true"
+  }, /* @__PURE__ */ import_react39.default.createElement(_components.span, {
+    className: "token punctuation"
+  }, "}"), `
+`))));
+  return MDXLayout ? /* @__PURE__ */ import_react39.default.createElement(MDXLayout, {
+    ...props
+  }, _content) : _content;
+}
+var config_default = MDXContent6, filename6 = "config.mdx", headers6 = typeof attributes6 < "u" && attributes6.headers, meta8 = typeof attributes6 < "u" && attributes6.meta;
 
 // mdx:routes/docs/index.mdx
 var docs_exports2 = {};
 __export(docs_exports2, {
-  attributes: () => attributes3,
+  attributes: () => attributes7,
   default: () => docs_default,
-  filename: () => filename3,
-  headers: () => headers3,
-  meta: () => meta5
+  filename: () => filename7,
+  headers: () => headers7,
+  meta: () => meta9
 });
-var import_react31 = require("@mdx-js/react"), import_react32 = __toESM(require("react")), attributes3 = {
+var import_react40 = require("@mdx-js/react"), import_react41 = __toESM(require("react")), attributes7 = {
   meta: {
     title: "\u7B80\u4ECB | @aoviz/graphs",
     description: "\u5173\u4E8E @aoviz/graphs \u4ECB\u7ECD"
@@ -6282,7 +7928,7 @@ var import_react31 = require("@mdx-js/react"), import_react32 = __toESM(require(
   sidebar_position: 1,
   noSubnav: !0
 };
-function MDXContent3(props = {}) {
+function MDXContent7(props = {}) {
   let _components = Object.assign({
     h1: "h1",
     a: "a",
@@ -6290,26 +7936,26 @@ function MDXContent3(props = {}) {
     code: "code",
     h3: "h3",
     h2: "h2"
-  }, (0, import_react31.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react32.default.createElement(import_react32.default.Fragment, null, /* @__PURE__ */ import_react32.default.createElement(_components.h1, {
+  }, (0, import_react40.useMDXComponents)(), props.components), { wrapper: MDXLayout } = _components, _content = /* @__PURE__ */ import_react41.default.createElement(import_react41.default.Fragment, null, /* @__PURE__ */ import_react41.default.createElement(_components.h1, {
     id: "\u7B80\u4ECB"
-  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react41.default.createElement(_components.a, {
     href: "#\u7B80\u4ECB"
   }, "\u7B80\u4ECB")), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6B22\u8FCE\u4F7F\u7528 ", /* @__PURE__ */ import_react32.default.createElement(_components.code, null, "@aoviz/graphs"), " \u6587\u6863\u7AD9\u70B9\u3002"), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.h3, {
+`, /* @__PURE__ */ import_react41.default.createElement(_components.p, null, "\u6B22\u8FCE\u4F7F\u7528 ", /* @__PURE__ */ import_react41.default.createElement(_components.code, null, "@aoviz/graphs"), " \u6587\u6863\u7AD9\u70B9\u3002"), `
+`, /* @__PURE__ */ import_react41.default.createElement(_components.h3, {
     id: "aovizart-of-visualization\u53EF\u89C6\u5316\u7684\u827A\u672F"
-  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react41.default.createElement(_components.a, {
     href: "#aovizart-of-visualization\u53EF\u89C6\u5316\u7684\u827A\u672F"
   }, "aoviz\uFF08Art of Visualization\uFF09\uFF0C\u53EF\u89C6\u5316\u7684\u827A\u672F\u3002")), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u8FD9\u95E8\u6280\u672F\u662F\u5173\u4E8E\u6570\u636E\u89C6\u89C9\u8868\u73B0\u5F62\u5F0F\u7684\u4E00\u95E8\u79D1\u5B66\u6280\u672F\u7814\u7A76\u3002\u6570\u636E\u53EF\u89C6\u5316\u6280\u672F\u662F\u5229\u7528\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u4E0E\u56FE\u50CF\u5904\u7406\u6280\u672F\u76F8\u7ED3\u5408\uFF0C\u5C06\u6570\u636E\u901A\u8FC7\u5904\u7406\u8F6C\u6362\u4E3A\u56FE\u5F62\u6216\u56FE\u50CF\u5F62\u5F0F\u6700\u540E\u663E\u793A\u5230\u5C4F\u5E55\u4E0A\u9762\uFF0C\u5E76\u8FDB\u884C\u4EA4\u4E92\u5904\u7406\u7684\u7406\u8BBA\u3001\u65B9\u6CD5\u548C\u6280\u672F\u3002\u5B83\u6D89\u53CA\u8BA1\u7B97\u673A\u89C6\u89C9\u3001\u56FE\u50CF\u5904\u7406\u3001\u8BA1\u7B97\u673A\u8F85\u52A9\u8BBE\u8BA1\u3001\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u7B49\u591A\u4E2A\u9886\u57DF\uFF0C\u6210\u4E3A\u4E00\u9879\u7814\u7A76\u6570\u636E\u8868\u793A\u3001\u6570\u636E\u5904\u7406\u3001\u51B3\u7B56\u5206\u6790\u7B49\u95EE\u9898\u7684\u7EFC\u5408\u6280\u672F\u3002"), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u662F\u4FE1\u606F\u548C\u6570\u636E\u7684\u56FE\u5F62\u5316\u8868\u793A\u65B9\u5F0F\u3002\u901A\u8FC7\u4F7F\u7528\u56FE\u8868\u3001\u56FE\u5F62\u548C\u5730\u56FE\u7B49\u53EF\u89C6\u5316\u5143\u7D20\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u63D0\u4F9B\u4E86\u4E00\u79CD\u67E5\u770B\u548C\u7406\u89E3\u6570\u636E\u8D8B\u52BF\u3001\u5F02\u5E38\u503C\u548C\u6A21\u5F0F\u7684\u53EF\u8BBF\u95EE\u65B9\u5F0F\u3002"), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u5728\u5927\u6570\u636E\u4E16\u754C\u4E2D\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u548C\u6280\u672F\u5BF9\u4E8E\u5206\u6790\u6D77\u91CF\u4FE1\u606F\u548C\u505A\u51FA\u6570\u636E\u9A71\u52A8\u7684\u51B3\u7B56\u81F3\u5173\u91CD\u8981\u3002"), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react41.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u8FD9\u95E8\u6280\u672F\u662F\u5173\u4E8E\u6570\u636E\u89C6\u89C9\u8868\u73B0\u5F62\u5F0F\u7684\u4E00\u95E8\u79D1\u5B66\u6280\u672F\u7814\u7A76\u3002\u6570\u636E\u53EF\u89C6\u5316\u6280\u672F\u662F\u5229\u7528\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u4E0E\u56FE\u50CF\u5904\u7406\u6280\u672F\u76F8\u7ED3\u5408\uFF0C\u5C06\u6570\u636E\u901A\u8FC7\u5904\u7406\u8F6C\u6362\u4E3A\u56FE\u5F62\u6216\u56FE\u50CF\u5F62\u5F0F\u6700\u540E\u663E\u793A\u5230\u5C4F\u5E55\u4E0A\u9762\uFF0C\u5E76\u8FDB\u884C\u4EA4\u4E92\u5904\u7406\u7684\u7406\u8BBA\u3001\u65B9\u6CD5\u548C\u6280\u672F\u3002\u5B83\u6D89\u53CA\u8BA1\u7B97\u673A\u89C6\u89C9\u3001\u56FE\u50CF\u5904\u7406\u3001\u8BA1\u7B97\u673A\u8F85\u52A9\u8BBE\u8BA1\u3001\u8BA1\u7B97\u673A\u56FE\u5F62\u5B66\u7B49\u591A\u4E2A\u9886\u57DF\uFF0C\u6210\u4E3A\u4E00\u9879\u7814\u7A76\u6570\u636E\u8868\u793A\u3001\u6570\u636E\u5904\u7406\u3001\u51B3\u7B56\u5206\u6790\u7B49\u95EE\u9898\u7684\u7EFC\u5408\u6280\u672F\u3002"), `
+`, /* @__PURE__ */ import_react41.default.createElement(_components.p, null, "\u6570\u636E\u53EF\u89C6\u5316\u662F\u4FE1\u606F\u548C\u6570\u636E\u7684\u56FE\u5F62\u5316\u8868\u793A\u65B9\u5F0F\u3002\u901A\u8FC7\u4F7F\u7528\u56FE\u8868\u3001\u56FE\u5F62\u548C\u5730\u56FE\u7B49\u53EF\u89C6\u5316\u5143\u7D20\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u63D0\u4F9B\u4E86\u4E00\u79CD\u67E5\u770B\u548C\u7406\u89E3\u6570\u636E\u8D8B\u52BF\u3001\u5F02\u5E38\u503C\u548C\u6A21\u5F0F\u7684\u53EF\u8BBF\u95EE\u65B9\u5F0F\u3002"), `
+`, /* @__PURE__ */ import_react41.default.createElement(_components.p, null, "\u5728\u5927\u6570\u636E\u4E16\u754C\u4E2D\uFF0C\u6570\u636E\u53EF\u89C6\u5316\u5DE5\u5177\u548C\u6280\u672F\u5BF9\u4E8E\u5206\u6790\u6D77\u91CF\u4FE1\u606F\u548C\u505A\u51FA\u6570\u636E\u9A71\u52A8\u7684\u51B3\u7B56\u81F3\u5173\u91CD\u8981\u3002"), `
+`, /* @__PURE__ */ import_react41.default.createElement(_components.h2, {
     id: "\u529F\u80FD\u89C4\u5212"
-  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react41.default.createElement(_components.a, {
     href: "#\u529F\u80FD\u89C4\u5212"
   }, "\u529F\u80FD\u89C4\u5212")), `
-`, /* @__PURE__ */ import_react32.default.createElement("iframe", {
+`, /* @__PURE__ */ import_react41.default.createElement("iframe", {
     style: {
       width: "100%",
       height: "calc(100vh - 300px)",
@@ -6320,26 +7966,26 @@ function MDXContent3(props = {}) {
     sandbox: "allow-scripts allow-popups allow-top-navigation-by-user-activation allow-forms allow-same-origin allow-storage-access-by-user-activation",
     allowfullscreen: ""
   }), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.h2, {
+`, /* @__PURE__ */ import_react41.default.createElement(_components.h2, {
     id: "\u53C2\u4E0E\u8D21\u732E"
-  }, /* @__PURE__ */ import_react32.default.createElement(_components.a, {
+  }, /* @__PURE__ */ import_react41.default.createElement(_components.a, {
     href: "#\u53C2\u4E0E\u8D21\u732E"
   }, "\u53C2\u4E0E\u8D21\u732E")), `
-`, /* @__PURE__ */ import_react32.default.createElement(_components.p, null, "\u5982\u679C\u4F60\u4E5F\u5BF9\u53EF\u89C6\u5316\u65B9\u9762\u611F\u5174\u8DA3\uFF0C\u53EF\u4EE5\u901A\u8FC7\u63D0\u4EA4 ", /* @__PURE__ */ import_react32.default.createElement(_components.a, {
+`, /* @__PURE__ */ import_react41.default.createElement(_components.p, null, "\u5982\u679C\u4F60\u4E5F\u5BF9\u53EF\u89C6\u5316\u65B9\u9762\u611F\u5174\u8DA3\uFF0C\u53EF\u4EE5\u901A\u8FC7\u63D0\u4EA4 ", /* @__PURE__ */ import_react41.default.createElement(_components.a, {
     href: "https://github.com/Aoviz-Team/graphs"
   }, "Pull Request"), " \u53C2\u4E0E\u8D21\u732E"));
-  return MDXLayout ? /* @__PURE__ */ import_react32.default.createElement(MDXLayout, {
+  return MDXLayout ? /* @__PURE__ */ import_react41.default.createElement(MDXLayout, {
     ...props
   }, _content) : _content;
 }
-var docs_default = MDXContent3, filename3 = "index.mdx", headers3 = typeof attributes3 < "u" && attributes3.headers, meta5 = typeof attributes3 < "u" && attributes3.meta;
+var docs_default = MDXContent7, filename7 = "index.mdx", headers7 = typeof attributes7 < "u" && attributes7.headers, meta9 = typeof attributes7 < "u" && attributes7.meta;
 
 // app/routes/$.tsx
 var __exports = {};
 __export(__exports, {
   default: () => Index2,
   loader: () => loader2,
-  meta: () => meta6
+  meta: () => meta10
 });
 var import_node2 = require("@remix-run/node");
 
@@ -6399,7 +8045,7 @@ var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), GradientButton = 
 });
 
 // app/routes/$.tsx
-var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta6 = () => ({
+var import_jsx_dev_runtime = require("react/jsx-dev-runtime"), meta10 = () => ({
   title: "404 | Aoviz",
   description: "aoviz\uFF08Art of Visualization\uFF09\uFF0C\u53EF\u89C6\u5316\u7684\u827A\u672F\u3002"
 }), CAR = `                                                    7%;;WW/                                                                                                                                             
@@ -6573,7 +8219,7 @@ var Main4 = styled("main", {
 });
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { version: "cd45876e", entry: { module: "/build/entry.client-RBBP7QLC.js", imports: ["/build/_shared/chunk-432IMSLU.js", "/build/_shared/chunk-6K7Y3HNJ.js", "/build/_shared/chunk-454AYMIU.js", "/build/_shared/chunk-H7ERXWDW.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-CEWUDGLJ.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-WYE6LCH6.js", imports: ["/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-UH5X4E2C.js", imports: ["/build/_shared/chunk-DHB3565C.js", "/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MYP57KII.js", "/build/_shared/chunk-MHFW5KOY.js", "/build/_shared/chunk-FKBBATAY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-B4FHOAT5.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-BQRKOGGE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/instance": { id: "routes/docs/instance", parentId: "routes/docs", path: "instance", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/instance-WCEJB2UC.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-NKAW3DC4.js", imports: ["/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-LA5VKWIK.js", imports: ["/build/_shared/chunk-DHB3565C.js", "/build/_shared/chunk-BE6KB3MX.js", "/build/_shared/chunk-5U3EZMVN.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-CD45876E.js" };
+var assets_manifest_default = { version: "8b499b8d", entry: { module: "/build/entry.client-64VICSST.js", imports: ["/build/_shared/chunk-6K7Y3HNJ.js", "/build/_shared/chunk-432IMSLU.js", "/build/_shared/chunk-454AYMIU.js", "/build/_shared/chunk-H7ERXWDW.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-5LKWU5QG.js", imports: ["/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/$": { id: "routes/$", parentId: "root", path: "*", index: void 0, caseSensitive: void 0, module: "/build/routes/$-2WIWBQ6L.js", imports: ["/build/_shared/chunk-YD463S2W.js", "/build/_shared/chunk-QZJYQY4V.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !0, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs": { id: "routes/docs", parentId: "root", path: "docs", index: void 0, caseSensitive: void 0, module: "/build/routes/docs-H4KB6MM5.js", imports: ["/build/_shared/chunk-MYP57KII.js", "/build/_shared/chunk-ULBB5K2Y.js", "/build/_shared/chunk-YD463S2W.js", "/build/_shared/chunk-QZJYQY4V.js", "/build/_shared/chunk-MHFW5KOY.js", "/build/_shared/chunk-FKBBATAY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/config": { id: "routes/docs/config", parentId: "routes/docs", path: "config", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/config-N4DNIJCZ.js", imports: ["/build/_shared/chunk-QQYAFT77.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/getting-started": { id: "routes/docs/getting-started", parentId: "routes/docs", path: "getting-started", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/getting-started-R4MQEHBL.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/index": { id: "routes/docs/index", parentId: "routes/docs", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/docs/index-BQRKOGGE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/instance": { id: "routes/docs/instance", parentId: "routes/docs", path: "instance", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/instance-2G3UO6J7.js", imports: ["/build/_shared/chunk-QQYAFT77.js", "/build/_shared/chunk-4HZGVXWO.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/plugins/fisheys": { id: "routes/docs/plugins/fisheys", parentId: "routes/docs", path: "plugins/fisheys", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/plugins/fisheys-LAMF7X7G.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/plugins/index": { id: "routes/docs/plugins/index", parentId: "routes/docs", path: "plugins", index: !0, caseSensitive: void 0, module: "/build/routes/docs/plugins/index-O6I4YY57.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/docs/plugins/watermark": { id: "routes/docs/plugins/watermark", parentId: "routes/docs", path: "plugins/watermark", index: void 0, caseSensitive: void 0, module: "/build/routes/docs/plugins/watermark-5KI5EQWE.js", imports: void 0, hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/examples": { id: "routes/examples", parentId: "root", path: "examples", index: void 0, caseSensitive: void 0, module: "/build/routes/examples-2R6TCGTP.js", imports: ["/build/_shared/chunk-QZJYQY4V.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/index-PQRN4VJE.js", imports: ["/build/_shared/chunk-ULBB5K2Y.js", "/build/_shared/chunk-YD463S2W.js", "/build/_shared/chunk-QZJYQY4V.js", "/build/_shared/chunk-MHFW5KOY.js"], hasAction: !1, hasLoader: !1, hasCatchBoundary: !1, hasErrorBoundary: !1 } }, url: "/build/manifest-8B499B8D.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -6609,6 +8255,14 @@ var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { mod
     caseSensitive: void 0,
     module: docs_exports
   },
+  "routes/docs/plugins/watermark": {
+    id: "routes/docs/plugins/watermark",
+    parentId: "routes/docs",
+    path: "plugins/watermark",
+    index: void 0,
+    caseSensitive: void 0,
+    module: watermark_exports
+  },
   "routes/docs/getting-started": {
     id: "routes/docs/getting-started",
     parentId: "routes/docs",
@@ -6617,6 +8271,22 @@ var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { mod
     caseSensitive: void 0,
     module: getting_started_exports
   },
+  "routes/docs/plugins/fisheys": {
+    id: "routes/docs/plugins/fisheys",
+    parentId: "routes/docs",
+    path: "plugins/fisheys",
+    index: void 0,
+    caseSensitive: void 0,
+    module: fisheys_exports
+  },
+  "routes/docs/plugins/index": {
+    id: "routes/docs/plugins/index",
+    parentId: "routes/docs",
+    path: "plugins",
+    index: !0,
+    caseSensitive: void 0,
+    module: plugins_exports
+  },
   "routes/docs/instance": {
     id: "routes/docs/instance",
     parentId: "routes/docs",
@@ -6624,6 +8294,14 @@ var assetsBuildDirectory = "public/build", publicPath = "/build/", entry = { mod
     index: void 0,
     caseSensitive: void 0,
     module: instance_exports
+  },
+  "routes/docs/config": {
+    id: "routes/docs/config",
+    parentId: "routes/docs",
+    path: "config",
+    index: void 0,
+    caseSensitive: void 0,
+    module: config_exports
   },
   "routes/docs/index": {
     id: "routes/docs/index",

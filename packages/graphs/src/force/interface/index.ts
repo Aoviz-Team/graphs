@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 import { SimulationNodeDatum } from 'd3-force';
+import type { INodeStyle, ILabelStyle, ILinkStyle } from './style';
+
+export { INodeStyle, ILabelStyle, ILinkStyle };
 export type ISafeAny = any;
 
 export type IRenderNode = SimulationNodeDatum & Omit<Required<INode>, 'cfg'> & { cfg: INodeCfg };
@@ -97,27 +100,15 @@ export interface IForceData {
   links: ILink[];
 }
 
-export interface INodeCfg {
+export interface INodeCfg extends INodeStyle {
   radius: number;
-  label: ILabel;
-  backgroundColor: string;
+  label: ILabelStyle;
 }
 
-export interface ILinkCfg {
-  label: Omit<ILabel, 'borderRadius'>;
+export interface ILinkCfg extends ILinkStyle {
+  label: Omit<ILabelStyle, 'borderRadius'>;
   curveOffset: number;
   shape: 'line' | 'arc' | 'self';
-  stroke: string;
-}
-
-export interface ILabel {
-  width: number;
-  fontSize: number;
-  fontWeight: string;
-  fontFamily: string;
-  color: string;
-  backgroundColor: string;
-  borderRadius: number;
 }
 
 export interface IOption {
