@@ -7,13 +7,13 @@ const DEFAULT_OPTION = {
   keyCombination: ['ctrl'],
   radius: 130,
   distortion: 5,
-  smoothing: 0.1,
+  smoothing: 0.001,
   borderColor: '#329485',
-  borderWidth: 1,
+  borderWidth: 2,
   borderLineDash: [],
   fillColor: 'rgba(23,45,67,0.1)'
 };
-interface IFisheyeOption {
+export interface IFisheyeOption {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'>;
   radius: number;
   distortion: number;
@@ -64,7 +64,14 @@ export class FisheyePlugin extends Plugin {
   afterDraw(ctx: CanvasRenderingContext2D): void {
     if (!this.focus) return;
     ctx.beginPath();
-    ctx.arc(this.mousePoint.x, this.mousePoint.y, this.option.radius, 0, 2 * Math.PI);
+    ctx.arc(
+      this.transform.invertX(this.mousePoint.x),
+      this.transform.invertY(this.mousePoint.y),
+      this.option.radius / this.transform.k,
+      0,
+      2 * Math.PI
+    );
+    ctx.lineWidth = this.option.borderWidth / this.transform.k;
     ctx.strokeStyle = this.option.borderColor;
     ctx.fillStyle = this.option.fillColor;
     ctx.stroke();

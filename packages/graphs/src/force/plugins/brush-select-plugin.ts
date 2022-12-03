@@ -5,7 +5,7 @@ import { Plugin } from './plugin';
 
 const SVG_NS = 'http://www.w3.org/2000/svg';
 
-interface IBrushSelectOption {
+export interface IBrushSelectOption {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'>;
 }
 export class BrushSelectPlugin extends Plugin {

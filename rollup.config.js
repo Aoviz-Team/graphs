@@ -1,4 +1,5 @@
 import typescript from 'rollup-plugin-typescript2';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { uglify } from 'rollup-plugin-uglify';
 import del from 'rollup-plugin-delete';
 
@@ -16,5 +17,5 @@ export default {
       format: 'esm'
     }
   ],
-  plugins: [del({ targets: ['dist/*', 'es/*'] }), uglify(), typescript()]
+  plugins: [peerDepsExternal({ useTsconfigDeclarationDir: true }), del({ targets: ['dist/*', 'es/*'] }), uglify(), typescript()]
 };

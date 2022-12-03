@@ -1,8 +1,13 @@
 {
   "name": "@aoviz/mock",
-  "version": "0.0.14",
+  "version": "0.0.2",
   "description": "d3 graphs force knowledge 力导向图",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": [
+    "dist/*"
+  ],
   "repository": "https://github.com/Aoviz-Team/graphs",
   "author": "Steven.zhong",
   "license": "MIT",

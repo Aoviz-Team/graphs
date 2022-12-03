@@ -27,12 +27,12 @@ const data = {
     {
       id: '1',
       name: '节点1',
-      cfg: { backgroundColor: '#6EA3FD' }
+      cfg: { color: '#6EA3FD' }
     },
      {
       id: '2',
       name: '节点2',
-      cfg: { backgroundColor: '#8470A8' }
+      cfg: { color: '#8470A8' }
     }
   ],
   links: [
@@ -56,12 +56,12 @@ const data = {
     {
       id: '1',
       name: '节点1',
-      cfg: { backgroundColor: '#6EA3FD' }
+      cfg: { color: '#6EA3FD' }
     },
      {
       id: '2',
       name: '节点2',
-      cfg: { backgroundColor: '#8470A8' }
+      cfg: { color: '#8470A8' }
     }
   ],
   links: [
@@ -94,9 +94,11 @@ const option = {
 }
 export default function Viz() {
   const wrapper = useRef(null);
+
   useEffect(() => {
     const instance = new Force(wrapper.current,{ data, option });
   }, [wrapper]);
+  
   return <div ref={wrapper} style={{ height: 380, width: 600}}></div>;
 }
 

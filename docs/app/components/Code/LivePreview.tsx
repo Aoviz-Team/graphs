@@ -82,6 +82,7 @@ export const LivePreview = ({
           dependencies: {
             '@react-spring/web': '*',
             '@aoviz/graphs': '*',
+            '@aoviz/mock': '*',
             ...LIVE_PREVIEW_DEPS[template],
           },
         }}

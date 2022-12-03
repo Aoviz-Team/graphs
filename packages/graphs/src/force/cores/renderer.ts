@@ -1,4 +1,5 @@
 import { zoomIdentity, ZoomTransform } from 'd3-zoom';
+import { drawLinkStyle, drawNodeStyle } from '../../draws';
 import { ECollectorShape, ELinkShape, ICollector, ECollectorType, IPoint, IRenderData } from '../interface';
 import { IRenderLink, IRenderNode, IOption } from '../interface';
 import { distance, getCircleCenterByPoints, getCirclePointByArc, getRectPointsByCenterPoint, rotatePoints } from '../utils/math';
@@ -68,9 +69,9 @@ export class Renderer {
       }
       this.event.emit(EEventRender.BeforeDrawNode, context, node);
     });
-    context.restore();
     this.event.collectors = this.collectors;
     this.event.emit(EEventRender.AfterDraw, context, data, option);
+    context.restore();
   }
 
   drawLink(link: IRenderLink) {
@@ -117,13 +118,12 @@ export class Renderer {
 
     context.beginPath();
     context.arc(arcCenterPoint.x, arcCenterPoint.y, arcRadius, startAngel, endAngel, anticlockwise);
-    context.strokeStyle = cfg.stroke;
-    context.stroke();
+    drawLinkStyle(context, link.cfg, this.transform.k);
 
     const endPoint = getCirclePointByArc(arcCenterPoint.x, arcCenterPoint.y, arcRadius, endAngel);
     const arrowAngle = Math.atan2(link.target.y - endPoint.y, link.target.x - endPoint.x);
     this.drawLinkLabel(arcPoint, linkAngle, link);
-    this.drawLinkArrow(endPoint, arrowAngle, cfg.stroke);
+    this.drawLinkArrow(endPoint, arrowAngle, cfg.color);
   }
 
   drawLineLink(link: IRenderLink) {
@@ -147,10 +147,9 @@ export class Renderer {
     context.moveTo(startPoint.x, startPoint.y);
     context.lineTo(endPoint.x, endPoint.y);
     context.closePath();
-    context.strokeStyle = cfg.stroke;
-    context.stroke();
+    drawLinkStyle(context, link.cfg, this.transform.k);
     this.drawLinkLabel(midPoint, linkAngle, link);
-    this.drawLinkArrow(endPoint, linkAngle, cfg.stroke);
+    this.drawLinkArrow(endPoint, linkAngle, cfg.color);
   }
 
   drawSelfLink(link: IRenderLink) {
@@ -167,9 +166,9 @@ export class Renderer {
     context.beginPath();
     context.moveTo(point1.x, point1.y);
     context.quadraticCurveTo(controlPoint.x, controlPoint.y, point2.x, point2.y);
-    context.strokeStyle = cfg.stroke;
-    context.stroke();
-    this.drawLinkArrow(point2, arrowAngle, cfg.stroke);
+    context.closePath();
+    drawLinkStyle(context, link.cfg, this.transform.k);
+    this.drawLinkArrow(point2, arrowAngle, cfg.color);
     this.drawLinkLabel(labelPoint, Math.PI / 2, link);
   }
 
@@ -216,8 +215,7 @@ export class Renderer {
     context.beginPath();
     context.arc(node?.x || 0, node?.y || 0, cfg.radius, 0, 2 * Math.PI);
     context.closePath();
-    context.fillStyle = cfg.backgroundColor;
-    context.fill();
+    drawNodeStyle(context, node.cfg, this.transform.k);
     context.fillStyle = cfg.label.color;
     this.drawNodeLabel({ x: node.x || 0, y: (node.y || 0) + cfg.radius + offset }, node);
     this.collectors.unshift({

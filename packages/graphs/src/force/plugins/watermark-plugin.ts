@@ -49,7 +49,7 @@ export function generateText(value: string, style: Partial<ICanvasFontStyle> = {
   return canvas;
 }
 
-interface IWaterMarkOption extends ICanvasFontStyle {
+export interface IWaterMarkOption extends ICanvasFontStyle {
   value: string;
 }
 export class WatermarkPlugin extends Plugin {

@@ -9,10 +9,10 @@ import {
   BrushSelectPlugin,
   WatermarkPlugin,
   roundRectBgLabel,
-  FisheyePlugin
+  FisheyePlugin,
+  SelectedNodesPlugin
 } from '../packages/graphs/src';
-import { randomRadial } from '../packages/mock/src/index.ts';
-import data from './assets/data';
+import { randomRadial, DEFAULT_DATA, ONE_DEGREE_BANK_DATA, THREE_DEGREE_BANK_DATA } from '../packages/mock/src/index.ts';
 import './force.css';
 
 const OPTION: DeepPartial<IOption> = {
@@ -29,12 +29,12 @@ const OPTION: DeepPartial<IOption> = {
   layout: {
     velocityDecay: 0.15,
     forces: [
-      { force: 'n-body', strength: -1600, distanceMin: 30 },
+      { force: 'n-body', strength: -1600, distanceMin: 30, distanceMax: 800 },
       { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
       { force: 'link', id: (d) => d.id, distance: 200 },
-      { force: 'x', strength: 0.01 },
-      { force: 'y', strength: 0.01 },
-      { force: 'center', strength: 0.1 }
+      // { force: 'x', strength: 0.01 },
+      // { force: 'y', strength: 0.01 },
+      { force: 'center', strength: 0.005 }
     ]
   }
 };
@@ -46,7 +46,8 @@ class CustomPlugin extends Plugin {
     console.log(e, 'dblclick');
   }
   overwriteDrawNode(c: CanvasRenderingContext2D, n: IRenderNode) {
-    circleInnerShadow(c, n.x!, n.y!, n.cfg.radius, n.cfg.backgroundColor, 20, 20);
+    c.beginPath();
+    circleInnerShadow(c, n.x!, n.y!, n.cfg.radius, n.cfg.color, 20, 20);
     roundRectBgLabel(c, { x: n.x!, y: n.y! + n.cfg.radius + 10 }, n);
   }
 }
@@ -57,7 +58,7 @@ function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean
 
   useEffect(() => {
     const D = randomRadial();
-    instanceRef.current = new Force(wrapper.current!, { data: D, option });
+    instanceRef.current = new Force(wrapper.current!, { data: THREE_DEGREE_BANK_DATA, option });
     const plugins: any[] = [];
     if (watermark) {
       plugins.push(new WatermarkPlugin());
@@ -66,10 +67,9 @@ function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean
       plugins.push(new CustomPlugin());
     }
     if (brushSelect) {
-      plugins.push(new BrushSelectPlugin());
+      plugins.push(new SelectedNodesPlugin(), new BrushSelectPlugin());
     }
     if (fisheye) {
-      console.log('fish', fisheye);
       plugins.push(new FisheyePlugin());
     }
     instanceRef.current.setPlugins(plugins);
