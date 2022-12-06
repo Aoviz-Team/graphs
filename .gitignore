@@ -8,6 +8,7 @@
 /storybook-static
 docs/node_modules
 docs/.cache
+docs/api
 docs/public/build
 docs/api
 .vercel

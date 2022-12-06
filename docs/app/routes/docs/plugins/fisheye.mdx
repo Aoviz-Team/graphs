@@ -8,6 +8,7 @@ sidebar_position: 1
 # 鱼眼插件
 
 ## 使用方式
+
 按住 `ctrl` 键，在节点处滑动体验鱼眼插件 
 
 ```jsx live=true template=configPlayground
@@ -31,10 +32,13 @@ export default function Viz() {
     distortion: 5,
     smoothing: 0.01,
     radius: 130,
-    color: 'rgba(23,45,67,0.1)'
+    color: 'rgba(23,45,67,0.1)',
+    borderColor: '#329485',
+    borderWidth: 2
+   
   })
-  console.log(config)
-  useEffect(() => {
+
+useEffect(() => {
     instanceRef.current = new Force(wrapper.current,{ data: TWO_DEGREE_BANK_DATA, option });
   }, [wrapper]);
 
@@ -43,7 +47,7 @@ export default function Viz() {
   }, [instanceRef, config])
 
   return (
-    <div style={{ height: 380, width: 600, margin:'auto' }}>
+    <div style={{ height: 380 }}>
 		  <div ref={wrapper} style={{ height: 380 }}></div>
 	  </div>
   );

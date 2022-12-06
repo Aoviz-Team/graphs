@@ -177,6 +177,7 @@ export class Controller {
       plugin.apply(this);
     }
     this.plugins = plugins;
+    this.reRender();
   }
 
   resize(opt?: { width: number; height: number }) {
@@ -186,6 +187,10 @@ export class Controller {
     if (this.option.layout.width !== this.canvas.width || this.option.layout.height !== this.canvas.height) {
       this.layout.setOption(this.option.layout as ILayoutOption);
     }
+  }
+
+  reRender() {
+    this.tick$.next(this.tick$.value);
   }
 
   dispose() {

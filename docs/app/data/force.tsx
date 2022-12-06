@@ -109,3 +109,12 @@ export const FORCE_FISHEYE_PLUGIN_DATA = [
     [{ label: 'distortion' }, 'number', '5'],
     [{ label: 'smoothing' }, 'number', '0.001']
 ]
+
+export const FORCE_WATERMARK_PLUGIN_DATA = [
+    [{ label: 'value', content: '文本内容' }, 'string', null],
+    [{ label: 'rotate', content: '旋转角度' }, 'number', '30'],
+    [{ label: 'padding', content: '文本四周的边距' }, '[number, number, number, number]', '[50, 50, 50, 50]'],
+    [{ label: 'size', content: '文本的大小' }, 'number', '22'],
+    [{ label: 'color', content: '文本的颜色' }, 'string', 'rgba(179, 179, 255, 0.1)'],
+    [{ label: 'family', content: '文本的字体' }, 'string', '`Helvetica Neue`'],
+]
