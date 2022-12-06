@@ -144,6 +144,7 @@ export class BrushSelectPlugin extends Plugin {
     this.remove();
     this.container = undefined;
     this.setSelectedNodes(this.getNodes(this.getRectPosition(event)));
+    this.tick();
   };
 
   isAllow(event: MouseEvent) {

@@ -24,7 +24,8 @@
     "packages": [
       "docs",
       "src",
-      "packages/*"
+      "packages/*",
+      "storybook"
     ]
   },
   "dependencies": {

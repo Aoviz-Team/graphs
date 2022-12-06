@@ -46,10 +46,9 @@ export const renderCell =
         </Popover.Root>
       )
     }
-
     return (
       <TableCell
-        key={datum}
+        key={`${datum}_${index}`}
         isPropName={template === 'config' ? index === 0 : false}
         isThirdItem={template === 'config' ? index === 2 : false}>
         <code>{datum}</code>

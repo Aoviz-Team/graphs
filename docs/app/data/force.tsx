@@ -102,3 +102,10 @@ export const FORCE_LABEL_STYLE_DATA = [
     [{ label: 'backgroundColor', content: '文本的背景颜色' }, 'string', null],
     [{ label: 'borderRadius', content: '背景的圆角大小' }, 'number', '12'],
 ]
+
+export const FORCE_FISHEYE_PLUGIN_DATA = [
+    [{ label: 'keyCombination', content: '触发鱼眼效果的快捷键' }, '`alt` | `ctrl` | `shift`', '[`ctrl`]'],
+    [{ label: 'radius', content: '鱼眼的半径大小' }, 'number', '130'],
+    [{ label: 'distortion' }, 'number', '5'],
+    [{ label: 'smoothing' }, 'number', '0.001']
+]
