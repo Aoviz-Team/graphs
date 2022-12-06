@@ -30,10 +30,10 @@ export class Renderer {
     const { width = 0, height = 0 } = option.layout;
     this.collectors = [];
     context.clearRect(0, 0, width, height);
-    context.save();
+    this.event.emit(EEventRender.BeforeDraw, context, data, option);
     context.textAlign = 'center';
     context.textBaseline = 'middle';
-    this.event.emit(EEventRender.BeforeDraw, context, data, option);
+    context.save();
     context.translate(transform.x, transform.y);
     context.scale(transform.k, transform.k);
     const preprocessRenderDataFns = this.event.get(EInternalEvent.PreprocessRenderData);
@@ -70,8 +70,8 @@ export class Renderer {
       this.event.emit(EEventRender.BeforeDrawNode, context, node);
     });
     this.event.collectors = this.collectors;
-    this.event.emit(EEventRender.AfterDraw, context, data, option);
     context.restore();
+    this.event.emit(EEventRender.AfterDraw, context, data, option);
   }
 
   drawLink(link: IRenderLink) {

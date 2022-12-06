@@ -20,7 +20,6 @@ export const HeaderSubnav = ({ className, subnav }: HeaderSubnavProps) => {
   const [springs, ref] = useSprings(2, i => ({
     opacity: 0,
   }))
-
   const handleScroll = (e: WheelEvent<HTMLDivElement>) => {
     const el = e.target as HTMLDivElement
 

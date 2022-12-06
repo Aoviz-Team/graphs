@@ -62,8 +62,8 @@ export class Event extends EventEmitter {
       )
       .subscribe((ev) => this.processCollectors(ev, EEventName.Hover));
     fromEvent(this.element, EEventName.Click)
-      .pipe(tap((e) => this.emit(EEventName.Click, e)))
-      .subscribe((ev) => this.processCollectors(ev, EEventName.Click));
+      .pipe(tap((e) => this.processCollectors(e, EEventName.Click)))
+      .subscribe((e) => this.emit(EEventName.Click, e));
     fromEvent(this.element, EEventName.Dblclick).subscribe((e) => this.emit(EEventName.Dblclick, e));
     fromEvent(this.element, EEventName.Mousedown).subscribe((e) => this.emit(EEventName.Mousedown, e));
     fromEvent(this.element, EEventName.Mouseup).subscribe((e) => this.emit(EEventName.Mouseup, e));
@@ -79,6 +79,16 @@ export class Event extends EventEmitter {
   }
 
   dispatch(item: ICollector, eventName: EEventName) {
+    if ([ECollectorType.NodeLabel, ECollectorType.Node].includes(item.type) && eventName === EEventName.Click) {
+      this.onSelectedNodes$.next([item.data as IRenderNode]);
+      this.onSelectedLinks$.next([]);
+    }
+
+    if ([ECollectorType.Link, ECollectorType.LinkLabel].includes(item.type) && eventName === EEventName.Click) {
+      this.onSelectedLinks$.next([item.data as IRenderLink]);
+      this.onSelectedNodes$.next([]);
+    }
+
     switch (item.type) {
       case ECollectorType.NodeLabel:
       case ECollectorType.Node:
@@ -90,16 +100,6 @@ export class Event extends EventEmitter {
         break;
       default:
         break;
-    }
-
-    if ([ECollectorType.NodeLabel, ECollectorType.Node].includes(item.type) && eventName === EEventName.Click) {
-      this.onSelectedNodes$.next([item.data as IRenderNode]);
-      this.onSelectedLinks$.next([]);
-    }
-
-    if ([ECollectorType.Link, ECollectorType.LinkLabel].includes(item.type) && eventName === EEventName.Click) {
-      this.onSelectedLinks$.next([item.data as IRenderLink]);
-      this.onSelectedNodes$.next([]);
     }
   }
 

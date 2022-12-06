@@ -1,5 +1,6 @@
 import { merge } from 'lodash-es';
-import { IRenderData, IRenderLink, IRenderNode } from '../interface';
+import { drawNodeStyle } from '../../draws';
+import { INodeStyle, IRenderData, IRenderLink, IRenderNode } from '../interface';
 import { radial } from '../utils';
 import { Plugin } from './plugin';
 
@@ -11,17 +12,13 @@ const DEFAULT_OPTION = {
   borderColor: '#329485',
   borderWidth: 2,
   borderLineDash: [],
-  fillColor: 'rgba(23,45,67,0.1)'
+  color: 'rgba(23,45,67,0.1)'
 };
-export interface IFisheyeOption {
+export interface IFisheyeOption extends INodeStyle {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'>;
   radius: number;
   distortion: number;
   smoothing: number;
-  borderColor: string;
-  borderWidth: number;
-  borderLineDash: number[];
-  fillColor: string;
 }
 export class FisheyePlugin extends Plugin {
   keyCombination: Array<'alt' | 'ctrl' | 'shift'> = ['ctrl'];
@@ -64,18 +61,8 @@ export class FisheyePlugin extends Plugin {
   afterDraw(ctx: CanvasRenderingContext2D): void {
     if (!this.focus) return;
     ctx.beginPath();
-    ctx.arc(
-      this.transform.invertX(this.mousePoint.x),
-      this.transform.invertY(this.mousePoint.y),
-      this.option.radius / this.transform.k,
-      0,
-      2 * Math.PI
-    );
-    ctx.lineWidth = this.option.borderWidth / this.transform.k;
-    ctx.strokeStyle = this.option.borderColor;
-    ctx.fillStyle = this.option.fillColor;
-    ctx.stroke();
-    ctx.fill();
+    ctx.arc(this.mousePoint.x, this.mousePoint.y, this.option.radius, 0, 2 * Math.PI);
+    drawNodeStyle(ctx, this.option);
   }
 
   preprocessRenderData(data: IRenderData) {

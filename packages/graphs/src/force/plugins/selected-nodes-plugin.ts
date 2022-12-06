@@ -21,7 +21,14 @@ export class SelectedNodesPlugin extends Plugin {
     this.option = merge({ ...DEFAULT_OPTION }, option);
   }
 
+  onClick() {
+    this.tick();
+  }
+
   afterDraw(context: CanvasRenderingContext2D, data: IRenderData): void {
+    context.save();
+    context.translate(this.transform.x, this.transform.y);
+    context.scale(this.transform.k, this.transform.k);
     const selectedNodes = this.getSelectedNodes();
     const selectedNodeHash = selectedNodes.reduce((prev, curr) => {
       prev[curr.id] = curr;
@@ -34,5 +41,6 @@ export class SelectedNodesPlugin extends Plugin {
         drawNodeStyle(context, this.option, this.transform.k);
       }
     });
+    context.restore();
   }
 }

@@ -32,8 +32,8 @@ const OPTION: DeepPartial<IOption> = {
       { force: 'n-body', strength: -1600, distanceMin: 30, distanceMax: 800 },
       { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
       { force: 'link', id: (d) => d.id, distance: 200 },
-      // { force: 'x', strength: 0.01 },
-      // { force: 'y', strength: 0.01 },
+      { force: 'x', strength: 0.01 },
+      { force: 'y', strength: 0.01 },
       { force: 'center', strength: 0.005 }
     ]
   }
@@ -61,7 +61,7 @@ function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean
     instanceRef.current = new Force(wrapper.current!, { data: THREE_DEGREE_BANK_DATA, option });
     const plugins: any[] = [];
     if (watermark) {
-      plugins.push(new WatermarkPlugin());
+      plugins.push(new WatermarkPlugin({ value: 'aoviz' }));
     }
     if (custom) {
       plugins.push(new CustomPlugin());
