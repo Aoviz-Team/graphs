@@ -25,11 +25,21 @@ const option = {
 }
 export default function Viz() {
   const wrapper = useRef(null);
+  const instanceRef = useRef(null)
+  const config = useControls({
+    space: 5,
+    borderColor: '#BE6AFF',
+    borderWidth: 2,
+    shadowBlur: 3,
+    shadowColor: '#329485'
+  })
+  useEffect(() => {
+    instanceRef.current = new Force(wrapper.current,{ data: ONE_DEGREE_BANK_DATA, option });
+  }, [wrapper]);
 
   useEffect(() => {
-    const instance = new Force(wrapper.current,{ data: ONE_DEGREE_BANK_DATA, option });
-    instance.setPlugins([new SelectedNodesPlugin()])
-  }, [wrapper]);
+    instanceRef.current.setPlugins([new SelectedNodesPlugin(config)])
+  }, [instanceRef, config])
 
   return (
     <div style={{ height: 380, width: 600, margin: 'auto'}}>
