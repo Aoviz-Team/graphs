@@ -33,7 +33,6 @@ export const LivePreview = ({
 }: LivePreviewProps) => {
   const [value, setValue] = useState(defaultOpen ? 'code' : '')
   const preRef = useRef<HTMLPreElement>(null!)
-
   const codeTemplate = `
     import '/index.css'
     ${code}
@@ -67,7 +66,11 @@ export const LivePreview = ({
         template === 'configPlayground' ||
         template === 'imperative' ||
         template === 'r3f'
-      }>
+      }
+      maxLargeSize={
+        template === 'maxConfigPlayground'
+      }
+      >
       <SandpackProvider
         template="react"
         files={{
@@ -200,6 +203,13 @@ const PreviewContainer = styled('div', {
       true: {
         '& .preview__iframe': {
           minHeight: 400,
+        },
+      },
+    },
+    maxLargeSize: {
+      true: {
+        '& .preview__iframe': {
+          minHeight: 600,
         },
       },
     },

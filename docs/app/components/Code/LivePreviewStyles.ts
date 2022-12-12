@@ -125,6 +125,43 @@ export const LIVE_PREVIEW_STYLES = {
     }
   `,
 
+  maxConfigPlayground: /* css */ `
+    html,
+    body {
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+    }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    #root {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .card-main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 20ch;
+      height: 20ch;
+      background-color: #ff6d6d;
+      border-radius: 8px;
+      transition: box-shadow 0.5s;
+      will-change: transform;
+    }
+  `,
+
   r3f: /* css */ `
     html,
     body {
