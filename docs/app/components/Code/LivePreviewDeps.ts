@@ -8,6 +8,9 @@ export const LIVE_PREVIEW_DEPS = {
   configPlayground: {
     leva: '^0.9.31',
   },
+  maxConfigPlayground: {
+    leva: '^0.9.31',
+  },
   r3f: {
     '@react-spring/three': '*',
     '@react-three/drei': '^9.36.0',

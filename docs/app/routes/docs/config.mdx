@@ -7,6 +7,87 @@ sidebar_position: 3
 
 # Graph 配置项
 
+## 配置示例
+
+```jsx live=true template=maxConfigPlayground
+import { Force, WatermarkPlugin, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs'
+import { ONE_DEGREE_BANK_DATA, DEFAULT_DATA } from '@aoviz/mock'
+import { useRef, useEffect } from 'react'
+import { useControls } from 'leva'
+
+const option = {
+  node: {
+    radius: 28
+  },
+  link: {
+    color: '#9c9b9b',
+    shape: 'line',
+    label: {
+      backgroundColor: 'rgba(114, 193, 209, 0.6)' 
+    }
+  },
+  layout: DEFAULT_LAYOUT_OPTION
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+  const instanceRef = useRef(null)
+  const config = useControls({
+    nBodyStrength: -1600,
+    linkDistance: 200,
+    velocityDecay: { value: 0.15, max: 1, min: 0 },
+    layoutAlpha: { value: 0.3, max: 1, min: 0},
+    xyStrength: { value: 0.15, max: 1, min: 0},
+    linkShapeArc : false,
+    linkCurveOffset: { value: 22, min: 5 },
+    linkColor: '#9c9b9b',
+    static: false,
+    forceCenter: true
+
+  })
+
+  useEffect(() => {
+    instanceRef.current = new Force(wrapper.current,{ data: DEFAULT_DATA, option });
+  }, [wrapper]);
+
+  useEffect(() => {
+    option.layout.velocityDecay = config.velocityDecay;
+    option.layout.static = config.static;
+    option.layout.alpha = config.layoutAlpha;
+    option.link.color = config.linkColor;
+    option.link.shape = config.linkShapeArc ? 'arc' : 'line';
+    option.link.curveOffset = config.linkCurveOffset;
+    option.layout.forces.forEach( f => {
+        if(f.force === 'n-body'){
+            f.strength = config.nBodyStrength
+        }
+        if(f.force === 'link'){
+            f.distance = config.linkDistance
+        }
+        if(['x', 'y'].includes(f.force)){
+            f.strength = config.xyStrength
+        }
+    })
+
+    if(config.forceCenter){
+        if(!option.layout.forces.find(f=>f.force==='center')){
+            option.layout.forces.push({force: 'center'})
+        }
+    } else {
+        option.layout.forces = option.layout.forces.filter( f => f.force !== 'center')
+    }
+    console.log(option)
+    instanceRef.current.setOption(option)
+  }, [instanceRef, config])
+
+  return (
+    <div style={{ height: 590 }}>
+		<div ref={wrapper} style={{ height: 590 }}></div>
+	</div>
+  )
+}
+
+```
+
 ## 力布局配置
 力导向布局使用一个模型，其中数据对象作为带电粒子（或节点），可以选择由一组边（或关系）连接。一组力被用来驱动决定节点位置的物理模拟。布局基于 d3-force 实现。
 
