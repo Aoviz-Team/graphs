@@ -1,6 +1,6 @@
 {
   "name": "@aoviz/graphs",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
   "module": "es/index.js",
@@ -29,5 +29,5 @@
   },
   "peerDependencies": {
     "tinycolor2": "^1.5.1"
-   }
+  }
 }
