@@ -66,7 +66,7 @@ export const LivePreview = ({
         template === 'configPlayground' ||
         template === 'imperative' ||
         template === 'r3f' ||
-        template === 'tinyColor'
+        template === 'plugins'
       }
       maxLargeSize={
         template === 'maxConfigPlayground'

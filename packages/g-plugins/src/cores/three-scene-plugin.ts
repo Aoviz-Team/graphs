@@ -1,18 +1,13 @@
-import { IForceData, IRenderData, IRenderLink, IRenderNode } from '@aoviz/graphs';
-import { IPluginConfig, Plugin } from '@aoviz/graphs';
+import { IForceData, IRenderData, IRenderLink, IRenderNode, IPluginConfig, Plugin } from '@aoviz/graphs';
 import {
   AmbientLight,
-  AxesHelper,
   BufferGeometry,
   CanvasTexture,
   DirectionalLight,
-  EdgesGeometry,
-  Group,
   Line,
   LineBasicMaterial,
   Mesh,
   MeshPhongMaterial,
-  Object3D,
   PerspectiveCamera,
   Scene,
   SphereGeometry,

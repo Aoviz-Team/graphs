@@ -11,8 +11,8 @@ export const LIVE_PREVIEW_DEPS = {
   maxConfigPlayground: {
     leva: '^0.9.31',
   },
-  tinyColor: {
-    tinycolor2: "^1.5.1"
+  plugins: {
+    "@aoviz/g-plugins": "*"
   },
   r3f: {
     '@react-spring/three': '*',

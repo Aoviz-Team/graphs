@@ -9,9 +9,9 @@ sidebar_position: 6
 
 体验 threejs 的渲染方式
 
-```jsx live=true template=r3f
+```jsx live=true template=plugins
 import { Force, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs';
-import { ThreeScenePlugin } from '@aoviz/graphs/es/force/plugins/three-scene-plugin'
+import { ThreeScenePlugin } from '@aoviz/g-plugins'
 import { TWO_DEGREE_BANK_DATA } from '@aoviz/mock'
 import { useRef, useEffect } from 'react'
 
@@ -46,5 +46,4 @@ export default function Viz() {
 	  </div>
   );
 }
-
 ```

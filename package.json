@@ -11,7 +11,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "yarn workspace @aoviz/graphs build && yarn workspace @aoviz/mock build",
+    "build": "yarn workspace @aoviz/graphs build && yarn workspace @aoviz/mock build && yarn workspace @aoviz/g-plugins build",
     "build:graphs": "yarn workspace @aoviz/graphs build",
     "docs:dev": "yarn workspace @aoviz/docs dev",
     "docs:build": "yarn workspace @aoviz/docs build",

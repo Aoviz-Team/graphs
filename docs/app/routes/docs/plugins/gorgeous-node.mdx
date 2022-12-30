@@ -9,10 +9,10 @@ sidebar_position: 6
 
 样式绚丽的节点风格
 
-```jsx live=true template=r3f
+```jsx live=true template=plugins
 import { Force, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs';
-import { GorgeousNodePlugin } from '@aoviz/graphs/es/force/plugins/gorgeous-node-plugin'
-import { TWO_DEGREE_BANK_DATA } from '@aoviz/mock'
+import { GorgeousNodePlugin } from '@aoviz/g-plugins'
+import { GORGEOUS_DATA } from '@aoviz/mock'
 import { useRef, useEffect } from 'react'
 
 const option = {
@@ -27,7 +27,7 @@ export default function Viz() {
   const wrapper = useRef(null);
 
   useEffect(() => {
-    const instance = new Force(wrapper.current,{ data: TWO_DEGREE_BANK_DATA, option });
+    const instance = new Force(wrapper.current,{ data: GORGEOUS_DATA, option });
     instance.setPlugins([new GorgeousNodePlugin()])
   }, [wrapper]);
 

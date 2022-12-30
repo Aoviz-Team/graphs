@@ -1,7 +1,5 @@
 import tinyColor from 'tinycolor2';
-import { roundRectBgLabel } from '@aoviz/graphs';
-import { ECollectorShape, ECollectorType, ICollector, INode, IRenderData, IRenderNode } from '@aoviz/graphs';
-import { Plugin } from '@aoviz/graphs';
+import { Plugin, roundRectBgLabel, ECollectorShape, ECollectorType, ICollector, INode, IRenderData, IRenderNode } from '@aoviz/graphs';
 
 function drawCircleRadialGradient(ctx: CanvasRenderingContext2D, x: number, y: number, r: number, color: string, scale = 1) {
 	const rColor = tinyColor(color);
@@ -161,7 +159,7 @@ export class GorgeousNodePlugin extends Plugin {
 			}
 		});
 		context.restore();
-		const event  = this.getEvent()
+		const event = this.getEvent()
 		event.collectors.unshift(...this.collectors)
 	}
 }

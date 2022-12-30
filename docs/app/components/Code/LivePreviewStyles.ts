@@ -178,19 +178,19 @@ export const LIVE_PREVIEW_STYLES = {
     }
   `,
 
-  tinyColor: /* css */ `
-  html,
-  body {
-    height: 100%;
-    margin: 0
-  }
+  plugins: /* css */ `
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
 
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
 
-  #root {
-    height: 100%;
-  }
+    #root {
+      height: 100%;
+    }
 `,
 }
