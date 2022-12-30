@@ -1,10 +1,14 @@
 {
   "name": "@aoviz/mock",
-  "version": "0.0.2",
+  "version": "0.0.23",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
   "module": "es/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "es/*"
+  ],
   "sideEffects": [
     "dist/*"
   ],
@@ -14,7 +18,5 @@
   "private": false,
   "scripts": {
     "build": "rollup -c"
-  },
-  "dependencies": {
   }
 }

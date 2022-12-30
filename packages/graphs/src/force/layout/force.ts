@@ -1,5 +1,5 @@
 import { forceSimulation, forceManyBody, forceCollide, Simulation, forceX, forceY, forceCenter, forceLink } from 'd3-force';
-import { cloneDeep, difference, find, isFunction, merge } from 'lodash-es';
+import { cloneDeep, difference, find, isFunction, isNil, merge } from 'lodash-es';
 import { BehaviorSubject } from 'rxjs';
 import { IForceData, IForceLink, ILayoutOption, IRenderData, IRenderLink, IRenderNode } from '../interface';
 import { mergeRenderData } from '../utils';
@@ -62,11 +62,11 @@ export class ForceLayout {
       for (const p in _) {
         if (isFunction(f[p])) f[p](isFunction(_[p]) ? (...d) => _[p](...d, _, this.option) : _[p]);
       }
-      if (_.force === 'x' && !_['x']) f.x(width! / 2);
-      if (_.force === 'y' && !_['y']) f.y(height! / 2);
+      if (_.force === 'x' && isNil(_['x'])) f.x(width! / 2);
+      if (_.force === 'y' && isNil(_['y'])) f.y(height! / 2);
       if (_.force === 'center') {
-        if (!_['x']) f.x(width! / 2);
-        if (!_['y']) f.y(height! / 2);
+        if (isNil(_['x'])) f.x(width! / 2);
+        if (isNil(_['y'])) f.y(height! / 2);
       }
       collect.push(_.force);
       this.simulation.force(_.force, f);

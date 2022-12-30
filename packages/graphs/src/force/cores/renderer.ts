@@ -219,7 +219,7 @@ export class Renderer {
     context.fillStyle = cfg.label.color;
     this.drawNodeLabel({ x: node.x || 0, y: (node.y || 0) + cfg.radius + offset }, node);
     this.collectors.unshift({
-      type: ECollectorType.NodeLabel,
+      type: ECollectorType.Node,
       shape: ECollectorShape.Circle,
       model: { x: node.x || 0, y: node.y || 0, r: cfg.radius },
       data: node

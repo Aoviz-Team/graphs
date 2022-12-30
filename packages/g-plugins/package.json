@@ -1,5 +1,5 @@
 {
-  "name": "@aoviz/graphs",
+  "name": "@aoviz/g-plugins",
   "version": "0.0.24",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
@@ -20,14 +20,10 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "d3-drag": "^3.0.0",
-    "d3-force": "^3.0.0",
-    "d3-selection": "^3.0.0",
-    "d3-zoom": "^3.0.0",
-    "lodash-es": "^4.17.21",
-    "rxjs": "^7.5.7"
+    "three": "^0.147.0",
+    "tinycolor2": "^1.5.1"
   },
   "peerDependencies": {
-    "tinycolor2": "^1.5.1"
+    "@aoviz/graphs": "*"
   }
 }

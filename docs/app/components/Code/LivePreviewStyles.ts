@@ -177,4 +177,20 @@ export const LIVE_PREVIEW_STYLES = {
       height: 100%;
     }
   `,
+
+  plugins: /* css */ `
+    html,
+    body {
+      height: 100%;
+      margin: 0
+    }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    #root {
+      height: 100%;
+    }
+`,
 }

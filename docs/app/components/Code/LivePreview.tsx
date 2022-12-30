@@ -65,7 +65,8 @@ export const LivePreview = ({
       largeSize={
         template === 'configPlayground' ||
         template === 'imperative' ||
-        template === 'r3f'
+        template === 'r3f' ||
+        template === 'plugins'
       }
       maxLargeSize={
         template === 'maxConfigPlayground'
@@ -83,7 +84,7 @@ export const LivePreview = ({
         }}
         customSetup={{
           dependencies: {
-            '@react-spring/web': '*',
+            // '@react-spring/web': '*',
             '@aoviz/graphs': '*',
             '@aoviz/mock': '*',
             ...LIVE_PREVIEW_DEPS[template],

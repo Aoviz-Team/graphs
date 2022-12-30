@@ -1,0 +1,49 @@
+---
+meta:
+  title: 三维场景 |  @aoviz/graphs
+  description: 三维场景（测试功能）
+sidebar_position: 6
+---
+
+# 三维场景
+
+体验 threejs 的渲染方式
+
+```jsx live=true template=plugins
+import { Force, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs';
+import { ThreeScenePlugin } from '@aoviz/g-plugins'
+import { TWO_DEGREE_BANK_DATA } from '@aoviz/mock'
+import { useRef, useEffect } from 'react'
+
+const option = {
+  link:{
+    label: {
+      backgroundColor: 'rgba(114, 193, 209, 0.6)' 
+    }
+  },
+  layout: {
+    forces: [
+      { force: 'n-body', strength: -1600, distanceMin: 30, distanceMax: 800 },
+      { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
+      { force: 'link', id: (d) => d.id, distance: 200 },
+      { force: 'x', x: 0 },
+      { force: 'y', y: 0 },
+      { force: 'center', x: 0, y: 0 }
+    ]
+  }
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data: TWO_DEGREE_BANK_DATA, option });
+    instance.setPlugins([new ThreeScenePlugin()])
+  }, [wrapper]);
+
+  return (
+    <div style={{ height: 400 }}>
+		  <div ref={wrapper} style={{ height: 400 }}></div>
+	  </div>
+  );
+}
+```
