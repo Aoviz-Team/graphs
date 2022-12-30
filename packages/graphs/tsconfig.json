@@ -6,5 +6,5 @@
     "outDir": "dist",
     "typeRoots": ["./src/typings",]
   },
-  "include": ["src"]
+  "include": ["src", "../g-plugins/src/cores/gorgeous-node-plugin.ts", "../g-plugins/src/cores/three-scene-plugin.ts"]
 }

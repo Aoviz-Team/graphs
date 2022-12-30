@@ -1,0 +1,41 @@
+---
+meta:
+  title: 绚丽节点 |  @aoviz/graphs
+  description: 绚丽节点
+sidebar_position: 6
+---
+
+# 绚丽节点
+
+样式绚丽的节点风格
+
+```jsx live=true template=r3f
+import { Force, DEFAULT_LAYOUT_OPTION } from '@aoviz/graphs';
+import { GorgeousNodePlugin } from '@aoviz/graphs/es/force/plugins/gorgeous-node-plugin'
+import { TWO_DEGREE_BANK_DATA } from '@aoviz/mock'
+import { useRef, useEffect } from 'react'
+
+const option = {
+  link:{
+    label: {
+      backgroundColor: 'rgba(114, 193, 209, 0.6)' 
+    }
+  },
+  layout: DEFAULT_LAYOUT_OPTION
+}
+export default function Viz() {
+  const wrapper = useRef(null);
+
+  useEffect(() => {
+    const instance = new Force(wrapper.current,{ data: TWO_DEGREE_BANK_DATA, option });
+    instance.setPlugins([new GorgeousNodePlugin()])
+  }, [wrapper]);
+
+  return (
+    <div style={{ height: 400 }}>
+		  <div ref={wrapper} style={{ height: 400 }}></div>
+	  </div>
+  );
+}
+
+```

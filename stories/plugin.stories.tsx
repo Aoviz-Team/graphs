@@ -10,9 +10,12 @@ import {
   WatermarkPlugin,
   roundRectBgLabel,
   FisheyePlugin,
-  SelectedNodesPlugin
+  SelectedNodesPlugin,
+
 } from '../packages/graphs/src';
-import { randomRadial, DEFAULT_DATA, ONE_DEGREE_BANK_DATA, THREE_DEGREE_BANK_DATA } from '../packages/mock/src/index.ts';
+import { ThreeScenePlugin } from  '../packages/g-plugins/src/cores/three-scene-plugin'
+import { GorgeousNodePlugin } from  '../packages/g-plugins/src/cores/gorgeous-node-plugin'
+import { randomRadial, DEFAULT_DATA, ONE_DEGREE_BANK_DATA, TWO_DEGREE_BANK_DATA, THREE_DEGREE_BANK_DATA, GORGEOUS_DATA } from '../packages/mock/src/index.ts';
 import './force.css';
 
 const OPTION: DeepPartial<IOption> = {
@@ -32,9 +35,9 @@ const OPTION: DeepPartial<IOption> = {
       { force: 'n-body', strength: -1600, distanceMin: 30, distanceMax: 800 },
       { force: 'collide', strength: 0.5, radius: (d: any) => d.cfg?.radius || 20, iterations: 1 },
       { force: 'link', id: (d) => d.id, distance: 200 },
-      { force: 'x', strength: 0.01 },
-      { force: 'y', strength: 0.01 },
-      { force: 'center', strength: 0.005 }
+      { force: 'x',  strength: 0.1 },
+      { force: 'y', strength: 0.1  },
+      { force: 'center', strength: 0.1 }
     ]
   }
 };
@@ -51,14 +54,14 @@ class CustomPlugin extends Plugin {
     roundRectBgLabel(c, { x: n.x!, y: n.y! + n.cfg.radius + 10 }, n);
   }
 }
-function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean>) {
+function Viz({ watermark, custom, brushSelect, fisheye, three, gorgeous }: Record<string, boolean>) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [option, setOption] = useState(OPTION);
   const instanceRef = useRef<Force<IForceData>>(null);
 
   useEffect(() => {
     const D = randomRadial();
-    instanceRef.current = new Force(wrapper.current!, { data: THREE_DEGREE_BANK_DATA, option });
+    instanceRef.current = new Force(wrapper.current!, { data: GORGEOUS_DATA, option });
     const plugins: any[] = [];
     if (watermark) {
       plugins.push(new WatermarkPlugin({ value: 'aoviz' }));
@@ -71,6 +74,13 @@ function Viz({ watermark, custom, brushSelect, fisheye }: Record<string, boolean
     }
     if (fisheye) {
       plugins.push(new FisheyePlugin());
+    }
+    if (three) {
+      plugins.push(new ThreeScenePlugin());
+    }
+
+    if (gorgeous) {
+      plugins.push(new GorgeousNodePlugin())
     }
     instanceRef.current.setPlugins(plugins);
   }, [wrapper]);
@@ -100,3 +110,5 @@ export const Custom = () => <Viz custom />;
 export const Watermark = () => <Viz watermark />;
 export const BrushSelect = () => <Viz brushSelect />;
 export const Fisheye = () => <Viz fisheye />;
+export const Three = () => <Viz three />;
+export const Gorgeous = ()=> <Viz gorgeous/>

@@ -140,3 +140,28 @@ export const ONE_DEGREE_BANK_DATA = {
     }
   ]
 };
+
+
+const GorgeousNode = ONE_DEGREE_BANK_DATA.nodes.map(((n, i) => {
+  if (i === 0) {
+    return {
+      ...n,
+      cfg: {
+        radius: 50,
+        color: '#00068D'
+      }
+    }
+  }
+  return {
+    ...n,
+    cfg: {
+      radius: 36,
+      color: Math.random() > 0.5 ? '#60008E' : '#004B7F'
+    }
+  }
+}))
+
+export const GORGEOUS_DATA = {
+  nodes: GorgeousNode,
+  links: ONE_DEGREE_BANK_DATA.links
+}

@@ -1,16 +1,16 @@
 {
-  "name": "@aoviz/mock",
-  "version": "0.0.4",
+  "name": "@aoviz/g-plugins",
+  "version": "0.0.22",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
   "module": "es/index.js",
   "types": "dist/index.d.ts",
+  "sideEffects": [
+    "dist/*"
+  ],
   "files": [
     "dist/*",
     "es/*"
-  ],
-  "sideEffects": [
-    "dist/*"
   ],
   "repository": "https://github.com/Aoviz-Team/graphs",
   "author": "Steven.zhong",
@@ -20,5 +20,10 @@
     "build": "rollup -c"
   },
   "dependencies": {
+    "three": "^0.147.0",
+    "tinycolor2": "^1.5.1"
+  },
+  "peerDependencies": {
+    "@aoviz/graphs": "*"
   }
 }

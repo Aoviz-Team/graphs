@@ -23,7 +23,8 @@ export enum EInternalEvent {
   DisableZoom = 'disableZoom',
   EnableZoom = 'enableZoom',
   GetRenderData = 'getRenderData',
-  PreprocessRenderData = 'preprocessRenderData'
+  PreprocessRenderData = 'preprocessRenderData',
+  PreprocessData = 'preprocessData'
 }
 
 export enum EEventRender {

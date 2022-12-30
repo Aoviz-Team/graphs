@@ -1,12 +1,16 @@
 {
   "name": "@aoviz/graphs",
-  "version": "0.0.19",
+  "version": "0.0.22",
   "description": "d3 graphs force knowledge 力导向图",
   "main": "dist/index.js",
   "module": "es/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": [
     "dist/*"
+  ],
+  "files": [
+    "dist/*",
+    "es/*"
   ],
   "repository": "https://github.com/Aoviz-Team/graphs",
   "author": "Steven.zhong",
@@ -22,5 +26,8 @@
     "d3-zoom": "^3.0.0",
     "lodash-es": "^4.17.21",
     "rxjs": "^7.5.7"
-  }
+  },
+  "peerDependencies": {
+    "tinycolor2": "^1.5.1"
+   }
 }

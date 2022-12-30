@@ -2,7 +2,6 @@
 example
 src
 docs
-rollup.config.js
 tsconfig.json
 node_modules
 yarn.lock
@@ -17,3 +16,4 @@ stories
 .prettierrc
 yarn-error.log
 patches
+rollup.config.mjs

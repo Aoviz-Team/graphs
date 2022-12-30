@@ -63,7 +63,7 @@ export class Controller {
     this.option.layout.width = this.option.layout?.width || clientRect.width;
     this.option.layout.height = this.option.layout?.height || clientRect.height;
     this.layout = new ForceLayout(this.option.layout as ILayoutOption);
-    this.tick$.pipe(throttleTime(106, undefined, { trailing: true })).subscribe((data: IRenderData) => {
+    this.tick$.pipe(throttleTime(16, undefined, { trailing: true })).subscribe((data: IRenderData) => {
       this.renderer.draw(data);
     });
   }
@@ -197,5 +197,18 @@ export class Controller {
     for (const plugin of this.plugins) {
       plugin.dispose();
     }
+  }
+
+  preprocessData(data: IForceData) {
+    const preprocessDataFns = this.event.get(EInternalEvent.PreprocessData);
+    let { nodes, links } = data;
+    if (preprocessDataFns && preprocessDataFns.size) {
+      for (const preprocessData of preprocessDataFns) {
+        const _data = preprocessData({ nodes, links }) as IForceData;
+        nodes = _data.nodes;
+        links = _data.links;
+      }
+    }
+    return { nodes, links };
   }
 }
