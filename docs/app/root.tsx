@@ -65,6 +65,17 @@ function Document({ children }: { children: React.ReactNode }) {
         <Links />
         {/* <WidgetPlausible /> */}
         <WidgetTheme />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4377526927482447"
+          crossOrigin="anonymous"></script>
+        <ins className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-format="fluid"
+          data-ad-layout-key="-6t+ed+2i-1n-4w"
+          data-ad-client="ca-pub-4377526927482447"
+          data-ad-slot="2087205384"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({ });
+        </script>
       </head>
       <body>
         {children}
