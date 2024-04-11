@@ -15,6 +15,9 @@
     "build:graphs": "yarn workspace @aoviz/graphs build",
     "docs:dev": "yarn workspace @aoviz/docs dev",
     "docs:build": "yarn workspace @aoviz/docs build",
+    "docx:dev": "yarn workspace @aoviz/docx dev",
+    "docx:build": "yarn workspace @aoviz/docx build",
+    "docx:start": "yarn workspace @aoviz/docx start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint ./src/force/  --ext .ts,.js,.tsx",
@@ -24,6 +27,7 @@
   "workspaces": {
     "packages": [
       "docs",
+      "docx",
       "src",
       "packages/*",
       "storybook"
